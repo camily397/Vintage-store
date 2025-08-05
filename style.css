@@ -84,7 +84,7 @@ main {
 
 .album img {
   width: 100%;
-  border-radius: 120px;
+  border-radius: 4px;
 }
 
 .album p {
