@@ -71,7 +71,8 @@ main {
 
 .albuns-promocao img {
   width: 120px;
-  height: auto;
+  height: 120px; /* Mantém quadrado */
+  object-fit: cover;
   border-radius: 4px;
 }
 
@@ -83,8 +84,12 @@ main {
 }
 
 .album img {
-  width: 100%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 4px;
+  display: block;
+  margin: 0 auto;
 }
 
 .album p {
