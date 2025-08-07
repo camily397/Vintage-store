@@ -64,9 +64,11 @@ main {
 
 .albuns-promocao {
   display: flex;
-  gap: 10px;
+ justify - content : space - around
+  grap: 15px
+  flax-wrap: wrap;
   overflow-x: auto;
-  padding-bottom: 10px;
+ 
 }
 
 .albuns-promocao img {
