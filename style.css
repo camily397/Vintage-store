@@ -80,32 +80,6 @@ header {
   z-index: 1;
 }
 
-.albuns-promocao {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.albuns-promocao .album {
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.albuns-promocao .album img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.albuns-promocao .album p {
-  margin-top: 5px;
-  font-size: 0.9rem;
-}
-
 /* Destaques */
 .destaques {
   margin-top: 20px;
