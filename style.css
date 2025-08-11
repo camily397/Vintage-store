@@ -53,13 +53,17 @@ header {
   outline: none;
 }
 
-/* Seção Promoções com imagem de fundo */
+main {
+  padding: 20px;
+}
+
+/* SEÇÃO PROMOÇÕES */
 .promocoes {
   position: relative;
   padding: 20px;
   text-align: center;
   margin-bottom: 20px;
-  background-image: url('fundo.jfif'); /* aqui você coloca a imagem que quiser */
+  background-image: url('fundo.jfif');
   background-size: cover;
   background-position: center;
 }
@@ -68,8 +72,8 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.7); /* escurece fundo */
-  opacity: 0.3; /* 30% de opacidade */
+  background: #000;
+  opacity: 0.3;
 }
 
 .promocoes h2 {
@@ -80,7 +84,6 @@ header {
   font-size: 1.5rem;
 }
 
-
 .albuns-promocao {
   display: flex;
   gap: 20px;
@@ -90,8 +93,8 @@ header {
 }
 
 .albuns-promocao .album img {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -101,17 +104,18 @@ header {
   font-size: 0.9rem;
 }
 
-
+/* DESTAQUES */
 .destaques {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 15px;
   justify-items: center;
 }
 
 .album img {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 4px;
 }
@@ -119,6 +123,7 @@ header {
 .album p {
   margin-top: 5px;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .ver-mais {
@@ -135,4 +140,5 @@ header {
   border-radius: 10px;
   cursor: pointer;
 }
+
 
