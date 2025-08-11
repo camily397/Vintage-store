@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: url('URL_DA_SUA_IMAGEM_DE_FUNDO') no-repeat center center fixed;
+  background: url('fundo.jfif') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
 }
