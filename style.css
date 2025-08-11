@@ -86,10 +86,16 @@ main {
 
 .albuns-promocao {
   display: flex;
+  flex-wrap: nowrap; /* impede quebrar para baixo */
   gap: 20px;
   justify-content: center;
   position: relative;
   z-index: 1;
+}
+
+.albuns-promocao .album {
+  flex: 0 0 auto; /* garante tamanho fixo */
+  text-align: center;
 }
 
 .albuns-promocao .album img {
