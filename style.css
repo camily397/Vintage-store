@@ -6,12 +6,13 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #000;
+  background: url('fundo.jfif') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
 }
 
 header {
-  background-color: #111;
+  background-color:  #293E72;
   padding: 10px;
 }
 
@@ -53,39 +54,28 @@ header {
   outline: none;
 }
 
-/* Promoções com fundo */
-.promocoes {
-  position: relative;
-  padding: 20px;
-  text-align: center;
-  background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4');
-  background-size: cover;
-  background-position: center;
-}
-
 main {
   padding: 20px;
 }
 
-/* DESTAQUES */
 .destaques {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
   justify-items: center;
 }
 
 .album img {
-  width: 140px;
-  height: 140px;
+  width: 170px; /* aumentei o tamanho */
+  height: 170px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .album p {
   margin-top: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: center;
 }
 
