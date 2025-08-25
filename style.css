@@ -126,7 +126,7 @@ header {
 }
 
 .album-title {
-  background: #434C65;
+  background: #9CAFAA;
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -163,7 +163,7 @@ header {
 /* Coluna 2: detalhes */
 .album-details {
   flex: 2;
-  background: #434C65;
+  background: #9CAFAA;
   padding: 15px;
   border-radius: 5px;
   font-size: 14px;
@@ -223,5 +223,5 @@ header {
   border-radius: 5px;
 }
 .buy-btn:hover {
-  background: #ddd;
+  background: #D9D9D9;
 }
