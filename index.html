@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Store</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Vintage Store</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="logo">Vintage Store</div>
-        <input type="text" placeholder="Pesquisar...">
-        <div class="icons">
-            <div class="icon">👤 minha conta</div>
-            <div class="icon">💬 atendimento</div>
-        </div>
-    </header>
+  <!-- Cabeçalho -->
+  <header class="topo">
+    <h1 class="logo">Vintage Store</h1>
+    <input type="text" placeholder="Pesquisar...">
+    <div class="icones">
+      <span>Minha Conta</span>
+      <span>Atendimento</span>
+    </div>
+  </header>
 
-    <!-- Fundo com opacidade -->
-    <div class="background-overlay"></div>
+  <!-- Seção de destaques -->
+  <section class="destaques">
+    <h2>Destaques</h2>
+    <div class="grid-destaques">
+      <a href="ariana.html" class="album-link">
+        <img src="ariana.jfif" alt="Ariana - Positions">
+        <p>Ariana Grande - Positions</p>
+      </a>
+      <a href="anavi.html" class="album-link">
+        <img src="anavi.jfif" alt="Anavitória - Esquinas">
+        <p>Anavitória - Esquinas</p>
+      </a>
+      <a href="frank.html" class="album-link">
+        <img src="frank.jfif" alt="Frank Ocean - Blond">
+        <p>Frank Ocean - Blond</p>
+      </a>
+      <a href="bea.html" class="album-link">
+        <img src="bea.jfif" alt="Beabadoobee - Beatopia">
+        <p>Beabadoobee - Beatopia</p>
+      </a>
+      <a href="mit.html" class="album-link">
+        <img src="mit.jfif" alt="Mitski - Lush">
+        <p>Mitski - Lush</p>
+      </a>
+    </div>
+  </section>
 
-    <!-- Destaques -->
-    <section class="destaques">
-        <h2>Destaques</h2>
-        <div class="albums">
-            <div class="album">
-                <img src="anavi.jfif" alt="Anavitória - Esquinas">
-                <p>Anavitória - Esquinas</p>
-            </div>
-            <div class="album">
-                <img src="frank.jfif" alt="Frank Ocean - Blond">
-                <p>Frank Ocean - Blond</p>
-            </div>
-            <div class="album">
-                <img src="mit.jfif" alt="Mitski - Lush">
-                <p>Mitski - Lush</p>
-            </div>
-           <div  class="album">
-               <a href="ariana-positions.html" class="album-link">
-                <img src="ariana.jfif" alt="Ariana Grande - Positions">
-                <p>Ariana Grande - Positions</p>
-               </a>
-           </div>
-              <section class="categorias">
-            
-
-    <!-- Categorias -->
-    <section class="categorias">
-        <div class="categoria">
-            <img src="disco.jpg" alt="Disco Vinil">
-            <p>Disco Vinil</p>
-        </div>
-        <div class="categoria">
-            <img src="album.jpg" alt="Álbuns">
-            <p>Álbuns</p>
-        </div>
-        <div class="categoria">
-            <img src="cd.jpg" alt="CD's">
-            <p>CD's</p>
-        </div>
-    </section>
+  <!-- Seção de categorias -->
+  <section class="categorias">
+    <div class="categoria">
+      <img src="imagens/vinil.jpg" alt="Vinil">
+      <h3>Disco Vinil</h3>
+    </div>
+    <div class="categoria">
+      <img src="imagens/albums.jpg" alt="Álbuns">
+      <h3>Álbuns</h3>
+    </div>
+    <div class="categoria">
+      <img src="imagens/cds.jpg" alt="CDs">
+      <h3>CD's</h3>
+    </div>
+  </section>
 </body>
 </html>
