@@ -1,99 +1,100 @@
 /* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: Arial, sans-serif;
+    background: #A7C1A8; /* fundo claro como na foto */
+    color: black;
 }
 
 /* Cabeçalho */
 .topo {
-  background: #A7C1A8;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
+    background: #617F77;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
 }
 
 .logo {
-  font-family: "Times New Roman", serif;
-  font-size: 24px;
-  font-style: italic;
-  color: white;
+    font-family: "Times New Roman", serif;
+    font-size: 24px;
+    font-style: italic;
+    color: white;
 }
 
 .topo input {
-  width: 300px;
-  padding: 8px;
-  border-radius: 15px;
-  border: none;
+    width: 300px;
+    padding: 8px;
+    border-radius: 15px;
+    border: none;
 }
 
 .icones {
-  display: flex;
-  gap: 20px;
-  color: white;
-  font-size: 14px;
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-size: 14px;
 }
 
 /* Destaques */
 .destaques {
-  text-align: center;
-  background: #9CAFAA;
-  padding: 20px;
-}
-
-.destaques h2 {
-  margin-bottom: 15px;
+    text-align: center;
+    padding: 20px;
 }
 
 .grid-destaques {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .album-link {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .album-link img {
-  width: 120px;
-  height: auto;
-  border: 1px solid #ccc;
+    width: 120px;
+    height: auto;
+    border: 1px solid #ccc;
 }
 
 .album-link p {
-  font-size: 12px;
-  margin-top: 5px;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 /* Categorias */
 .categorias {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-  background: #E1E9C9;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
 }
 
 .categoria {
-  text-align: center;
+    text-align: center;
 }
 
 .categoria img {
-  width: 200px;
-  height: 250px;
-  object-fit: cover;
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
 }
 
 .categoria h3 {
-  margin-top: 8px;
-  font-family: "Times New Roman", serif;
-  font-size: 20px;
-  color: white;
-  background: black;
-  padding: 5px;
+    margin-top: 8px;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    color: white;
+    background: black;
+    padding: 5px;
 }
