@@ -112,133 +112,77 @@ header nav a:hover {
   width: 200px;
   height: 250px;
 }
-/* Estilos gerais */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #e0e5da;
-}
-
-/* Cabeçalho */
-.header {
-  background-color: #344e41;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.header h1 {
-  margin: 0 auto;
-  font-family: 'Georgia', serif;
-  font-style: italic;
-}
-
-.voltar {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-}
-
-/* Layout principal */
-.produto {
+/* === PÁGINA DA ARIANA === */
+.ariana-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px;
   gap: 20px;
+  padding: 20px;
+  background-color: #6d7f71; /* mesmo tom da sua primeira página */
+  color: white;
+  min-height: 90vh;
 }
 
-/* Fotos */
-.fotos {
-  background-color: #8f9779;
-  padding: 15px;
-  border-radius: 8px;
+.ariana-imagens h2 {
+  background: #4a5d52;
+  padding: 8px;
+  text-align: center;
 }
 
-.fotos h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.capa-principal img {
+.ariana-foto-principal img {
   width: 100%;
-  border: 2px solid #ccc;
+  border: 2px solid #333;
 }
 
-.capas-extra {
+.ariana-fotos-secundarias {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
-
-.capas-extra img {
+.ariana-fotos-secundarias img {
   width: 30%;
-  border: 1px solid #aaa;
+  border: 1px solid #333;
 }
 
-/* Informações */
-.informacoes {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #5a6d5c;
+.ariana-info {
+  background: #324654;
   padding: 15px;
-  border-radius: 8px;
-  color: white;
-}
-
-.info-bloco {
-  margin-bottom: 15px;
-}
-
-/* Pagamento */
-.pagamento {
-  background-color: #8f9779;
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.opcoes-pagamento {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.opcoes-pagamento button {
-  flex: 1;
-  margin: 0 5px;
-  padding: 10px;
-  border: none;
-  background-color: #344e41;
-  color: white;
   border-radius: 5px;
+  font-size: 14px;
+}
+
+.ariana-pagamento {
+  background: #4a5d52;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.metodos button {
+  background: #fff;
+  color: #000;
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
   cursor: pointer;
 }
 
 .quantidade {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
-
 .quantidade button {
   padding: 5px 10px;
-  border: none;
-  background-color: #ccc;
-  cursor: pointer;
 }
-
-.quantidade span {
-  margin: 0 10px;
+.quantidade input {
+  width: 40px;
+  text-align: center;
 }
 
 .comprar {
-  padding: 10px 20px;
-  background-color: white;
-  border: 2px solid #344e41;
-  border-radius: 5px;
-  cursor: pointer;
+  background: white;
+  color: black;
   font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }
