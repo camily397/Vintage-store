@@ -112,142 +112,133 @@ header nav a:hover {
   width: 200px;
   height: 250px;
 }
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Estilos gerais */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #d9e2da;
-  color: #222;
+  background-color: #e0e5da;
 }
 
-header {
-  background-color: #345c4c;
+/* Cabeçalho */
+.header {
+  background-color: #344e41;
   color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header h1 {
+  margin: 0 auto;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+.voltar {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+/* Layout principal */
+.produto {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Fotos */
+.fotos {
+  background-color: #8f9779;
   padding: 15px;
-  text-align: center;
-}
-
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 20px;
-}
-
-/* Fotos do álbum */
-.album-fotos {
-  flex: 1;
-  margin-right: 20px;
-}
-
-.album-fotos h2 {
-  background: #a3a9ad;
-  padding: 10px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.album-fotos .fotos {
-  display: flex;
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.album-fotos img {
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-}
-
-.album-fotos .miniaturas {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.album-fotos .miniaturas img {
-  width: 70px;
-  height: 70px;
-}
-
-/* Informações */
-.album-info {
-  flex: 1;
-  background: #7a8da9;
-  color: white;
-  padding: 20px;
   border-radius: 8px;
 }
 
-.album-info .preco {
-  margin: 15px 0;
-  font-size: 1.1em;
-  color: #ffd700;
+.fotos h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.album-info .endereco {
-  margin-top: 15px;
-  font-size: 0.9em;
+.capa-principal img {
+  width: 100%;
+  border: 2px solid #ccc;
+}
+
+.capas-extra {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.capas-extra img {
+  width: 30%;
+  border: 1px solid #aaa;
+}
+
+/* Informações */
+.informacoes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #5a6d5c;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.info-bloco {
+  margin-bottom: 15px;
 }
 
 /* Pagamento */
 .pagamento {
-  flex: 0.7;
+  background-color: #8f9779;
+  padding: 15px;
+  border-radius: 8px;
   text-align: center;
 }
 
-.pagamento h3 {
-  margin-bottom: 10px;
+.opcoes-pagamento {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.pagamento .opcoes button {
-  margin: 5px;
-  padding: 10px 15px;
+.opcoes-pagamento button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
   border: none;
-  background: #a3a9ad;
+  background-color: #344e41;
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.pagamento .opcoes button:hover {
-  background: #345c4c;
-}
-
 .quantidade {
-  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .quantidade button {
   padding: 5px 10px;
-  font-size: 1.2em;
   border: none;
-  background: #a3a9ad;
-  color: white;
-  border-radius: 5px;
+  background-color: #ccc;
   cursor: pointer;
+}
+
+.quantidade span {
+  margin: 0 10px;
 }
 
 .comprar {
-  padding: 12px 30px;
-  font-size: 1.1em;
-  border: none;
-  background: #345c4c;
-  color: white;
-  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: white;
+  border: 2px solid #344e41;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.comprar:hover {
-  background: #2a4639;
+  font-weight: bold;
 }
