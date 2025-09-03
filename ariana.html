@@ -1,62 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Ariana Grande - Positions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ariana Grande - Positions | Vintage Store</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <button class="voltar">⬅</button>
-    <h1>Vintage Store</h1>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1 class="logo">Vintage Store</h1>
   </header>
 
-  <main class="ariana-container">
-    <!-- COLUNA ESQUERDA - imagens -->
-    <section class="ariana-imagens">
-      <h2>ARIANA GRANDE - POSITIONS</h2>
-      <div class="ariana.jfif">
-        <img src="ari2.jpeg" alt="Capa do Álbum">
+  <!-- Conteúdo principal -->
+  <section class="album-page">
+
+    <!-- Coluna esquerda: fotos -->
+    <div class="album-images">
+      <h2 class="album-title">ARIANA GRANDE - POSITIONS</h2>
+      <div class="main-cover">
+        <img src="ari2.jpeg" alt="Capa Positions">
       </div>
-      <div class="ariana-fotos-secundarias">
-        <img src="aricd.jpeg" alt="CD">
-        <img src="ariposter.jpeg" alt="Poster">
-        <img src="arivinyl.jpeg" alt="Disco Vinil">
+      <div class="thumbs">
+        <img src="aricd.jpeg" alt="Miniatura 1">
+        <img src="ariPoster.jpeg" alt="Miniatura 2">
+        <img src="arivinyl.jpeg" alt="Miniatura 3">
       </div>
-    </section>
+    </div>
 
-    <!-- COLUNA DO MEIO - informações -->
-    <section class="ariana-info">
-      <p><strong>Data de lançamento:</strong> xx/xx/xxxx</p>
-      <p>Produto oficial e lacrado – não vendemos réplicas.<br>
-        Todos os itens são garantidos diretamente de suas distribuidoras oficiais.</p>
-      <p><strong>Álbum:</strong> CD - Vinil - Pôster</p>
-      <p><strong>TOTAL A PAGAR:</strong> R$ XXX,XX</p>
+    <!-- Coluna do meio: informações -->
+    <div class="album-details">
+      <p><b>Data de lançamento:</b> xx/xx/xxxx</p>
+      <p>Produto oficial e lacrado – não vendemos réplicas, todos os itens são garantidos diretamente de suas distribuidoras oficiais.</p>
+      <p><b>Álbum:</b> CD - Vinil - Pôster</p>
+      <p class="preco"><b>TOTAL A PAGAR:</b> R$ XXX,XX</p>
 
-      <p><strong>Endereço:</strong> Rua XXXX | Número: XXX<br>
-         Cidade: XXXX | Estado: XXXX</p>
-      <p><strong>CPF:</strong> <br>
-         <strong>Telefone:</strong> <br>
-         <strong>Email:</strong></p>
-    </section>
+      <div class="endereco">
+        <p><b>Endereço:</b> Rua XXXX | Nº XXX</p>
+        <p><b>Cidade:</b> XXXX | Estado: XXXX</p>
+        <p><b>CEP:</b> XXXXX-XXX</p>
+        <p><b>Telefone:</b> (XX) XXXX-XXXX</p>
+        <p><b>Email:</b> exemplo@email.com</p>
+      </div>
+    </div>
 
-    <!-- COLUNA DIREITA - pagamento -->
-    <section class="ariana-pagamento">
+    <!-- Coluna direita: pagamento -->
+    <div class="payment">
       <h3>MÉTODOS DE PAGAMENTO</h3>
-      <div class="metodos">
-        <button>PIX</button>
-        <button>BOLETO</button>
-        <button>CARTÃO</button>
+      <div class="pag-buttons">
+        <label>
+          <input type="radio" name="pagamento" value="pix">
+          PIX
+        </label>
+        <label>
+          <input type="radio" name="pagamento" value="boleto">
+          Boleto
+        </label>
+        <label>
+          <input type="radio" name="pagamento" value="cartao">
+          Cartão de Crédito
+        </label>
       </div>
 
       <div class="quantidade">
         <button>-</button>
-        <input type="text" value="1">
+        <input type="text" value="1" size="1">
         <button>+</button>
       </div>
 
-      <button class="comprar">Comprar</button>
-    </section>
-  </main>
+      <button class="buy-btn">Comprar</button>
+    </div>
+
+  </section>
 </body>
 </html>
