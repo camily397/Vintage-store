@@ -239,4 +239,29 @@ header nav a:hover {
   border-radius: 5px;
   cursor: pointer;
 }
+/* Botões de pagamento (radio estilizados com span) */
+.pag-buttons label {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.pag-buttons input[type="radio"] {
+  display: none;
+}
+
+.pag-buttons span {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 2px solid #3a5c80;
+  border-radius: 5px;
+  background: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.pag-buttons input[type="radio"]:checked + span {
+  background: #3a5c80;
+  color: white;
+}
 
