@@ -51,27 +51,49 @@
       <div class="pag-buttons">
         <label>
           <input type="radio" name="pagamento" value="pix">
-          PIX
+          <span>PIX</span>
         </label>
         <label>
           <input type="radio" name="pagamento" value="boleto">
-          Boleto
+          <span>Boleto</span>
         </label>
         <label>
           <input type="radio" name="pagamento" value="cartao">
-          Cartão de Crédito
+          <span>Cartão de Crédito</span>
         </label>
       </div>
 
       <div class="quantidade">
-        <button>-</button>
-        <input type="text" value="1" size="1">
-        <button>+</button>
+        <button id="menos">-</button>
+        <input type="text" id="qtd" value="1" readonly>
+        <button id="mais">+</button>
       </div>
 
       <button class="buy-btn">Comprar</button>
     </div>
 
   </section>
+
+  <!-- Script para quantidade -->
+  <script>
+    const menos = document.getElementById("menos");
+    const mais = document.getElementById("mais");
+    const qtd = document.getElementById("qtd");
+
+    mais.addEventListener("click", () => {
+      let valor = parseInt(qtd.value);
+      if (valor < 5) {
+        qtd.value = valor + 1;
+      }
+    });
+
+    menos.addEventListener("click", () => {
+      let valor = parseInt(qtd.value);
+      if (valor > 1) {
+        qtd.value = valor - 1;
+      }
+    });
+  </script>
+
 </body>
 </html>
