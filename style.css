@@ -265,9 +265,9 @@ header nav a:hover {
   color: white;
 }
 .btn-voltar {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  position: fixed;   /* fica fixo na tela */
+  bottom: 15px;      /* distância do rodapé */
+  left: 15px;        /* distância da lateral esquerda */
   background: #2e4a4a;
   color: white;
   padding: 8px 15px;
