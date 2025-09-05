@@ -280,3 +280,156 @@ header nav a:hover {
 .btn-voltar:hover {
   background: #3c5c5c;
 }
+/* Layout da página Anavitória */
+.album-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 20px;
+}
+
+/* Coluna esquerda */
+.album-images {
+  flex: 1;
+}
+
+.album-title {
+  background: #6a2e2e;   /* tom vinho/marrom para diferenciar */
+  color: white;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.album-images img {
+  display: block;
+  max-width: 250px;
+  border-radius: 8px;
+}
+
+.thumbs {
+  margin-top: 10px;
+}
+
+.thumbs img {
+  width: 70px;
+  margin-right: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Coluna do meio */
+.album-details {
+  flex: 1;
+  background: #803c3c;  /* fundo mais claro que o título */
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.album-details .preco {
+  background: white;
+  color: black;
+  padding: 5px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.endereco {
+  background: #5c2e2e;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Coluna da direita */
+.payment {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.payment h3 {
+  margin-bottom: 10px;
+}
+
+/* Botões de pagamento (radio estilizados com span) */
+.pag-buttons label {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.pag-buttons input[type="radio"] {
+  display: none;
+}
+
+.pag-buttons span {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 2px solid #6a2e2e;
+  border-radius: 5px;
+  background: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.pag-buttons input[type="radio"]:checked + span {
+  background: #6a2e2e;
+  color: white;
+}
+
+/* Quantidade */
+.quantidade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.quantidade button {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.quantidade input {
+  text-align: center;
+  width: 40px;
+  margin: 0 5px;
+}
+
+/* Botão de compra */
+.buy-btn {
+  background: #6a2e2e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background: #803c3c;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  background: #2e4a4a;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-voltar:hover {
+  background: #3c5c5c;
+}
