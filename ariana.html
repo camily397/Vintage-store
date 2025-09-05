@@ -13,29 +13,87 @@
     <h1 class="logo">Vintage Store</h1>
   </header>
 
-  <!-- Título do Álbum -->
-  <section class="album-info">
-    <h2 class="album-title">ARIANA GRANDE - POSITIONS</h2>
+  <!-- Conteúdo principal -->
+  <section class="album-page">
 
-    <div class="album-container">
-      
-      <!-- Foto do álbum -->
-      <div class="album-images">
-        <img src="ari2.jpeg" alt="Capa Positions" class="main-cover">
-        <div class="thumbs">
-          <img src="aricd.jpeg" alt="Foto 1">
-          <img src="ariposter.jpeg" alt="Foto 2">
-          <img src="arivinyl.jpeg" alt="Foto 3">
-        </div>
+    <!-- Coluna esquerda: fotos -->
+    <div class="album-images">
+      <h2 class="album-title">ARIANA GRANDE - POSITIONS</h2>
+      <div class="main-cover">
+        <img src="ari2,jpeg" alt="Capa Positions">
+      </div>
+      <div class="thumbs">
+        <img src="aricd.jpeg" alt="Miniatura 1">
+        <img src="ariposter.jpeg" alt="Miniatura 2">
+        <img src="arivinyl.jpeg" alt="Miniatura 3">
+      </div>
+    </div>
+
+    <!-- Coluna do meio: informações -->
+    <div class="album-details">
+      <p><b>Data de lançamento:</b> xx/xx/xxxx</p>
+      <p>Produto oficial e lacrado – não vendemos réplicas, todos os itens são garantidos diretamente de suas distribuidoras oficiais.</p>
+      <p><b>Álbum:</b> CD - Vinil - Pôster</p>
+      <p class="preco"><b>TOTAL A PAGAR:</b> R$ XXX,XX</p>
+
+      <div class="endereco">
+        <p><b>Endereço:</b> Rua XXXX | Nº XXX</p>
+        <p><b>Cidade:</b> XXXX | Estado: XXXX</p>
+        <p><b>CEP:</b> XXXXX-XXX</p>
+        <p><b>Telefone:</b> (XX) XXXX-XXXX</p>
+        <p><b>Email:</b> exemplo@email.com</p>
+      </div>
+    </div>
+
+    <!-- Coluna direita: pagamento -->
+    <div class="payment">
+      <h3>MÉTODOS DE PAGAMENTO</h3>
+      <div class="pag-buttons">
+        <label>
+          <input type="radio" name="pagamento" value="pix">
+          <span>PIX</span>
+        </label>
+        <label>
+          <input type="radio" name="pagamento" value="boleto">
+          <span>Boleto</span>
+        </label>
+        <label>
+          <input type="radio" name="pagamento" value="cartao">
+          <span>Cartão de Crédito</span>
+        </label>
       </div>
 
-      <!-- Detalhes do álbum -->
-      <div class="album-details">
-        <p><b>Data de lançamento:</b> xx/xx/xxxx</p>
-        <p>Produto oficial e lacrado – não vendemos réplicas, todos os itens são garantidos diretamente de suas distribuidoras oficiais.</p>
-        <p><b>Álbum:</b> CD - Vinil - Pôster</p>
-        <p><b>Total a pagar:</b> R$ XXX,XX</p>
+      <div class="quantidade">
+        <button id="menos">-</button>
+        <input type="text" id="qtd" value="1" readonly>
+        <button id="mais">+</button>
+      </div>
 
-        <div class="endereco">
-          <p><b>Endereço:</b> Rua XXXX | Nº XXX</p>
-          <
+      <button class="buy-btn">Comprar</button>
+    </div>
+
+  </section>
+
+  <!-- Script para quantidade -->
+  <script>
+    const menos = document.getElementById("menos");
+    const mais = document.getElementById("mais");
+    const qtd = document.getElementById("qtd");
+
+    mais.addEventListener("click", () => {
+      let valor = parseInt(qtd.value);
+      if (valor < 5) {
+        qtd.value = valor + 1;
+      }
+    });
+
+    menos.addEventListener("click", () => {
+      let valor = parseInt(qtd.value);
+      if (valor > 1) {
+        qtd.value = valor - 1;
+      }
+    });
+  </script>
+
+</body>
+</html>
