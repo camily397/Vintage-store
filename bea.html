@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beabadoobee - Beatopia | Vintage Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1 class="logo">Vintage Store</h1>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <section class="album-page">
+
+    <!-- Coluna esquerda: fotos -->
+    <div class="album-images">
+      <h2 class="album-title">BEABADOOBEE - BEATOPIA</h2>
+      <div class="main-cover">
+        <img src="bea.jfif" alt="Capa Beatopia">
+      </div>
+      <div class="thumbs">
+        <img src="esqcd.jpeg" alt="Miniatura 1">
+        <img src="esqposter.jpeg" alt="Miniatura 2">
+        <img src="esqvinyl.jpeg" alt="Miniatura 3">
+      </div>
+    </div>
+
+    <!-- Coluna do meio: informações -->
+    <div class="album-details">
+      <p><b>Data de lançamento:</b> xx/xx/xxxx</p>
+      <p>Produto oficial e lacrado – não vendemos réplicas, todos os itens são garantidos diretamente de suas distribuidoras oficiais.</p>
+      <p><b>Álbum:</b> CD - Vinil - Pôster</p>
+      <p class="preco"><b>TOTAL A PAGAR:</b> R$ XXX,XX</p>
+
+      <div class="endereco">
+        <p><b>Endereço:</b> Rua XXXX | Nº XXX</p>
+        <p><b>Cidade:</b> XXXX | Estado: XXXX</p>
+        <p><b>CEP:</b> XXXXX-XXX</p>
+        <p><b>Telefone:</b> (XX) XXXX-XXXX</p>
+        <p><b>Email:</b> exemplo@email.com</p>
+      </div>
+    </div>
+
+    <!-- Coluna direita: pagamento -->
+    <div class="payment">
+      <h3>MÉTODOS DE PAGAMENTO</h3>
+      <div class="pag-buttons">
+        <label>
+          <input type="radio" name="pagamento" value="pix">
+          <span>PIX</span>
+        </label>
+        <label>
+          <input type="radio" name="pagamento" value="boleto">
+          <span>Boleto</span>
+        </label>
+        <label>
+          <input type="radio" name="pagamento" value="cartao">
+          <span>Cartão de Crédito</span>
+        </label>
+      </div>
+
+      <div class="quantidade">
+        <button id="menos">-</button>
+        <input type="text" id="qtd" value="1" readonly>
+        <button id="mais">+</button>
+      </div>
+
+      <button class="buy-btn">Comprar</button>
+    </div>
+
+  </section>
+
+  <!-- Script para quantidade -->
+  <script>
+    const menos = document.getElementById("menos");
+    const mais = document.getElementById("mais");
+    const qtd = document.getElementById("qtd");
+
+    mais.addEventListener("click", () => {
+      let valor = parseInt(qtd.value);
+      if (valor < 5) {
+        qtd.value = valor + 1;
+      }
+    });
+
+    menos.addEventListener("click", () => {
+      let valor = parseInt(qtd.value);
+      if (valor > 1) {
+        qtd.value = valor - 1;
+      }
+    });
+  </script>
+
+  <!-- Botão Voltar -->
+  <a href="index.html" class="btn-voltar">← Voltar</a>
+
+</body>
+</html>
