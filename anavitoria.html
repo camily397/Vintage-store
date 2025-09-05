@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anavitória - Esquinas</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .album-container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .album-images {
+      flex: 1;
+      text-align: center;
+    }
+
+    .album-images img {
+      max-width: 250px;
+      border: 2px solid #333;
+      border-radius: 5px;
+    }
+
+    .thumbs {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .thumbs img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border: 1px solid #555;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .album-info {
+      flex: 1;
+      background: #2e4a4a;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .payment-methods {
+      margin-top: 15px;
+    }
+
+    .payment-methods label {
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .quantity {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity button {
+      padding: 5px 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .buy-btn {
+      display: block;
+      margin: auto;
+      padding: 10px 20px;
+      background: #eee;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vintage Store</h1>
+  </header>
+
+  <main>
+    <h2>ANAVITÓRIA - ESQUINAS</h2>
+    <div class="album-container">
+      <!-- Imagem principal -->
+      <div class="album-images">
+        <img id="mainImage" src="anavi.jfif" alt="Capa do álbum Anavitória - Esquinas">
+        <div class="thumbs">
+          <img src="imagens/anavitoria-cd.jpg" alt="CD" onclick="trocarImagem(this)">
+          <img src="imagens/anavitoria-vinil.jpg" alt="Vinil" onclick="trocarImagem(this)">
+          <img src="imagens/anavitoria-poster.jpg" alt="Pôster" onclick="trocarImagem(this)">
+        </div>
+      </div>
+
+      <!-- Informações do álbum -->
+      <div class="album-info">
+        <p><strong>Data de lançamento:</strong> xx/xx/xxxx</p>
+        <p>Produto oficial e lacrado - não vendemos réplicas, todos os itens são garantidos diretamente de suas distribuidoras oficiais.</p>
+        <p><strong>Álbum:</strong> CD - Vinil - Pôster</p>
+        <p><strong>Total a pagar:</strong> R$ XXX,XX</p>
+        <p><strong>Endereço:</strong> Rua XXXXX | Número Casa: XXX <br>
+           Cidade: XXXX | Estado: XXXX</p>
+        <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
+        <p><strong>Email:</strong> exemplo@email.com</p>
+      </div>
+    </div>
+
+    <!-- Métodos de pagamento -->
+    <div class="payment-methods">
+      <h3>Métodos de Pagamento</h3>
+      <label><input type="radio" name="pagamento" value="pix"> Pix</label>
+      <label><input type="radio" name="pagamento" value="boleto"> Boleto</label>
+      <label><input type="radio" name="pagamento" value="cartao"> Cartão de Crédito</label>
+    </div>
+
+    <!-- Quantidade -->
+    <div class="quantity">
+      <button onclick="diminuir()">-</button>
+      <span id="quantidade">1</span>
+      <button onclick="aumentar()">+</button>
+    </div>
+
+    <!-- Botão Comprar -->
+    <button class="buy-btn">Comprar</button>
+  </main>
+
+  <script>
+    // troca imagem principal
+    function trocarImagem(img) {
+      document.getElementById("mainImage").src = img.src;
+    }
+
+    // quantidade
+    let qtd = 1;
+    function aumentar() {
+      if (qtd < 5) {
+        qtd++;
+        document.getElementById("quantidade").innerText = qtd;
+      }
+    }
+
+    function diminuir() {
+      if (qtd > 1) {
+        qtd--;
+        document.getElementById("quantidade").innerText = qtd;
+      }
+    }
+  </script>
+</body>
+</html>
