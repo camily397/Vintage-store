@@ -126,7 +126,7 @@ header nav a:hover {
   flex: 1;
 }
 
-.ariana .album-title {
+ .album-title {
   background: #3a5c80;
   color: white;
   padding: 8px;
@@ -151,7 +151,7 @@ header nav a:hover {
 }
 
 /* Coluna do meio */
-.ariana .album-details {
+ .album-details {
   flex: 1;
   background: #2f4a60;
   padding: 15px;
@@ -188,7 +188,7 @@ header nav a:hover {
 }
 
 /* Botões de pagamento (radio estilizados) */
-.ariana.pag-buttons label {
+.pag-buttons label {
   display: inline-block;
   margin: 5px;
   padding: 6px 12px;
@@ -229,7 +229,7 @@ header nav a:hover {
 }
 
 /* Botão de compra */
-.ariana.buy-btn {
+.buy-btn {
   background: #3a5c80;
   color: white;
   font-size: 16px;
@@ -250,7 +250,7 @@ header nav a:hover {
   display: none;
 }
 
-.ariana.pag-buttons span {
+.pag-buttons span {
   display: inline-block;
   padding: 8px 14px;
   border: 2px solid #3a5c80;
@@ -294,7 +294,7 @@ header nav a:hover {
   flex: 1;
 }
 
-.anavitoria .album-title {
+ .album-title {
   background: #6a2e2e;   /* tom vinho/marrom para diferenciar */
   color: white;
   padding: 8px;
@@ -319,7 +319,7 @@ header nav a:hover {
 }
 
 /* Coluna do meio */
-.anavitoria .album-details {
+ .album-details {
   flex: 1;
   background: #823D3D;  /* fundo mais claro que o título */
   padding: 15px;
@@ -327,7 +327,7 @@ header nav a:hover {
   color: white;
 }
 
-.anavitoria .album-details .preco {
+ .album-details .preco {
   background: white;
   color: black;
   padding: 5px;
@@ -356,7 +356,7 @@ header nav a:hover {
 }
 
 /* Botões de pagamento (radio estilizados com span) */
-.anavitoria .pag-buttons label {
+ .pag-buttons label {
   display: inline-block;
   margin: 5px;
   cursor: pointer;
@@ -401,7 +401,7 @@ header nav a:hover {
 }
 
 /* Botão de compra */
-.anavitoria .buy-btn {
+ .buy-btn {
   background: #6a2e2e;
   color: white;
   font-size: 16px;
