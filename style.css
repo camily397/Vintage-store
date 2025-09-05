@@ -126,7 +126,7 @@ header nav a:hover {
   flex: 1;
 }
 
-.album-title {
+.ariana .album-title {
   background: #3a5c80;
   color: white;
   padding: 8px;
@@ -151,7 +151,7 @@ header nav a:hover {
 }
 
 /* Coluna do meio */
-.album-details {
+.ariana .album-details {
   flex: 1;
   background: #2f4a60;
   padding: 15px;
@@ -188,7 +188,7 @@ header nav a:hover {
 }
 
 /* Botões de pagamento (radio estilizados) */
-.pag-buttons label {
+.ariana.pag-buttons label {
   display: inline-block;
   margin: 5px;
   padding: 6px 12px;
@@ -229,7 +229,7 @@ header nav a:hover {
 }
 
 /* Botão de compra */
-.buy-btn {
+.ariana.buy-btn {
   background: #3a5c80;
   color: white;
   font-size: 16px;
@@ -250,7 +250,7 @@ header nav a:hover {
   display: none;
 }
 
-.pag-buttons span {
+.ariana.pag-buttons span {
   display: inline-block;
   padding: 8px 14px;
   border: 2px solid #3a5c80;
@@ -294,7 +294,7 @@ header nav a:hover {
   flex: 1;
 }
 
-.album-title {
+.anavitoria .album-title {
   background: #6a2e2e;   /* tom vinho/marrom para diferenciar */
   color: white;
   padding: 8px;
@@ -319,15 +319,15 @@ header nav a:hover {
 }
 
 /* Coluna do meio */
-.album-details {
+.anavitoria .album-details {
   flex: 1;
-  background: #803c3c;  /* fundo mais claro que o título */
+  background: #823D3D;  /* fundo mais claro que o título */
   padding: 15px;
   border-radius: 8px;
   color: white;
 }
 
-.album-details .preco {
+.anavitoria .album-details .preco {
   background: white;
   color: black;
   padding: 5px;
@@ -336,7 +336,7 @@ header nav a:hover {
 }
 
 .endereco {
-  background: #5c2e2e;
+  background: #6A2E2E;
   padding: 10px;
   border-radius: 5px;
   margin-top: 10px;
@@ -356,7 +356,7 @@ header nav a:hover {
 }
 
 /* Botões de pagamento (radio estilizados com span) */
-.pag-buttons label {
+.anavitoria .pag-buttons label {
   display: inline-block;
   margin: 5px;
   cursor: pointer;
@@ -401,7 +401,7 @@ header nav a:hover {
 }
 
 /* Botão de compra */
-.buy-btn {
+.anavitoria .buy-btn {
   background: #6a2e2e;
   color: white;
   font-size: 16px;
