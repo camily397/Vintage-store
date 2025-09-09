@@ -126,7 +126,7 @@ header nav a:hover {
   flex: 1;
 }
 
- .album-title {
+.ariana .album-title {
   background: #3a5c80;
   color: white;
   padding: 8px;
@@ -151,7 +151,7 @@ header nav a:hover {
 }
 
 /* Coluna do meio */
- .album-details {
+.ariana .album-details {
   flex: 1;
   background: #2f4a60;
   padding: 15px;
@@ -229,7 +229,7 @@ header nav a:hover {
 }
 
 /* Botão de compra */
-.buy-btn {
+.ariana .buy-btn {
   background: #3a5c80;
   color: white;
   font-size: 16px;
@@ -250,7 +250,7 @@ header nav a:hover {
   display: none;
 }
 
-.pag-buttons span {
+.ariana .pag-buttons span {
   display: inline-block;
   padding: 8px 14px;
   border: 2px solid #3a5c80;
@@ -294,7 +294,7 @@ header nav a:hover {
   flex: 1;
 }
 
- .album-title {
+.anavitoria .album-title {
   background: #6a2e2e;   /* tom vinho/marrom para diferenciar */
   color: white;
   padding: 8px;
@@ -319,7 +319,7 @@ header nav a:hover {
 }
 
 /* Coluna do meio */
- .album-details {
+.anavitoria .album-details {
   flex: 1;
   background: #823D3D;  /* fundo mais claro que o título */
   padding: 15px;
@@ -366,7 +366,7 @@ header nav a:hover {
   display: none;
 }
 
-.pag-buttons span {
+.anavitoria .pag-buttons span {
   display: inline-block;
   padding: 8px 14px;
   border: 2px solid #6a2e2e;
@@ -401,7 +401,7 @@ header nav a:hover {
 }
 
 /* Botão de compra */
- .buy-btn {
+.anavitoria .buy-btn {
   background: #6a2e2e;
   color: white;
   font-size: 16px;
