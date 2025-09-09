@@ -246,7 +246,7 @@ header nav a:hover {
   cursor: pointer;
 }
 
-.pag-buttons input[type="radio"] {
+.ariana .pag-buttons input[type="radio"] {
   display: none;
 }
 
@@ -260,7 +260,7 @@ header nav a:hover {
   transition: 0.3s;
 }
 
-.pag-buttons input[type="radio"]:checked + span {
+.ariana .pag-buttons input[type="radio"]:checked + span {
   background: #3a5c80;
   color: white;
 }
@@ -335,7 +335,7 @@ header nav a:hover {
   display: inline-block;
 }
 
-.endereco {
+.anavitoria .endereco {
   background: #6A2E2E;
   padding: 10px;
   border-radius: 5px;
@@ -362,7 +362,7 @@ header nav a:hover {
   cursor: pointer;
 }
 
-.pag-buttons input[type="radio"] {
+.anavitoria .pag-buttons input[type="radio"] {
   display: none;
 }
 
@@ -412,7 +412,7 @@ header nav a:hover {
   cursor: pointer;
 }
 
-.buy-btn:hover {
+.anavitoria .buy-btn:hover {
   background: #803c3c;
 }
 
