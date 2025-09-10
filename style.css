@@ -121,7 +121,8 @@ header nav a:hover {
   gap: 20px;
 }
 .ariana {
-  background-color: #B4E3B6;
+  background: #B4E3B6
+  color: white;
 
 /* Coluna esquerda */
 .album-images {
