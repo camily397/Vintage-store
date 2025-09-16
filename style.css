@@ -138,28 +138,22 @@ header {
 }
 
 /* =============== ÁREA DAS IMAGENS =============== */
+/* ÁREA DAS IMAGENS */
 .album-images {
   flex: 1;
-  background: #95A294; /* FIXO: não muda se alterar o fundo da página */
+  background: #a5b29d;
   padding: 20px;
   border-radius: 10px;
-}
-
-.album-images h2 {
-  margin-bottom: 20px;
-  color: #fff;
-  background: #4a5645;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 18px;
+  display: flex;              /* deixa lado a lado */
+  gap: 15px;                  /* espaço entre as imagens */
+  align-items: flex-start;
 }
 
 .main-image {
-  width: 100%;
+  flex: 3;                    /* ocupa mais espaço que os thumbs */
   height: 250px;
   background: #ccc;
   border-radius: 8px;
-  margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,35 +162,28 @@ header {
 }
 
 .thumbs {
+  flex: 1;                    /* menor que a principal */
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  flex-direction: column;     /* uma embaixo da outra */
+  gap: 15px;
 }
 
 .thumbs div {
   flex: 1;
-  height: 70px;
+  height: 250px;              /* mesmo tamanho da imagem grande */
   background: #bbb;
   border-radius: 5px;
 }
 
-/* =============== ÁREA DAS INFORMAÇÕES =============== */
+/* ÁREA DAS INFORMAÇÕES */
 .album-info {
   flex: 1;
-  background: #95A294; /* FIXO: não muda com o fundo */
+  background: #4a5645;
   color: #fff;
-  padding: 20px;
+  padding: 30px;              /* aumentei um pouco o espaço interno */
   border-radius: 10px;
-}
-
-.album-info p {
-  margin: 8px 0;
-}
-
-.price {
-  margin-top: 15px;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 18px;            /* aumenta os textos */
+  line-height: 1.6;           /* deixa mais espaçado */
 }
 
 /* =============== ÁREA DE PAGAMENTO =============== */
