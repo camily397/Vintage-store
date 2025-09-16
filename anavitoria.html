@@ -3,100 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anavitória - Esquinas | Vintage Store</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Vintage Store - Anavitória</title>
+  <link rel="stylesheet" href="anavitoria.css">
 </head>
-<body class="anavitoria">
+<body>
+  <header>Vintage Store</header>
 
-  <!-- Cabeçalho -->
-  <header>
-    <h1 class="logo">Vintage Store</h1>
-  </header>
-
-  <!-- Conteúdo principal -->
-  <section class="album-page">
-
-    <!-- Coluna esquerda: fotos -->
-    <div class="album-images">
-      <h2 class="album-title">ANAVITÓRIA - ESQUINAS</h2>
-      <div class="main-cover">
-        <img src="anavi.jfif" alt="Capa Esquinas">
+  <main class="container">
+    <!-- Área das imagens -->
+    <section class="album-images">
+      <div class="main-image">
+        <img id="mainImg" src="anavi.jfif" alt="Anavitória Álbum">
       </div>
       <div class="thumbs">
-        <img src="anavicd.jpg" alt="Miniatura 1">
-        <img src="anaviposter.jpg" alt="Miniatura 2">
-        <img src="anavidisco.jpg" alt="Miniatura 3">
+        <img src="anavicd.jpg" alt="Thumb 1" class="thumb active">
+        <img src="anaviposter.jpg" alt="Thumb 2" class="thumb">
+        <img src="anavidisco.jpg" alt="Thumb 3" class="thumb">
       </div>
-    </div>
+    </section>
 
-    <!-- Coluna do meio: informações -->
-    <div class="album-details">
-      <p><b>Data de lançamento:</b> xx/xx/xxxx</p>
-      <p>Produto oficial e lacrado – não vendemos réplicas, todos os itens são garantidos diretamente de suas distribuidoras oficiais.</p>
-      <p><b>Álbum:</b> CD - Vinil - Pôster</p>
-      <p class="preco"><b>TOTAL A PAGAR:</b> R$ XXX,XX</p>
+    <!-- Área das informações -->
+    <section class="album-info">
+      <h2>ANAVITÓRIA - O TEMPO É AGORA</h2>
+      <p><strong>Data de lançamento:</strong> xx/xx/xxxx</p>
+      <p>Produto oficial e lacrado - não vendemos réplicas.</p>
+      <p>Itens enviados diretamente de distribuidoras oficiais.</p>
+      <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
+      <p class="price">TOTAL A PAGAR: R$ <span id="total">89,90</span></p>
+      <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
+      <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
+      <p><strong>Email:</strong> exemplo@email.com</p>
+    </section>
 
-      <div class="endereco">
-        <p><b>Endereço:</b> Rua XXXX | Nº XXX</p>
-        <p><b>Cidade:</b> XXXX | Estado: XXXX</p>
-        <p><b>CEP:</b> XXXXX-XXX</p>
-        <p><b>Telefone:</b> (XX) XXXX-XXXX</p>
-        <p><b>Email:</b> exemplo@email.com</p>
-      </div>
-    </div>
-
-    <!-- Coluna direita: pagamento -->
-    <div class="payment">
+    <!-- Área do pagamento -->
+    <section class="payment">
       <h3>MÉTODOS DE PAGAMENTO</h3>
-      <div class="pag-buttons">
-        <label>
-          <input type="radio" name="pagamento" value="pix">
-          <span>PIX</span>
-        </label>
-        <label>
-          <input type="radio" name="pagamento" value="boleto">
-          <span>Boleto</span>
-        </label>
-        <label>
-          <input type="radio" name="pagamento" value="cartao">
-          <span>Cartão de Crédito</span>
-        </label>
+      <div class="payment-options">
+        <button>Boleto</button>
+        <button>PIX</button>
+        <button>Cartão</button>
       </div>
-
-      <div class="quantidade">
-        <button id="menos">-</button>
-        <input type="text" id="qtd" value="1" readonly>
-        <button id="mais">+</button>
+      <div class="quantity">
+        <button id="minus">-</button>
+        <span id="qty">1</span>
+        <button id="plus">+</button>
       </div>
-
       <button class="buy-btn">Comprar</button>
-    </div>
+    </section>
+  </main>
 
-  </section>
-
-  <!-- Script para quantidade -->
-  <script>
-    const menos = document.getElementById("menos");
-    const mais = document.getElementById("mais");
-    const qtd = document.getElementById("qtd");
-
-    mais.addEventListener("click", () => {
-      let valor = parseInt(qtd.value);
-      if (valor < 5) {
-        qtd.value = valor + 1;
-      }
-    });
-
-    menos.addEventListener("click", () => {
-      let valor = parseInt(qtd.value);
-      if (valor > 1) {
-        qtd.value = valor - 1;
-      }
-    });
-  </script>
-
-  <!-- Botão Voltar -->
-  <a href="index.html" class="btn-voltar">← Voltar</a>
-
+  <script src="anavitoria.js"></script>
 </body>
 </html>
