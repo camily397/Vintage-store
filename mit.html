@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vintage Store - Mitski - The Land Is Inhospitable and So Are We</title>
+  <link rel="stylesheet" href="mitski.css">
+</head>
+<body>
+  <header>Vintage Store</header>
+
+  <main class="container">
+    <!-- Imagens -->
+    <section class="album-images">
+      <div class="main-image">
+        <img id="mainImg" src="mit.jfif" alt="Mitski - Album">
+      </div>
+      <div class="thumbs">
+        <img src="img/mitski1.jpg" alt="Thumb 1" class="thumb active">
+        <img src="img/mitski2.jpg" alt="Thumb 2" class="thumb">
+        <img src="img/mitski3.jpg" alt="Thumb 3" class="thumb">
+      </div>
+    </section>
+
+    <!-- Informações -->
+    <section class="album-info">
+      <h2>MITSKI - THE LAND IS INHOSPITABLE AND SO ARE WE</h2>
+      <p><strong>Data de lançamento:</strong> 15/09/2023</p>
+      <p>Produto oficial e lacrado - não vendemos réplicas.</p>
+      <p>Itens enviados diretamente de distribuidoras oficiais.</p>
+      <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
+      <p class="price">TOTAL A PAGAR: <span id="total">R$ 139,90</span></p>
+      <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
+      <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
+      <p><strong>Email:</strong> exemplo@email.com</p>
+    </section>
+
+    <!-- Pagamento -->
+    <section class="payment">
+      <h3>MÉTODOS DE PAGAMENTO</h3>
+
+      <div class="payment-options">
+        <button type="button" class="pay-btn" data-method="boleto">Boleto</button>
+        <button type="button" class="pay-btn" data-method="pix">PIX</button>
+        <button type="button" class="pay-btn" data-method="cartao">Cartão</button>
+      </div>
+
+      <div class="quantity">
+        <button type="button" id="minus" class="qty-btn">-</button>
+        <span id="qty" class="qty-value">1</span>
+        <button type="button" id="plus" class="qty-btn">+</button>
+      </div>
+
+      <button class="buy-btn" id="buyBtn">Comprar</button>
+    </section>
+  </main>
+
+  <script src="mitski.js"></script>
+</body>
+</html>
