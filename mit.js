@@ -1,6 +1,5 @@
-// ======= Seleção de forma de pagamento =======
+// Seleção de pagamento
 const payButtons = document.querySelectorAll(".payment-options .pay-btn");
-
 payButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     payButtons.forEach(b => b.classList.remove("selected"));
@@ -8,22 +7,21 @@ payButtons.forEach(btn => {
   });
 });
 
-// ======= Controle de quantidade (1 a 5) e atualização do total =======
+// Quantidade e total
 const minusBtn = document.getElementById("minus");
 const plusBtn = document.getElementById("plus");
 const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const unitPrice = 139.90; // preço unitário Mitski
+const unitPrice = 139.90;
 
 function formatBRL(value) {
   return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
 }
 
 function updateTotal() {
-  const total = unitPrice * quantity;
-  totalDisplay.textContent = formatBRL(total);
+  totalDisplay.textContent = formatBRL(unitPrice * quantity);
 }
 
 minusBtn.addEventListener("click", () => {
@@ -44,7 +42,7 @@ plusBtn.addEventListener("click", () => {
 
 updateTotal();
 
-// ======= Troca da imagem principal =======
+// Troca de imagem principal
 const thumbs = document.querySelectorAll(".thumb");
 const mainImg = document.getElementById("mainImg");
 
@@ -56,7 +54,7 @@ thumbs.forEach(thumb => {
   });
 });
 
-// ======= Comprar =======
+// Comprar
 const buyBtn = document.getElementById("buyBtn");
 buyBtn.addEventListener("click", () => {
   const selectedMethod = document.querySelector(".payment-options .pay-btn.selected");
