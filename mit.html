@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vintage Store - Mitski</title>
-  <link rel="stylesheet" href="mitski.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Store - Mitski Lush</title>
+  <link rel="stylesheet" href="mit.css">
 </head>
 <body>
   <header>Vintage Store</header>
 
   <main class="container">
-    <!-- Imagens -->
+    <!-- Área das imagens -->
     <section class="album-images">
       <div class="main-image">
-        <img id="mainImg" src="mit.jfif" alt="Mitski - Album">
+        <img id="mainImg" src="mit.jfif" alt=ia"Mitski - Lush">
       </div>
       <div class="thumbs">
         <img src="mitcd.png" alt="Thumb 1" class="thumb active">
         <img src="mitposter.jpg" alt="Thumb 2" class="thumb">
-        <img src="cdvinyl.jpg" alt="Thumb 3" class="thumb">
+        <img src="mitvinyl.jpg" alt="Thumb 3" class="thumb">
       </div>
     </section>
 
-    <!-- Informações -->
+    <!-- Área das informações -->
     <section class="album-info">
-      <h2>MITSKI - THE LAND IS INHOSPITABLE AND SO ARE WE</h2>
-      <p><strong>Data de lançamento:</strong> 15/09/2023</p>
+      <h2>MITSKI- LUSH</h2>
+      <p><strong>Data de lançamento:</strong> xx/xx/xxxx</p>
       <p>Produto oficial e lacrado - não vendemos réplicas.</p>
       <p>Itens enviados diretamente de distribuidoras oficiais.</p>
       <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
-      <p class="price">TOTAL A PAGAR: <span id="total">R$ 139,90</span></p>
+      <p class="price">TOTAL A PAGAR: R$ <span id="total">99,90</span></p>
       <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
       <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
       <p><strong>Email:</strong> exemplo@email.com</p>
     </section>
 
-    <!-- Pagamento -->
+    <!-- Área do pagamento -->
     <section class="payment">
       <h3>MÉTODOS DE PAGAMENTO</h3>
-
       <div class="payment-options">
-        <button type="button" class="pay-btn" data-method="boleto">Boleto</button>
-        <button type="button" class="pay-btn" data-method="pix">PIX</button>
-        <button type="button" class="pay-btn" data-method="cartao">Cartão</button>
+        <button>Boleto</button>
+        <button>PIX</button>
+        <button>Cartão</button>
       </div>
-
       <div class="quantity">
-        <button type="button" id="minus" class="qty-btn">-</button>
-        <span id="qty" class="qty-value">1</span>
-        <button type="button" id="plus" class="qty-btn">+</button>
+        <button id="minus">-</button>
+        <span id="qty">1</span>
+        <button id="plus">+</button>
       </div>
-
-      <button class="buy-btn" id="buyBtn">Comprar</button>
+      <button class="buy-btn">Comprar</button>
     </section>
   </main>
 
-  <script src="mitski.js"></script>
+  <script src="mit.js"></script>
 </body>
 </html>
