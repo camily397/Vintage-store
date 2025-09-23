@@ -1,5 +1,4 @@
 /* ======= GERAL ======= */
-* { box-sizing: border-box; }
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f1eb; /* bege clarinho */
@@ -95,61 +94,63 @@ header {
   gap: 14px;
   margin-bottom: 18px;
 }
-
-.payment-options .pay-btn {
-  flex: 1;
-  min-width: 80px;
-  padding: 12px;
-  border-radius: 8px;
+.payment-options button {
+  padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   background: #333;
-  color: #fff;
+  color: white;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.payment-options .pay-btn:hover { background: #5c2d21; }
-.payment-options .pay-btn.selected { background: #ffe6c9; color: #333; }
+.payment-options button:hover {
+  background: #555;
+}
+
+.payment-options button.selected {
+  background: #c49a8c; /* cor quando selecionado */
+  color: #fff;
+}
 
 .quantity {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
-.qty-btn {
-  width: 45px;
-  height: 45px;
+.quantity button {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quantity button:hover {
+  background: #555;
+}
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
   border: none;
   border-radius: 8px;
   background: #333;
   color: white;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.qty-value {
-  min-width: 32px;
-  text-align: center;
   font-size: 18px;
-  font-weight: bold;
-}
-
-.buy-btn {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background: #333;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.buy-btn:hover { background: #5c2d21; }
-
-@media (max-width: 900px) {
-  .container { flex-direction: column; }
+.buy-btn:hover {
+  background: #555;
 }
