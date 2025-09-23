@@ -1,4 +1,4 @@
-// Seleção de pagamento
+/* ======= Seleção de forma de pagamento ======= */
 const buttons = document.querySelectorAll(".payment-options button");
 
 buttons.forEach(btn => {
@@ -8,7 +8,7 @@ buttons.forEach(btn => {
   });
 });
 
-// Quantidade e total
+/* ======= Controle de quantidade ======= */
 const minusBtn = document.getElementById("minus");
 const plusBtn = document.getElementById("plus");
 const qtyDisplay = document.getElementById("qty");
@@ -37,7 +37,7 @@ plusBtn.addEventListener("click", () => {
   }
 });
 
-// Troca de imagem principal
+/* ======= Troca da imagem principal ======= */
 const thumbs = document.querySelectorAll(".thumb");
 const mainImg = document.getElementById("mainImg");
 
