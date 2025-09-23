@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mitski - The Land Is Inhospitable and So Are We</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vintage Store - Mitski</title>
   <link rel="stylesheet" href="mitski.css">
 </head>
 <body>
-  <header>
-    Vintage Store
-  </header>
+  <header>Vintage Store</header>
 
-  <main>
-    <div class="produto">
-      <!-- imagens -->
-      <div class="imagens">
-        <img id="mainImg" src="mit.jfif" alt="Mitski Album">
-        <div class="thumbs">
-          <img class="thumb active" src="mitcd.png" alt="Capa 1">
-          <img class="thumb" src="mitposter.jpg" alt="Capa 2">
-          <img class="thumb" src="mitvinyl.jpg" alt="Capa 3">
-        </div>
+  <main class="container">
+    <!-- Imagens -->
+    <section class="album-images">
+      <div class="main-image">
+        <img id="mainImg" src="mit.jfif" alt="Mitski - Album">
+      </div>
+      <div class="thumbs">
+        <img src="mitcd.png" class="thumb active">
+        <img src="mitposter.jpg" alt="Thumb 2" class="thumb">
+        <img src="mitvinyl.jpg" alt="Thumb 3" class="thumb">
+      </div>
+    </section>
+
+    <!-- Informações -->
+    <section class="album-info">
+      <h2>MITSKI - THE LAND IS INHOSPITABLE AND SO ARE WE</h2>
+      <p><strong>Data de lançamento:</strong> 15/09/2023</p>
+      <p>Produto oficial e lacrado - não vendemos réplicas.</p>
+      <p>Itens enviados diretamente de distribuidoras oficiais.</p>
+      <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
+      <p class="price">TOTAL A PAGAR: <span id="total">R$ 139,90</span></p>
+      <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
+      <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
+      <p><strong>Email:</strong> exemplo@email.com</p>
+    </section>
+
+    <!-- Pagamento -->
+    <section class="payment">
+      <h3>MÉTODOS DE PAGAMENTO</h3>
+
+      <div class="payment-options">
+        <button type="button" class="pay-btn" data-method="boleto">Boleto</button>
+        <button type="button" class="pay-btn" data-method="pix">PIX</button>
+        <button type="button" class="pay-btn" data-method="cartao">Cartão</button>
       </div>
 
-      <!-- infos -->
-      <div class="info">
-        <h2>Mitski – The Land Is Inhospitable and So Are We</h2>
-        <p class="price">Preço unitário: R$ 139,90</p>
-        <p>Total: <span id="total">R$ 139,90</span></p>
-
-        <!-- métodos de pagamento -->
-        <div class="payment-options">
-          <button class="pay-btn" data-method="Boleto">Boleto</button>
-          <button class="pay-btn" data-method="Pix">Pix</button>
-          <button class="pay-btn" data-method="Cartão">Cartão</button>
-        </div>
-
-        <!-- quantidade -->
-        <div class="quantidade">
-          <button id="minus">-</button>
-          <span id="qty">1</span>
-          <button id="plus">+</button>
-        </div>
-
-        <!-- comprar -->
-        <button id="buyBtn">Comprar</button>
+      <div class="quantity">
+        <button type="button" id="minus" class="qty-btn">-</button>
+        <span id="qty" class="qty-value">1</span>
+        <button type="button" id="plus" class="qty-btn">+</button>
       </div>
-    </div>
+
+      <button class="buy-btn" id="buyBtn">Comprar</button>
+    </section>
   </main>
-
-  <a href="albuns.html" class="voltar">← Voltar</a>
 
   <script src="mitski.js"></script>
 </body>
