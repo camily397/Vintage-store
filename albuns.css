@@ -8,51 +8,78 @@ body {
 header {
   background: #333;
   color: white;
-  padding: 15px;
+  padding: 20px;
   font-size: 22px;
   text-align: center;
 }
 
-.titulo {
-  text-align: center;
-  margin: 30px 0 20px;
-  font-size: 26px;
-}
-
-.grid-albuns {
+.album-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 0 40px 40px;
+  gap: 30px;
+  padding: 40px;
 }
 
 .album-card {
   background: white;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-  text-decoration: none;
-  color: #222;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .album-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
 }
 
 .album-card img {
   width: 100%;
-  border-radius: 8px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .album-card h3 {
+  margin: 5px 0;
   font-size: 18px;
-  margin: 12px 0 6px;
 }
 
-.album-card .preco {
-  font-weight: bold;
-  font-size: 16px;
-  color: #333;
+.album-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  background: #333;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+.voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #333;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.voltar:hover {
+  background: #555;
 }
