@@ -1,107 +1,125 @@
 /* Reset */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
+/* Body */
 body {
-  height: 100vh;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #24292e;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header .menu {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header .menu:hover {
+  text-decoration: underline;
+}
+
+/* Main container: centraliza e ocupa quase toda a tela */
+main {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #1e2a38, #2b3b4b);
+  padding: 40px;
 }
 
-/* Container ocupa quase a tela */
-.login-container {
+.conta-container {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 600px; /* aumenta largura */
 }
 
-/* Caixa de login maior */
-.login-box {
-  background: #fff;
-  padding: 60px 80px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  max-width: 500px;
+/* Login card maior */
+.login-card {
+  background: white;
+  padding: 50px;
+  border-radius: 15px;
   width: 100%;
+  box-shadow: 0 0 25px rgba(0,0,0,0.15);
   text-align: center;
 }
 
-.login-box h1 {
-  margin-bottom: 10px;
-  font-size: 32px;
-  color: #1e2a38;
-}
-
-.subtitle {
-  margin-bottom: 30px;
-  font-size: 14px;
-  color: #555;
-}
-
-/* Labels */
-label {
-  display: block;
-  text-align: left;
-  margin-bottom: 6px;
-  font-weight: bold;
+.login-card h2 {
+  margin-bottom: 25px;
   color: #333;
+  font-size: 1.8rem;
 }
 
-/* Inputs */
-input {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 22px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-}
-
-input:focus {
-  border-color: #1e2a38;
-  outline: none;
-  box-shadow: 0 0 6px rgba(30,42,56,0.4);
-}
-
-/* Botão */
-.btn {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background: #1e2a38;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  background: #2b3b4b;
-}
-
-/* Extras */
-.extras {
-  margin-top: 20px;
+.login-card form {
   display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.extras a {
-  color: #1e2a38;
+.login-card input {
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-card button {
+  padding: 15px;
+  background: #24292e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.login-card button:hover {
+  background: #444;
+}
+
+.login-card p {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.login-card a {
+  color: #0366d6;
   text-decoration: none;
 }
 
-.extras a:hover {
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+/* Voltar */
+.voltar {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  text-decoration: none;
+  color: #0366d6;
+}
+
+.voltar:hover {
   text-decoration: underline;
 }
