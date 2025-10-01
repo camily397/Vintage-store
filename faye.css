@@ -1,7 +1,7 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #d6dfd2; /* fundo da página */
+  background-color: #1C6EA4; /* fundo da página */
   margin: 0;
   padding: 0;
 }
@@ -25,7 +25,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #a5b29d;
+  background: #154D71;
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -130,7 +130,7 @@ header {
 }
 
 .payment-options button.selected {
-  background: #ff9800; /* cor de seleção */
+  background: #E43636; /* cor de seleção */
   color: #fff;
 }
 
