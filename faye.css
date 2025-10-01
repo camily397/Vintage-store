@@ -1,15 +1,15 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #1C6EA4; /* fundo da página */
+  background-color: #dbe7f0; /* azul suave */
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #7c8b74;
+  background-color: #c94c4c; /* vermelho queimado */
   padding: 15px;
-  color: white;
+  color: #f5e8c7; /* bege claro */
   font-size: 22px;
   font-family: "Georgia", serif;
 }
@@ -25,7 +25,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #154D71;
+  background: #a3c4f3; /* azul mais intenso */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -68,15 +68,15 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #ff9800;
+  border: 3px solid #c94c4c; /* vermelho queimado */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #4a5645;
-  color: #fff;
+  background: #f5e8c7; /* bege claro */
+  color: #333;
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -85,19 +85,20 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #ffdd57;
+  color: #c94c4c; /* vermelho queimado */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
+  color: #3a5f7d; /* azul escuro */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #a5b29d;
+  background: #f5e8c7; /* bege claro */
   padding: 20px;
   border-radius: 10px;
 }
@@ -119,19 +120,19 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #4a5645;
-  color: white;
+  background: #c94c4c; /* vermelho queimado */
+  color: #f5e8c7; /* bege claro */
   cursor: pointer;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #333;
+  background: #a23838; /* vermelho mais escuro */
 }
 
 .payment-options button.selected {
-  background: #E43636; /* cor de seleção */
-  color: #fff;
+  background: #3a5f7d; /* azul escuro */
+  color: #f5e8c7;
 }
 
 .quantity {
@@ -148,14 +149,14 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #4a5645;
-  color: white;
+  background: #c94c4c;
+  color: #f5e8c7;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .quantity button:hover {
-  background: #333;
+  background: #a23838;
 }
 
 .buy-btn {
@@ -164,13 +165,13 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #4a5645;
-  color: white;
+  background: #3a5f7d; /* azul escuro */
+  color: #f5e8c7; /* bege claro */
   font-size: 18px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .buy-btn:hover {
-  background: #333;
+  background: #2b4a63; /* azul mais escuro */
 }
