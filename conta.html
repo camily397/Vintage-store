@@ -7,19 +7,21 @@
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <div class="login-wrapper">
+  <div class="login-container">
     <div class="login-box">
-      <h2>Entrar na sua conta</h2>
+      <h1>Entrar</h1>
+      <p class="subtitle">Acesse sua conta para continuar</p>
+
       <form action="#" method="post">
         <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
         <label for="senha">Senha</label>
-        <input type="password" id="senha" placeholder="Digite sua senha" required>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
 
-        <button type="submit">Entrar</button>
+        <button type="submit" class="btn">Entrar</button>
 
-        <div class="login-links">
+        <div class="extras">
           <a href="#">Esqueceu a senha?</a>
           <a href="#">Criar conta</a>
         </div>
