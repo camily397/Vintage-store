@@ -3,43 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Conta - Vintage Store</title>
-  <link rel="stylesheet" href="conta.css">
+  <title>Login - Vintage Store</title>
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">Vintage Store</div>
-    <div class="menu">Minha Conta</div>
-  </header>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Entrar</h1>
+      <p class="subtitle">Acesse sua conta para continuar</p>
 
-  <main>
-    <div class="conta-container">
-      <!-- Lado esquerdo: avatar -->
-      <div class="user-card">
-        <div class="user-header">Usuário</div>
-        <div class="avatar">
-          <img src="img/user.png" alt="Avatar">
-        </div>
-      </div>
+      <form action="#" method="post">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
-      <!-- Lado direito: informações -->
-      <div class="info-card">
-        <div class="info-header">
-          <h3>Informações da Conta</h3>
-          <button class="edit-btn" title="Editar perfil">✏️</button>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+        <button type="submit" class="btn">Entrar</button>
+
+        <div class="extras">
+          <a href="#">Esqueceu a senha?</a>
+          <a href="#">Criar conta</a>
         </div>
-        <ul>
-          <li><strong>Data de nascimento:</strong> xx/xx/xxxx</li>
-          <li><strong>Sexo:</strong> Feminino</li>
-          <li><strong>Email:</strong> nome@exemplo.com</li>
-          <li><strong>Estado:</strong> PR</li>
-          <li><strong>Bio:</strong> Apaixonada por música e tecnologia 🎶💻</li>
-        </ul>
-      </div>
+      </form>
     </div>
-  </main>
-
-  <a href="index.html" class="voltar">← Voltar</a>
+  </div>
 </body>
 </html>
