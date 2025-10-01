@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Vintage Store</title>
-  <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Minha Conta</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="login-container">
-    <div class="login-box">
-      <h1>Entrar</h1>
-      <p class="subtitle">Acesse sua conta para continuar</p>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
 
-      <form action="#" method="post">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-
-        <button type="submit" class="btn">Entrar</button>
-
-        <div class="extras">
-          <a href="#">Esqueceu a senha?</a>
-          <a href="#">Criar conta</a>
-        </div>
-      </form>
+            <button type="submit">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
     </div>
-  </div>
 </body>
 </html>
