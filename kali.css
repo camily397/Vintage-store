@@ -182,4 +182,18 @@ header {
 .buy-btn:hover {
   background: #490948; /* roxo mais fechado */
 }
+.voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1e2a38;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
 
+.voltar:hover {
+  background: #333;
+}
