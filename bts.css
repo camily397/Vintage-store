@@ -1,1 +1,184 @@
+/* ======= GERAL ======= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FEEBF6; /* rosa claro */
+  margin: 0;
+  padding: 0;
+  color: #31326F; /* texto principal em roxo escuro */
+}
+
+header {
+  background-color: #31326F; /* roxo escuro */
+  padding: 15px;
+  color: #FEEBF6; /* rosa claro */
+  font-size: 22px;
+  font-family: "Georgia", serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 20px;
+}
+
+/* ======= ÁREA DAS IMAGENS ======= */
+.album-images {
+  flex: 1;
+  background: #7F78D2; /* lilás médio */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.main-image {
+  flex: 3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.thumbs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.thumbs img {
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: transform 0.3s, opacity 0.3s, border 0.3s;
+}
+
+.thumbs img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.thumbs img.active {
+  border: 3px solid #FEEBF6; /* rosa claro em destaque */
+  opacity: 1;
+}
+
+/* ======= ÁREA DAS INFORMAÇÕES ======= */
+.album-info {
+  flex: 1;
+  background: #fff; /* fundo branco para contraste */
+  color: #31326F;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.album-info h2 {
+  margin-bottom: 15px;
+  color: #7F78D2; /* lilás */
+}
+
+.price {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #31326F; /* roxo escuro */
+}
+
+/* ======= ÁREA DE PAGAMENTO ======= */
+.payment {
+  flex: 1;
+  background: #7F78D2; /* lilás */
+  padding: 20px;
+  border-radius: 10px;
+  color: #FEEBF6; /* texto em rosa claro */
+}
+
+.payment h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #FEEBF6;
+}
+
+.payment-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-options button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #31326F; /* roxo escuro */
+  color: #FEEBF6; /* rosa claro */
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.payment-options button:hover {
+  background: #27285c; /* roxo mais escuro */
+}
+
+.payment-options button.selected {
+  background: #FEEBF6; /* rosa claro */
+  color: #31326F; /* roxo escuro */
+  border: 2px solid #7F78D2;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.quantity button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #31326F; /* roxo escuro */
+  color: #FEEBF6; /* rosa claro */
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.quantity button:hover {
+  background: #27285c;
+}
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #7F78D2; /* lilás */
+  color: #FEEBF6; /* rosa claro */
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #5e57a6; /* lilás mais escuro */
+}
 
