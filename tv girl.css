@@ -1,15 +1,16 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #fceade; /* bege amarelado retro */
+  background-color: #000000; /* fundo preto */
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 
 header {
-  background-color: #e94f64; /* rosa vibrante */
+  background-color: #392467; /* roxo escuro */
   padding: 15px;
-  color: #fffaf2; /* quase branco/bege claro */
+  color: #D63484; /* rosa destaque */
   font-size: 22px;
   font-family: "Georgia", serif;
 }
@@ -25,7 +26,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #69c9d0; /* azul turquesa pastel */
+  background: #392467; /* roxo escuro */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -58,7 +59,7 @@ header {
   max-height: 250px;
   border-radius: 8px;
   cursor: pointer;
-  opacity: 0.85;
+  opacity: 0.8;
   transition: transform 0.3s, opacity 0.3s, border 0.3s;
 }
 
@@ -68,15 +69,15 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #e94f64; /* rosa destaque */
+  border: 3px solid #D63484; /* rosa destaque */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #fffaf2; /* bege quase branco */
-  color: #333;
+  background: #1a122e; /* roxo quase preto */
+  color: #fff;
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -85,28 +86,29 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #e94f64; /* rosa */
+  color: #D63484; /* rosa destaque */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #1a6f7d; /* azul petróleo escuro para contraste */
+  color: #D63484; /* rosa destaque */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #fceade; /* bege claro */
+  background: #392467; /* roxo escuro */
   padding: 20px;
   border-radius: 10px;
+  color: #fff;
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #333;
+  color: #fff;
 }
 
 .payment-options {
@@ -120,20 +122,21 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #e94f64; /* rosa */
-  color: #fffaf2;
+  background: #D63484; /* rosa destaque */
+  color: #fff;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #c23a4c; /* rosa escuro */
+  background: #a62763; /* rosa mais escuro */
 }
 
 .payment-options button.selected {
-  background: #1a6f7d; /* azul petróleo */
-  color: #fffaf2;
+  background: #000000; /* preto */
+  color: #D63484;
+  border: 2px solid #D63484;
 }
 
 .quantity {
@@ -150,15 +153,15 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #69c9d0; /* azul turquesa */
-  color: #fffaf2;
+  background: #D63484;
+  color: #fff;
   cursor: pointer;
-  font-weight: bold;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #1a6f7d; /* azul petróleo */
+  background: #a62763;
 }
 
 .buy-btn {
@@ -167,8 +170,8 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #e94f64; /* rosa */
-  color: #fffaf2;
+  background: #D63484; /* rosa destaque */
+  color: #fff;
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
@@ -176,5 +179,5 @@ header {
 }
 
 .buy-btn:hover {
-  background: #c23a4c; /* rosa escuro */
+  background: #a62763; /* rosa escuro */
 }
