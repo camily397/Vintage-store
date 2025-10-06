@@ -4,7 +4,9 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 // ===== CONFIG SUPABASE =====
 const SUPABASE_URL = "https://qgacdbbfpkvunlkofckt.supabase.co&quot;;   // troque
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnYWNkYmJmcGt2dW5sa29mY2t0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2MjI1NDMsImV4cCI6MjA3NDE5ODU0M30.8Sj3XFkd49olF6997K9iciuVboYdKIBjDWzzo7w5xp8";             // troque
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);// ===== ELEMENTOS =====
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ===== ELEMENTOS =====
 const tabs = document.querySelectorAll('.tab');
 const panes = document.querySelectorAll('.pane');
 const loginForm = document.getElementById('loginForm');
