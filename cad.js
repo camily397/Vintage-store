@@ -6,5 +6,3 @@
       window.location.href = "login.html";
     });
   </script>
-</body>
-</html>
