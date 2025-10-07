@@ -1,18 +1,19 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212; /* fundo escuro - preto */
+  background-color: #FFFFFF; /* fundo branco */
   margin: 0;
   padding: 0;
-  color: #E0E0E0; /* texto principal em cinza claro */
+  color: #333333; /* texto em cinza escuro */
 }
 
 header {
-  background-color: #4A00E0; /* roxo neon */
+  background-color: #000000; /* fundo preto */
   padding: 15px;
-  color: #FF00FF; /* rosa neon */
+  color: #FFFFFF; /* texto em branco */
   font-size: 22px;
   font-family: "Georgia", serif;
+  text-align: center;
 }
 
 .container {
@@ -26,7 +27,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #00C9FF; /* azul neon */
+  background: #F4F4F4; /* cinza claro para o fundo */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -69,46 +70,48 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #FF00FF; /* rosa neon em destaque */
+  border: 3px solid #000000; /* borda preta em destaque */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #1F1F1F; /* fundo escuro para contraste */
-  color: #E0E0E0; /* texto claro */
+  background: #FFFFFF; /* fundo branco */
+  color: #333333; /* texto em cinza escuro */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
   line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* sombra suave para destacar */
 }
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #00C9FF; /* azul neon */
+  color: #000000; /* título em preto */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #FF00FF; /* rosa neon */
+  color: #333333; /* preço em cinza escuro */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #4A00E0; /* roxo neon */
+  background: #F4F4F4; /* cinza claro */
   padding: 20px;
   border-radius: 10px;
-  color: #E0E0E0; /* texto claro */
+  color: #000000; /* texto em preto */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* sombra suave para destacar */
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #FF00FF; /* rosa neon */
+  color: #000000; /* título em preto */
 }
 
 .payment-options {
@@ -120,23 +123,24 @@ header {
 .payment-options button {
   flex: 1;
   padding: 10px;
-  border: none;
+  border: 1px solid #CCCCCC; /* borda cinza clara */
   border-radius: 5px;
-  background: #00C9FF; /* azul neon */
-  color: #1F1F1F; /* fundo escuro */
+  background: #FFFFFF; /* fundo branco */
+  color: #000000; /* texto em preto */
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #0099CC; /* azul mais escuro */
+  background: #F4F4F4; /* fundo cinza claro */
+  border-color: #000000; /* borda preta ao passar o mouse */
 }
 
 .payment-options button.selected {
-  background: #FF00FF; /* rosa neon */
-  color: #1F1F1F; /* fundo escuro */
-  border: 2px solid #00C9FF; /* azul neon */
+  background: #000000; /* fundo preto */
+  color: #FFFFFF; /* texto em branco */
+  border: 1px solid #000000; /* borda preta */
 }
 
 .quantity {
@@ -151,27 +155,28 @@ header {
   width: 40px;
   height: 40px;
   font-size: 20px;
-  border: none;
+  border: 1px solid #CCCCCC; /* borda cinza clara */
   border-radius: 5px;
-  background: #4A00E0; /* roxo neon */
-  color: #E0E0E0; /* texto claro */
+  background: #FFFFFF; /* fundo branco */
+  color: #000000; /* texto em preto */
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #3C00B3; /* roxo mais escuro */
+  background: #F4F4F4; /* fundo cinza claro */
+  border-color: #000000; /* borda preta ao passar o mouse */
 }
 
 .buy-btn {
   display: block;
   width: 100%;
   padding: 15px;
-  border: none;
+  border: 1px solid #CCCCCC; /* borda cinza clara */
   border-radius: 8px;
-  background: #00C9FF; /* azul neon */
-  color: #1F1F1F; /* fundo escuro */
+  background: #000000; /* fundo preto */
+  color: #FFFFFF; /* texto em branco */
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
@@ -179,14 +184,14 @@ header {
 }
 
 .buy-btn:hover {
-  background: #0099CC; /* azul mais escuro */
+  background: #333333; /* fundo preto mais escuro */
 }
 
 .voltar {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #1e2a38;
+  background: #000000; /* fundo preto */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -195,6 +200,5 @@ header {
 }
 
 .voltar:hover {
-  background: #333;
+  background: #333333; /* fundo preto mais escuro */
 }
-
