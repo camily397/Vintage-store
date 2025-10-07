@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro - Vintage Store</title>
-  <link rel="stylesheet" href="style-cadastro.css">
+  <link rel="stylesheet" href="style-cad.css">
 </head>
 <body>
   <div class="logo">
@@ -24,13 +24,3 @@
     <p>Já tem uma conta? <a href="login.html">Entrar</a></p>
   </div>
 
-  <script>
-    document.getElementById("cadastroForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nome = document.getElementById("nome").value;
-      alert(`Conta criada com sucesso!\nBem-vindo(a), ${nome}!`);
-      window.location.href = "login.html";
-    });
-  </script>
-</body>
-</html>
