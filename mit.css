@@ -1,13 +1,13 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #7c8b74; /* fundo da página */
+  background-color: #d6dfd2; /* fundo da página */
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #52754A;
+  background-color: #7c8b74;
   padding: 15px;
   color: white;
   font-size: 22px;
