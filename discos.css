@@ -1,1 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e2a38;
+  color: white;
+  padding: 15px 30px;
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+header input {
+  width: 40%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+}
+
+header .menu {
+  font-size: 16px;
+}
+
+main {
+  padding: 30px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.album-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.album-card:hover {
+  transform: translateY(-5px);
+}
+
+.album-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.album-card p {
+  font-size: 14px;
+  margin: 8px 0 5px;
+  color: #333;
+}
+
+.album-card span {
+  font-weight: bold;
+  color: #444;
+}
+
+.voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1e2a38;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.voltar:hover {
+  background: #333;
+}
