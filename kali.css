@@ -1,16 +1,16 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #23486A; /* azul petróleo */
+  background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: #4A4A4A; /* texto cinza suave */
 }
 
 header {
-  background-color: #A62C2C; /* vermelho intenso */
+  background-color: #1C2833; /* azul marinho */
   padding: 15px;
-  color: #FEE; /* tom claro pro contraste */
+  color: #F9F6F0; /* off-white para o texto */
   font-size: 22px;
   font-family: "Georgia", serif;
   text-align: center;
@@ -28,7 +28,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #B12C00; /* laranja avermelhado */
+  background: #C8A2D8; /* lavanda suave (refletindo tons de roxo do álbum) */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -70,15 +70,15 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #fff; /* destaque em branco */
+  border: 3px solid #9B59B6; /* roxo suave (destaque nas thumbs) */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #2e0a0f; /* vinho quase preto */
-  color: #fff;
+  background: #4A2C67; /* roxo profundo (lembrando a estética do álbum) */
+  color: #F9F6F0; /* texto off-white */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -87,29 +87,29 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #B12C00; /* laranja avermelhado */
+  color: #F1C40F; /* dourado suave (para criar contraste e sofisticação) */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #A62C2C; /* vermelho intenso */
+  color: #E74C3C; /* vermelho mais suave (remetendo ao tom quente do álbum) */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #B12C00; /* laranja forte */
+  background: #9B59B6; /* roxo suave */
   padding: 20px;
   border-radius: 10px;
-  color: #fff;
+  color: #F9F6F0; /* texto off-white */
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #fff;
+  color: #F9F6F0; /* texto off-white */
 }
 
 .payment-options {
@@ -123,7 +123,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #A62C2C; /* vermelho */
+  background: #F1C40F; /* dourado suave */
   color: #fff;
   cursor: pointer;
   font-weight: bold;
@@ -131,13 +131,13 @@ header {
 }
 
 .payment-options button:hover {
-  background: #7c1f1f; /* vermelho mais escuro */
+  background: #F39C12; /* dourado mais intenso */
 }
 
 .payment-options button.selected {
-  background: #690B22; /* vinho escuro */
-  color: #fff;
-  border: 2px solid #B12C00;
+  background: #8E44AD; /* roxo mais intenso */
+  color: #F9F6F0; /* off-white */
+  border: 2px solid #8E44AD;
 }
 
 .quantity {
@@ -154,7 +154,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #A62C2C; /* vermelho */
+  background: #F1C40F; /* dourado suave */
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
@@ -162,7 +162,7 @@ header {
 }
 
 .quantity button:hover {
-  background: #7c1f1f;
+  background: #F39C12; /* dourado mais intenso */
 }
 
 .buy-btn {
@@ -171,7 +171,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #690B22; /* vinho escuro */
+  background: #8E44AD; /* roxo mais intenso */
   color: #fff;
   font-size: 18px;
   cursor: pointer;
@@ -180,13 +180,14 @@ header {
 }
 
 .buy-btn:hover {
-  background: #490a18; /* vinho mais fechado */
+  background: #6C3483; /* roxo mais fechado */
 }
+
 .voltar {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #1e2a38;
+  background: #2C3E50; /* azul escuro (para contraste e harmonia com o cabeçalho) */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -195,5 +196,5 @@ header {
 }
 
 .voltar:hover {
-  background: #333;
+  background: #34495E; /* azul mais claro */
 }
