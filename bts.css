@@ -1,18 +1,20 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #FEEBF6; /* rosa claro */
+  background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #31326F; /* texto principal em roxo escuro */
+  color: #4A4A4A; /* texto principal em cinza escuro */
 }
 
 header {
-  background-color: #31326F; /* roxo escuro */
+  background-color: #1C2833; /* azul marinho */
   padding: 15px;
-  color: #FEEBF6; /* rosa claro */
+  color: #F9F6F0; /* off-white para o texto */
   font-size: 22px;
   font-family: "Georgia", serif;
+  text-align: center;
+  font-weight: bold;
 }
 
 .container {
@@ -21,16 +23,18 @@ header {
   align-items: flex-start;
   padding: 30px;
   gap: 20px;
+  flex-wrap: wrap; /* para tornar a página responsiva */
 }
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #7F78D2; /* lilás médio */
+  background: #D1C6E1; /* lilás suave (combinando com a paleta do BTS) */
   padding: 20px;
   border-radius: 10px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .main-image {
@@ -69,7 +73,7 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #FEEBF6; /* rosa claro em destaque */
+  border: 3px solid #F9F6F0; /* off-white em destaque */
   opacity: 1;
 }
 
@@ -77,7 +81,7 @@ header {
 .album-info {
   flex: 1;
   background: #fff; /* fundo branco para contraste */
-  color: #31326F;
+  color: #4A4A4A; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -86,7 +90,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #7F78D2; /* lilás */
+  color: #D5A6BD; /* lilás suave (combinando com a paleta de Love Yourself) */
 }
 
 .price {
@@ -99,16 +103,16 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #7F78D2; /* lilás */
+  background: #D5A6BD; /* lilás suave */
   padding: 20px;
   border-radius: 10px;
-  color: #FEEBF6; /* texto em rosa claro */
+  color: #F9F6F0; /* off-white */
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #FEEBF6;
+  color: #F9F6F0;
 }
 
 .payment-options {
@@ -122,21 +126,21 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #31326F; /* roxo escuro */
-  color: #FEEBF6; /* rosa claro */
+  background: #31326F; /* azul marinho */
+  color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #27285c; /* roxo mais escuro */
+  background: #27285c; /* azul mais escuro */
 }
 
 .payment-options button.selected {
-  background: #FEEBF6; /* rosa claro */
-  color: #31326F; /* roxo escuro */
-  border: 2px solid #7F78D2;
+  background: #F9F6F0; /* off-white */
+  color: #31326F; /* azul marinho */
+  border: 2px solid #D5A6BD; /* lilás suave */
 }
 
 .quantity {
@@ -153,8 +157,8 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #31326F; /* roxo escuro */
-  color: #FEEBF6; /* rosa claro */
+  background: #31326F; /* azul marinho */
+  color: #F9F6F0; /* off-white */
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
@@ -170,8 +174,8 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #7F78D2; /* lilás */
-  color: #FEEBF6; /* rosa claro */
+  background: #D5A6BD; /* lilás suave */
+  color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
@@ -179,13 +183,14 @@ header {
 }
 
 .buy-btn:hover {
-  background: #5e57a6; /* lilás mais escuro */
+  background: #A37B8A; /* lilás mais escuro */
 }
+
 .voltar {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #1e2a38;
+  background: #1C2833; /* azul marinho */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -194,6 +199,64 @@ header {
 }
 
 .voltar:hover {
-  background: #333;
+  background: #34495E; /* azul mais claro */
 }
 
+/* ======= RESPONSIVIDADE (MOBILE, TABLET, ETC) ======= */
+
+/* Para telas pequenas (celulares) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .album-images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-image {
+    flex: 1;
+  }
+
+  .thumbs {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-between;
+  }
+
+  .payment,
+  .album-info {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .payment-options button,
+  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
+}
+
+/* Para tablets e dispositivos com largura maior */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .album-images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .payment-options button,
+  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
+}
