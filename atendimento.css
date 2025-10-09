@@ -1,78 +1,125 @@
-/* ======= GERAL ======= */
+/* ====== ESTILO GERAL ====== */
+* { box-sizing: border-box; }
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
 }
 
-/* ======= CABEÇALHO ======= */
-header {
-  background: linear-gradient(90deg, #2b2d42, #3a0ca3);
-  color: white;
+/* ====== CABEÇALHO ====== */
+.site-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
-  font-size: 20px;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: linear-gradient(90deg,#1e2a38,#2b3b4b);
+  color: #fff;
 }
 
 .logo {
-  font-family: 'Georgia', serif;
-  font-style: italic;
+  font-weight: 700;
   font-size: 22px;
 }
 
-.titulo {
-  font-weight: bold;
+.tagline {
+  font-size: 12px;
+  opacity: 0.85;
 }
 
-/* ======= CONTEÚDO ======= */
-main {
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 15px;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ====== CONTEÚDO PRINCIPAL ====== */
+.page-content {
   display: flex;
-  justify-content: space-between;
-  padding: 30px;
   gap: 30px;
+  padding: 40px 28px;
 }
 
-/* ======= MENU LATERAL ======= */
-.menu {
+/* ====== MENU LATERAL ====== */
+.sidebar {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 280px;
+  gap: 18px;
 }
 
-.menu button {
-  background-color: #3a0ca3;
-  color: white;
+.sidebar button {
+  background: linear-gradient(90deg, #1e2a38, #2b3b4b);
+  color: #fff;
   border: none;
-  padding: 15px;
-  margin-bottom: 15px;
-  font-size: 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.menu button:hover {
-  background-color: #4a12c7;
-}
-
-/* ======= TEXTO PRINCIPAL ======= */
-.conteudo {
-  background-color: #e3e7f1;
-  color: #222;
-  padding: 25px;
+  padding: 18px 14px;
+  font-size: 17px;
+  font-weight: 600;
   border-radius: 10px;
-  width: 70%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  text-align: left;
 }
 
-.conteudo .texto {
-  font-size: 16px;
-  line-height: 1.6;
+.sidebar button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  background: linear-gradient(90deg, #273547, #36485a);
+}
+
+/* ====== TEXTO PRINCIPAL ====== */
+.main-info {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  flex: 1;
+}
+
+.main-info h2 {
+  font-size: 26px;
+  color: #1e2a38;
+  margin-bottom: 16px;
+}
+
+.main-info p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #333;
 }
 
 strong {
-  color: #3a0ca3;
+  color: #1e2a38;
+}
+
+/* ====== RODAPÉ ====== */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background: #1e2a38;
+  color: #fff;
+  margin-top: 36px;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 820px) {
+  .page-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar button {
+    font-size: 16px;
+    text-align: center;
+  }
 }
