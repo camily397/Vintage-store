@@ -111,15 +111,18 @@ main {
   text-decoration: underline;
 }
 
-/* Voltar */
 .voltar {
-  display: block;
-  text-align: center;
-  margin: 20px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1e2a38;
+  color: white;
+  padding: 10px 20px;
   text-decoration: none;
-  color: #0366d6;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 .voltar:hover {
-  text-decoration: underline;
+  background: #333;
 }
