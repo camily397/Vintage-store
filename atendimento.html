@@ -4,40 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vintage Store - Atendimento</title>
-  <link rel="stylesheet" href="atendimento.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Vintage Store</div>
-    <div class="titulo">Atendimento</div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
+    <div class="header-nav">
+      <a href="index.html">Início</a>
+      <a href="#">Catálogo</a>
+      <a href="#">Contato</a>
+    </div>
   </header>
 
-  <main>
-    <section class="menu">
-      <button onclick="window.location.href='acompanhar.html'">Acompanhar pedido</button>
-      <button onclick="window.location.href='termos.html'">Termos de Uso/Condições</button>
-      <button onclick="window.location.href='avaliacao.html'">Avaliação de atendimento</button>
-      <button onclick="window.location.href='faleconosco.html'">Fale conosco (Ajuda)</button>
-    </section>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="page-content">
+    <aside class="sidebar">
+      <button onclick="window.location.href='acompanhar.html'">📦 Acompanhar Pedido</button>
+      <button onclick="window.location.href='termos.html'">📜 Termos de Uso / Condições</button>
+      <button onclick="window.location.href='avaliacao.html'">⭐ Avaliação de Atendimento</button>
+      <button onclick="window.location.href='faleconosco.html'">💬 Fale Conosco (Ajuda)</button>
+    </aside>
 
-    <section class="conteudo">
-      <div class="texto">
-        <p>
-          O objetivo da <strong>Vintage Store</strong> é facilitar a compra de CDs, álbuns e discos de vinil.
-          O aplicativo busca proporcionar uma experiência diferenciada para os usuários, permitindo a descoberta
-          de edições raras, lançamentos exclusivos, valorização cultural e a apreciação da mídia física que tem
-          se perdido aos poucos.
-        </p>
-        <p>
-          Muitos álbuns, discos vinis e CD’s são difíceis de achar, e até mesmo existem lançamentos de grandes
-          artistas que esgotam rapidamente. Com isso, nossa loja ajuda os fãs e colecionadores a encontrarem seus
-          produtos desejados com mais acessibilidade, segurança e qualidade nos produtos, sendo eles todos
-          verificados dos próprios artistas.
-        </p>
-      </div>
+    <section class="main-info">
+      <h2>Atendimento</h2>
+      <p>
+        O objetivo da <strong>Vintage Store</strong> é facilitar a compra de CDs, álbuns e discos de vinil. 
+        Nosso aplicativo busca proporcionar uma experiência diferenciada para os usuários, permitindo a descoberta 
+        de edições raras, lançamentos exclusivos e valorizando a mídia física que tem se perdido com o tempo.
+      </p>
+
+      <p>
+        Muitos álbuns, discos vinis e CDs são difíceis de encontrar, e há lançamentos de grandes artistas que esgotam rapidamente. 
+        Por isso, nossa loja online ajuda fãs e colecionadores a encontrarem seus produtos desejados com mais acessibilidade, 
+        segurança e qualidade — com itens verificados pelos próprios artistas.
+      </p>
     </section>
   </main>
 
-  <script src="atendimento.js"></script>
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    © 2025 Vintage Store — Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
