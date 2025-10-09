@@ -1,0 +1,78 @@
+/* ======= GERAL ======= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  background: linear-gradient(90deg, #2b2d42, #3a0ca3);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  font-size: 20px;
+}
+
+.logo {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 22px;
+}
+
+.titulo {
+  font-weight: bold;
+}
+
+/* ======= CONTEÚDO ======= */
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 30px;
+}
+
+/* ======= MENU LATERAL ======= */
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.menu button {
+  background-color: #3a0ca3;
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu button:hover {
+  background-color: #4a12c7;
+}
+
+/* ======= TEXTO PRINCIPAL ======= */
+.conteudo {
+  background-color: #e3e7f1;
+  color: #222;
+  padding: 25px;
+  border-radius: 10px;
+  width: 70%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.conteudo .texto {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+strong {
+  color: #3a0ca3;
+}
