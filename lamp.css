@@ -1,10 +1,10 @@
 /* ======= GERAL ======= */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #F9F6F0; /* off-white suave */
+  background-color: #F9F6F0; /* off-white */
   margin: 0;
   padding: 0;
-  color: #534C5D; /* cinza púrpura */
+  color: #3E3A45; /* cinza profundo */
 }
 
 header {
@@ -30,13 +30,13 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #BFDDE6; /* azul névoa viva */
+  background: #C1B0F2; /* lavanda vibrante */
   padding: 20px;
   border-radius: 12px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .main-image {
@@ -78,41 +78,41 @@ header {
 .thumbs img.active {
   transform: scale(1.05);
   opacity: 1;
-  border-color: #E2B2C0; /* rosa acentuado */
+  border-color: #E86482; /* rosa escuro */
 }
 
 /* ======= INFORMAÇÕES DO ÁLBUM ======= */
 .album-info {
   flex: 1;
   background: #FFFFFF;
-  color: #534C5D;
+  color: #3E3A45;
   padding: 30px;
   border-radius: 12px;
   font-size: 18px;
   line-height: 1.6;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #E2CDA0; /* dourado claro */
+  color: #F5A623; /* dourado intenso */
 }
 
 .price {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  color: #A97FA4; /* lilás queimado */
+  color: #822F5A; /* vinho */
 }
 
 /* ======= PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #D8EBDD; /* verde chá pastel */
+  background: #F8D7E0; /* rosa suave vibrante */
   padding: 20px;
   border-radius: 12px;
-  color: #534C5D;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  color: #3E3A45;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .payment h3 {
@@ -131,7 +131,7 @@ header {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background: #E2B2C0; /* rosa pastel mais viva */
+  background: #F76C6C; /* vermelho-rosa vibrante */
   color: #fff;
   cursor: pointer;
   font-weight: bold;
@@ -139,13 +139,13 @@ header {
 }
 
 .payment-options button:hover {
-  background: #CE9DAE;
+  background: #d94c4c;
 }
 
 .payment-options button.selected {
-  background: #BFDDE6; /* azul pastel */
+  background: #C1B0F2; /* lavanda viva */
   color: #fff;
-  border: 2px solid #E2B2C0;
+  border: 2px solid #E86482;
 }
 
 .quantity {
@@ -162,7 +162,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 6px;
-  background: #E2B2C0;
+  background: #F76C6C;
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
@@ -170,7 +170,7 @@ header {
 }
 
 .quantity button:hover {
-  background: #CE9DAE;
+  background: #d94c4c;
 }
 
 .buy-btn {
@@ -179,7 +179,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 10px;
-  background: #A97FA4; /* lilás queimado */
+  background: #822F5A; /* vinho */
   color: #fff;
   font-size: 18px;
   cursor: pointer;
@@ -188,7 +188,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #92688C;
+  background: #6e254a;
 }
 
 .voltar {
@@ -207,7 +207,7 @@ header {
   background: #34495E;
 }
 
-/* ======= RESPONSIVIDADE MELHORADA ======= */
+/* ======= RESPONSIVIDADE ======= */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -217,10 +217,6 @@ header {
   .album-images {
     flex-direction: column;
     gap: 15px;
-  }
-
-  .main-image {
-    flex: 1;
   }
 
   .thumbs {
