@@ -4,13 +4,13 @@ body {
   background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #4A4A4A; /* texto cinza suave */
+  color: #4A4A4A;
 }
 
 header {
   background-color: #1C2833; /* azul marinho */
   padding: 15px;
-  color: #F9F6F0; /* off-white para o texto */
+  color: #F9F6F0;
   font-size: 22px;
   font-family: "Georgia", serif;
   text-align: center;
@@ -19,6 +19,7 @@ header {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px;
@@ -27,12 +28,13 @@ header {
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
-  flex: 1;
-  background: #C8A2D8; /* lavanda suave (refletindo tons de roxo do álbum) */
+  flex: 1 1 100%;
+  background: #F7C6C7; /* rosa pastel */
   padding: 20px;
   border-radius: 10px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .main-image {
@@ -43,7 +45,7 @@ header {
 
 .main-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -57,11 +59,12 @@ header {
 
 .thumbs img {
   width: 100%;
-  max-height: 250px;
+  max-height: 200px;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.85;
   transition: transform 0.3s, opacity 0.3s, border 0.3s;
+  background: #FAD4C0; /* pêssego pastel */
 }
 
 .thumbs img:hover {
@@ -70,15 +73,15 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #9B59B6; /* roxo suave (destaque nas thumbs) */
+  border: 3px solid #C94A57; /* vermelho venus */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #4A2C67; /* roxo profundo (lembrando a estética do álbum) */
-  color: #F9F6F0; /* texto off-white */
+  background: #FAD4C0; /* pêssego claro */
+  color: #4A1E23; /* vinho suave */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -87,29 +90,29 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #F1C40F; /* dourado suave (para criar contraste e sofisticação) */
+  color: #E6C36B; /* dourado suave */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #E74C3C; /* vermelho mais suave (remetendo ao tom quente do álbum) */
+  color: #C94A57; /* vermelho venus */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #9B59B6; /* roxo suave */
+  background: #F7C6C7; /* rosa pastel */
   padding: 20px;
   border-radius: 10px;
-  color: #F9F6F0; /* texto off-white */
+  color: #4A1E23;
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #F9F6F0; /* texto off-white */
+  color: #4A1E23;
 }
 
 .payment-options {
@@ -123,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #F1C40F; /* dourado suave */
+  background: #E6C36B; /* dourado suave */
   color: #fff;
   cursor: pointer;
   font-weight: bold;
@@ -131,13 +134,13 @@ header {
 }
 
 .payment-options button:hover {
-  background: #F39C12; /* dourado mais intenso */
+  background: #d4af37; /* dourado intenso */
 }
 
 .payment-options button.selected {
-  background: #8E44AD; /* roxo mais intenso */
-  color: #F9F6F0; /* off-white */
-  border: 2px solid #8E44AD;
+  background: #C94A57; /* vermelho venus */
+  color: #fff;
+  border: 2px solid #C94A57;
 }
 
 .quantity {
@@ -154,7 +157,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #F1C40F; /* dourado suave */
+  background: #E6C36B;
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
@@ -162,7 +165,7 @@ header {
 }
 
 .quantity button:hover {
-  background: #F39C12; /* dourado mais intenso */
+  background: #d4af37;
 }
 
 .buy-btn {
@@ -171,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #8E44AD; /* roxo mais intenso */
+  background: #C94A57; /* vermelho venus */
   color: #fff;
   font-size: 18px;
   cursor: pointer;
@@ -180,14 +183,14 @@ header {
 }
 
 .buy-btn:hover {
-  background: #6C3483; /* roxo mais fechado */
+  background: #a03b45; /* vermelho mais fechado */
 }
 
 .voltar {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #2C3E50; /* azul escuro (para contraste e harmonia com o cabeçalho) */
+  background: #2C3E50;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -196,5 +199,67 @@ header {
 }
 
 .voltar:hover {
-  background: #34495E; /* azul mais claro */
+  background: #34495E;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .album-images {
+    flex-direction: column;
+  }
+
+  .thumbs {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .thumbs img {
+    max-height: 120px;
+    width: auto;
+  }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .album-info,
+  .payment {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .payment-options {
+    flex-direction: column;
+  }
+
+  .payment-options button {
+    width: 100%;
+  }
+
+  .quantity {
+    gap: 10px;
+  }
+
+  .buy-btn {
+    font-size: 16px;
+  }
+
+  .thumbs {
+    flex-wrap: wrap;
+  }
+
+  .thumbs img {
+    max-height: 100px;
+  }
 }
