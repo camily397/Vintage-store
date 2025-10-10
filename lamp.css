@@ -1,22 +1,25 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #FAF3E0; /* amarelo pastel claro */
+  background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #5F5A61; /* cinza suave para texto */
+  color: #6D6875; /* cinza violeta suave */
 }
 
 header {
-  background-color: #FFD28C; /* laranja pastel suave */
+  background-color: #1C2833; /* azul marinho */
   padding: 15px;
-  color: #FFFFFF; /* texto branco */
+  color: #F9F6F0;
   font-size: 22px;
   font-family: "Georgia", serif;
+  text-align: center;
 }
 
+/* ======= LAYOUT PRINCIPAL ======= */
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px;
@@ -25,12 +28,13 @@ header {
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
-  flex: 1;
-  background: #FFEBB5; /* amarelo pastel mais suave */
+  flex: 1 1 100%;
+  background: #AFC8D8; /* azul nevoado pastel */
   padding: 20px;
   border-radius: 10px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .main-image {
@@ -41,7 +45,7 @@ header {
 
 .main-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -55,12 +59,12 @@ header {
 
 .thumbs img {
   width: 100%;
-  height: 100%;
   max-height: 250px;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.85;
   transition: transform 0.3s, opacity 0.3s, border 0.3s;
+  background: #D8A7B1; /* lavanda suave */
 }
 
 .thumbs img:hover {
@@ -69,15 +73,15 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #FFD28C; /* laranja pastel suave */
+  border: 3px solid #D8A7B1; /* rosa lavanda pastel */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFFFFF; /* fundo branco */
-  color: #5F5A61; /* texto cinza suave */
+  background: #FFFFFF;
+  color: #6D6875; /* cinza violeta */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -86,29 +90,29 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #FFD28C; /* laranja pastel suave */
+  color: #D8A7B1; /* rosa lavanda */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #5F5A61; /* cinza suave */
+  color: #D9CBA3; /* dourado acinzentado */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #FFF3C3; /* amarelo pastel suave */
+  background: #D7E3D4; /* verde chá pastel */
   padding: 20px;
   border-radius: 10px;
-  color: #5F5A61; /* texto cinza suave */
+  color: #6D6875;
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #5F5A61; /* cinza suave */
+  color: #6D6875;
 }
 
 .payment-options {
@@ -122,23 +126,24 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #FFD28C; /* laranja pastel suave */
-  color: #FFFFFF; /* texto branco */
+  background: #D8A7B1; /* lavanda suave */
+  color: #fff;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #FFB84C; /* laranja um pouco mais forte */
+  background: #c48996; /* lavanda mais intensa */
 }
 
 .payment-options button.selected {
-  background: #FFEBB5; /* amarelo pastel suave */
-  color: #5F5A61; /* cinza suave */
-  border: 2px solid #FFD28C; /* laranja pastel suave */
+  background: #AFC8D8; /* azul suave */
+  color: #fff;
+  border: 2px solid #D8A7B1;
 }
 
+/* ======= QUANTIDADE ======= */
 .quantity {
   display: flex;
   justify-content: center;
@@ -153,25 +158,26 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #FFD28C; /* laranja pastel suave */
-  color: #FFFFFF; /* texto branco */
+  background: #D8A7B1; /* rosa lavanda */
+  color: #fff;
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #FFB84C; /* laranja suave */
+  background: #c48996;
 }
 
+/* ======= BOTÃO DE COMPRA ======= */
 .buy-btn {
   display: block;
   width: 100%;
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #FFD28C; /* laranja pastel suave */
-  color: #FFFFFF; /* texto branco */
+  background: #AFC8D8; /* azul pastel */
+  color: #fff;
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
@@ -179,14 +185,15 @@ header {
 }
 
 .buy-btn:hover {
-  background: #FFB84C; /* laranja suave */
+  background: #8ba8bc; /* azul um pouco mais escuro */
 }
 
+/* ======= BOTÃO VOLTAR ======= */
 .voltar {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #5F5A61; /* cinza suave */
+  background: #6D6875; /* cinza violeta */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -195,5 +202,67 @@ header {
 }
 
 .voltar:hover {
-  background: #7F7F7F; /* cinza um pouco mais claro */
+  background: #8B8894;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .album-images {
+    flex-direction: column;
+  }
+
+  .thumbs {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .thumbs img {
+    max-height: 120px;
+    width: auto;
+  }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .album-info,
+  .payment {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .payment-options {
+    flex-direction: column;
+  }
+
+  .payment-options button {
+    width: 100%;
+  }
+
+  .quantity {
+    gap: 10px;
+  }
+
+  .buy-btn {
+    font-size: 16px;
+  }
+
+  .thumbs {
+    flex-wrap: wrap;
+  }
+
+  .thumbs img {
+    max-height: 100px;
+  }
 }
