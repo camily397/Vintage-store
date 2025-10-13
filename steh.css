@@ -1,16 +1,16 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #F9F6F0; /* Fundo off-white suave */
+  background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #333333; /* Texto principal em cinza escuro */
+  color: #333; /* cinza escuro para o texto */
 }
 
 header {
-  background-color: #1C2833; /* Azul marinho */
+  background-color: #1C2833; /* azul marinho */
   padding: 15px;
-  color: #F9F6F0; /* Texto em branco */
+  color: #F9F6F0; /* off-white para o texto */
   font-size: 22px;
   font-family: "Georgia", serif;
   text-align: center;
@@ -23,17 +23,18 @@ header {
   align-items: flex-start;
   padding: 30px;
   gap: 20px;
-  flex-wrap: wrap; /* Para tornar a página responsiva */
+  flex-wrap: wrap; /* para tornar a página responsiva */
 }
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #000000; /* Lilás suave, combinando com o tema de Virgingod */
+  background: #E0E0E0; /* cinza suave */
   padding: 20px;
   border-radius: 10px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .main-image {
@@ -64,6 +65,7 @@ header {
   cursor: pointer;
   opacity: 0.85;
   transition: transform 0.3s, opacity 0.3s, border 0.3s;
+  background: #BDBDBD; /* cinza médio */
 }
 
 .thumbs img:hover {
@@ -72,48 +74,46 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #1C2833; /* Azul marinho em destaque */
+  border: 3px solid #1C2833; /* borda azul marinho */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFFFFF; /* Fundo branco */
-  color: #4A4A4A; /* Texto cinza */
+  background: #FFFFFF; /* branco puro */
+  color: #333; /* cinza escuro */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
   line-height: 1.6;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
 }
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #707070; /* Lilás mais suave para título */
+  color: #1C2833; /* azul marinho no título */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #1C2833; /* Azul marinho para preço */
+  color: #333; /* cinza escuro para o preço */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #F1D7F7; /* Rosa suave, complementando com o tema do álbum */
+  background: #E0E0E0; /* cinza suave */
   padding: 20px;
   border-radius: 10px;
-  color: #1C2833; /* Azul marinho para texto */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  color: #333; /* cinza escuro */
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #1C2833; /* Azul marinho */
+  color: #1C2833; /* azul marinho */
 }
 
 .payment-options {
@@ -125,24 +125,23 @@ header {
 .payment-options button {
   flex: 1;
   padding: 10px;
-  border: 1px solid #a19f9f; /* Lilás suave para borda */
+  border: none;
   border-radius: 5px;
-  background: #FFFFFF; /* Fundo branco */
-  color: #1C2833; /* Azul marinho para texto */
+  background: #BDBDBD; /* cinza médio */
+  color: #FFF;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #000000; /* Lilás suave para hover */
-  border-color: #1C2833; /* Azul marinho para borda */
+  background: #757575; /* cinza escuro */
 }
 
 .payment-options button.selected {
-  background: #1C2833; /* Azul marinho */
-  color: #F9F6F0; /* Texto em branco */
-  border: 1px solid #1C2833; /* Borda azul marinho */
+  background: #1C2833; /* azul marinho */
+  color: #FFF;
+  border: 2px solid #1C2833;
 }
 
 .quantity {
@@ -157,28 +156,27 @@ header {
   width: 40px;
   height: 40px;
   font-size: 20px;
-  border: 1px solid #707070; /* Lilás suave para borda */
+  border: none;
   border-radius: 5px;
-  background: #FFFFFF; /* Fundo branco */
-  color: #1C2833; /* Azul marinho */
+  background: #BDBDBD; /* cinza médio */
+  color: #FFF;
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #D6AEDD; /* Lilás suave para hover */
-  border-color: #1C2833; /* Azul marinho */
+  background: #757575; /* cinza escuro */
 }
 
 .buy-btn {
   display: block;
   width: 100%;
   padding: 15px;
-  border: 1px solid #B682D0; /* Lilás suave */
+  border: none;
   border-radius: 8px;
-  background: #1C2833; /* Azul marinho */
-  color: #F9F6F0; /* Texto em branco */
+  background: #1C2833; /* azul marinho */
+  color: #FFF;
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
@@ -186,14 +184,14 @@ header {
 }
 
 .buy-btn:hover {
-  background: #2E3C56; /* Azul mais escuro */
+  background: #34495E; /* azul mais claro */
 }
 
 .voltar {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #1C2833; /* Azul marinho */
+  background: #1C2833; /* azul marinho */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -202,10 +200,10 @@ header {
 }
 
 .voltar:hover {
-  background: #2E3C56; /* Azul mais escuro */
+  background: #34495E; /* azul mais claro */
 }
 
-/* ======= RESPONSIVIDADE (MOBILE, TABLET, ETC) */
+/* ======= RESPONSIVIDADE (MOBILE, TABLET, ETC) ======= */
 
 /* Para telas pequenas (celulares) */
 @media (max-width: 600px) {
