@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #D6AEDD; /* Lilás suave, combinando com o tema de Virgingod */
+  background: #000000; /* Lilás suave, combinando com o tema de Virgingod */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -90,7 +90,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #B682D0; /* Lilás mais suave para título */
+  color: #707070; /* Lilás mais suave para título */
 }
 
 .price {
@@ -125,7 +125,7 @@ header {
 .payment-options button {
   flex: 1;
   padding: 10px;
-  border: 1px solid #B682D0; /* Lilás suave para borda */
+  border: 1px solid #a19f9f; /* Lilás suave para borda */
   border-radius: 5px;
   background: #FFFFFF; /* Fundo branco */
   color: #1C2833; /* Azul marinho para texto */
@@ -135,7 +135,7 @@ header {
 }
 
 .payment-options button:hover {
-  background: #D6AEDD; /* Lilás suave para hover */
+  background: #000000; /* Lilás suave para hover */
   border-color: #1C2833; /* Azul marinho para borda */
 }
 
@@ -157,7 +157,7 @@ header {
   width: 40px;
   height: 40px;
   font-size: 20px;
-  border: 1px solid #B682D0; /* Lilás suave para borda */
+  border: 1px solid #707070; /* Lilás suave para borda */
   border-radius: 5px;
   background: #FFFFFF; /* Fundo branco */
   color: #1C2833; /* Azul marinho */
