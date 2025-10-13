@@ -41,6 +41,7 @@ header {
   flex: 3;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
 }
 
 .main-image img {
