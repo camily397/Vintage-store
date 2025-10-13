@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #B5B5B5; /* cinza suave */
+  background: #F2AEBB; /* cinza suave */
   padding: 20px;
   border-radius: 10px;
   display: flex;
