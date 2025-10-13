@@ -1,14 +1,14 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #F6E1D3; /* bege quente suave, inspirado na capa de "Red Moon in Venus" */
+  background-color: #1C2833; /* bege quente suave, inspirado na capa de "Red Moon in Venus" */
   margin: 0;
   padding: 0;
   color: #4A4A4A; /* cinza escuro para o texto */
 }
 
 header {
-  background-color: #7A1D3E; /* vermelho queimado inspirado no álbum */
+  background-color: #1C2833; /* vermelho queimado inspirado no álbum */
   padding: 15px;
   color: #F9F6F0; /* off-white para o texto */
   font-size: 22px;
