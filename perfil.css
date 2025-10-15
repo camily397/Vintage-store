@@ -1,0 +1,199 @@
+:root{
+  --bg: #f4f7fa;
+  --card: #ffffff;
+  --accent: #3a6ea5;
+  --muted: #7a8aa1;
+  --glass: rgba(58,110,165,0.08);
+  --danger: #e25a5a;
+  --radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Poppins", sans-serif;
+  background: linear-gradient(180deg,#f7fbff 0%, var(--bg) 100%);
+  margin:0;
+  color:#0f1724;
+  padding:28px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+}
+
+/* cartão esquerdo */
+.card{
+  width:300px;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 10px 26px rgba(12,20,30,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  align-items:center;
+}
+
+.brand{
+  align-self:flex-start;
+  font-weight:600;
+  color:var(--accent);
+  letter-spacing:0.3px;
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.avatar-wrap{ text-align:center; width:100%;}
+.avatar{
+  width:140px;
+  height:140px;
+  border-radius:12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
+  color:#eaf6ff;
+  background: linear-gradient(180deg,#2f6fa8,#2b5b85);
+  border:6px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(26,44,66,0.12);
+  margin:0 auto;
+}
+
+.name{
+  margin-top:12px;
+  font-weight:700;
+  text-transform:lowercase;
+  letter-spacing:0.2px;
+}
+
+.role{ color:var(--muted); font-size:13px; margin-top:4px; text-transform:lowercase; }
+
+/* small action */
+.card-actions{ width:100%; display:flex; justify-content:center; margin-top:6px; }
+.card-actions button{
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid var(--glass);
+  background:transparent;
+  cursor:pointer;
+  color:var(--accent);
+  font-weight:600;
+}
+
+/* painel direito */
+.panel{
+  flex:1;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: 0 10px 26px rgba(12,20,30,0.06);
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.panel-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.panel-header h2{
+  font-size:16px;
+  color:var(--accent);
+  text-transform:capitalize;
+}
+
+.panel-actions button{
+  margin-left:8px;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid rgba(58,110,165,0.12);
+  background:var(--accent);
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+.panel-actions button.hidden{ display:none; }
+
+/* formulário com labels verticais (estilo tabela) */
+.form-grid{
+  margin-top:6px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+/* cada "linha" tem a label vertical e o campo */
+.row{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:12px;
+  align-items:center;
+}
+
+/* label vertical (rotacionada) */
+.label-vertical{
+  writing-mode: vertical-rl; /* fica na vertical */
+  transform: rotate(180deg); /* ajusta leitura para baixo-para-cima */
+  text-transform:lowercase;
+  color:var(--muted);
+  font-weight:600;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+}
+
+/* campo */
+.field{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.field input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid #e6eef6;
+  font-size:14px;
+  background:transparent;
+}
+
+.field-actions{
+  justify-content:flex-start;
+}
+
+button.danger{
+  background:transparent;
+  border:1px solid var(--danger);
+  color:var(--danger);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:not-allowed;
+  font-weight:600;
+}
+button[disabled]{ opacity:0.7; }
+
+/* hidden helper class */
+.hidden{ display:none !important; }
+
+/* responsividade pequena */
+@media (max-width:880px){
+  .wrap{ flex-direction:column; padding:18px; }
+  .card{ width:100%; align-items:flex-start; padding:14px; }
+  .avatar{ width:96px; height:96px; font-size:30px; border-radius:10px; }
+  .panel{ width:100%; min-height:unset; padding:14px; }
+  .row{ grid-template-columns:36px 1fr; }
+  .label-vertical{ font-size:12px; }
+}
