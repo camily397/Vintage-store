@@ -1,149 +1,129 @@
-/* ======= GERAL ======= */
+/* ======== GERAL ======== */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1e2b3c;
-    color: #fff;
-    margin: 0;
-    padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #e6ecf3; /* azul bem claro de fundo */
+  color: #222;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* ======= CABEÇALHO ======= */
+/* ======== CABEÇALHO ======== */
 header {
-    background-color: #0f1b2d;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
+  background-color: #1e3a5f; /* azul escuro principal */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-.logo {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: #fff;
-}
-
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: 0.3s;
-}
-
-nav a:hover, nav a.ativo {
-    color: #00b4d8;
-}
-
-/* ======= CONTEÚDO ======= */
+/* ======== CONTEÚDO PRINCIPAL ======== */
 main {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
+  flex: 1;
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.contato {
-    width: 90%;
-    max-width: 700px;
-    background-color: #24344c;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+/* Título e texto */
+main h2 {
+  color: #1e3a5f;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
 }
 
-.contato h2 {
-    text-align: center;
-    background-color: #153259;
-    padding: 10px;
-    border-radius: 8px;
+main p {
+  text-align: center;
+  color: #444;
+  margin-bottom: 25px;
+  font-size: 1rem;
 }
 
-.formulario {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
+/* ======== FORMULÁRIO ======== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.formulario label {
-    font-weight: bold;
-    margin-bottom: 8px;
+label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
 }
 
+input,
 textarea {
-    resize: none;
-    height: 100px;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    font-size: 14px;
-    margin-bottom: 15px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1e3a5f;
+  box-shadow: 0 0 6px rgba(30, 58, 95, 0.3);
+}
+
+/* ======== BOTÃO ======== */
 button {
-    background-color: #00b4d8;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: flex-end;
-    transition: 0.3s;
+  background-color: #1e3a5f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.25s ease;
 }
 
 button:hover {
-    background-color: #0097b2;
+  background-color: #162b46;
+  transform: scale(1.03);
 }
 
-/* ======= CONTATO RÁPIDO ======= */
-.contato-rapido {
-    background-color: #30638e;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
+/* ======== LINK VOLTAR ======== */
+a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #1e3a5f;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  transition: color 0.2s;
 }
 
-.contato-rapido h3 {
-    margin-top: 0;
-    background-color: #264c73;
-    padding: 8px;
-    border-radius: 8px;
-    text-align: center;
+a:hover {
+  color: #162b46;
 }
 
-/* ======= AJUDA RÁPIDA ======= */
-.ajuda-rapida {
-    background-color: #2a4b6a;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 480px) {
+  main {
+    margin: 20px;
+    padding: 25px;
+  }
 
-.ajuda-rapida h3 {
-    margin-top: 0;
-    background-color: #1d3852;
-    padding: 8px;
-    border-radius: 8px;
-    text-align: center;
-}
+  header {
+    font-size: 1.5rem;
+    padding: 15px 0;
+  }
 
-.ajuda-rapida ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.ajuda-rapida li {
-    background-color: #3e5b7a;
-    margin-bottom: 8px;
-    padding: 8px;
-    border-radius: 6px;
-}
-
-/* ======= RODAPÉ ======= */
-footer {
-    background-color: #0f1b2d;
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-    color: #aaa;
-    margin-top: 40px;
+  button {
+    font-size: 0.95rem;
+  }
 }
