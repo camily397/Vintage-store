@@ -1,26 +1,22 @@
-// atendimento.js
+document.getElementById('btn-acompanhar').addEventListener('click', function() {
+    const pedido = document.getElementById('pedido').value.trim();
+    const resultado = document.getElementById('resultado');
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Pega os botões
-  const btnPedido = document.getElementById("btn-pedido");
-  const btnTermos = document.getElementById("btn-termos");
-  const btnAvaliacao = document.getElementById("btn-avaliacao");
-  const btnFale = document.getElementById("btn-fale");
+    if(pedido === "") {
+        resultado.textContent = "Por favor, digite o número do seu pedido.";
+        resultado.style.color = "red";
+        return;
+    }
 
-  // Adiciona os redirecionamentos
-  btnPedido.addEventListener("click", () => {
-    window.location.href = "pedido.html";
-  });
+    // Simulação de status do pedido
+    const statusPedidos = [
+        "Pedido recebido",
+        "Preparando para envio",
+        "Em transporte",
+        "Entregue"
+    ];
 
-  btnTermos.addEventListener("click", () => {
-    window.location.href = "termos.html";
-  });
-
-  btnAvaliacao.addEventListener("click", () => {
-    window.location.href = "avaliacao.html";
-  });
-
-  btnFale.addEventListener("click", () => {
-    window.location.href = "fale.html";
-  });
+    const status = statusPedidos[Math.floor(Math.random() * statusPedidos.length)];
+    resultado.style.color = "#6a4c93";
+    resultado.textContent = `Status do pedido ${pedido}: ${status}`;
 });
