@@ -8,17 +8,23 @@ body {
 }
 
 /* ======= CABEÇALHO ======= */
-header {
+.site-header {
   background-color: #0b2c55;
   color: white;
-  text-align: center;
-  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  font-size: 2rem;
-  margin: 0;
+.header-left .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.header-left .tagline {
+  font-size: 0.9rem;
+  color: #d2d9e6;
 }
 
 /* ======= CONTEÚDO PRINCIPAL ======= */
@@ -131,11 +137,12 @@ h3 {
 }
 
 /* ======= RODAPÉ ======= */
-footer {
+.site-footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
   color: #555;
+  margin-top: 30px;
 }
 
 /* ======= ANIMAÇÃO ======= */
@@ -157,7 +164,11 @@ footer {
     padding: 25px;
   }
 
-  header h1 {
-    font-size: 1.6rem;
+  .header-left .logo {
+    font-size: 1.5rem;
+  }
+
+  .header-left .tagline {
+    font-size: 0.8rem;
   }
 }
