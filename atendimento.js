@@ -1,22 +1,6 @@
-document.getElementById('btn-acompanhar').addEventListener('click', function() {
-    const pedido = document.getElementById('pedido').value.trim();
-    const resultado = document.getElementById('resultado');
-
-    if(pedido === "") {
-        resultado.textContent = "Por favor, digite o número do seu pedido.";
-        resultado.style.color = "red";
-        return;
-    }
-
-    // Simulação de status do pedido
-    const statusPedidos = [
-        "Pedido recebido",
-        "Preparando para envio",
-        "Em transporte",
-        "Entregue"
-    ];
-
-    const status = statusPedidos[Math.floor(Math.random() * statusPedidos.length)];
-    resultado.style.color = "#6a4c93";
-    resultado.textContent = `Status do pedido ${pedido}: ${status}`;
-});
+// JS antigo do Atendimento
+// Aqui você pode adicionar funcionalidades como:
+// - Abrir outras páginas
+// - Mostrar mensagens de alerta
+// - Futuras interações do menu lateral
+console.log("Atendimento.js carregado corretamente");
