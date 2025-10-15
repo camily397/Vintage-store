@@ -51,3 +51,10 @@ thumbs.forEach(thumb => {
     thumb.classList.add("active");
   });
 });
+// ======= Adicionar ao carrinho =======
+const cartBtn = document.getElementById("addToCart");
+
+cartBtn.addEventListener("click", () => {
+  alert("Produto adicionado ao carrinho com sucesso! 🛒");
+});
+
