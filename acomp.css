@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4e9f8;
+    background-color: #f4f8ff; /* fundo azul suave */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #6a4c93;
+    background-color: #0B3D91; /* azul escuro */
     color: white;
     padding: 15px 30px;
 }
@@ -25,37 +25,44 @@ header .logo h1 {
     text-align: center;
 }
 
+.acompanhar-container h2 {
+    color: #0B3D91; /* azul escuro */
+    margin-bottom: 15px;
+}
+
 .acompanhar-container input {
     width: 80%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #6a4c93;
+    border: 2px solid #0B3D91; /* azul escuro */
     border-radius: 8px;
 }
 
 .acompanhar-container button {
     padding: 10px 20px;
-    background-color: #6a4c93;
+    background-color: #0B3D91; /* azul escuro */
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 .acompanhar-container button:hover {
-    background-color: #8e6bb8;
+    background-color: #254EAA; /* azul médio */
 }
 
 #acompanhamento, #resultado {
     margin-top: 20px;
     font-weight: bold;
+    color: #0B3D91; /* azul escuro */
 }
 
 .voltar {
     display: inline-block;
     margin-top: 15px;
     text-decoration: none;
-    color: #6a4c93;
+    color: #0B3D91; /* azul escuro */
 }
 
 .voltar:hover {
@@ -63,7 +70,7 @@ header .logo h1 {
 }
 
 footer {
-    background-color: #6a4c93;
+    background-color: #0B3D91; /* azul escuro */
     color: white;
     text-align: center;
     padding: 15px 0;
