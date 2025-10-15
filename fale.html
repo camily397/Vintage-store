@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vintage Store | Fale Conosco</title>
+  <title>Fale Conosco | Vintage Store</title>
   <link rel="stylesheet" href="fale.css">
 </head>
 <body>
@@ -17,11 +17,9 @@
 
     <form>
       <label for="mensagem">Relate sua necessidade:</label>
-      <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." rows="4" required></textarea>
+      <textarea id="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..."></textarea>
       <button type="submit">Enviar</button>
     </form>
-
-    <hr style="margin: 30px 0; border: none; border-top: 1px solid #ccc;">
 
     <section class="contato-rapido">
       <h3>Contato Rápido</h3>
@@ -31,19 +29,43 @@
 
     <section class="ajuda-rapida">
       <h3>Ajuda Rápida (FAQ Compacto)</h3>
-      <ul>
-        <li>Qual o prazo de entrega?</li>
-        <li>Onde está meu pedido?</li>
-        <li>Os discos são novos ou usados?</li>
-        <li>Quais são as formas de pagamento?</li>
-      </ul>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">Qual o prazo de entrega?</button>
+        <div class="faq-resposta">
+          <p>O prazo médio de entrega é de 5 a 10 dias úteis, dependendo da sua região e teletransportadora.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">Onde está meu pedido?</button>
+        <div class="faq-resposta">
+          <p>Você pode acompanhar o status do seu pedido na aba "Acompanhar Pedido" no menu de Atendimento.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">Os discos são novos ou usados?</button>
+        <div class="faq-resposta">
+          <p>Os produtos são oficias e novos, com garantia do artista.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-pergunta">Quais são as formas de pagamento?</button>
+        <div class="faq-resposta">
+          <p>Aceitamos Pix, cartão de crédito e boleto.</p>
+        </div>
+      </div>
     </section>
 
-    <a href="atendimento.html">← Voltar ao Atendimento</a>
+    <a href="index.html" class="voltar">← Voltar à página inicial</a>
   </main>
 
-  <footer style="text-align:center; padding:15px 0; color:#555; font-size:0.9rem;">
-    © 2025 Vintage Store — Todos os direitos reservados
+  <footer>
+    © 2025 Vintage Store — Todos os direitos reservados.
   </footer>
+
+  <script src="fale.js"></script>
 </body>
 </html>
