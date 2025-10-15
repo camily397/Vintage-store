@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário - Vintage Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Vintage Store</h1>
+    <a href="#" class="conta">Minha conta</a>
+  </header>
+
+  <main class="perfil-container">
+    <section class="perfil-foto">
+      <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Foto do usuário">
+      <h2>Usuário</h2>
+    </section>
+
+    <section class="perfil-info">
+      <div id="info-view">
+        <p><strong>Data de nascimento:</strong> <span id="data">xx/xx/xxxx</span></p>
+        <p><strong>Gênero:</strong> <span id="genero">Masculino</span></p>
+        <p><strong>Email:</strong> <span id="email">xxxxx@xxxx.com</span></p>
+        <p><strong>Estado:</strong> <span id="estado">PR</span></p>
+        <p><strong>Bio:</strong> <span id="bio">Apaixonado por tecnologia, design e boas ideias.</span></p>
+      </div>
+
+      <div id="info-edit" class="hidden">
+        <label>Data de nascimento:</label>
+        <input type="text" id="edit-data" value="xx/xx/xxxx">
+        <label>Gênero:</label>
+        <input type="text" id="edit-genero" value="Masculino">
+        <label>Email:</label>
+        <input type="email" id="edit-email" value="xxxxx@xxxx.com">
+        <label>Estado:</label>
+        <input type="text" id="edit-estado" value="PR">
+        <label>Bio:</label>
+        <textarea id="edit-bio">Apaixonado por tecnologia, design e boas ideias.</textarea>
+      </div>
+
+      <div class="botoes">
+        <button id="editar-btn">✏️ Editar</button>
+        <button id="salvar-btn" class="hidden">💾 Salvar</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
