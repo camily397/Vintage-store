@@ -64,46 +64,9 @@
   margin-bottom: 15px;
 }
 
-.acompanhar-pedido {
-  margin-top: 30px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.acompanhar-pedido h3 {
-  margin-bottom: 10px;
-  color: #6a4c93;
-}
-
-.acompanhar-pedido input {
-  width: 80%;
-  padding: 10px;
+.conteudo p {
   margin-bottom: 15px;
-  border: 2px solid #6a4c93;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.acompanhar-pedido button {
-  padding: 10px 20px;
-  background-color: #6a4c93;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.acompanhar-pedido button:hover {
-  background-color: #8e6bb8;
-}
-
-#acompanhamento, #resultado {
-  margin-top: 15px;
-  font-weight: bold;
-  color: #333;
+  line-height: 1.5;
 }
 
 /* ====== FOOTER ====== */
