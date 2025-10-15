@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+header {
+  background-color: #1d3557;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 22px;
+}
+
+header .conta {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.perfil-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.perfil-foto {
+  text-align: center;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.perfil-foto img {
+  width: 120px;
+  border-radius: 50%;
+  border: 4px solid #457b9d;
+}
+
+.perfil-info {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 350px;
+  position: relative;
+}
+
+.perfil-info p {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  height: 60px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#editar-btn, #salvar-btn {
+  background-color: #457b9d;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#editar-btn:hover, #salvar-btn:hover {
+  background-color: #1d3557;
+}
