@@ -1,129 +1,163 @@
-/* ======== GERAL ======== */
+/* ======= GERAL ======= */
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  background-color: #e6ecf3; /* azul bem claro de fundo */
-  color: #222;
+  font-family: "Poppins", sans-serif;
+  background-color: #e9edf3;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  color: #222;
 }
 
-/* ======== CABEÇALHO ======== */
+/* ======= CABEÇALHO ======= */
 header {
-  background-color: #1e3a5f; /* azul escuro principal */
+  background-color: #0b2c55;
   color: white;
   text-align: center;
-  padding: 20px 0;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  padding: 25px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ======== CONTEÚDO PRINCIPAL ======== */
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
 main {
-  flex: 1;
-  max-width: 600px;
-  margin: 40px auto;
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 30px 40px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background: white;
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Título e texto */
-main h2 {
-  color: #1e3a5f;
+h2 {
+  color: #0b2c55;
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 1.6rem;
+  margin-top: 0;
+  font-size: 1.5rem;
 }
 
-main p {
-  text-align: center;
-  color: #444;
-  margin-bottom: 25px;
-  font-size: 1rem;
-}
-
-/* ======== FORMULÁRIO ======== */
+/* ======= FORMULÁRIO ======= */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 label {
   font-weight: 600;
   color: #333;
-  margin-bottom: 5px;
 }
 
-input,
 textarea {
-  padding: 10px 12px;
+  resize: none;
+  padding: 10px;
   border-radius: 8px;
-  border: 1px solid #bbb;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
 }
 
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: #1e3a5f;
-  box-shadow: 0 0 6px rgba(30, 58, 95, 0.3);
-}
-
-/* ======== BOTÃO ======== */
 button {
-  background-color: #1e3a5f;
+  background-color: #0b2c55;
   color: white;
   border: none;
-  border-radius: 10px;
-  padding: 12px 0;
-  font-size: 1rem;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: bold;
-  transition: all 0.25s ease;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: #162b46;
-  transform: scale(1.03);
+  background-color: #143e7a;
 }
 
-/* ======== LINK VOLTAR ======== */
-a {
+/* ======= SEÇÕES ======= */
+.contato-rapido, .ajuda-rapida {
+  margin-top: 30px;
+}
+
+h3 {
+  color: #0b2c55;
+  margin-bottom: 10px;
+}
+
+.voltar {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 30px;
+  color: #0b2c55;
   text-decoration: none;
-  color: #1e3a5f;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 600;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+/* ======= FAQ INTERATIVO ======= */
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.faq-pergunta {
+  background: none;
+  border: none;
+  color: #0b2c55;
+  font-weight: 600;
+  text-align: left;
   width: 100%;
-  transition: color 0.2s;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-a:hover {
-  color: #162b46;
+.faq-pergunta:hover {
+  color: #143e7a;
 }
 
-/* ======== RESPONSIVIDADE ======== */
-@media (max-width: 480px) {
+.faq-resposta {
+  display: none;
+  margin-top: 8px;
+  color: #333;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+.faq-item.ativo .faq-resposta {
+  display: block;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ======= ANIMAÇÃO ======= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
   main {
-    margin: 20px;
+    width: 90%;
     padding: 25px;
   }
 
-  header {
-    font-size: 1.5rem;
-    padding: 15px 0;
-  }
-
-  button {
-    font-size: 0.95rem;
+  header h1 {
+    font-size: 1.6rem;
   }
 }
