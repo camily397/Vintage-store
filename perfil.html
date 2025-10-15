@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>perfil · vintage store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <!-- cartão à esquerda -->
+    <aside class="card">
+      <div class="brand">vintage store</div>
+
+      <div class="avatar-wrap">
+        <div id="avatar" class="avatar">vh</div>
+        <div class="name" id="displayName">vinícius henrique</div>
+        <div class="role">usuário</div>
+      </div>
+
+      <div class="card-actions">
+        <button id="change-photo">trocar foto</button>
+      </div>
+    </aside>
+
+    <!-- painel / formulário à direita -->
+    <section class="panel">
+      <div class="panel-header">
+        <h2>gerenciar cadastros</h2>
+        <div class="panel-actions">
+          <button id="editBtn">✎ editar</button>
+          <button id="saveBtn" class="hidden">💾 salvar</button>
+          <button id="cancelBtn" class="hidden">✕ cancelar</button>
+        </div>
+      </div>
+
+      <form id="profileForm" class="form-grid" autocomplete="off">
+        <!-- linha com label vertical (rotacionado) + campo -->
+        <div class="row">
+          <div class="label-vertical">nome</div>
+          <div class="field">
+            <input type="text" id="in-name" value="vinícius henrique" readonly>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label-vertical">nascimento</div>
+          <div class="field">
+            <input type="date" id="in-dob" readonly>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label-vertical">email</div>
+          <div class="field">
+            <input type="email" id="in-email" value="xxxxx@xxxx.com" readonly>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label-vertical">telefone</div>
+          <div class="field">
+            <input type="tel" id="in-phone" placeholder="(xx) xxxxx-xxxx" readonly>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label-vertical">usuário</div>
+          <div class="field">
+            <input type="text" id="in-username" value="usuario123" readonly>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label-vertical">ações</div>
+          <div class="field field-actions">
+            <button type="button" id="btn-delete" class="danger" disabled>excluir</button>
+            <button type="button" id="btn-reset" disabled>limpar</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <input id="fileInput" type="file" accept="image/*" class="hidden">
+
+  <script src="script.js"></script>
+</body>
+</html>
