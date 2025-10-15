@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fale Conosco | Vintage Store</title>
-    <link rel="stylesheet" href="faleconosco.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Store | Fale Conosco</title>
+  <link rel="stylesheet" href="fale.css">
 </head>
 <body>
-    <header>
-        <h1 class="logo">Vintage Store</h1>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="produtos.html">Produtos</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="faleconosco.html" class="ativo">Fale Conosco</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Vintage Store</h1>
+  </header>
 
-    <main>
-        <section class="contato">
-            <h2>Fale Conosco (Ajuda)</h2>
+  <main>
+    <h2>Fale Conosco (Ajuda)</h2>
+    <p>Envie sua mensagem ou entre em contato pelos canais abaixo:</p>
 
-            <div class="formulario">
-                <label for="mensagem">Relate sua necessidade</label>
-                <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..."></textarea>
-                <button type="submit">Enviar</button>
-            </div>
+    <form>
+      <label for="mensagem">Relate sua necessidade:</label>
+      <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
 
-            <div class="contato-rapido">
-                <h3>Contato Rápido</h3>
-                <p><strong>E-mail:</strong> contato@vintagestore.com</p>
-                <p><strong>WhatsApp:</strong> (xx) xxxxx-xxxx</p>
-            </div>
+    <hr style="margin: 30px 0; border: none; border-top: 1px solid #ccc;">
 
-            <div class="ajuda-rapida">
-                <h3>Ajuda Rápida (FAQ Compacto)</h3>
-                <ul>
-                    <li>Qual o prazo de entrega?</li>
-                    <li>Onde está meu pedido?</li>
-                    <li>Os discos são novos ou usados?</li>
-                    <li>Quais são as formas de pagamento?</li>
-                </ul>
-            </div>
-        </section>
-    </main>
+    <section class="contato-rapido">
+      <h3>Contato Rápido</h3>
+      <p><strong>E-mail:</strong> contato@vintagestore.com</p>
+      <p><strong>WhatsApp:</strong> (xx) xxxxx-xxxx</p>
+    </section>
 
-    <footer>
-        <p>© 2025 Vintage Store — Todos os direitos reservados</p>
-    </footer>
+    <section class="ajuda-rapida">
+      <h3>Ajuda Rápida (FAQ Compacto)</h3>
+      <ul>
+        <li>Qual o prazo de entrega?</li>
+        <li>Onde está meu pedido?</li>
+        <li>Os discos são novos ou usados?</li>
+        <li>Quais são as formas de pagamento?</li>
+      </ul>
+    </section>
+
+    <a href="atendimento.html">← Voltar ao Atendimento</a>
+  </main>
+
+  <footer style="text-align:center; padding:15px 0; color:#555; font-size:0.9rem;">
+    © 2025 Vintage Store — Todos os direitos reservados
+  </footer>
 </body>
 </html>
