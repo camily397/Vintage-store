@@ -16,6 +16,6 @@ document.getElementById('btn-acompanhar').addEventListener('click', function() {
     ];
 
     const status = statusPedidos[Math.floor(Math.random() * statusPedidos.length)];
-    resultado.style.color = "#6a4c93";
+    resultado.style.color = "#0B3D91"; /* azul escuro */
     resultado.textContent = `Status do pedido ${pedido}: ${status}`;
 });
