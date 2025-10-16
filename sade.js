@@ -48,4 +48,25 @@ thumbs.forEach(thumb => {
     thumb.classList.add("active");
   });
 });
+.cart-btn {
+  background-color: #d4af37;
+  color: #222;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #b68c2a;
+  transform: scale(1.05);
+}
+
+/* Efeito de "adicionado" */
+.cart-btn.added {
+  background-color: #2ecc71; /* verde */
+  color: #fff;
+}
 
