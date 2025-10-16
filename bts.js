@@ -48,3 +48,18 @@ thumbs.forEach(thumb => {
     thumb.classList.add("active");
   });
 });
+// ======= Adicionar ao carrinho =======
+const cartBtn = document.getElementById("addToCart");
+
+cartBtn.addEventListener("click", () => {
+  // muda o texto e a cor
+  cartBtn.textContent = "✔️ Adicionado!";
+  cartBtn.classList.add("added");
+
+  // volta ao normal depois de 2 segundos
+  setTimeout(() => {
+    cartBtn.textContent = "🛒 Adicionar ao carrinho";
+    cartBtn.classList.remove("added");
+  }, 2000);
+});
+
