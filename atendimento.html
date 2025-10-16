@@ -12,14 +12,19 @@
       <div class="logo">Vintage Store</div>
       <div class="tagline">Música com história, estilo e nostalgia</div>
     </div>
+    <nav class="header-nav">
+      <a href="#">Início</a>
+      <a href="#">Catálogo</a>
+      <a href="#">Contato</a>
+    </nav>
   </header>
 
   <main class="container">
     <aside class="menu">
-      <button onclick="window.location.href='acomp.html'">Acompanhar Pedido</button>
-      <button onclick="window.location.href='termos.html'">Termos de Uso / Condições</button>
-      <button onclick="window.location.href='avaliacao.html'">Avaliação de Atendimento</button>
-      <button onclick="window.location.href='fale.html'">Fale Conosco / Ajuda</button>
+      <button onclick="irPara('acomp.html')">Acompanhar Pedido</button>
+      <button onclick="irPara('termos.html')">Termos de Uso / Condições</button>
+      <button onclick="irPara('avaliacao.html')">Avaliação de Atendimento</button>
+      <button onclick="irPara('fale.html')">Fale Conosco / Ajuda</button>
     </aside>
 
     <section class="conteudo">
@@ -33,9 +38,6 @@
     © 2025 Vintage Store — Todos os direitos reservados.
   </footer>
 
-  <a href="index.html" class="voltar">← Voltar</a>
-
-  <!-- Importa o JavaScript -->
   <script src="atendimento.js"></script>
 </body>
 </html>
