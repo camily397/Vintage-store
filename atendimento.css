@@ -62,9 +62,8 @@ body {
 }
 
 .menu button:hover {
-  background: linear-gradient(145deg, #2b3b4b, #1e2a38);
-  transform: translateX(4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  background-color: #2d527b; /* azul médio no hover */
+  transform: scale(1.03);
 }
 
 /* Links dentro dos botões */
