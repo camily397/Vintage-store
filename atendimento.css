@@ -49,7 +49,7 @@ header .logo h1 {
 }
 
 .acompanhar-container button:hover {
-    background-color: #254EAA; /* azul médio */
+    background-color: #254EAA; /* azul médio ao passar o mouse */
 }
 
 #acompanhamento, #resultado {
