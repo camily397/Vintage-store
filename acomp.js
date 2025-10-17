@@ -10,9 +10,9 @@ function verificarPedido() {
 
   // Simulação de acompanhamento (você pode trocar pelos seus dados reais depois)
   const pedidos = {
-    VS12345: "Pedido sendo preparado.",
-    VS98765: "Pedido enviado — em transporte!",
-    VS00001: "Pedido entregue com sucesso!.",
+    VS12345: "Pedido enviado — em transporte.",
+    VS98765: "Pedido entregue com sucesso!",
+    VS00001: "Pedido aguardando pagamento.",
   };
 
   if (pedidos[numero]) {
