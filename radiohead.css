@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #F1F1F1; /* fundo neutro para deixar as imagens se destacarem */
+  background: #DD0303; /* fundo neutro para deixar as imagens se destacarem */
   padding: 20px;
   border-radius: 10px;
   display: flex;
