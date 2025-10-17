@@ -1,34 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vintage Store - Acompanhar Pedido</title>
-  <link rel="stylesheet" href="acomp.css">
-</head>
-<body>
-  <header>
-    <div class="logo">
-      <h1>Vintage Store</h1>
-    </div>
-  </header>
+<section class="conteudo">
+  <h2>Atendimento</h2>
+  <p>O objetivo da <strong>Vintage Store</strong> é facilitar a compra de CDs, álbuns e discos de vinil. Nosso aplicativo busca proporcionar uma experiência diferenciada para os usuários, permitindo a descoberta de edições raras, lançamentos exclusivos e valorizando a mídia física que tem se perdido com o tempo.</p>
+  <p>Muitos álbuns, discos de vinil e CDs são difíceis de encontrar, e há lançamentos de grandes artistas que esgotam rapidamente. Por isso, nossa loja online ajuda fãs e colecionadores a encontrarem seus produtos desejados com mais acessibilidade, segurança e qualidade — com itens verificados pelos próprios artistas.</p>
 
-  <main>
-    <section class="acompanhar-container">
-      <h2>Acompanhe seu pedido</h2>
-      <p>Digite o número do seu pedido abaixo:</p>
-      <input type="text" id="pedido" placeholder="Ex: 123456">
-      <button id="btn-acompanhar">Acompanhar</button>
-      <div id="resultado"></div>
-      <br>
-      <a href="atendimento.html" class="voltar">← Voltar para Atendimento</a>
-    </section>
-  </main>
+  <div class="box-info">
+    <h3>Entregas e prazos:</h3>
+    <ul>
+      <li>O cliente tem até 7 (sete) dias corridos, a contar da data de recebimento, para solicitar devolução conforme o Código de Defesa do Consumidor.</li>
+      <li>Produtos devem estar em perfeitas condições, sem sinais de uso indevido.</li>
+      <li>Em caso de defeito de fabricação ou problema no transporte, o cliente deverá comunicar imediatamente para avaliação.</li>
+      <li>Todos os produtos são apresentados com descrição e preço em reais (R$).</li>
+      <li>A disponibilidade dos itens está sujeita a confirmação de estoque.</li>
+      <li>Caso o produto adquirido esteja indisponível, a Vintage Store entrará em contato para oferecer substituição ou reembolso.</li>
+    </ul>
+  </div>
 
-  <footer>
-    <p>© 2025 Vintage Store. Todos os direitos reservados.</p>
-  </footer>
+  <div class="box-info">
+    <h3>Outras informações:</h3>
+    <ul>
+      <li>O cliente tem até 7 (sete) dias corridos, a contar da data de recebimento, para solicitar devolução conforme o Código de Defesa do Consumidor.</li>
+      <li>Produtos devem estar em perfeitas condições, sem sinais de uso indevido.</li>
+      <li>Em caso de defeito de fabricação ou problema no transporte, o cliente deverá comunicar imediatamente para avaliação.</li>
+      <li>Todos os produtos são apresentados com descrição e preço em reais (R$).</li>
+      <li>A disponibilidade dos itens está sujeita a confirmação de estoque.</li>
+      <li>Caso o produto adquirido esteja indisponível, a Vintage Store entrará em contato para oferecer substituição ou reembolso.</li>
+    </ul>
+  </div>
 
-  <script src="acomp.js"></script>
-</body>
-</html>
+  <div class="acompanhar-container">
+    <h2>Acompanhar Pedido</h2>
+    <input type="text" placeholder="Digite o número do pedido" id="pedidoNumero">
+    <button onclick="acompanharPedido()">Verificar</button>
+    <div id="resultado"></div>
+  </div>
+</section>
