@@ -4,7 +4,7 @@ body {
   background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #4A4A4A; /* texto principal em cinza suave */
+  color: #3D3D3D; /* cinza escuro suave para o texto */
 }
 
 header {
@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #D8B8D4; /* lilás suave (combinando com a paleta do álbum) */
+  background: #5C6B4F; /* verde escuro */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -80,8 +80,8 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #fff; /* fundo branco para contraste */
-  color: #4A4A4A; /* texto cinza suave */
+  background: #F2EFE4; /* bege claro suave */
+  color: #3D3D3D; /* texto cinza escuro */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -90,20 +90,20 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #B48A9C; /* rosa suave (combinando com a paleta de Lush) */
+  color: #3A4B3F; /* verde escuro */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #4A4A4A; /* cinza suave */
+  color: #3D3D3D; /* cinza escuro */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #B8C0D4; /* azul claro suave, semelhante ao tom do álbum */
+  background: #D4C8B0; /* marrom claro */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #5A5B84; /* lilás escuro suave */
+  background: #5C6B4F; /* verde escuro */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
@@ -134,13 +134,13 @@ header {
 }
 
 .payment-options button:hover {
-  background: #4A4A6A; /* lilás mais escuro */
+  background: #4C5947; /* verde mais escuro */
 }
 
 .payment-options button.selected {
   background: #F9F6F0; /* off-white */
-  color: #5A5B84; /* lilás escuro */
-  border: 2px solid #B48A9C; /* rosa suave */
+  color: #5C6B4F; /* verde escuro */
+  border: 2px solid #5C6B4F; /* verde escuro */
 }
 
 .quantity {
@@ -157,7 +157,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #5A5B84; /* lilás escuro */
+  background: #5C6B4F; /* verde escuro */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   transition: 0.3s;
@@ -165,7 +165,7 @@ header {
 }
 
 .quantity button:hover {
-  background: #4A4A6A; /* lilás mais escuro */
+  background: #4C5947; /* verde mais escuro */
 }
 
 .buy-btn {
@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #B48A9C; /* rosa suave */
+  background: #5C6B4F; /* verde escuro */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
@@ -183,7 +183,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #9D7C8C; /* rosa mais escuro */
+  background: #4C5947; /* verde mais escuro */
 }
 
 .voltar {
@@ -262,7 +262,7 @@ header {
 }
 
 .cart-btn {
-  background-color: #6D875E; /* verde suave */
+  background-color: #5C6B4F; /* verde escuro */
   color: #222;
   border: none;
   padding: 10px 18px;
@@ -273,7 +273,7 @@ header {
 }
 
 .cart-btn:hover {
-  background-color: #567A4A;
+  background-color: #4C5947; /* verde mais escuro */
   transform: scale(1.05);
 }
 
