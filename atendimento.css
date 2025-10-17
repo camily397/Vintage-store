@@ -7,7 +7,7 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(180deg, #f4f6f9, #e8ebf0);
+  background: linear-gradient(180deg, #000000, #1ab21a);
   color: #ffffff;
   min-height: 100vh;
   display: flex;
@@ -77,14 +77,14 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 6px rgba(255, 0, 0, 0.2);
   font-weight: 600;
 }
 
 .menu button:hover {
   background: linear-gradient(145deg, #ffffff, #ebebeb);
   transform: translateX(4px);
-  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 12px rgba(255, 0, 0, 0.3);
 }
 
 /* ===== CONTEÚDO ===== */
@@ -93,7 +93,7 @@ body {
   background: rgba(255,255,255,0.85);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 16px #fdfcfc1a;
+  box-shadow: 0 4px 16px #ff00001a;
   backdrop-filter: blur(6px);
 }
 
