@@ -1,23 +1,23 @@
 /* ======= GERAL ======= */
 body {
-  font-family: "Helvetica Neue", sans-serif;
-  background-color: #F8F7F3; /* off white */
+  font-family: Arial, sans-serif;
+  background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #000000; /* texto preto */
+  color: #000; /* texto principal em preto */
 }
 
 /* ======= CABEÇALHO ======= */
 header {
-  background-color: #0B1E39; /* azul marinho */
-  padding: 20px 0;
-  color: #F8F7F3;
-  font-size: 24px;
+  background-color: #1C2833; /* azul marinho */
+  padding: 15px;
+  color: #F9F6F0; /* off-white para o texto */
+  font-size: 22px;
+  font-family: "Georgia", serif;
   text-align: center;
   font-weight: bold;
   letter-spacing: 1px;
   border-bottom: 4px solid #FF9A00; /* detalhe laranja */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* ======= CONTAINER PRINCIPAL ======= */
@@ -25,27 +25,28 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px;
-  gap: 30px;
+  padding: 30px;
+  gap: 20px;
+  flex-wrap: wrap; /* responsividade */
 }
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
   background: #B45253; /* vermelho rosado */
-  padding: 25px;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
   gap: 20px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-  border: 2px solid #000; /* detalhe preto */
+  flex-wrap: wrap;
+  border: 2px solid #000; /* detalhe em preto */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-image {
   flex: 3;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  border: 2px solid #000;
 }
 
 .main-image img {
@@ -59,16 +60,16 @@ header {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 .thumbs img {
   width: 100%;
-  max-height: 200px;
+  height: 100%;
+  max-height: 250px;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.85;
-  border: 2px solid transparent;
   transition: transform 0.3s, opacity 0.3s, border 0.3s;
 }
 
@@ -78,56 +79,51 @@ header {
 }
 
 .thumbs img.active {
-  border: 2px solid #000; /* destaque preto */
+  border: 3px solid #FF9A00; /* destaque laranja */
   opacity: 1;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFFFFF;
+  background: #fff; /* branco para contraste */
   color: #000;
-  padding: 35px;
-  border-radius: 12px;
+  padding: 30px;
+  border-radius: 10px;
   font-size: 18px;
   line-height: 1.6;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
   border: 2px solid #000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #B45253;
-  border-bottom: 3px solid #000; /* detalhe preto */
+  color: #B45253; /* vermelho rosado */
+  border-bottom: 2px solid #FF9A00;
   padding-bottom: 5px;
-  font-weight: bold;
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #FF9A00;
+  color: #FF9A00; /* destaque em laranja */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #FF9A00;
-  padding: 25px;
-  border-radius: 12px;
-  color: #000;
-  font-weight: bold;
+  background: #B45253; /* vermelho rosado */
+  padding: 20px;
+  border-radius: 10px;
+  color: #F9F6F0; /* off-white */
   border: 2px solid #000;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #0B1E39;
-  border-bottom: 2px solid #000;
-  padding-bottom: 5px;
+  color: #FF9A00;
 }
 
 .payment-options {
@@ -140,25 +136,26 @@ header {
   flex: 1;
   padding: 10px;
   border: 2px solid #000;
-  border-radius: 6px;
-  background: #B45253;
-  color: #fff;
+  border-radius: 5px;
+  background: #FF9A00;
+  color: #000;
   cursor: pointer;
-  transition: 0.3s;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #000;
-  color: #FF9A00;
+  background: #e88a00;
+  color: #fff;
 }
 
 .payment-options button.selected {
-  background: #fff;
-  color: #000;
-  border: 2px solid #B45253;
+  background: #000;
+  color: #FF9A00;
+  border-color: #FF9A00;
 }
 
+/* ======= QUANTIDADE E BOTÕES ======= */
 .quantity {
   display: flex;
   justify-content: center;
@@ -172,17 +169,17 @@ header {
   height: 40px;
   font-size: 20px;
   border: 2px solid #000;
-  border-radius: 6px;
-  background: #B45253;
-  color: white;
+  border-radius: 5px;
+  background: #FF9A00;
+  color: #000;
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #000;
-  color: #FF9A00;
+  background: #B45253;
+  color: #fff;
 }
 
 .buy-btn {
@@ -190,9 +187,9 @@ header {
   width: 100%;
   padding: 15px;
   border: 2px solid #000;
-  border-radius: 10px;
-  background: #B45253;
-  color: #fff;
+  border-radius: 8px;
+  background: #FF9A00;
+  color: #000;
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
@@ -200,6 +197,81 @@ header {
 }
 
 .buy-btn:hover {
-  background: #000;
-  color: #FF9A00;
+  background: #B45253;
+  color: #fff;
+}
+
+/* ======= BOTÃO VOLTAR ======= */
+.voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1C2833;
+  color: #F9F6F0;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.voltar:hover {
+  background: #2E4053;
+}
+
+/* ======= BOTÃO DO CARRINHO ======= */
+.cart-btn {
+  background-color: #FF9A00;
+  color: #000;
+  border: 2px solid #000;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #B45253;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Efeito de "adicionado" */
+.cart-btn.added {
+  background-color: #2ecc71; /* verde */
+  color: #fff;
+  border: 2px solid #000;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .album-images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .thumbs {
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    justify-content: space-between;
+  }
+
+  .payment,
+  .album-info {
+    padding: 15px;
+  }
+
+  .payment-options button,
+  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
 }
