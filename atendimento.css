@@ -1,109 +1,36 @@
-/* ======= GERAL ======= */
-body {
-  font-family: 'Poppins', Arial, sans-serif;
-  background-color: #f5f7fa; /* fundo branco-acinzentado */
-  color: #222;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Store - Atendimento</title>
+  <link rel="stylesheet" href="atendimento.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
+  </header>
 
-/* ======= CABEÇALHO ======= */
-.site-header {
-  background-color: #1e3a5f; /* azul escuro elegante */
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
+  <main class="container">
+    <aside class="menu">
+      <button><a href="acomp.html">Acompanhar Pedido</a></button>
+      <button><a href="termos.html">Termos de Uso / Condições</a></button>
+      <button><a href="avaliacao.html">Avaliação de Atendimento</a></button>
+      <button><a href="fale.html">Fale Conosco / Ajuda</a></button>
+    </aside>
 
-.header-left {
-  display: flex;
-  flex-direction: column;
-}
+    <section class="conteudo">
+      <h2>Atendimento</h2>
+      <p>O objetivo da <strong>Vintage Store</strong> é facilitar a compra de CDs, álbuns e discos de vinil. Nosso aplicativo busca proporcionar uma experiência diferenciada para os usuários, permitindo a descoberta de edições raras, lançamentos exclusivos e valorizando a mídia física que tem se perdido com o tempo.</p>
+      <p>Muitos álbuns, discos de vinil e CDs são difíceis de encontrar, e há lançamentos de grandes artistas que esgotam rapidamente. Por isso, nossa loja online ajuda fãs e colecionadores a encontrarem seus produtos desejados com mais acessibilidade, segurança e qualidade — com itens verificados pelos próprios artistas.</p>
+    </section>
+  </main>
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.tagline {
-  font-size: 0.95rem;
-  color: #dbe5f1;
-}
-
-/* ======= CONTEÚDO PRINCIPAL ======= */
-.container {
-  display: flex;
-  min-height: 75vh;
-  padding: 40px 10%;
-  gap: 40px;
-}
-
-/* ======= MENU LATERAL ======= */
-.menu {
-  width: 240px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.menu button {
-  background-color: #1e3a5f; /* azul principal */
-  border: none;
-  border-radius: 10px;
-  padding: 12px 10px;
-  font-size: 1rem;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.menu button:hover {
-  background-color: #2d527b; /* azul médio no hover */
-  transform: scale(1.03);
-}
-
-/* Links dentro dos botões */
-.menu button a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  height: 100%;
-  font-weight: 500;
-  text-align: center;
-}
-
-/* ======= CONTEÚDO ======= */
-.conteudo {
-  flex: 1;
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.conteudo h2 {
-  color: #1e3a5f;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.6rem;
-}
-
-.conteudo p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-/* ======= RODAPÉ ======= */
-.site-footer {
-  text-align: center;
-  background-color: #1e3a5f;
-  color: #fff;
-  padding: 15px 10px;
-  font-size: 0.9rem;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
-}
+  <footer class="site-footer">
+    © 2025 Vintage Store — Todos os direitos reservados.
+  </footer>
+</body>
+</html>
