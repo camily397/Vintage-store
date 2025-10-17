@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #B18F91; /* tom suave de rosa quente (inspirado nas cores do álbum) */
+  background: #F25912; /* tom suave de rosa quente (inspirado nas cores do álbum) */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFF1F3; /* rosa claro suave (inspirado nas tonalidades suaves do álbum) */
+  background: #F25912; /* rosa claro suave (inspirado nas tonalidades suaves do álbum) */
   color: #4A4A4A; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #A0C9E8; /* azul suave, inspirado na atmosfera do álbum */
+  background: #6D94C5; /* azul suave, inspirado na atmosfera do álbum */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #B18F91; /* rosa quente suave */
+  background: #FA812F; /* rosa quente suave */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
@@ -183,7 +183,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #9B6D6A; /* tom mais escuro de rosa queimado */
+  background: #FA812F; /* tom mais escuro de rosa queimado */
 }
 
 .voltar {
@@ -199,7 +199,7 @@ header {
 }
 
 .voltar:hover {
-  background: #34495E; /* azul mais claro */
+  background: #456882; /* azul mais claro */
 }
 
 /* ======= RESPONSIVIDADE (MOBILE, TABLET, ETC) ======= */
