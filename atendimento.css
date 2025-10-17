@@ -1,164 +1,77 @@
-@@ -1,147 +1,163 @@
-/* ===== RESET ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(180deg, #f4f6f9, #e8ebf0);
-  color: #222;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f8ff; /* fundo azul suave */
+    margin: 0;
+    padding: 0;
 }
 
-/* ===== HEADER ===== */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 28px;
-  background: linear-gradient(90deg, #1e2a38, #2b3b4b);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+header {
+    background-color: #0B3D91; /* azul escuro */
+    color: white;
+    padding: 15px 30px;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 22px;
+header .logo h1 {
+    margin: 0;
 }
 
-.tagline {
-  font-size: 12px;
-  opacity: 0.9;
+.acompanhar-container {
+    max-width: 450px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-.header-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
+.acompanhar-container h2 {
+    color: #0B3D91; /* azul escuro */
+    margin-bottom: 15px;
 }
 
-.header-nav a:hover {
-  text-decoration: underline;
+.acompanhar-container input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #0B3D91; /* azul escuro */
+    border-radius: 8px;
 }
 
-/* ===== MAIN ===== */
-.container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px 60px;
-  flex: 1;
+.acompanhar-container button {
+    padding: 10px 20px;
+    background-color: #0B3D91; /* azul escuro */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-/* ===== MENU LATERAL ===== */
-.menu {
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  border-left: 4px solid #1e2a38;
-  padding-left: 18px;
-  position: sticky;
-  top: 80px;
+.acompanhar-container button:hover {
+    background-color: #254EAA; /* azul médio */
 }
 
-.menu button {
-  background: linear-gradient(145deg, #1e2a38, #2c3e50);
-  color: #fff;
-  border: none;
-  padding: 18px;
-  font-size: 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  font-weight: 600;
-}
-
-.menu button:hover {
-  background: linear-gradient(145deg, #2b3b4b, #1e2a38);
-  transform: translateX(4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-/* ===== CONTEÚDO ===== */
-.conteudo {
-  flex: 1;
-  background: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  backdrop-filter: blur(6px);
-}
-
-.conteudo h2 {
-  font-size: 26px;
-  color: #1e2a38;
-  margin-bottom: 20px;
-}
-
-.conteudo p {
-  margin-bottom: 16px;
-  line-height: 1.7;
-  font-size: 16px;
-  color: #333;
-}
-
-/* ===== FOOTER ===== */
-.site-footer {
-  text-align: center;
-  padding: 20px;
-  background: #1e2a38;
-  color: #fff;
-  margin-top: auto;
-  font-size: 14px;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 820px) {
-  .container {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .menu {
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    border-left: none;
-    border-top: 4px solid #1e2a38;
-    padding-top: 12px;
-  }
-
-  .menu button {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .conteudo {
-    padding: 20px;
-  }
+#acompanhamento, #resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #0B3D91; /* azul escuro */
 }
 
 .voltar {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #1e2a38;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #0B3D91; /* azul escuro */
 }
 
 .voltar:hover {
-  background: #333;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #0B3D91; /* azul escuro */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
 }
