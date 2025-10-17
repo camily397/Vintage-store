@@ -1,55 +1,72 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('cadastroForm');
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('cadastroForm');
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();  // Impede o envio do formulário até a validação
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Impede o envio padrão do formulário
 
-        // Pegando os valores dos campos
-        const nome = document.getElementById('nome').value;
-        const email = document.getElementById('email').value;
-        const senha = document.getElementById('senha').value;
-        const confirmarSenha = document.getElementById('confirmar-senha').value;
+    // Captura os valores dos inputs
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmar-senha').value;
 
-        let valid = true;
+    // Flags para validar
+    let valido = true;
 
-        // Limpando mensagens de erro anteriores
-        document.getElementById('nomeError').textContent = '';
-        document.getElementById('emailError').textContent = '';
-        document.getElementById('senhaError').textContent = '';
-        document.getElementById('confirmarSenhaError').textContent = '';
+    // Limpa mensagens de erro anteriores
+    limparErros();
 
-        // Validação do nome
-        if (nome === '') {
-            document.getElementById('nomeError').textContent = 'Nome é obrigatório.';
-            valid = false;
-        }
+    // Função para mostrar erros
+    function mostrarErro(id, mensagem) {
+      const elementoErro = document.getElementById(id);
+      if (elementoErro) {
+        elementoErro.textContent = mensagem;
+      }
+    }
 
-        // Validação do email
-        let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if (email === '') {
-            document.getElementById('emailError').textContent = 'E-mail é obrigatório.';
-            valid = false;
-        } else if (!emailRegex.test(email)) {
-            document.getElementById('emailError').textContent = 'E-mail inválido.';
-            valid = false;
-        }
+    // Validações
 
-        // Validação da senha
-        if (senha === '') {
-            document.getElementById('senhaError').textContent = 'Senha é obrigatória.';
-            valid = false;
-        }
+    // Nome obrigatório
+    if (!nome) {
+      mostrarErro('nomeError', 'Nome é obrigatório.');
+      valido = false;
+    }
 
-        // Validação de confirmação de senha
-        if (confirmarSenha !== senha) {
-            document.getElementById('confirmarSenhaError').textContent = 'As senhas não coincidem.';
-            valid = false;
-        }
+    // Email obrigatório e formato válido
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email) {
+      mostrarErro('emailError', 'E-mail é obrigatório.');
+      valido = false;
+    } else if (!emailRegex.test(email)) {
+      mostrarErro('emailError', 'E-mail inválido.');
+      valido = false;
+    }
 
-        // Se os dados estiverem corretos, mostramos uma mensagem de sucesso
-        if (valid) {
-            alert(`Cadastro realizado com sucesso!\nNome: ${nome}\nE-mail: ${email}`);
-            // Se necessário, você pode enviar o formulário aqui com form.submit()
-        }
-    });
+    // Senha obrigatória
+    if (!senha) {
+      mostrarErro('senhaError', 'Senha é obrigatória.');
+      valido = false;
+    }
+
+    // Confirmação de senha igual à senha
+    if (confirmarSenha !== senha) {
+      mostrarErro('confirmarSenhaError', 'As senhas não coincidem.');
+      valido = false;
+    }
+
+    if (valido) {
+      alert(`Cadastro realizado com sucesso!\nNome: ${nome}\nE-mail: ${email}`);
+      // Aqui você pode enviar o form via AJAX ou form.submit()
+      // form.submit();
+    }
+
+    // Função para limpar erros
+    function limparErros() {
+      ['nomeError', 'emailError', 'senhaError', 'confirmarSenhaError'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '';
+      });
+    }
+  });
 });
+
