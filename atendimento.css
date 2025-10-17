@@ -34,29 +34,30 @@ header.site-header {
 /* ======= MENU LATERAL ======= */
 .menu {
   background-color: #111;
-  padding: 20px;
-  width: 240px;
+  padding: 25px;
+  width: 260px; /* um pouquinho mais largo */
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 18px;
 }
 
 .menu button {
   background-color: #222;
   color: white;
   border: none;
-  padding: 16px;
-  font-size: 15px;
-  border-radius: 8px;
+  padding: 20px 16px; /* mais alto */
+  font-size: 17px; /* texto levemente maior */
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.1s ease;
 }
 
 .menu button:hover {
   background-color: #333;
+  transform: scale(1.02); /* leve destaque ao passar o mouse */
 }
 
-/* Links dentro dos botões (corrigido) */
+/* Links dentro dos botões (corrigido — agora nunca ficam azuis) */
 button a {
   color: inherit;
   text-decoration: none;
