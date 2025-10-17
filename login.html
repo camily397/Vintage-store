@@ -4,6 +4,7 @@
     <h2>Gerenciar Cadastros</h2>
     <button id="logoutBtn" class="btn">Sair</button>
   </div>
+  
   <!-- Tabela de usuários -->
   <table id="usersTable" border="1" cellpadding="8" style="width:100%; border-collapse:collapse; margin-top:20px;">
     <thead>
@@ -18,99 +19,37 @@
     </thead>
     <tbody></tbody>
   </table>
+  
   <!-- Formulário de edição -->
   <div id="editFormContainer" class="hidden" style="margin-top:30px;">
     <h3>Editar Cadastro</h3>
     <form id="editForm" class="form">
-      <input type="hidden" id="editId">
-      <div class="field"><label for="editNome">Nome completo</label><input id="editNome" required /></div>
-      <div class="field"><label for="editNascimento">Nascimento</label><input id="editNascimento" type="date" required /></div>
-      <div class="field"><label for="editEmail">Email</label><input id="editEmail" type="email" required /></div>
-      <div class="field"><label for="editTelefone">Telefone</label><input id="editTelefone" /></div>
-      <div class="field"><label for="editUsuario">Usuário</label><input id="editUsuario" required /></div>
+      <input type="hidden" id="editId" />
+      <div class="field">
+        <label for="editNome">Nome completo</label>
+        <input id="editNome" required />
+      </div>
+      <div class="field">
+        <label for="editNascimento">Nascimento</label>
+        <input id="editNascimento" type="date" required />
+      </div>
+      <div class="field">
+        <label for="editEmail">Email</label>
+        <input id="editEmail" type="email" required />
+      </div>
+      <div class="field">
+        <label for="editTelefone">Telefone</label>
+        <input id="editTelefone" />
+      </div>
+      <div class="field">
+        <label for="editUsuario">Usuário</label>
+        <input id="editUsuario" required />
+      </div>
       <button type="submit" class="btn">Salvar</button>
       <button type="button" id="cancelEdit" class="btn ghost">Cancelar</button>
     </form>
   </div>
+  
+  <!-- Mensagens -->
   <div id="msg" class="msg"></div>
 </div>
-
-<script type="module">
-  // Função para exibir a tabela de usuários
-  const users = [
-    { id: 1, nome: 'João Silva', nascimento: '1990-05-25', email: 'joao@example.com', telefone: '1234567890', usuario: 'joaosilva' },
-    { id: 2, nome: 'Maria Oliveira', nascimento: '1985-08-15', email: 'maria@example.com', telefone: '0987654321', usuario: 'mariaol' }
-  ];
-
-  // Carregar os dados da tabela
-  const usersTable = document.getElementById('usersTable').getElementsByTagName('tbody')[0];
-  const editFormContainer = document.getElementById('editFormContainer');
-  const editForm = document.getElementById('editForm');
-  const cancelEditBtn = document.getElementById('cancelEdit');
-  const msgDiv = document.getElementById('msg');
-  function carregarTabela() {
-    usersTable.innerHTML = ''; // Limpar tabela antes de recarregar
-    users.forEach(user => {
-      const row = usersTable.insertRow();
-      row.innerHTML = `
-        <td>${user.nome}</td>
-        <td>${user.nascimento}</td>
-        <td>${user.email}</td>
-        <td>${user.telefone}</td>
-        <td>${user.usuario}</td>
-        <td>
-          <button class="btn" onclick="editarUsuario(${user.id})">Editar</button>
-          <button class="btn" onclick="removerUsuario(${user.id})">Remover</button>
-        </td>
-      `;
-    });
-  }
-  // Função de edição
-  function editarUsuario(id) {
-    const user = users.find(u => u.id === id);
-    if (user) {
-      document.getElementById('editId').value = user.id;
-      document.getElementById('editNome').value = user.nome;
-      document.getElementById('editNascimento').value = user.nascimento;
-      document.getElementById('editEmail').value = user.email;
-      document.getElementById('editTelefone').value = user.telefone;
-      document.getElementById('editUsuario').value = user.usuario;
-      editFormContainer.classList.remove('hidden');
-    }
-  }
-  // Cancelar edição
-  cancelEditBtn.addEventListener('click', () => {
-    editFormContainer.classList.add('hidden');
-  });
-  // Salvar edição
-  editForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const id = document.getElementById('editId').value;
-    const nome = document.getElementById('editNome').value;
-    const nascimento = document.getElementById('editNascimento').value;
-    const email = document.getElementById('editEmail').value;
-    const telefone = document.getElementById('editTelefone').value;
-    const usuario = document.getElementById('editUsuario').value;
-
-    const userIndex = users.findIndex(u => u.id == id);
-    if (userIndex > -1) {
-      users[userIndex] = { id, nome, nascimento, email, telefone, usuario };
-      carregarTabela();
-      editFormContainer.classList.add('hidden');
-      msgDiv.textContent = 'Cadastro atualizado com sucesso!';
-      msgDiv.classList.add('success');
-    }
-  });
-  // Remover usuário
-  function removerUsuario(id) {
-    const userIndex = users.findIndex(u => u.id === id);
-    if (userIndex > -1) {
-      users.splice(userIndex, 1);
-      carregarTabela();
-      msgDiv.textContent = 'Usuário removido com sucesso!';
-      msgDiv.classList.add('success');
-    }
-  }
-  // Inicializar a tabela
-  carregarTabela();
-</script>
