@@ -97,13 +97,13 @@ header {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #FDCB82; /* amarelo pastel que combina com o tom do álbum */
+  color: #EA2264; /* amarelo pastel que combina com o tom do álbum */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #D0E9E3; /* azul pastel suave (reflete o tom tranquilo do álbum) */
+  background: #3C467B; /* azul pastel suave (reflete o tom tranquilo do álbum) */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #F2A7C3; /* rosa suave, lembra a paleta pastel */
+  background: #5D2F77; /* rosa suave, lembra a paleta pastel */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
