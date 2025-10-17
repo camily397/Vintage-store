@@ -1,24 +1,117 @@
-/* ====== Caixinhas de informação ====== */
-.box-info {
-    background-color: #f1f4fc; /* azul muito suave */
-    border-left: 5px solid #031A4B; /* destaque azul escuro */
-    padding: 20px 25px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
 }
 
-.box-info h3 {
-    color: #031A4B;
-    margin-bottom: 10px;
+/* ===== Cabeçalho ===== */
+header.site-header {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
 }
 
-.box-info ul {
-    padding-left: 20px;
+.header-left .logo {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.box-info ul li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-    color: #1A1A1A;
+.header-left .tagline {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* ===== Corpo ===== */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.conteudo {
+  max-width: 800px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo h2 {
+  text-align: center;
+  color: #000;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* ===== Balões ===== */
+.balao {
+  background-color: #f7f7f7;
+  border-left: 5px solid #000;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+}
+
+.balao h3 {
+  margin-top: 0;
+  color: #000;
+  font-size: 18px;
+}
+
+.balao p, .balao li {
+  color: #333;
+  line-height: 1.6;
+}
+
+.balao ul {
+  padding-left: 20px;
+}
+
+/* ===== Campo de acompanhamento ===== */
+.acompanhamento {
+  text-align: center;
+}
+
+.acompanhamento input {
+  padding: 10px;
+  width: 70%;
+  max-width: 300px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.acompanhamento button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.acompanhamento button:hover {
+  background-color: #333;
+}
+
+#resultado {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ===== Rodapé ===== */
+.site-footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
 }
