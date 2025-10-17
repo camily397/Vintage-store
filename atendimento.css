@@ -1,9 +1,12 @@
 @@ -1,94 +1,164 @@
+
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
+  
 @@ -1,147 +1,163 @@
+  
 /* ===== RESET ===== */
 * {
   box-sizing: border-box;
@@ -14,6 +17,7 @@ body {
 header.site-header {
   background-color: #000;
   color: white;
+  
 body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(180deg, #f4f6f9, #e8ebf0);
