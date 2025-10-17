@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #F5F5F0; /* rosa claro suave (inspirado nas tonalidades suaves do álbum) */
+  background: #FFF0DD; /* rosa claro suave (inspirado nas tonalidades suaves do álbum) */
   color: #4A4A4A; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
