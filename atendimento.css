@@ -1,40 +1,48 @@
 /* ======= GERAL ======= */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f5f7fa; /* fundo branco-acinzentado */
+  color: #222;
   margin: 0;
   padding: 0;
 }
 
-header.site-header {
-  background-color: #000;
-  color: white;
+/* ======= CABEÇALHO ======= */
+.site-header {
+  background-color: #1e3a5f; /* azul escuro elegante */
+  color: #fff;
+  padding: 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.header-left .logo {
-  font-size: 24px;
-  font-weight: bold;
+.header-left {
+  display: flex;
+  flex-direction: column;
 }
 
-.header-left .tagline {
-  font-size: 14px;
-  color: #ccc;
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
-/* ======= CONTAINER ======= */
+.tagline {
+  font-size: 0.95rem;
+  color: #dbe5f1;
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
 .container {
   display: flex;
-  min-height: calc(100vh - 100px);
+  min-height: 75vh;
+  padding: 40px 10%;
+  gap: 40px;
 }
 
 /* ======= MENU LATERAL ======= */
 .menu {
-  background-color: #111;
-  padding: 20px;
   width: 240px;
   display: flex;
   flex-direction: column;
@@ -42,53 +50,60 @@ header.site-header {
 }
 
 .menu button {
-  background-color: #222;
-  color: white;
+  background-color: #1e3a5f; /* azul principal */
   border: none;
-  padding: 16px;
-  font-size: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 12px 10px;
+  font-size: 1rem;
+  color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .menu button:hover {
-  background-color: #333;
+  background-color: #2d527b; /* azul médio no hover */
+  transform: scale(1.03);
 }
 
-/* Links dentro dos botões (corrigido) */
-button a {
+/* Links dentro dos botões */
+.menu button a {
   color: inherit;
   text-decoration: none;
   display: block;
   width: 100%;
   height: 100%;
+  font-weight: 500;
+  text-align: center;
 }
 
-/* ======= CONTEÚDO PRINCIPAL ======= */
+/* ======= CONTEÚDO ======= */
 .conteudo {
   flex: 1;
-  padding: 40px;
-  background-color: white;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 .conteudo h2 {
-  font-size: 28px;
-  color: #000;
-  margin-bottom: 15px;
+  color: #1e3a5f;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
 }
 
 .conteudo p {
-  color: #333;
   line-height: 1.6;
   margin-bottom: 15px;
 }
 
 /* ======= RODAPÉ ======= */
 .site-footer {
-  background-color: #000;
-  color: white;
   text-align: center;
-  padding: 10px 0;
-  font-size: 14px;
+  background-color: #1e3a5f;
+  color: #fff;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
 }
