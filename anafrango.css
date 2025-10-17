@@ -1,23 +1,27 @@
 /* ======= GERAL ======= */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #F9F6F0; /* off-white suave */
+  font-family: "Arial", sans-serif;
+  background-color: #F9F6F0; /* off-white */
   margin: 0;
   padding: 0;
-  color: #000; /* texto principal em preto */
+  color: #000; /* texto em preto */
 }
 
 /* ======= CABEÇALHO ======= */
 header {
   background-color: #1C2833; /* azul marinho */
-  padding: 15px;
-  color: #F9F6F0; /* off-white para o texto */
-  font-size: 22px;
-  font-family: "Georgia", serif;
+  color: #F9F6F0;
+  padding: 20px 0;
   text-align: center;
+  font-size: 24px;
+  font-family: "Georgia", serif;
   font-weight: bold;
-  letter-spacing: 1px;
   border-bottom: 4px solid #FF9A00; /* detalhe laranja */
+  letter-spacing: 1px;
 }
 
 /* ======= CONTAINER PRINCIPAL ======= */
@@ -25,9 +29,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 30px;
-  gap: 20px;
-  flex-wrap: wrap; /* responsividade */
+  padding: 40px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 /* ======= ÁREA DAS IMAGENS ======= */
@@ -35,17 +39,17 @@ header {
   flex: 1;
   background: #B45253; /* vermelho rosado */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  border: 2px solid #000; /* detalhe em preto */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
 }
 
 .main-image {
   flex: 3;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -53,7 +57,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .thumbs {
@@ -65,8 +69,6 @@ header {
 
 .thumbs img {
   width: 100%;
-  height: 100%;
-  max-height: 250px;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.85;
@@ -79,14 +81,13 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #FF9A00; /* destaque laranja */
-  opacity: 1;
+  border: 3px solid #FF9A00;
 }
 
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #fff; /* branco para contraste */
+  background: #fff;
   color: #000;
   padding: 30px;
   border-radius: 10px;
@@ -98,7 +99,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #B45253; /* vermelho rosado */
+  color: #B45253;
   border-bottom: 2px solid #FF9A00;
   padding-bottom: 5px;
 }
@@ -107,16 +108,16 @@ header {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #FF9A00; /* destaque em laranja */
+  color: #FF9A00;
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #B45253; /* vermelho rosado */
+  background: #B45253;
   padding: 20px;
   border-radius: 10px;
-  color: #F9F6F0; /* off-white */
+  color: #F9F6F0;
   border: 2px solid #000;
 }
 
@@ -152,7 +153,6 @@ header {
 .payment-options button.selected {
   background: #000;
   color: #FF9A00;
-  border-color: #FF9A00;
 }
 
 /* ======= QUANTIDADE E BOTÕES ======= */
@@ -220,7 +220,7 @@ header {
   background: #2E4053;
 }
 
-/* ======= BOTÃO DO CARRINHO ======= */
+/* ======= BOTÃO CARRINHO ======= */
 .cart-btn {
   background-color: #FF9A00;
   color: #000;
@@ -238,14 +238,15 @@ header {
   transform: scale(1.05);
 }
 
-/* Efeito de "adicionado" */
 .cart-btn.added {
-  background-color: #2ecc71; /* verde */
+  background-color: #2ecc71;
   color: #fff;
   border: 2px solid #000;
 }
 
 /* ======= RESPONSIVIDADE ======= */
+
+/* Celulares */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -254,14 +255,12 @@ header {
 
   .album-images {
     flex-direction: column;
-    gap: 15px;
   }
 
   .thumbs {
     flex-direction: row;
     gap: 10px;
     overflow-x: auto;
-    justify-content: space-between;
   }
 
   .payment,
@@ -269,8 +268,27 @@ header {
     padding: 15px;
   }
 
-  .payment-options button,
-  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
+
+  header {
+    font-size: 20px;
+    padding: 12px 0;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .album-images {
+    flex-direction: column;
+  }
+
   .buy-btn {
     width: 100%;
   }
