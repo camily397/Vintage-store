@@ -1,25 +1,31 @@
-function verificarPedido() {
-  const numero = document.getElementById("pedido").value.trim();
+document.addEventListener("DOMContentLoaded", function () {
+  const botao = document.getElementById("verificarBtn");
+  const input = document.getElementById("numeroPedido");
   const resultado = document.getElementById("resultado");
 
-  if (numero === "") {
-    resultado.textContent = "Por favor, digite o número do pedido.";
-    resultado.style.color = "red";
-    return;
-  }
+  botao.addEventListener("click", function () {
+    const numero = input.value.trim();
 
-  // Simulação de acompanhamento (você pode trocar pelos seus dados reais depois)
-  const pedidos = {
-    VS12345: "Pedido enviado — em transporte.",
-    VS98765: "Pedido entregue com sucesso!",
-    VS00001: "Pedido aguardando pagamento.",
-  };
+    if (numero === "") {
+      resultado.textContent = "Por favor, digite um número de pedido.";
+      resultado.style.color = "#b30000";
+      return;
+    }
 
-  if (pedidos[numero]) {
-    resultado.textContent = `Status do pedido: ${pedidos[numero]}`;
-    resultado.style.color = "green";
-  } else {
-    resultado.textContent = "Número de pedido não encontrado.";
-    resultado.style.color = "red";
-  }
-}
+    // Simulação de pedidos (você pode ajustar depois)
+    const pedidos = {
+      "12345": "✅ Pedido entregue com sucesso!",
+      "67890": "🚚 Pedido em transporte.",
+      "11111": "🕓 Pedido em preparação.",
+      "22222": "📦 Pedido separado e pronto para envio."
+    };
+
+    if (pedidos[numero]) {
+      resultado.textContent = pedidos[numero];
+      resultado.style.color = "#0b1a33";
+    } else {
+      resultado.textContent = "Pedido não encontrado. Verifique o número digitado.";
+      resultado.style.color = "#b30000";
+    }
+  });
+});
