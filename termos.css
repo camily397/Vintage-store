@@ -1,83 +1,93 @@
 /* ======= GERAL ======= */
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background: linear-gradient(180deg, #0f1b2e, #1a2a40);
-  color: #1e1e1e;
+  background-color: #e8edf5;
   margin: 0;
   padding: 0;
+  color: #1e2a38;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 /* ======= CABEÇALHO ======= */
-header {
-  background: linear-gradient(180deg, #060b13, #0b1625); /* azul bem mais escuro, quase preto */
-  color: #ffffff;
-  text-align: center;
-  padding: 28px 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  border-bottom: 3px solid #0090e0;
+.site-header {
+  background: linear-gradient(90deg, #162235, #1b2f4a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  border-bottom: 4px solid #4aa3ff; /* linha azul clara */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-header h1 {
-  font-size: 2em;
+.logo {
+  font-size: 20px;
   font-weight: 600;
-  margin: 0;
-  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.titulo-pagina {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.95;
 }
 
 /* ======= CONTEÚDO ======= */
 .conteudo {
-  max-width: 950px;
-  background-color: #ffffff;
+  background: #ffffff;
+  max-width: 900px;
   margin: 60px auto;
-  padding: 45px 50px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  text-align: justify;
-  line-height: 1.9;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .conteudo h2 {
-  color: #0d4d8b;
-  font-size: 1.4em;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  border-left: 5px solid #0d4d8b;
+  color: #1e2a38;
+  border-left: 4px solid #1e2a38;
   padding-left: 10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .conteudo p {
   color: #333;
-  margin-bottom: 18px;
-  font-size: 1.05em;
-}
-
-/* ======= DESTAQUES ======= */
-strong {
-  color: #0d4d8b;
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 15px;
 }
 
 /* ======= RODAPÉ ======= */
-footer {
+.site-footer {
   text-align: center;
-  color: #cdd6e0;
-  font-size: 0.9em;
-  padding: 22px;
+  background-color: #1a2a40;
+  color: #fff;
+  padding: 15px;
+  font-size: 14px;
   margin-top: auto;
-  background: linear-gradient(180deg, #060b13, #0b1625);
-  border-top: 2px solid #0090e0;
+  border-top: 3px solid #4aa3ff; /* linha azul clara igual ao topo */
 }
 
 /* ======= RESPONSIVO ======= */
 @media (max-width: 768px) {
-  .conteudo {
-    padding: 25px 20px;
-    margin: 30px 15px;
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
   }
 
-  header h1 {
-    font-size: 1.6em;
+  .conteudo {
+    margin: 25px;
+    padding: 25px;
+  }
+
+  .titulo-pagina {
+    font-size: 16px;
   }
 }
