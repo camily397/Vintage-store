@@ -1,29 +1,76 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #eef2f6; /* fundo mais suave */
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ===== Cabeçalho ===== */
-header.site-header {
-  background-color: #0b1a33; /* azul escuro */
-  color: white;
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(180deg, #aabddb, #cccccc);
+  color: #222;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  display: flex;
   align-items: center;
-  padding: 15px 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, #1e2a38, #2b3b4b);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-.header-left .logo {
-  font-size: 24px;
-  font-weight: bold;
+.logo {
+  font-weight: 700;
+  font-size: 22px;
 }
 
-.header-left .tagline {
+.tagline {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  background-color: #1e2a38;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
   font-size: 14px;
-  color: #a8b3c4;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* ===== Corpo ===== */
