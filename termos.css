@@ -1,70 +1,83 @@
 /* ======= GERAL ======= */
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background-color: #f4f6f8; /* cinza bem claro */
+  background: linear-gradient(180deg, #0f1b2e, #1a2a40);
+  color: #1e1e1e;
   margin: 0;
   padding: 0;
-  color: #1e2a38; /* azul escuro/cinza elegante */
-  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ======= CABEÇALHO ======= */
 header {
-  background-color: #ffffff;
-  color: #1e2a38;
+  background: linear-gradient(180deg, #060b13, #0b1625); /* azul bem mais escuro, quase preto */
+  color: #ffffff;
   text-align: center;
-  padding: 25px 10px;
-  border-bottom: 3px solid #1e90ff; /* linha azul */
+  padding: 28px 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-bottom: 3px solid #0090e0;
 }
 
 header h1 {
-  font-size: 1.8em;
+  font-size: 2em;
+  font-weight: 600;
   margin: 0;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 /* ======= CONTEÚDO ======= */
 .conteudo {
-  max-width: 900px;
+  max-width: 950px;
   background-color: #ffffff;
-  margin: 40px auto;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 60px auto;
+  padding: 45px 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  text-align: justify;
+  line-height: 1.9;
 }
 
 .conteudo h2 {
-  color: #1e90ff;
-  font-size: 1.3em;
+  color: #0d4d8b;
+  font-size: 1.4em;
   margin-top: 30px;
   margin-bottom: 10px;
-  border-left: 4px solid #1e90ff;
+  border-left: 5px solid #0d4d8b;
   padding-left: 10px;
 }
 
 .conteudo p {
   color: #333;
-  text-align: justify;
-  font-size: 1.05em;
   margin-bottom: 18px;
+  font-size: 1.05em;
 }
 
-/* ======= LINKS ======= */
-a {
-  color: #1e90ff;
-  text-decoration: none;
+/* ======= DESTAQUES ======= */
+strong {
+  color: #0d4d8b;
 }
-a:hover {
-  text-decoration: underline;
+
+/* ======= RODAPÉ ======= */
+footer {
+  text-align: center;
+  color: #cdd6e0;
+  font-size: 0.9em;
+  padding: 22px;
+  margin-top: auto;
+  background: linear-gradient(180deg, #060b13, #0b1625);
+  border-top: 2px solid #0090e0;
 }
 
 /* ======= RESPONSIVO ======= */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .conteudo {
-    padding: 25px;
-    margin: 20px;
+    padding: 25px 20px;
+    margin: 30px 15px;
   }
+
   header h1 {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
 }
