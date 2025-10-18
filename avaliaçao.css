@@ -46,6 +46,33 @@ body {
   text-decoration: underline;
 }
 
+/* ======= CABEÇALHO ======= */
+header {
+  background-color: #333333;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 /* ======= CONTEÚDO ======= */
 .container {
   max-width: 600px;
