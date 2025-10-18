@@ -7,8 +7,8 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(180deg, #be0000, #1ab21a);
-  color: #ffffff;
+  background: linear-gradient(180deg, #f4f6f9, #e8ebf0);
+  color: #222;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 14px 28px;
-  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background: linear-gradient(90deg, #1e2a38, #2b3b4b);
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
@@ -62,29 +62,29 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  border-left: 4px solid #ffffff;
+  border-left: 4px solid #1e2a38;
   padding-left: 18px;
   position: sticky;
   top: 80px;
 }
 
 .menu button {
-  background: linear-gradient(145deg, #ffffff, #ffffff);
-  color: #EFEEEA;
+  background: linear-gradient(145deg, #1e2a38, #2c3e50);
+  color: #fff;
   border: none;
   padding: 18px;
   font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   font-weight: 600;
 }
 
 .menu button:hover {
-  background: linear-gradient(145deg, #ffffff, #ebebeb);
+  background: linear-gradient(145deg, #2b3b4b, #1e2a38);
   transform: translateX(4px);
-  box-shadow: 0 6px 12px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 /* ===== CONTEÚDO ===== */
@@ -93,13 +93,13 @@ body {
   background: rgba(255,255,255,0.85);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 16px #ff00001a;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   backdrop-filter: blur(6px);
 }
 
 .conteudo h2 {
   font-size: 26px;
-  color: #ffffff;
+  color: #1e2a38;
   margin-bottom: 20px;
 }
 
@@ -107,14 +107,14 @@ body {
   margin-bottom: 16px;
   line-height: 1.7;
   font-size: 16px;
-  color: #ffffff;
+  color: #333;
 }
 
 /* ===== FOOTER ===== */
 .site-footer {
   text-align: center;
   padding: 20px;
-  background: #ffffff;
+  background: #1e2a38;
   color: #fff;
   margin-top: auto;
   font-size: 14px;
@@ -132,7 +132,7 @@ body {
     width: 100%;
     justify-content: center;
     border-left: none;
-    border-top: 4px solid #ffffff;
+    border-top: 4px solid #1e2a38;
     padding-top: 12px;
   }
 
@@ -159,5 +159,5 @@ body {
 }
 
 .voltar:hover {
-  background: #ffffff;
+  background: #333;
 }
