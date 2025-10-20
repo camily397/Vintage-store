@@ -92,14 +92,14 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* azul marinho */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #000000; /* preto */
+  color: #FFFFFF; /* preto */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
