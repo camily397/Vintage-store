@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #FFFFFF; /* branco */
+  background: #000000; /* branco */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -105,7 +105,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #FFFFFF; /* branco */
+  background: #000000; /* branco */
   padding: 20px;
   border-radius: 10px;
   color: #1E1E1E; /* preto */
