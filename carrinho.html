@@ -18,8 +18,10 @@
       <p>Nenhum produto selecionado.</p>
     </div>
 
+    <!-- Lista de produtos -->
     <div class="cart-items" id="listaProdutos"></div>
 
+    <!-- Resumo do carrinho -->
     <div class="resumo-carrinho">
       <div class="resumo-info">
         <p><strong>Itens no carrinho:</strong> <span id="totalItens">0</span></p>
@@ -39,11 +41,31 @@
     const totalItensEl = document.getElementById('totalItens');
     const msgVazia = document.getElementById('mensagemVazia');
 
+    // Função para atualizar quantidade
+    function atualizarQuantidade(index, valor) {
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      valor = parseInt(valor);
+      if (valor < 1) valor = 1;
+      carrinho[index].quantidade = valor;
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      carregarCarrinho();
+    }
+
+    // Função para remover item
+    function remover(index) {
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinho.splice(index, 1);
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      carregarCarrinho();
+    }
+
+    // Carregar carrinho
     function carregarCarrinho() {
       const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
       if (carrinho.length === 0) {
         msgVazia.style.display = 'block';
+        lista.innerHTML = '';
         totalEl.textContent = '0,00';
         totalItensEl.textContent = '0';
         return;
@@ -81,20 +103,6 @@
 
       totalEl.textContent = total.toFixed(2);
       totalItensEl.textContent = quantidadeTotal;
-    }
-
-    function remover(index) {
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      carrinho.splice(index, 1);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      carregarCarrinho();
-    }
-
-    function atualizarQuantidade(index, valor) {
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      carrinho[index].quantidade = parseInt(valor);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      carregarCarrinho();
     }
 
     document.getElementById('finalizarCompra').addEventListener('click', () => {
