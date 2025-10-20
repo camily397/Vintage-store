@@ -1,65 +1,69 @@
-// Lista de produtos do carrinho (exemplo)
-let cart = [
-  { id: 1, nome: "Vinil Clássico", preco: 120.00, quantidade: 1, imagem: "https://via.placeholder.com/60" },
-  { id: 2, nome: "CD Retro", preco: 45.50, quantidade: 2, imagem: "https://via.placeholder.com/60" }
+// Exemplo inicial de produtos no carrinho (pode ser trocado por dados reais)
+const produtos = JSON.parse(localStorage.getItem('carrinho')) || [
+  { nome: "Vinil - Queen", preco: 89.90, imagem: "img/vinil-queen.jpg", quantidade: 1 },
+  { nome: "CD - The Beatles", preco: 49.90, imagem: "img/cd-beatles.jpg", quantidade: 2 }
 ];
 
-const cartItems = document.getElementById('cart-items');
-const cartTotal = document.getElementById('cart-total');
+const lista = document.getElementById('listaProdutos');
+const totalEl = document.getElementById('total');
+const msgVazia = document.getElementById('mensagemVazia');
+const tabela = document.getElementById('tabelaCarrinho');
 
-// Função para atualizar tabela
-function renderCart() {
-  cartItems.innerHTML = '';
+function atualizarCarrinho() {
+  lista.innerHTML = '';
+  let total = 0;
 
-  cart.forEach(item => {
-    const row = document.createElement('tr');
+  if (produtos.length === 0) {
+    msgVazia.style.display = 'block';
+    tabela.style.display = 'none';
+  } else {
+    msgVazia.style.display = 'none';
+    tabela.style.display = 'table';
 
-    row.innerHTML = `
-      <td><img src="${item.imagem}" alt="${item.nome}"> ${item.nome}</td>
-      <td>R$ ${item.preco.toFixed(2)}</td>
-      <td>
-        <input type="number" min="1" value="${item.quantidade}" onchange="updateQuantity(${item.id}, this.value)">
-      </td>
-      <td>R$ ${(item.preco * item.quantidade).toFixed(2)}</td>
-      <td><button class="remove-btn" onclick="removeItem(${item.id})">Remover</button></td>
-    `;
-    cartItems.appendChild(row);
-  });
+    produtos.forEach((p, i) => {
+      const subtotal = p.preco * p.quantidade;
+      total += subtotal;
 
-  updateTotal();
-}
-
-// Atualiza quantidade
-function updateQuantity(id, qty) {
-  const item = cart.find(p => p.id === id);
-  if(item){
-    item.quantidade = parseInt(qty);
-    renderCart();
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="produto-info">
+          <img src="${p.imagem}" alt="${p.nome}">
+          <span>${p.nome}</span>
+        </td>
+        <td>R$ ${p.preco.toFixed(2)}</td>
+        <td>
+          <input type="number" min="1" value="${p.quantidade}" class="quantidade-input" onchange="alterarQuantidade(${i}, this.value)">
+        </td>
+        <td>R$ ${(p.preco * p.quantidade).toFixed(2)}</td>
+        <td><button class="remover" onclick="removerProduto(${i})">Remover</button></td>
+      `;
+      lista.appendChild(tr);
+    });
   }
+
+  totalEl.textContent = total.toFixed(2);
 }
 
-// Remove item do carrinho
-function removeItem(id) {
-  cart = cart.filter(p => p.id !== id);
-  renderCart();
+function alterarQuantidade(index, novaQtd) {
+  produtos[index].quantidade = parseInt(novaQtd);
+  localStorage.setItem('carrinho', JSON.stringify(produtos));
+  atualizarCarrinho();
 }
 
-// Calcula total
-function updateTotal() {
-  const total = cart.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
-  cartTotal.textContent = `R$ ${total.toFixed(2)}`;
+function removerProduto(index) {
+  produtos.splice(index, 1);
+  localStorage.setItem('carrinho', JSON.stringify(produtos));
+  atualizarCarrinho();
 }
 
-// Finalizar compra
-document.getElementById('btnFinalizar').addEventListener('click', () => {
-  if(cart.length === 0){
-    alert("Seu carrinho está vazio!");
-    return;
+document.getElementById('finalizarCompra').addEventListener('click', () => {
+  if (produtos.length === 0) {
+    alert('Seu carrinho está vazio.');
+  } else {
+    alert('Compra finalizada com sucesso!');
+    localStorage.removeItem('carrinho');
+    window.location.reload();
   }
-  alert("Compra finalizada! Obrigado pelo pedido. 😊");
-  cart = [];
-  renderCart();
 });
 
-// Inicializa carrinho
-renderCart();
+atualizarCarrinho();
