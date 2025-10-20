@@ -99,7 +99,7 @@ header {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #FFFFFF; /* preto */
+  color: #000000; /* preto */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
@@ -115,7 +115,7 @@ header {
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* azul marinho */
 }
 
 .payment-options {
@@ -127,10 +127,10 @@ header {
 .payment-options button {
   flex: 1;
   padding: 10px;
-  border: 2px solid #1C2833; /* azul marinho */
+  border: 2px solid #FFFFFF; /* azul marinho */
   border-radius: 5px;
   background: #FFFFFF; /* branco */
-  color: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* azul marinho */
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
