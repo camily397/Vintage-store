@@ -7,41 +7,93 @@
   <link rel="stylesheet" href="carrinho.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Vintage Store</div>
-    <h1>Carrinho</h1>
+  <header class="topo">
+    <h1 class="logo">Vintage Store</h1>
   </header>
 
-  <main>
-    <section class="carrinho">
-      <div id="mensagemVazia" class="mensagem-vazia">
-        <p>Nenhum produto selecionado.</p>
-      </div>
+  <main class="carrinho-container">
+    <h2>Seu Carrinho</h2>
 
-      <table class="tabela-carrinho" id="tabelaCarrinho">
-        <thead>
-          <tr>
-            <th>Produto</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Subtotal</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="listaProdutos"></tbody>
-      </table>
+    <div id="mensagemVazia" class="mensagem-vazia">
+      <p>Nenhum produto selecionado.</p>
+    </div>
 
-      <div class="resumo-carrinho">
-        <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
-        <button id="finalizarCompra">Finalizar compra</button>
-      </div>
-    </section>
+    <table class="tabela-carrinho" id="tabelaCarrinho">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Subtotal</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="listaProdutos"></tbody>
+    </table>
+
+    <div class="resumo-carrinho">
+      <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
+      <button id="finalizarCompra">Finalizar compra</button>
+    </div>
   </main>
 
   <footer>
     <p>© 2025 Vintage Store — Todos os direitos reservados.</p>
   </footer>
 
-  <script src="carrinho.js"></script>
+  <script>
+    const lista = document.getElementById('listaProdutos');
+    const totalEl = document.getElementById('total');
+    const msgVazia = document.getElementById('mensagemVazia');
+
+    function carregarCarrinho() {
+      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+      if (carrinho.length === 0) {
+        msgVazia.style.display = 'block';
+        document.querySelector('.tabela-carrinho').style.display = 'none';
+        document.querySelector('.resumo-carrinho').style.display = 'none';
+        return;
+      }
+
+      msgVazia.style.display = 'none';
+      let total = 0;
+
+      lista.innerHTML = '';
+
+      carrinho.forEach((item, index) => {
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+
+        const linha = `
+          <tr>
+            <td><img src="${item.imagem}" alt="${item.nome}" class="thumb-produto"> ${item.nome}</td>
+            <td>R$ ${item.preco.toFixed(2)}</td>
+            <td>${item.quantidade}</td>
+            <td>R$ ${subtotal.toFixed(2)}</td>
+            <td><button onclick="remover(${index})">❌</button></td>
+          </tr>
+        `;
+        lista.innerHTML += linha;
+      });
+
+      totalEl.textContent = total.toFixed(2);
+    }
+
+    function remover(index) {
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinho.splice(index, 1);
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      carregarCarrinho();
+    }
+
+    document.getElementById('finalizarCompra').addEventListener('click', () => {
+      alert('Compra finalizada com sucesso!');
+      localStorage.removeItem('carrinho');
+      window.location.href = "index.html";
+    });
+
+    carregarCarrinho();
+  </script>
 </body>
 </html>
