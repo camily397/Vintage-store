@@ -92,7 +92,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #FFFFFF; /* azul marinho */
+  color: #000000; /* azul marinho */
 }
 
 .price {
@@ -130,7 +130,7 @@ header {
   border: 2px solid #FFFFFF; /* azul marinho */
   border-radius: 5px;
   background: #FFFFFF; /* branco */
-  color: #FFFFFF; /* azul marinho */
+  color: #000000; /* azul marinho */
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
