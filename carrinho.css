@@ -1,87 +1,130 @@
-body {
-  font-family: 'Poppins', sans-serif;
+/* ===== RESET ===== */
+* {
   margin: 0;
-  background-color: #f4f4f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header.topo {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== CABEÇALHO ===== */
+.topo {
+  background-color: #0a1f44; /* azul escuro */
+  color: #fff;
+  padding: 15px 30px;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 1.8rem;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
+/* ===== CONTEÚDO ===== */
 .carrinho-container {
-  max-width: 900px;
-  margin: 40px auto;
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #0a1f44;
+}
+
+.mensagem-vazia {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
 }
 
 .tabela-carrinho {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .tabela-carrinho th, .tabela-carrinho td {
-  border-bottom: 1px solid #ddd;
-  padding: 12px;
-  text-align: center;
+  padding: 12px 15px;
+  text-align: left;
 }
 
 .tabela-carrinho th {
-  background-color: #eee;
+  background-color: #0a1f44;
+  color: #fff;
+}
+
+.tabela-carrinho tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 .thumb-produto {
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  margin-right: 8px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
   vertical-align: middle;
 }
 
+/* ===== RESUMO ===== */
 .resumo-carrinho {
-  margin-top: 30px;
   text-align: right;
+  margin-top: 10px;
 }
 
-button {
-  background-color: #333;
-  color: white;
+.resumo-carrinho p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.resumo-carrinho button {
+  padding: 10px 20px;
+  background-color: #0a1f44;
+  color: #fff;
   border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-button:hover {
-  background-color: #555;
+.resumo-carrinho button:hover {
+  background-color: #06233a;
 }
 
+/* ===== RODAPÉ ===== */
 footer {
-  background-color: #222;
+  background-color: #0a1f44;
   color: #fff;
   text-align: center;
-  padding: 15px;
-  margin-top: 40px;
+  padding: 20px;
+  margin-top: auto;
 }
-/* ======= RODAPÉ ======= */
-footer {
-  background-color: #1f2a44;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 0.9em;
-  margin-top: 50px;
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .tabela-carrinho th, .tabela-carrinho td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .thumb-produto {
+    width: 50px;
+    height: 50px;
+  }
+
+  .resumo-carrinho p {
+    font-size: 1rem;
+  }
 }
