@@ -1,24 +1,23 @@
 /* ======= GERAL ======= */
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #F8F8F6; /* fundo off-white */
+  font-family: Arial, sans-serif;
+  background-color: #F8F8F6; /* off-white suave */
   margin: 0;
   padding: 0;
-  color: #1E1E1E; /* preto suave para texto */
+  color: #1E1E1E; /* preto suave para o texto */
 }
 
 header {
-  background-color: #0A1A3C; /* azul marinho */
+  background-color: #31326F; /* azul profundo */
   padding: 15px;
-  color: #FFFFFF; /* branco para contraste */
+  color: #FFFFFF; /* texto branco */
   font-size: 22px;
   font-family: "Georgia", serif;
   text-align: center;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-/* ======= CONTAINER PRINCIPAL ======= */
+/* ======= CONTAINER ======= */
 .container {
   display: flex;
   justify-content: space-between;
@@ -31,13 +30,13 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #FFFFFF; /* fundo branco para destacar as imagens */
+  background: #FFFFFF; /* fundo branco limpo */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .main-image {
@@ -69,3 +68,133 @@ header {
   opacity: 0.85;
   transition: transform 0.3s, opacity 0.3s, border 0.3s;
 }
+
+.thumbs img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.thumbs img.active {
+  border: 2px solid #31326F; /* destaque azul profundo */
+  opacity: 1;
+}
+
+/* ======= ÁREA DAS INFORMAÇÕES ======= */
+.album-info {
+  flex: 1;
+  background: #FFFFFF;
+  color: #1E1E1E;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.album-info h2 {
+  margin-bottom: 15px;
+  color: #31326F; /* azul profundo, único tom de cor */
+}
+
+.price {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000; /* preto forte */
+}
+
+/* ======= ÁREA DE PAGAMENTO ======= */
+.payment {
+  flex: 1;
+  background: #FFFFFF; /* branco limpo */
+  padding: 20px;
+  border-radius: 10px;
+  color: #1E1E1E; /* texto preto */
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.payment h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #31326F; /* azul profundo */
+}
+
+.payment-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-options button {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #31326F;
+  border-radius: 5px;
+  background: #FFFFFF;
+  color: #1E1E1E;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.payment-options button:hover {
+  background: #F1F1F1;
+}
+
+.payment-options button.selected {
+  background: #31326F;
+  color: #FFFFFF;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.quantity button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #31326F; /* azul profundo */
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.quantity button:hover {
+  background: #2A2B5E; /* tom mais escuro */
+}
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #31326F; /* azul profundo */
+  color: #FFFFFF;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #2A2B5E;
+}
+
+/* ======= BOTÃO VOLTAR ======= */
+.voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #31326F;
+  color: white;
+  padding: 10px 20px;
+  text
