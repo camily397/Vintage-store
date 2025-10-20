@@ -1,21 +1,21 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #0D0D0D; /* preto profundo com textura mental */ /* NAO MUDA ESSE */
+  background-color: #F9F6F0; /* off-white suave */ /* NAO MUDA ESSE */
   margin: 0;
   padding: 0;
-  color: #EAEAEA; /* cinza claro para contraste */
+  color: #2B2B2B; /* cinza escuro quase preto */
 }
 
 header {
-  background-color: #111111; /* preto carvão */ /* NAO MUDA ESSE */
+  background-color: #1C2833; /* azul marinho */ /* NAO MUDA ESSE */
   padding: 15px;
-  color: #FF2E2E; /* vermelho sangue intenso */
+  color: #F9F6F0; /* off-white para o texto */
   font-size: 22px;
-  font-family: "Impact", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   text-align: center;
-  letter-spacing: 2px;
   font-weight: bold;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -31,20 +31,20 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: linear-gradient(135deg, #1A1A1A, #2B2B2B, #0D0D0D);
+  background: linear-gradient(135deg, #141414, #2B2B2B); /* preto com gradiente metálico */
   padding: 20px;
   border-radius: 10px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  box-shadow: 0 0 15px rgba(255, 46, 46, 0.15);
+  box-shadow: 0 0 12px rgba(255, 46, 46, 0.2);
 }
 
 .main-image {
   flex: 3;
   border-radius: 8px;
   overflow: hidden;
-  border: 2px solid #FF2E2E;
+  border: 2px solid #FF2E2E; /* vermelho sangue */
 }
 
 .main-image img {
@@ -67,9 +67,9 @@ header {
   max-height: 250px;
   border-radius: 8px;
   cursor: pointer;
-  opacity: 0.8;
-  transition: transform 0.3s, opacity 0.3s, border 0.3s;
+  opacity: 0.85;
   border: 2px solid transparent;
+  transition: transform 0.3s, opacity 0.3s, border 0.3s;
 }
 
 .thumbs img:hover {
@@ -85,37 +85,36 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #141414; /* preto fosco */
-  color: #EAEAEA;
+  background: #FFFFFF;
+  color: #2B2B2B;
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
   line-height: 1.6;
-  box-shadow: 0 0 10px rgba(255, 46, 46, 0.2);
+  box-shadow: 0 0 10px rgba(255, 46, 46, 0.15);
 }
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #FF2E2E; /* vermelho principal */
+  color: #FF2E2E; /* vermelho característico do álbum */
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #F0F0F0;
+  color: #1C2833; /* usa o azul marinho pra harmonizar com o header */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: linear-gradient(135deg, #202020, #2E2E2E, #1C1C1C);
+  background: #2B2B2B; /* preto/cinza carvão */
   padding: 20px;
   border-radius: 10px;
-  color: #EAEAEA;
+  color: #F9F6F0; /* off-white */
   border: 1px solid #FF2E2E;
 }
 
@@ -123,7 +122,6 @@ header {
   margin-bottom: 15px;
   font-size: 18px;
   color: #FF2E2E;
-  text-transform: uppercase;
 }
 
 .payment-options {
@@ -138,19 +136,18 @@ header {
   border: none;
   border-radius: 5px;
   background: #FF2E2E;
-  color: #fff;
+  color: #F9F6F0;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
-  letter-spacing: 1px;
 }
 
 .payment-options button:hover {
-  background: #E00000;
+  background: #C40000;
 }
 
 .payment-options button.selected {
-  background: #0D0D0D;
+  background: #F9F6F0;
   color: #FF2E2E;
   border: 2px solid #FF2E2E;
 }
@@ -170,14 +167,14 @@ header {
   border: none;
   border-radius: 5px;
   background: #FF2E2E;
-  color: #0D0D0D;
+  color: #F9F6F0;
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #E00000;
+  background: #C40000;
 }
 
 .buy-btn {
@@ -187,37 +184,34 @@ header {
   border: none;
   border-radius: 8px;
   background: #FF2E2E;
-  color: #0D0D0D;
+  color: #F9F6F0;
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
-  letter-spacing: 1px;
 }
 
 .buy-btn:hover {
-  background: #E00000;
-  color: #FFF;
+  background: #C40000;
 }
 
 .voltar {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: #111111; /* preto carvão */ /* NAO MUDA ESSE */
+  background: #1C2833; /* azul marinho */ /* NAO MUDA ESSE */
   color: white;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 6px;
   font-size: 14px;
-  text-transform: uppercase;
 }
 
 .voltar:hover {
-  background: #FF2E2E;
+  background: #34495E;
 }
 
-/* ======= RESPONSIVIDADE ======= */
+/* ======= RESPONSIVIDADE (MOBILE, TABLET, ETC) ======= */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -275,22 +269,21 @@ header {
 
 .cart-btn {
   background-color: #FF2E2E;
-  color: #fff;
+  color: #F9F6F0;
   border: none;
   padding: 10px 18px;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  letter-spacing: 1px;
 }
 
 .cart-btn:hover {
-  background-color: #E00000;
+  background-color: #C40000;
   transform: scale(1.05);
 }
 
 .cart-btn.added {
-  background-color: #B3B3B3; /* cinza metálico */
-  color: #0D0D0D;
+  background-color: #2ecc71; /* verde */
+  color: #fff;
 }
