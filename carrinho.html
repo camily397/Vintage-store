@@ -18,22 +18,14 @@
       <p>Nenhum produto selecionado.</p>
     </div>
 
-    <table class="tabela-carrinho" id="tabelaCarrinho">
-      <thead>
-        <tr>
-          <th>Produto</th>
-          <th>Preço</th>
-          <th>Quantidade</th>
-          <th>Subtotal</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody id="listaProdutos"></tbody>
-    </table>
+    <div class="cart-items" id="listaProdutos"></div>
 
     <div class="resumo-carrinho">
-      <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
-      <button id="finalizarCompra">Finalizar compra</button>
+      <div class="resumo-info">
+        <p><strong>Itens no carrinho:</strong> <span id="totalItens">0</span></p>
+        <p><strong>Preço total:</strong> R$ <span id="total">0,00</span></p>
+      </div>
+      <button id="finalizarCompra">Finalizar Compra</button>
     </div>
   </main>
 
@@ -44,6 +36,7 @@
   <script>
     const lista = document.getElementById('listaProdutos');
     const totalEl = document.getElementById('total');
+    const totalItensEl = document.getElementById('totalItens');
     const msgVazia = document.getElementById('mensagemVazia');
 
     function carregarCarrinho() {
@@ -51,38 +44,55 @@
 
       if (carrinho.length === 0) {
         msgVazia.style.display = 'block';
-        document.querySelector('.tabela-carrinho').style.display = 'none';
-        document.querySelector('.resumo-carrinho').style.display = 'none';
+        totalEl.textContent = '0,00';
+        totalItensEl.textContent = '0';
         return;
       }
 
       msgVazia.style.display = 'none';
-      let total = 0;
-
       lista.innerHTML = '';
+      let total = 0;
+      let quantidadeTotal = 0;
 
       carrinho.forEach((item, index) => {
         const subtotal = item.preco * item.quantidade;
         total += subtotal;
+        quantidadeTotal += item.quantidade;
 
-        const linha = `
-          <tr>
-            <td><img src="${item.imagem}" alt="${item.nome}" class="thumb-produto"> ${item.nome}</td>
-            <td>R$ ${item.preco.toFixed(2)}</td>
-            <td>${item.quantidade}</td>
-            <td>R$ ${subtotal.toFixed(2)}</td>
-            <td><button onclick="remover(${index})">❌</button></td>
-          </tr>
+        const card = document.createElement('div');
+        card.className = 'cart-item';
+        card.innerHTML = `
+          <div class="cart-item-left">
+            <img src="${item.imagem}" alt="${item.nome}">
+            <div class="cart-item-info">
+              <h3>${item.nome}</h3>
+              <p>R$ ${item.preco.toFixed(2)} cada</p>
+            </div>
+          </div>
+          <div class="cart-item-right">
+            <label>Qtd:</label>
+            <input type="number" min="1" value="${item.quantidade}" onchange="atualizarQuantidade(${index}, this.value)">
+            <p class="subtotal">Subtotal: R$ ${subtotal.toFixed(2)}</p>
+            <button onclick="remover(${index})">❌</button>
+          </div>
         `;
-        lista.innerHTML += linha;
+        lista.appendChild(card);
       });
 
       totalEl.textContent = total.toFixed(2);
+      totalItensEl.textContent = quantidadeTotal;
     }
 
     function remover(index) {
       let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
       carrinho.splice(index, 1);
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      carregarCarrinho();
+    }
+
+    function atualizarQuantidade(index, valor) {
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinho[index].quantidade = parseInt(valor);
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
       carregarCarrinho();
     }
