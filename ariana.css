@@ -141,11 +141,98 @@ header {
 }
 
 .voltar {
-  display: block;
-  text-align: center;
-  margin: 15px auto;
-  width: fit-content;
-  color: #1e2b1f;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1C2833; /* azul marinho */
+  color: white;
+  padding: 10px 20px;
   text-decoration: none;
-  font-weight: bold;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.voltar:hover {
+  background: #34495E; /* azul mais claro */
+}
+
+/* ======= RESPONSIVIDADE (MOBILE, TABLET, ETC) ======= */
+
+/* Para telas pequenas (celulares) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .album-images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-image {
+    flex: 1;
+  }
+
+  .thumbs {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-between;
+  }
+
+  .payment,
+  .album-info {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .payment-options button,
+  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
+}
+
+/* Para tablets e dispositivos com largura maior */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .album-images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .payment-options button,
+  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
+}
+
+.cart-btn {
+  background-color: #A8C9A3; /* verde suave */
+  color: #222;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #8AAE91; /* verde mais escuro */
+  transform: scale(1.05);
+}
+
+/* Efeito de "adicionado" */
+.cart-btn.added {
+  background-color: #2ecc71; /* verde */
+  color: #fff;
 }
