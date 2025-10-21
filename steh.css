@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #000000; /* branco */
+  background: #cccccc; /* branco */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -105,7 +105,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #000000; /* branco */
+  background: #cccccc; /* branco */
   padding: 20px;
   border-radius: 10px;
   color: #1E1E1E; /* preto */
@@ -137,12 +137,12 @@ header {
 }
 
 .payment-options button:hover {
-  background: #1C2833;
+  background: #FFFFFF;
   color: #FFFFFF;
 }
 
 .payment-options button.selected {
-  background: #1C2833;
+  background: #FFFFFF;
   color: #FFFFFF;
   border: 2px solid #1C2833;
 }
@@ -161,7 +161,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #1C2833; /* azul marinho */
+  background: #FFFFFF; /* azul marinho */
   color: #FFFFFF;
   cursor: pointer;
   transition: 0.3s;
@@ -178,7 +178,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #1C2833; /* azul marinho */
+  background: #FFFFFF; /* azul marinho */
   color: #FFFFFF;
   font-size: 18px;
   cursor: pointer;
@@ -187,7 +187,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #273849;
+  background: #FFFFFF;
 }
 
 /* ======= BOTÃO VOLTAR ======= */
