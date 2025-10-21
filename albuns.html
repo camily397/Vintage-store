@@ -131,11 +131,18 @@
     const albums = document.querySelectorAll('.album-card');
 
     searchInput.addEventListener('input', () => {
-      const term = searchInput.value.toLowerCase();
+      const term = searchInput.value.toLowerCase().trim();
 
       albums.forEach(album => {
         const text = album.textContent.toLowerCase();
-        album.style.display = text.includes(term) ? '' : 'none';
+
+        if (text.includes(term)) {
+          album.style.visibility = 'visible';
+          album.style.position = 'static';
+        } else {
+          album.style.visibility = 'hidden';
+          album.style.position = 'absolute';
+        }
       });
     });
   </script>
