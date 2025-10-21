@@ -16,7 +16,7 @@ body {
 
 /* Header */
 header {
-  background: #24292e;
+  background: #1e2a38;
   color: white;
   padding: 15px 30px;
   display: flex;
@@ -84,7 +84,7 @@ main {
 
 .login-card button {
   padding: 15px;
-  background: #24292e;
+  background: #1e2a38;
   color: white;
   border: none;
   border-radius: 8px;
