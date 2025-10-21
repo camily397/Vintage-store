@@ -1,26 +1,37 @@
+/* GERAL */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #0f0f0f;
-  color: #fff;
+  background-color: #f8f8f6; /* off white */
+  color: #001f3f; /* azul marinho escuro */
 }
 
+/* CABEÇALHO */
 header {
-  background-color: #111;
-  color: #fff;
+  background-color: #001f3f;
+  color: #f8f8f6;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
+  flex-wrap: wrap;
 }
 
 header .logo {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 header nav a {
-  color: #fff;
+  color: #f8f8f6;
   margin-left: 20px;
   text-decoration: none;
   font-weight: 500;
@@ -28,65 +39,66 @@ header nav a {
 }
 
 header nav a:hover {
-  color: #d4af37;
+  color: #bcd0ff;
 }
 
 .cart-icon {
-  background-color: #d4af37;
-  color: #111;
+  background-color: #bcd0ff;
+  color: #001f3f;
   padding: 8px 15px;
-  border-radius: 30px;
+  border-radius: 25px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .cart-icon:hover {
-  background-color: #b68c2a;
+  background-color: #8aa8e3;
 }
 
-/* Banner */
+/* BANNER */
 .banner {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #1e1e1e, #111);
+  background: linear-gradient(135deg, #e3e8f0, #f8f8f6);
 }
 
 .banner h1 {
   font-size: 36px;
-  color: #d4af37;
+  color: #001f3f;
 }
 
 .banner p {
   font-size: 18px;
-  color: #ccc;
+  color: #333;
 }
 
-/* Álbum Section */
+/* SEÇÃO DE ÁLBUNS */
 .album-section {
   padding: 50px 80px;
 }
 
 .album-section h2 {
-  color: #d4af37;
-  margin-bottom: 20px;
+  color: #001f3f;
+  margin-bottom: 25px;
   font-size: 26px;
   text-align: center;
 }
 
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
 
 .album-card {
-  background-color: #1a1a1a;
+  background-color: #ffffff;
   border-radius: 15px;
   padding: 15px;
   text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
-  color: #fff;
+  color: #001f3f;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .album-card img {
@@ -97,7 +109,7 @@ header nav a:hover {
 
 .album-card:hover {
   transform: scale(1.05);
-  background-color: #222;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .album-card h3 {
@@ -107,15 +119,59 @@ header nav a:hover {
 
 .album-card p {
   font-size: 15px;
-  color: #d4af37;
+  color: #003366;
   font-weight: 600;
 }
 
-/* Footer */
+/* RODAPÉ */
 footer {
-  background-color: #111;
+  background-color: #001f3f;
   text-align: center;
   padding: 20px;
-  color: #999;
+  color: #f8f8f6;
   font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav a {
+    margin: 10px;
+  }
+
+  .album-section {
+    padding: 40px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner h1 {
+    font-size: 28px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  header .logo {
+    font-size: 22px;
+  }
+
+  .album-section {
+    padding: 30px 20px;
+  }
 }
