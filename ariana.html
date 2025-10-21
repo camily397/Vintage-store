@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vintage Store - Ariana Grande Positions</title>
-  <link rel="stylesheet" href="ariana.css"> <!-- Mantendo o CSS do Frank Ocean -->
+  <link rel="stylesheet" href="frank.css"> <!-- Mantendo o CSS do Frank Ocean -->
 </head>
 <body>
   <header class="topo">
@@ -66,7 +66,6 @@
   </footer>
 
   <script>
-    // Controle de quantidade
     const qtyEl = document.getElementById('qty');
     const minusBtn = document.getElementById('minus');
     const plusBtn = document.getElementById('plus');
@@ -86,7 +85,7 @@
       qtyEl.textContent = quantidade;
     });
 
-    // Adicionar ao carrinho
+    // Adicionar ao carrinho e permanecer na página
     addBtn.addEventListener('click', () => {
       const produto = {
         nome: "Ariana Grande - Positions",
@@ -95,10 +94,7 @@
         imagem: "ariana.jfif"
       };
 
-      // Busca o carrinho salvo (ou cria novo)
       let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-      // Verifica se o produto já está no carrinho
       const existente = carrinho.find(p => p.nome === produto.nome);
       if (existente) {
         existente.quantidade += quantidade;
@@ -106,11 +102,9 @@
         carrinho.push(produto);
       }
 
-      // Salva de volta
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-      // Redireciona para a página do carrinho
-      window.location.href = "carrinho.html";
+      alert(`${produto.nome} adicionado ao carrinho!`);
     });
   </script>
 </body>
