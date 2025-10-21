@@ -137,15 +137,22 @@ h3 {
 }
 
 .voltar {
-  display: inline-block;
-  margin-top: 30px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
   color: #0b2c55;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
 .voltar:hover {
   text-decoration: underline;
+  background-color: #f2f2f2;
 }
 
 /* ======= FAQ INTERATIVO ======= */
