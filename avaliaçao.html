@@ -1,53 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avaliação de Atendimento - Vintage Store</title>
-  <link rel="stylesheet" href="avaliaçao.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vintage Store - Avaliação</title>
+  <link rel="stylesheet" href="avaliacao.css" />
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="header-left">
-      <div class="logo">Vintage Store</div>
-      <div class="tagline">Música com história, estilo e nostalgia</div>
-    </div>
+  <header>
+    <h1>Vintage Store</h1>
+    <p>Música com história, estilo e nostalgia</p>
   </header>
 
-  <div class="container">
-    <h2>Avalie nosso Atendimento</h2>
+  <main>
+    <h2>Avaliação</h2>
 
-    <div class="balloon" id="balloon">
-      <p>Conte-nos como foi sua experiência:</p>
-      <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
-    </div>
+    <section>
+      <h3>Sobre sua experiência</h3>
+      <p>
+        Conte pra gente como foi sua experiência com a Vintage Store! Sua opinião é muito importante para que possamos melhorar sempre.
+      </p>
+    </section>
 
-    <div class="stars" id="stars">
-      <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
-      <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
-      <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
-      <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
-      <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
-    </div>
+    <section>
+      <h3>Avalie nosso atendimento e produtos</h3>
+      <div class="rating">
+        <input type="radio" name="estrela" id="estrela5" value="5">
+        <label for="estrela5">★</label>
+        <input type="radio" name="estrela" id="estrela4" value="4">
+        <label for="estrela4">★</label>
+        <input type="radio" name="estrela" id="estrela3" value="3">
+        <label for="estrela3">★</label>
+        <input type="radio" name="estrela" id="estrela2" value="2">
+        <label for="estrela2">★</label>
+        <input type="radio" name="estrela" id="estrela1" value="1">
+        <label for="estrela1">★</label>
+      </div>
 
-    <button class="btn" id="btnEnviar">Enviar Avaliação</button>
+      <label for="comentario"><strong>Deixe seu comentário:</strong></label>
+      <textarea id="comentario" placeholder="Digite aqui sua opinião..."></textarea>
+    </section>
 
-    <div class="thankyou" id="thankyou">
-      Obrigado pela sua avaliação! 😊
-    </div>
+    <section style="text-align:center;">
+      <button onclick="enviarAvaliacao()">Enviar Avaliação</button>
+      <p class="mensagem" id="mensagem"></p>
+    </section>
+  </main>
 
-    <div class="tip">
-      Dica: Sua opinião ajuda a melhorar nosso atendimento. Seja sincero e conte detalhes!
-    </div>
-  </div>
+  <a href="index.html" class="voltar">← Voltar</a>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Vintage Store — Todos os direitos reservados.</p>
-    <p><a href="contato.html">Contato</a> | <a href="sobre.html">Sobre</a> | <a href="politica.html">Política de Privacidade</a></p>
+  <footer>
+    © 2025 Vintage Store — Todos os direitos reservados
   </footer>
 
-  <a href="atendimento.html" class="voltar">← Voltar</a>
+  <script>
+    function enviarAvaliacao() {
+      const mensagem = document.getElementById("mensagem");
+      const comentario = document.getElementById("comentario").value;
+      const estrela = document.querySelector('input[name="estrela"]:checked');
 
-  <script src="avaliaçao.js"></script>
+      if (!estrela) {
+        mensagem.textContent = "Por favor, selecione uma nota antes de enviar.";
+        mensagem.style.color = "#b33";
+        return;
+      }
+
+      if (comentario.trim() === "") {
+        mensagem.textContent = "Por favor, escreva um comentário antes de enviar.";
+        mensagem.style.color = "#b33";
+        return;
+      }
+
+      mensagem.textContent = "✨ Obrigado pela sua avaliação! Sua opinião é muito importante para nós.";
+      mensagem.style.color = "#1e2a38";
+      document.getElementById("comentario").value = "";
+      estrela.checked = false;
+    }
+  </script>
 </body>
 </html>
