@@ -52,7 +52,6 @@
   </footer>
 
   <script>
-    // Controle de quantidade
     const qtyEl = document.getElementById('qty');
     const minusBtn = document.getElementById('minus');
     const plusBtn = document.getElementById('plus');
@@ -72,7 +71,7 @@
       qtyEl.textContent = quantidade;
     });
 
-    // Adicionar ao carrinho
+    // Adicionar ao carrinho e permanecer na página
     addBtn.addEventListener('click', () => {
       const produto = {
         nome: "Frank Ocean - Blond",
@@ -81,10 +80,7 @@
         imagem: "frankcapa.jpg"
       };
 
-      // Busca o carrinho salvo (ou cria novo)
       let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-      // Verifica se o produto já está no carrinho
       const existente = carrinho.find(p => p.nome === produto.nome);
       if (existente) {
         existente.quantidade += quantidade;
@@ -92,11 +88,9 @@
         carrinho.push(produto);
       }
 
-      // Salva de volta
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-      // Redireciona para a página do carrinho
-      window.location.href = "carrinho.html";
+      alert(`${produto.nome} adicionado ao carrinho!`);
     });
   </script>
 </body>
