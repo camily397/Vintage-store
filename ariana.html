@@ -4,22 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vintage Store - Ariana Grande Positions</title>
-  <link rel="stylesheet" href="ariana.css">
+  <link rel="stylesheet" href="frank.css"> <!-- Mantendo o CSS do Frank Ocean -->
 </head>
-
 <body>
-  <header>Vintage Store</header>
+  <header class="topo">
+    <h1 class="logo">Vintage Store</h1>
+  </header>
 
   <main class="container">
     <!-- Área das imagens -->
     <section class="album-images">
       <div class="main-image">
-        <img id="mainImg" src="ariana1.jpg" alt="Ariana Grande - Positions">
+        <img id="mainImg" src="ariana.jfif" alt="Ariana Grande - Positions">
       </div>
       <div class="thumbs">
-        <img src="ariana1.jpg" alt="Thumb 1" class="thumb active">
-        <img src="ariana2.jpg" alt="Thumb 2" class="thumb">
-        <img src="ariana3.jpg" alt="Thumb 3" class="thumb">
+        <img src="aricd.jpeg" alt="Thumb 1" class="thumb active">
+        <img src="ariposter.jpeg" alt="Thumb 2" class="thumb">
+        <img src="arivinyl.jpeg" alt="Thumb 3" class="thumb">
       </div>
     </section>
 
@@ -30,24 +31,15 @@
         <button class="cart-btn" id="addToCart">🛒 Adicionar ao carrinho</button>
       </div>
 
-      <p><strong>Data de lançamento:</strong> 30/10/2020</p>
-      <p>Produto oficial e lacrado — não vendemos réplicas.</p>
+      <p><strong>Data de lançamento:</strong> xx/xx/xxxx</p>
+      <p>Produto oficial e lacrado - não vendemos réplicas.</p>
       <p>Itens enviados diretamente de distribuidoras oficiais.</p>
       <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
-      <p class="price">TOTAL A PAGAR: R$ <span id="total">159,90</span></p>
+      <p class="price">TOTAL A PAGAR: R$ <span id="preco">159,90</span></p>
+
       <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
       <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
       <p><strong>Email:</strong> exemplo@email.com</p>
-    </section>
-
-    <!-- Área do pagamento -->
-    <section class="payment">
-      <h3>MÉTODOS DE PAGAMENTO</h3>
-      <div class="payment-options">
-        <button>Boleto</button>
-        <button>PIX</button>
-        <button>Cartão</button>
-      </div>
 
       <div class="quantity">
         <button id="minus">-</button>
@@ -55,12 +47,65 @@
         <button id="plus">+</button>
       </div>
 
+      <!-- Área do pagamento -->
+      <section class="payment">
+        <h3>MÉTODOS DE PAGAMENTO</h3>
+        <div class="payment-options">
+          <button>Boleto</button>
+          <button>PIX</button>
+          <button>Cartão</button>
+        </div>
+      </section>
+
       <button class="buy-btn">Comprar</button>
     </section>
   </main>
 
-  <a href="index.html" class="voltar">← Voltar</a>
+  <footer>
+    <a href="index.html" class="voltar">← Voltar</a>
+  </footer>
 
-  <script src="ariana.js"></script>
+  <script>
+    const qtyEl = document.getElementById('qty');
+    const minusBtn = document.getElementById('minus');
+    const plusBtn = document.getElementById('plus');
+    const addBtn = document.getElementById('addToCart');
+
+    let quantidade = 1;
+
+    minusBtn.addEventListener('click', () => {
+      if (quantidade > 1) {
+        quantidade--;
+        qtyEl.textContent = quantidade;
+      }
+    });
+
+    plusBtn.addEventListener('click', () => {
+      quantidade++;
+      qtyEl.textContent = quantidade;
+    });
+
+    // Adicionar ao carrinho e permanecer na página
+    addBtn.addEventListener('click', () => {
+      const produto = {
+        nome: "Ariana Grande - Positions",
+        preco: 159.90,
+        quantidade: quantidade,
+        imagem: "ariana.jfif"
+      };
+
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      const existente = carrinho.find(p => p.nome === produto.nome);
+      if (existente) {
+        existente.quantidade += quantidade;
+      } else {
+        carrinho.push(produto);
+      }
+
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+      alert(`${produto.nome} adicionado ao carrinho!`);
+    });
+  </script>
 </body>
 </html>
