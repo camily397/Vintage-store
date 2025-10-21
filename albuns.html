@@ -15,7 +15,6 @@
   </header>
 
   <main>
-    <!-- Primeira seção -->
     <section>
       <h2>Destaques</h2>
       <div class="album-grid">
@@ -69,7 +68,6 @@
       </div>
     </section>
 
-    <!-- Segunda seção -->
     <section>
       <div class="album-grid">
         <div class="album-card">
@@ -128,22 +126,30 @@
   <!-- Script da barra de pesquisa -->
   <script>
     const searchInput = document.getElementById('search');
-    const albums = document.querySelectorAll('.album-card');
+    const albumCards = document.querySelectorAll('.album-card');
+    const sections = document.querySelectorAll('section');
 
     searchInput.addEventListener('input', () => {
       const term = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
 
-      albums.forEach(album => {
-        const text = album.textContent.toLowerCase();
+      albumCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
 
         if (text.includes(term)) {
-          album.style.visibility = 'visible';
-          album.style.position = 'static';
+          card.style.display = 'inline-block';
+          visibleCount++;
         } else {
-          album.style.visibility = 'hidden';
-          album.style.position = 'absolute';
+          card.style.display = 'none';
         }
       });
+
+      // se não houver termo, volta ao layout normal
+      if (term === '') {
+        albumCards.forEach(card => {
+          card.style.display = '';
+        });
+      }
     });
   </script>
 </body>
