@@ -200,3 +200,26 @@ textarea {
 .voltar:hover {
   background: #333;
 }
+/* ======= RODAPÉ ======= */
+footer {
+  background-color: #1e2a38;  /* Mesma cor do cabeçalho */
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  margin-top: auto; /* Para garantir que o rodapé fique na parte inferior */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
