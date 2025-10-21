@@ -191,11 +191,22 @@ h3 {
 
 /* ======= RODAPÉ ======= */
 .site-footer {
+  background-color: #1e2a38; /* Mesma cor do cabeçalho */
+  color: #fff; /* Texto branco para contraste */
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
-  color: #555;
   margin-top: 30px;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
 }
 
 /* ======= ANIMAÇÃO ======= */
