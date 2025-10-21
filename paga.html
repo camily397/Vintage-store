@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Store - Pagamento</title>
+  <link rel="stylesheet" href="paga.css">
+</head>
+<body>
+  <header>
+    <h1>Vintage Store</h1>
+    <p>Finalizar Compra</p>
+  </header>
+
+  <main class="checkout-container">
+    <!-- Resumo do Pedido -->
+    <section class="order-summary">
+      <h2>Resumo do Pedido</h2>
+      <div class="product-item">
+        <img src="frankcapa.jpg" alt="Produto" class="product-image">
+        <div>
+          <h3>Frank Ocean - Blond</h3>
+          <p>Vinil, CD e Pôster inclusos</p>
+          <p><strong>Quantidade:</strong> 1</p>
+          <p><strong>Preço:</strong> R$ 129,90</p>
+        </div>
+      </div>
+
+      <div class="address">
+        <h3>Endereço de Entrega</h3>
+        <p>Rua das Flores, 123 - Jardim Aurora</p>
+        <p>São Paulo - SP, 01234-000</p>
+        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+      </div>
+
+      <div class="total">
+        <p><strong>Subtotal:</strong> R$ 129,90</p>
+        <p><strong>Frete:</strong> R$ 15,00</p>
+        <p class="grand-total"><strong>Total:</strong> R$ 144,90</p>
+      </div>
+    </section>
+
+    <!-- Métodos de Pagamento -->
+    <section class="payment-section">
+      <h2>Escolha sua forma de pagamento</h2>
+      <div class="payment-buttons">
+        <button id="pixBtn" class="active">PIX</button>
+        <button id="boletoBtn">Boleto</button>
+        <button id="cartaoBtn">Cartão</button>
+      </div>
+
+      <!-- PIX -->
+      <div id="pixInfo" class="payment-info active">
+        <h3>Pagamento via PIX</h3>
+        <p>Escaneie o QR Code abaixo ou copie o código para pagamento instantâneo.</p>
+        <img src="qrcodepix.png" alt="QR Code PIX" class="qrcode">
+        <p><strong>Chave PIX:</strong> vintage@store.com</p>
+        <button class="finalizar">Confirmar Pagamento</button>
+      </div>
+
+      <!-- BOLETO -->
+      <div id="boletoInfo" class="payment-info">
+        <h3>Pagamento por Boleto</h3>
+        <p>O boleto tem vencimento de 3 dias úteis. O envio do pedido ocorrerá após a compensação do pagamento.</p>
+        <button class="generate-boleto">Gerar Boleto</button>
+      </div>
+
+      <!-- CARTÃO -->
+      <div id="cartaoInfo" class="payment-info">
+        <h3>Pagamento com Cartão</h3>
+        <form id="cardForm" class="card-form">
+          <label>Número do Cartão</label>
+          <input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+
+          <label>Nome impresso no cartão</label>
+          <input type="text" placeholder="Nome completo" required>
+
+          <div class="card-row">
+            <div>
+              <label>Validade</label>
+              <input type="text" placeholder="MM/AA" maxlength="5" required>
+            </div>
+            <div>
+              <label>CVV</label>
+              <input type="text" placeholder="XXX" maxlength="3" required>
+            </div>
+          </div>
+
+          <button type="submit" class="finalizar">Finalizar Pagamento</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <a href="carrinho.html" class="voltar">← Voltar ao carrinho</a>
+
+  <!-- Pop-up de confirmação -->
+  <div id="successModal" class="success-modal">
+    <div class="modal-content">
+      <h2>✅ Compra concluída com sucesso!</h2>
+      <p>Obrigado por comprar na <strong>Vintage Store</strong> 💿</p>
+      <p>Número do pedido: <span id="orderNumber"></span></p>
+      <button id="closeModal">Fechar</button>
+    </div>
+  </div>
+
+  <script>
+    // Alternar métodos de pagamento
+    const buttons = document.querySelectorAll('.payment-buttons button');
+    const infos = document.querySelectorAll('.payment-info');
+
+    buttons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        infos.forEach(i => i.classList.remove('active'));
+        btn.classList.add('active');
+        infos[index].classList.add('active');
+      });
+    });
+
+    // Mostrar confirmação de compra
+    const modal = document.getElementById('successModal');
+    const orderNumber = document.getElementById('orderNumber');
+    const closeModal = document.getElementById('closeModal');
+
+    function showSuccess() {
+      const randomOrder = Math.floor(100000 + Math.random() * 900000);
+      orderNumber.textContent = `#${randomOrder}`;
+      modal.classList.add('show');
+    }
+
+    document.querySelectorAll('.finalizar, .generate-boleto').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSuccess();
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('show');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
