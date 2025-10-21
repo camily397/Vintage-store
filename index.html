@@ -2,115 +2,93 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vintage Store - Início</title>
   <link rel="stylesheet" href="style.css">
+
+  <script>
+    // ======= DETECTOR DE DISPOSITIVO =======
+    document.addEventListener("DOMContentLoaded", () => {
+      const body = document.body;
+
+      function atualizarClasse() {
+        const largura = window.innerWidth;
+        body.classList.remove("mobile", "tablet", "desktop");
+
+        if (largura <= 768) {
+          body.classList.add("mobile"); // celular
+        } else if (largura <= 1024) {
+          body.classList.add("tablet"); // tablet
+        } else {
+          body.classList.add("desktop"); // computador
+        }
+      }
+
+      atualizarClasse(); // define ao carregar
+      window.addEventListener("resize", atualizarClasse); // redefine ao redimensionar
+    });
+  </script>
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="site-header">
-    <div class="header-left">
-      <div class="logo">Vintage Store</div>
-      <div class="tagline">Vinil • CD • Mercadoria</div>
-    </div>
-
-    <div class="header-center">
-      <input type="search" placeholder="Pesquisar álbuns, artistas..." aria-label="Pesquisar">
-    </div>
-
-    <nav class="header-nav">
+    <h1 class="logo">Vintage Store</h1>
+    <nav class="menu">
+      <a href="index.html">Início</a>
       <a href="albuns.html">Álbuns</a>
-      <a href="conta.html">Minha Conta</a>
-      <a href="#">Atendimento</a>
+      <a href="roupas.html">Roupas</a>
+      <a href="decoracao.html">Decoração</a>
+      <a href="contato.html">Contato</a>
+      <a href="carrinho.html" class="cart-link">🛒 Carrinho</a>
     </nav>
   </header>
 
-  <!-- CATEGORIAS (no topo) -->
+  <!-- CATEGORIAS -->
   <section class="categories">
     <a class="cat-card" href="albuns.html">
-      <img src="img/cat-albuns.jpg" alt="Álbuns">
-      <div class="cat-title">Álbuns</div>
+      <img src="album.jpg" alt="Álbuns">
+      <h3>Álbuns</h3>
     </a>
-
-    <a class="cat-card" href="cds.html">
-      <img src="img/cat-cds.jpg" alt="CDs">
-      <div class="cat-title">CDs</div>
+    <a class="cat-card" href="roupas.html">
+      <img src="roupa.jpg" alt="Roupas">
+      <h3>Roupas</h3>
     </a>
-
-    <a class="cat-card" href="discos.html">
-      <img src="img/cat-discos.jpg" alt="Discos">
-      <div class="cat-title">Discos</div>
+    <a class="cat-card" href="decoracao.html">
+      <img src="decoracao.jpg" alt="Decoração">
+      <h3>Decoração</h3>
     </a>
   </section>
 
-  <!-- BANNER -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>Bem-vindo à Vintage Store</h1>
-      <p>Discos e CDs selecionados com carinho — encontre seus favoritos e complete a coleção.</p>
-      <a class="cta" href="albuns.html">Ver catálago de álbuns</a>
-    </div>
-  </section>
-
-  <!-- VITRINE / DESTAQUES -->
+  <!-- DESTAQUES -->
   <main class="container">
     <section class="destaques">
       <h2>Destaques</h2>
-
-      <div class="album-grid">
-        <!-- Card 1 -->
-        <article class="album-card">
-          <a href="mitski.html">
-            <img src="img/mitski1.jpg" alt="Mitski - The Land Is Inhospitable">
-            <h3>Mitski</h3>
-            <p class="album-name">The Land Is Inhospitable</p>
-            <div class="price">R$ 139,90</div>
-          </a>
+      <div class="produtos">
+        <article class="produto">
+          <img src="frankcapa.jpg" alt="Frank Ocean - Blond">
+          <h3>Frank Ocean</h3>
+          <p>Blond (Vinil)</p>
+          <p class="preco">R$ 129,90</p>
+          <a href="frank.html" class="btn">Ver produto</a>
         </article>
 
-        <!-- Card 2 -->
-        <article class="album-card">
-          <a href="ariana.html">
-            <img src="img/ariana.jpg" alt="Ariana Grande">
-            <h3>Ariana Grande</h3>
-            <p class="album-name">Eternal Sunshine</p>
-            <div class="price">R$ 159,90</div>
-          </a>
+        <article class="produto">
+          <img src="ariana.jfif" alt="Ariana Grande - Positions">
+          <h3>Ariana Grande</h3>
+          <p>Positions (Vinil)</p>
+          <p class="preco">R$ 159,90</p>
+          <a href="ariana.html" class="btn">Ver produto</a>
         </article>
 
-        <!-- Card 3 -->
-        <article class="album-card">
-          <a href="anavitoria.html">
-            <img src="img/anavitoria.jpg" alt="Anavitória">
-            <h3>Anavitória</h3>
-            <p class="album-name">Cor</p>
-            <div class="price">R$ 119,90</div>
-          </a>
+        <article class="produto">
+          <img src="theweeknd.jpg" alt="The Weeknd - After Hours">
+          <h3>The Weeknd</h3>
+          <p>After Hours (Vinil)</p>
+          <p class="preco">R$ 149,90</p>
+          <a href="weeknd.html" class="btn">Ver produto</a>
         </article>
-
-        <!-- Card 4 -->
-        <article class="album-card">
-          <a href="bea.html">
-            <img src="img/bea1.jpg" alt="Beabadoobee">
-            <h3>Beabadoobee</h3>
-            <p class="album-name">Beatopia</p>
-            <div class="price">R$ 119,90</div>
-          </a>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="album-card">
-          <a href="frank.html">
-            <img src="img/frank1.jpg" alt="Frank Ocean">
-            <h3>Frank Ocean</h3>
-            <p class="album-name">Blond</p>
-            <div class="price">R$ 199,90</div>
-          </a>
-        </article>
-
-        
       </div>
-
     </section>
   </main>
 
@@ -118,6 +96,5 @@
   <footer class="site-footer">
     <p>&copy; 2025 Vintage Store — Todos os direitos reservados</p>
   </footer>
-
 </body>
 </html>
