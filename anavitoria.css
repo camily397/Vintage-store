@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
    flex: 1;
-   background: #f7f7f7; /* fundo branco para contraste */
+   background: #563b83; /* fundo branco para contraste */
    color: #ffffff; /* texto cinza */
    padding: 30px;
    border-radius: 10px;
