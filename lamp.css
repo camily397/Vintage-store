@@ -81,7 +81,7 @@ header {
 /* ======= INFORMAÇÕES DO ÁLBUM ======= */
 .album-info {
   flex: 1;
-  background: #000000; /* preto */
+  background: #ffffff; /* preto */
   color: #FFCF71; /* amarelo claro */
   padding: 30px;
   border-radius: 10px;
