@@ -1,0 +1,292 @@
+/* ======= GERAL ======= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F9F6F0; /* off-white suave */ /* NAO MUDA ESSE */
+  margin: 0;
+  padding: 0;
+  color: #3A2E28; /* marrom suave */
+}
+
+header {
+  background-color: #1C2833; /* azul marinho */ /* NAO MUDA ESSE */
+  padding: 15px;
+  color: #F9F6F0; /* off-white para o texto */
+  font-size: 22px;
+  font-family: "Georgia", serif;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ======= ÁREA DAS IMAGENS ======= */
+.album-images {
+  flex: 1;
+  background: linear-gradient(145deg, #F7C37A, #F89A54, #C9733A); /* tons de caju e caramelo */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 0 25px rgba(201, 115, 58, 0.3);
+}
+
+.main-image {
+  flex: 3;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #F89A54; /* laranja queimado */
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.thumbs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.thumbs img {
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.85;
+  border: 2px solid transparent;
+  transition: transform 0.3s, opacity 0.3s, border 0.3s;
+}
+
+.thumbs img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.thumbs img.active {
+  border: 3px solid #F7C37A; /* dourado suave */
+  opacity: 1;
+}
+
+/* ======= ÁREA DAS INFORMAÇÕES ======= */
+.album-info {
+  flex: 1;
+  background: #fff;
+  color: #3A2E28;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+  box-shadow: 0 0 15px rgba(248, 154, 84, 0.2);
+}
+
+.album-info h2 {
+  margin-bottom: 15px;
+  color: #C9733A; /* tom de caju */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.price {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #7A5531; /* marrom dourado */
+}
+
+/* ======= ÁREA DE PAGAMENTO ======= */
+.payment {
+  flex: 1;
+  background: linear-gradient(160deg, #FFF4E2, #F7C37A);
+  padding: 20px;
+  border-radius: 10px;
+  color: #3A2E28;
+  border: 1px solid #E7A65C;
+  box-shadow: 0 0 25px rgba(201, 115, 58, 0.25);
+}
+
+.payment h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #C9733A;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.payment-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-options button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #C9733A;
+  color: #F9F6F0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.payment-options button:hover {
+  background: #A65C2D;
+}
+
+.payment-options button.selected {
+  background: #fff;
+  color: #C9733A;
+  border: 2px solid #C9733A;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.quantity button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #A0B58D; /* verde oliva suave */
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.quantity button:hover {
+  background: #8DA277;
+}
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #C9733A; /* laranja caju */
+  color: #F9F6F0;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #A65C2D;
+}
+
+.voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1C2833; /* azul marinho */ /* NAO MUDA ESSE */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.voltar:hover {
+  background: #C9733A;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .album-images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-image {
+    flex: 1;
+  }
+
+  .thumbs {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-between;
+  }
+
+  .payment,
+  .album-info {
+    flex: 1;
+    padding: 15px;
+  }
+
+  .payment-options button,
+  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .album-images {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .payment-options button,
+  .quantity button,
+  .buy-btn {
+    width: 100%;
+  }
+}
+
+.cart-btn {
+  background-color: #E7A65C; /* dourado suave */
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #C9733A;
+  transform: scale(1.05);
+}
+
+.cart-btn.added {
+  background-color: #A0B58D; /* verde oliva */
+  color: #fff;
+}
