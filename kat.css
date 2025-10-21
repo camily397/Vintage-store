@@ -1,22 +1,22 @@
 /* ======= GERAL ======= */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #F9F6F0; /* off-white suave */ /* NAO MUDA ESSE */
   margin: 0;
   padding: 0;
-  color: #E0E0E0; /* texto em cinza claro sobre fundo escuro */
+  color: #40283A; /* rosa escuro acinzentado */
 }
 
 header {
   background-color: #1C2833; /* azul marinho */ /* NAO MUDA ESSE */
   padding: 15px;
-  color: #E0E0E0;
-  font-size: 26px;
-  font-family: "Orbitron", sans-serif;
+  color: #F9F6F0; /* off-white para o texto */
+  font-size: 24px;
+  font-family: "Georgia", serif;
   text-align: center;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-shadow: 0 0 12px rgba(147, 112, 219, 0.6);
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 128, 170, 0.7);
 }
 
 /* ======= CONTAINER ======= */
@@ -32,29 +32,29 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: linear-gradient(145deg, #2E0854, #000000, #2B0063); /* roxo escuro + preto */
+  background: linear-gradient(135deg, #FFB6D9, #FF66B3, #FF8CD1);
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  box-shadow: 0 0 30px rgba(147, 112, 219, 0.5);
-  border: 2px solid rgba(147, 112, 219, 0.3);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+  border: 1px solid rgba(255, 182, 219, 0.3);
 }
 
 .main-image {
   flex: 3;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 2px solid #9370DB; /* roxo médio */
+  border: 2px solid #FF66B3;
 }
 
 .main-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 14px;
-  filter: brightness(0.95);
+  border-radius: 12px;
+  filter: brightness(0.95) saturate(1.1);
 }
 
 .thumbs {
@@ -66,13 +66,11 @@ header {
 
 .thumbs img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.85;
   border: 2px solid transparent;
   transition: transform 0.3s, opacity 0.3s, border 0.3s;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
 }
 
 .thumbs img:hover {
@@ -81,56 +79,53 @@ header {
 }
 
 .thumbs img.active {
-  border: 3px solid #9370DB;
+  border: 3px solid #FFF0FA; /* rosa clarinho */
   opacity: 1;
 }
 
 /* ======= INFO ======= */
 .album-info {
   flex: 1;
-  background: linear-gradient(180deg, #12002F, #1E003D);
-  color: #EAEAEA;
+  background: linear-gradient(180deg, #FFF0FA, #FFD6E9);
+  color: #40283A;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 15px;
   font-size: 18px;
   line-height: 1.6;
-  box-shadow: 0 0 25px rgba(147, 112, 219, 0.3);
+  box-shadow: 0 0 25px rgba(255, 128, 170, 0.3);
 }
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #8A2BE2; /* roxo vibrante */
-  font-family: "Orbitron", sans-serif;
+  color: #FF66B3; /* rosa principal */
   font-weight: 700;
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+  text-shadow: 0 0 10px rgba(255, 150, 200, 0.6);
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #00BFFF; /* azul elétrico */
+  color: #BF3F83; /* magenta escuro */
 }
 
 /* ======= PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: linear-gradient(160deg, #1A0036, #000000);
+  background: linear-gradient(160deg, #FF66B3, #E04C9C, #BF3F83);
   padding: 25px;
-  border-radius: 20px;
-  color: #EAEAEA;
-  border: 1px solid rgba(147, 112, 219, 0.3);
-  box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+  border-radius: 15px;
+  color: #F9F6F0;
+  border: 1px solid rgba(255, 150, 200, 0.3);
+  box-shadow: 0 0 25px rgba(255, 100, 160, 0.3);
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #8A2BE2;
+  color: #FFF0FA;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: bold;
 }
 
 .payment-options {
@@ -143,24 +138,23 @@ header {
   flex: 1;
   padding: 10px;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #8A2BE2, #00BFFF);
-  color: #fff;
+  border-radius: 6px;
+  background: #FFB6D9;
+  color: #40283A;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .payment-options button:hover {
-  opacity: 0.85;
-  transform: scale(1.03);
+  background: #FF66B3;
+  color: #fff;
 }
 
 .payment-options button.selected {
-  background: #fff;
-  color: #8A2BE2;
-  border: 2px solid #00BFFF;
+  background: #F9F6F0;
+  color: #BF3F83;
+  border: 2px solid #FF66B3;
 }
 
 .quantity {
@@ -176,16 +170,16 @@ header {
   height: 40px;
   font-size: 20px;
   border: none;
-  border-radius: 8px;
-  background: #8A2BE2;
-  color: #fff;
+  border-radius: 5px;
+  background: #FF66B3;
+  color: #F9F6F0;
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #00BFFF;
+  background: #BF3F83;
 }
 
 .buy-btn {
@@ -193,20 +187,18 @@ header {
   width: 100%;
   padding: 15px;
   border: none;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #8A2BE2, #00BFFF);
-  color: #fff;
+  border-radius: 8px;
+  background: #FF8CD1;
+  color: #40283A;
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
 }
 
 .buy-btn:hover {
-  transform: scale(1.05);
+  background: #FF66B3;
+  color: #fff;
 }
 
 /* ======= BOTÃO VOLTAR ======= */
@@ -223,7 +215,7 @@ header {
 }
 
 .voltar:hover {
-  background: #8A2BE2;
+  background: #34495E; /* azul mais claro */
 }
 
 /* ======= RESPONSIVIDADE ======= */
@@ -283,23 +275,23 @@ header {
 }
 
 .cart-btn {
-  background-color: #8A2BE2;
-  color: #fff;
+  background-color: #FF8CD1;
+  color: #40283A;
   border: none;
   padding: 10px 18px;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
 }
 
 .cart-btn:hover {
-  background: #00BFFF;
+  background-color: #FF66B3;
+  color: #fff;
   transform: scale(1.05);
 }
 
 .cart-btn.added {
-  background-color: #00BFFF;
+  background-color: #BF3F83;
   color: #fff;
-}
+} /* NAO MUDA OS QUE EU COLOQUEI "NAO MUDA ESSE" */
