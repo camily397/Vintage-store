@@ -61,7 +61,7 @@
   </section>
 </main>
 
-<a href="index.html" class="voltar">← Voltar</a>
+<a href="carrinho.html" class="voltar">← Voltar</a>
 
 <script>
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -146,7 +146,7 @@ document.getElementById("finalizePurchase").addEventListener("click", () => {
   }
   alert("Compra finalizada! Detalhes do pagamento serão exibidos em seguida.");
   localStorage.removeItem("cart"); // limpa carrinho
-  window.location.href = "pagamento.html"; // página de pagamento real
+  window.location.href = "paga.html"; // página de pagamento real
 });
 </script>
 </body>
