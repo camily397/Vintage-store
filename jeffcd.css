@@ -25,13 +25,13 @@ header {
   align-items: flex-start;
   padding: 30px;
   gap: 20px;
-  flex-wrap: wrap; /* para responsividade */
+  flex-wrap: wrap; /* responsivo */
 }
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #CCCCCC; /* cinza */
+  background: #5E5D5D; /* cinza escuro atualizado */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -84,7 +84,7 @@ header {
 .album-info {
   flex: 1;
   background: #FFFFFF; /* branco */
-  color: #1E1E1E; /* texto preto */
+  color: #1E1E1E; /* preto */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -107,7 +107,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #CCCCCC; /* cinza */
+  background: #5E5D5D; /* cinza escuro atualizado */
   padding: 20px;
   border-radius: 10px;
   color: #000000; /* preto */
@@ -171,7 +171,7 @@ header {
 }
 
 .quantity button:hover {
-  background: #333333; /* cinza escuro */
+  background: #333333; /* cinza mais escuro */
 }
 
 .buy-btn {
@@ -198,7 +198,7 @@ header {
   bottom: 20px;
   left: 20px;
   background: #1C2833; /* azul marinho */
-  color: #FFFFFF; /* branco */
+  color: #FFFFFF;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 6px;
@@ -212,7 +212,7 @@ header {
 /* ======= BOTÃO CARRINHO ======= */
 .cart-btn {
   background-color: #000000; /* preto */
-  color: #FFFFFF; /* branco */
+  color: #FFFFFF;
   border: none;
   padding: 10px 18px;
   border-radius: 25px;
