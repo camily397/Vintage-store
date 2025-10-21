@@ -23,7 +23,6 @@ body {
   background: linear-gradient(90deg, #1e2a38, #2b3b4b);
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  flex-wrap: wrap;
 }
 
 .logo {
@@ -55,7 +54,6 @@ body {
   gap: 40px;
   padding: 40px 60px;
   flex: 1;
-  flex-wrap: wrap;
 }
 
 /* ===== MENU LATERAL ===== */
@@ -122,7 +120,32 @@ body {
   font-size: 14px;
 }
 
-/* ===== BOTÃO VOLTAR ===== */
+/* ===== RESPONSIVO ===== */
+@media (max-width: 820px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .menu {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    border-left: none;
+    border-top: 4px solid #1e2a38;
+    padding-top: 12px;
+  }
+
+  .menu button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .conteudo {
+    padding: 20px;
+  }
+}
+
 .voltar {
   position: fixed;
   bottom: 20px;
@@ -137,68 +160,4 @@ body {
 
 .voltar:hover {
   background: #333;
-}
-
-/* ===== RESPONSIVIDADE ===== */
-
-/* TABLET (820px ou menor) */
-@media (max-width: 820px) {
-  .container {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .menu {
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    border-left: none;
-    border-top: 4px solid #1e2a38;
-    padding-top: 12px;
-    position: static;
-    top: auto;
-  }
-
-  .menu button {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .conteudo {
-    padding: 20px;
-  }
-}
-
-/* CELULAR (480px ou menor) */
-@media (max-width: 480px) {
-  .logo {
-    font-size: 18px;
-  }
-
-  .tagline {
-    font-size: 10px;
-  }
-
-  .header-nav a {
-    margin-left: 10px;
-    font-size: 14px;
-  }
-
-  .menu button {
-    padding: 10px;
-    font-size: 12px;
-  }
-
-  .conteudo h2 {
-    font-size: 22px;
-  }
-
-  .conteudo p {
-    font-size: 14px;
-  }
-
-  .voltar {
-    padding: 8px 15px;
-    font-size: 12px;
-  }
 }
