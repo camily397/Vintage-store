@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vintage Store - Ariana Grande Positions</title>
-  <link rel="stylesheet" href="frank.css"> <!-- Mantendo CSS original -->
+  <link rel="stylesheet" href="frank.css"> <!-- Mantendo o CSS do Frank Ocean -->
 </head>
 <body>
   <header class="topo">
@@ -12,6 +12,7 @@
   </header>
 
   <main class="container">
+    <!-- Área das imagens -->
     <section class="album-images">
       <div class="main-image">
         <img id="mainImg" src="ariana.jfif" alt="Ariana Grande - Positions">
@@ -23,6 +24,7 @@
       </div>
     </section>
 
+    <!-- Área das informações -->
     <section class="album-info">
       <div class="album-header">
         <h2>ARIANA GRANDE - POSITIONS</h2>
@@ -45,6 +47,7 @@
         <button id="plus">+</button>
       </div>
 
+      <!-- Área do pagamento -->
       <section class="payment">
         <h3>MÉTODOS DE PAGAMENTO</h3>
         <div class="payment-options">
@@ -63,6 +66,7 @@
   </footer>
 
   <script>
+    // Controle de quantidade
     const qtyEl = document.getElementById('qty');
     const minusBtn = document.getElementById('minus');
     const plusBtn = document.getElementById('plus');
@@ -82,7 +86,7 @@
       qtyEl.textContent = quantidade;
     });
 
-    // Adicionar ao carrinho sem alterar layout
+    // Adicionar ao carrinho
     addBtn.addEventListener('click', () => {
       const produto = {
         nome: "Ariana Grande - Positions",
@@ -91,7 +95,10 @@
         imagem: "ariana.jfif"
       };
 
+      // Busca o carrinho salvo (ou cria novo)
       let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+      // Verifica se o produto já está no carrinho
       const existente = carrinho.find(p => p.nome === produto.nome);
       if (existente) {
         existente.quantidade += quantidade;
@@ -99,9 +106,11 @@
         carrinho.push(produto);
       }
 
+      // Salva de volta
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-      alert(`${produto.nome} adicionado ao carrinho!`);
+      // Redireciona para a página do carrinho
+      window.location.href = "carrinho.html";
     });
   </script>
 </body>
