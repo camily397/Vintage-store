@@ -200,3 +200,29 @@ h2 {
     font-size: 12px;
   }
 }
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.album-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.album-card {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.album-card:hover {
+  transform: scale(1.05);
+}
