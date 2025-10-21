@@ -1,25 +1,58 @@
-/* ======== GERAL ======== */
+/* ======= GERAL ======= */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f8f8f8; /* cinza bem clarinho */
   margin: 0;
-  padding: 0;
-  color: #1d2e1e;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f8f6; /* off white */
+  color: #1e2a38; /* azul marinho escuro */
 }
 
-/* ======== CABEÇALHO ======== */
-.topo {
-  background-color: #1f2e4f; /* azul escuro elegante */
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 20px;
-  font-weight: 600;
+/* CABEÇALHO */
+header {
+  background-color: #1e2a38;
+  color: #f8f8f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 26px;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
-.logo {
-  margin: 0;
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav a {
+  color: #f8f8f6;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #bcd0ff;
+}
+
+.cart-icon {
+  background-color: #bcd0ff;
+  color: #001f3f;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+  background-color: #8aa8e3;
 }
 
 /* ======== CONTAINER ======== */
