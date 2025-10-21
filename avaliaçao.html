@@ -1,83 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vintage Store - Avaliação</title>
-  <link rel="stylesheet" href="avaliacao.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliação - Vintage Store</title>
+  <link rel="stylesheet" href="avaliacao.css">
 </head>
-
 <body>
-  <header>
-    <h1>Vintage Store</h1>
-    <p>Música com história, estilo e nostalgia</p>
+
+  <header class="site-header">
+    <div>
+      <h1>Vintage Store</h1>
+      <p>Música com história, estilo e nostalgia</p>
+    </div>
   </header>
 
-  <main>
+  <main class="avaliacao-container">
     <h2>Avaliação</h2>
 
-    <section>
+    <section class="card">
       <h3>Sobre sua experiência</h3>
       <p>
-        Conte pra gente como foi sua experiência com a Vintage Store! Sua opinião é muito importante para que possamos melhorar sempre.
+        Conte pra gente como foi sua experiência com a Vintage Store! 
+        Sua opinião é muito importante para que possamos melhorar sempre.
       </p>
     </section>
 
-    <section>
+    <section class="card">
       <h3>Avalie nosso atendimento e produtos</h3>
-      <div class="rating">
-        <input type="radio" name="estrela" id="estrela5" value="5">
-        <label for="estrela5">★</label>
-        <input type="radio" name="estrela" id="estrela4" value="4">
-        <label for="estrela4">★</label>
-        <input type="radio" name="estrela" id="estrela3" value="3">
-        <label for="estrela3">★</label>
-        <input type="radio" name="estrela" id="estrela2" value="2">
-        <label for="estrela2">★</label>
-        <input type="radio" name="estrela" id="estrela1" value="1">
-        <label for="estrela1">★</label>
+      <div class="estrelas">
+        <input type="radio" id="estrela5" name="estrela" value="5"><label for="estrela5">★</label>
+        <input type="radio" id="estrela4" name="estrela" value="4"><label for="estrela4">★</label>
+        <input type="radio" id="estrela3" name="estrela" value="3"><label for="estrela3">★</label>
+        <input type="radio" id="estrela2" name="estrela" value="2"><label for="estrela2">★</label>
+        <input type="radio" id="estrela1" name="estrela" value="1"><label for="estrela1">★</label>
       </div>
 
-      <label for="comentario"><strong>Deixe seu comentário:</strong></label>
+      <label for="comentario">Deixe seu comentário:</label>
       <textarea id="comentario" placeholder="Digite aqui sua opinião..."></textarea>
+
+      <button class="btn-enviar">Enviar Avaliação</button>
     </section>
 
-    <section style="text-align:center;">
-      <button onclick="enviarAvaliacao()">Enviar Avaliação</button>
-      <p class="mensagem" id="mensagem"></p>
-    </section>
+    <a href="index.html" class="btn-voltar">← Voltar</a>
   </main>
 
-  <a href="index.html" class="voltar">← Voltar</a>
-
-  <footer>
-    © 2025 Vintage Store — Todos os direitos reservados
+  <footer class="site-footer">
+    <p>© 2025 Vintage Store — Todos os direitos reservados</p>
   </footer>
 
-  <script>
-    function enviarAvaliacao() {
-      const mensagem = document.getElementById("mensagem");
-      const comentario = document.getElementById("comentario").value;
-      const estrela = document.querySelector('input[name="estrela"]:checked');
-
-      if (!estrela) {
-        mensagem.textContent = "Por favor, selecione uma nota antes de enviar.";
-        mensagem.style.color = "#b33";
-        return;
-      }
-
-      if (comentario.trim() === "") {
-        mensagem.textContent = "Por favor, escreva um comentário antes de enviar.";
-        mensagem.style.color = "#b33";
-        return;
-      }
-
-      mensagem.textContent = "✨ Obrigado pela sua avaliação! Sua opinião é muito importante para nós.";
-      mensagem.style.color = "#1e2a38";
-      document.getElementById("comentario").value = "";
-      estrela.checked = false;
-    }
-  </script>
 </body>
 </html>
-
