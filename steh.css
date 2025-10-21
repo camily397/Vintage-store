@@ -1,12 +1,13 @@
 /* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #F8F8F6; /* off-white suave */
+  background-color: #F8F8F6; /* off-white */
   margin: 0;
   padding: 0;
-  color: #1E1E1E; /* preto suave para o texto */
+  color: #1E1E1E; /* texto preto suave */
 }
 
+/* ======= CABEÇALHO ======= */
 header {
   background-color: #1C2833; /* azul marinho */
   padding: 15px;
@@ -17,19 +18,20 @@ header {
   font-weight: bold;
 }
 
+/* ======= CONTAINER PRINCIPAL ======= */
 .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 30px;
   gap: 20px;
-  flex-wrap: wrap; /* para tornar a página responsiva */
+  flex-wrap: wrap; /* para responsividade */
 }
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #cccccc; /* branco */
+  background: #FFFFFF; /* branco */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -82,7 +84,7 @@ header {
 .album-info {
   flex: 1;
   background: #FFFFFF; /* branco */
-  color: #1E1E1E; /* preto */
+  color: #1E1E1E; /* texto preto */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -92,20 +94,20 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #000000; /* azul marinho */
+  color: #1C2833; /* azul marinho */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #000000; /* preto */
+  color: #1E1E1E; /* preto */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #cccccc; /* branco */
+  background: #FFFFFF; /* branco */
   padding: 20px;
   border-radius: 10px;
   color: #1E1E1E; /* preto */
@@ -115,7 +117,7 @@ header {
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #FFFFFF; /* azul marinho */
+  color: #1C2833; /* azul marinho */
 }
 
 .payment-options {
@@ -127,24 +129,24 @@ header {
 .payment-options button {
   flex: 1;
   padding: 10px;
-  border: 2px solid #FFFFFF; /* azul marinho */
+  border: 2px solid #1C2833; /* azul marinho */
   border-radius: 5px;
   background: #FFFFFF; /* branco */
-  color: #000000; /* azul marinho */
+  color: #1C2833; /* azul marinho */
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background: #FFFFFF;
-  color: #FFFFFF;
+  background: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* texto branco */
 }
 
 .payment-options button.selected {
-  background: #FFFFFF;
-  color: #FFFFFF;
-  border: 2px solid #000000;
+  background: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* texto branco */
+  border: 2px solid #1C2833;
 }
 
 .quantity {
@@ -161,15 +163,15 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #FFFFFF; /* azul marinho */
-  color: #FFFFFF;
+  background: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* branco */
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
 }
 
 .quantity button:hover {
-  background: #273849;
+  background: #273849; /* azul escuro */
 }
 
 .buy-btn {
@@ -178,8 +180,8 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #FFFFFF; /* azul marinho */
-  color: #FFFFFF;
+  background: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* branco */
   font-size: 18px;
   cursor: pointer;
   font-weight: bold;
@@ -187,7 +189,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #FFFFFF;
+  background: #273849; /* azul escuro */
 }
 
 /* ======= BOTÃO VOLTAR ======= */
@@ -196,7 +198,7 @@ header {
   bottom: 20px;
   left: 20px;
   background: #1C2833; /* azul marinho */
-  color: #FFFFFF;
+  color: #FFFFFF; /* branco */
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 6px;
@@ -204,13 +206,13 @@ header {
 }
 
 .voltar:hover {
-  background: #34495E;
+  background: #273849; /* azul escuro */
 }
 
 /* ======= BOTÃO CARRINHO ======= */
 .cart-btn {
   background-color: #1C2833; /* azul marinho */
-  color: #FFFFFF;
+  color: #FFFFFF; /* branco */
   border: none;
   padding: 10px 18px;
   border-radius: 25px;
@@ -220,7 +222,7 @@ header {
 }
 
 .cart-btn:hover {
-  background-color: #273849;
+  background-color: #273849; /* azul escuro */
   transform: scale(1.05);
 }
 
@@ -285,4 +287,3 @@ header {
     width: 100%;
   }
 }
-
