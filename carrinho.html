@@ -4,19 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Carrinho - Vintage Store</title>
-  <link rel="stylesheet" href="frank.css">
+  <link rel="stylesheet" href="carrinho.css">
 </head>
 
 <body>
   <header>🛒 Carrinho - Vintage Store</header>
 
-  <main class="container" id="cartContainer">
-    <section class="album-info" style="flex: 1 1 100%;">
-      <h2>Itens no seu carrinho:</h2>
-      <div id="cartItems"></div>
-      <h3 id="cartTotal"></h3>
-      <button class="buy-btn" id="clearCart">🗑️ Esvaziar carrinho</button>
-      <a href="index.html" class="voltar">← Continuar comprando</a>
+  <main class="cart-container">
+    <section class="cart">
+      <h2>Itens no seu carrinho</h2>
+      <div id="cartItems" class="cart-items"></div>
+
+      <div class="cart-summary">
+        <h3 id="cartTotal">Total: R$ 0,00</h3>
+        <div class="cart-buttons">
+          <button id="clearCart" class="btn clear">🗑️ Esvaziar carrinho</button>
+          <a href="index.html" class="btn continue">← Continuar comprando</a>
+          <button class="btn checkout">✅ Finalizar compra</button>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -33,25 +39,28 @@
         let total = 0;
 
         if (cart.length === 0) {
-          cartItemsDiv.innerHTML = "<p>Seu carrinho está vazio.</p>";
-          cartTotal.textContent = "";
+          cartItemsDiv.innerHTML = "<p class='empty'>Seu carrinho está vazio.</p>";
+          cartTotal.textContent = "Total: R$ 0,00";
           return;
         }
 
         cart.forEach((item, index) => {
+          const subtotal = item.price * item.quantity;
+          total += subtotal;
+
           const itemDiv = document.createElement("div");
-          itemDiv.style.borderBottom = "1px solid #ccc";
-          itemDiv.style.marginBottom = "15px";
-          itemDiv.style.paddingBottom = "10px";
+          itemDiv.classList.add("cart-item");
           itemDiv.innerHTML = `
-            <p><strong>${item.name}</strong></p>
-            <p>Quantidade: ${item.quantity}</p>
-            <p>Preço unitário: R$ ${item.price.toFixed(2)}</p>
-            <p>Subtotal: R$ ${(item.price * item.quantity).toFixed(2)}</p>
-            <button style="background:#8B0000;color:#fff;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;" onclick="removeItem(${index})">Remover</button>
+            <img src="${item.image}" alt="${item.name}">
+            <div class="info">
+              <h4>${item.name}</h4>
+              <p>Preço unitário: R$ ${item.price.toFixed(2)}</p>
+              <p>Quantidade: ${item.quantity}</p>
+              <p><strong>Subtotal:</strong> R$ ${subtotal.toFixed(2)}</p>
+            </div>
+            <button class="remove-btn" onclick="removeItem(${index})">✖</button>
           `;
           cartItemsDiv.appendChild(itemDiv);
-          total += item.price * item.quantity;
         });
 
         cartTotal.textContent = `💰 Total: R$ ${total.toFixed(2)}`;
