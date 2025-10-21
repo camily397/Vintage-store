@@ -1,143 +1,189 @@
+/* ======= GERAL ======= */
 body {
   font-family: Arial, sans-serif;
-  background-color: #edf5ef;
+  background-color: #F9F6F0; /* off-white suave */
   margin: 0;
   padding: 0;
+  color: #4A4A4A; /* texto principal em cinza suave */
 }
 
 header {
-  background-color: #1e2b1f;
-  color: white;
-  text-align: center;
-  padding: 10px;
+  background-color: #1C2833; /* azul marinho */
+  padding: 15px;
+  color: #F9F6F0; /* off-white para o texto */
   font-size: 22px;
+  font-family: "Georgia", serif;
+  text-align: center;
   font-weight: bold;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 30px;
   gap: 20px;
+  flex-wrap: wrap; /* para tornar a página responsiva */
 }
 
-.album-images, .album-info, .payment {
-  background-color: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
+/* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  text-align: center;
+  background: #D8E8D8; /* verde suave */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.album-images img {
+.main-image {
+  flex: 3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-image img {
   width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .thumbs {
-  margin-top: 10px;
+  flex: 1;
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .thumbs img {
-  width: 60px;
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
   border-radius: 8px;
   cursor: pointer;
-  opacity: 0.7;
-  transition: 0.3s;
+  opacity: 0.85;
+  transition: transform 0.3s, opacity 0.3s, border 0.3s;
 }
 
-.thumbs img.active, .thumbs img:hover {
+.thumbs img:hover {
+  transform: scale(1.05);
   opacity: 1;
-  border: 2px solid #a3c7a1;
 }
 
+.thumbs img.active {
+  border: 3px solid #F9F6F0; /* off-white em destaque */
+  opacity: 1;
+}
+
+/* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  font-size: 15px;
+  background: #fff; /* fundo branco para contraste */
+  color: #4A4A4A; /* texto cinza suave */
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-.album-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cart-btn {
-  background-color: #82b89f;
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.cart-btn:hover {
-  background-color: #6da487;
+.album-info h2 {
+  margin-bottom: 15px;
+  color: #A8C9A3; /* verde menta suave */
 }
 
 .price {
-  font-size: 18px;
-  color: #2b2b2b;
+  margin-top: 15px;
+  font-size: 20px;
   font-weight: bold;
+  color: #4A4A4A; /* cinza suave */
 }
 
+/* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
-  flex: 0.8;
-  text-align: center;
+  flex: 1;
+  background: #F2E9E1; /* nude suave */
+  padding: 20px;
+  border-radius: 10px;
+  color: #F9F6F0; /* off-white */
+}
+
+.payment h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #F9F6F0;
+}
+
+.payment-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .payment-options button {
-  background-color: #2c3e30;
-  color: white;
+  flex: 1;
+  padding: 10px;
   border: none;
-  padding: 8px 12px;
-  margin: 5px;
   border-radius: 5px;
+  background: #A8C9A3; /* verde menta suave */
+  color: #F9F6F0; /* off-white */
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background-color: #3e5542;
+  background: #8AAE91; /* verde mais escuro */
+}
+
+.payment-options button.selected {
+  background: #F9F6F0; /* off-white */
+  color: #A8C9A3; /* verde suave */
+  border: 2px solid #A8C9A3; /* verde suave */
 }
 
 .quantity {
-  margin: 15px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .quantity button {
-  background-color: #d9e6d9;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
   border: none;
-  padding: 5px 10px;
+  border-radius: 5px;
+  background: #A8C9A3; /* verde menta suave */
+  color: #F9F6F0; /* off-white */
   cursor: pointer;
-  font-size: 16px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.quantity button:hover {
+  background: #8AAE91; /* verde mais escuro */
 }
 
 .buy-btn {
-  background-color: #6ea98b;
-  color: white;
+  display: block;
+  width: 100%;
+  padding: 15px;
   border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
+  background: #A8C9A3; /* verde menta suave */
+  color: #F9F6F0; /* off-white */
+  font-size: 18px;
   cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
 }
 
 .buy-btn:hover {
-  background-color: #5c9176;
+  background: #8AAE91; /* verde mais escuro */
 }
 
 .voltar {
