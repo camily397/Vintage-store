@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vintage Store - Checkout</title>
+<link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+<header>Vintage Store - Checkout</header>
+
+<main class="container">
+  <!-- Produtos do carrinho -->
+  <section class="cart-items">
+    <h2>Seus Produtos</h2>
+    <div id="cartProducts"></div>
+  </section>
+
+  <!-- Endereço de entrega -->
+  <section class="address-info">
+    <h2>Endereço de Entrega</h2>
+    <label>Rua:
+      <input type="text" id="street" value="Rua XXXX">
+    </label>
+    <label>Número:
+      <input type="text" id="number" value="XXX">
+    </label>
+    <label>Bairro:
+      <input type="text" id="neighborhood" value="XXXX">
+    </label>
+    <label>Estado:
+      <input type="text" id="state" value="XXXX">
+    </label>
+    <label>Telefone:
+      <input type="text" id="phone" value="(xx) xxxxx-xxxx">
+    </label>
+    <label>Email:
+      <input type="email" id="email" value="exemplo@email.com">
+    </label>
+  </section>
+
+  <!-- Formas de pagamento -->
+  <section class="payment-methods">
+    <h2>Formas de Pagamento</h2>
+    <div class="payment-options">
+      <button data-method="boleto">Boleto Bancário</button>
+      <button data-method="pix">PIX</button>
+      <button data-method="cartao">Cartão de Crédito</button>
+    </div>
+    <div id="paymentDetails" class="payment-details">
+      <p>Escolha um método de pagamento para ver as instruções.</p>
+    </div>
+  </section>
+
+  <!-- Resumo da compra -->
+  <section class="summary">
+    <h2>Resumo da Compra</h2>
+    <p>Total de Produtos: <span id="totalItems">0</span></p>
+    <p>Valor Total: R$ <span id="totalPrice">0,00</span></p>
+    <button id="finalizePurchase" class="buy-btn">Finalizar Compra</button>
+  </section>
+</main>
+
+<a href="index.html" class="voltar">← Voltar</a>
+
+<script>
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const cartProducts = document.getElementById("cartProducts");
+const totalItemsEl = document.getElementById("totalItems");
+const totalPriceEl = document.getElementById("totalPrice");
+let totalItems = 0;
+let totalPrice = 0;
+
+// Função para atualizar totais
+function updateTotals() {
+  totalItems = 0;
+  totalPrice = 0;
+  cartProducts.querySelectorAll(".cart-product").forEach(prodEl => {
+    const qty = parseInt(prodEl.querySelector(".qty-input").value);
+    const price = parseFloat(prodEl.dataset.price);
+    prodEl.querySelector(".subtotal").textContent = (qty * price).toFixed(2);
+    totalItems += qty;
+    totalPrice += qty * price;
+  });
+  totalItemsEl.textContent = totalItems;
+  totalPriceEl.textContent = totalPrice.toFixed(2);
+}
+
+// Renderiza produtos do carrinho
+cart.forEach((product, index) => {
+  const prodDiv = document.createElement("div");
+  prodDiv.classList.add("cart-product");
+  prodDiv.dataset.price = product.price;
+
+  prodDiv.innerHTML = `
+    <img src="${product.image}" alt="${product.name}">
+    <div class="info">
+      <h3>${product.name}</h3>
+      <p><strong>Preço Unitário:</strong> R$ ${product.price.toFixed(2)}</p>
+      <p><strong>Descrição:</strong> Produto oficial e lacrado — inclui CD, Vinil e Pôster.</p>
+      <p><strong>Quantidade:</strong>
+        <input type="number" class="qty-input" value="${product.quantity}" min="1">
+      </p>
+      <p><strong>Subtotal:</strong> R$ <span class="subtotal">${(product.price * product.quantity).toFixed(2)}</span></p>
+    </div>
+  `;
+
+  cartProducts.appendChild(prodDiv);
+
+  // Evento para atualizar quantidade
+  prodDiv.querySelector(".qty-input").addEventListener("change", () => {
+    const val = parseInt(prodDiv.querySelector(".qty-input").value);
+    if (val < 1) prodDiv.querySelector(".qty-input").value = 1;
+    updateTotals();
+  });
+});
+
+updateTotals();
+
+// Formas de pagamento
+const paymentButtons = document.querySelectorAll(".payment-options button");
+const paymentDetails = document.getElementById("paymentDetails");
+
+paymentButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    paymentButtons.forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+    const method = btn.dataset.method;
+    if (method === "boleto") {
+      paymentDetails.innerHTML = `<p>Você escolheu Boleto Bancário. Após finalizar a compra, você receberá o boleto para pagamento.</p>`;
+    } else if (method === "pix") {
+      paymentDetails.innerHTML = `<p>Você escolheu PIX. Após finalizar a compra, será exibido um QR Code para pagamento.</p>`;
+    } else if (method === "cartao") {
+      paymentDetails.innerHTML = `<p>Você escolheu Cartão de Crédito. Preencha os dados do cartão após finalizar a compra.</p>`;
+    }
+  });
+});
+
+// Finalizar compra
+document.getElementById("finalizePurchase").addEventListener("click", () => {
+  const selectedPayment = document.querySelector(".payment-options button.selected");
+  if(!selectedPayment) {
+    alert("Por favor, selecione uma forma de pagamento.");
+    return;
+  }
+  alert("Compra finalizada! Detalhes do pagamento serão exibidos em seguida.");
+  localStorage.removeItem("cart"); // limpa carrinho
+  window.location.href = "pagamento.html"; // página de pagamento real
+});
+</script>
+</body>
+</html>
