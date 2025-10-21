@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Store - Ariana Grande</title>
+  <link rel="stylesheet" href="thanks.css">
+</head>
+<body>
+  <header>Vintage Store</header>
+
+  <main class="container">
+    <!-- Área das imagens -->
+    <section class="album-images">
+      <div class="main-image">
+        <img id="mainImg" src="thanks.jfif" alt="Ariana Grande Álbum">
+      </div>
+      <div class="thumbs">
+      </div>
+    </section>
+
+    <!-- Área das informações -->
+    <section class="album-info">
+      <div class="album-header">
+      <h2>Ariana Grande -  thank u next </h2>
+       <button class="cart-btn" id="addToCart">🛒 Adicionar ao carrinho</button>
+</div>
+      <p><strong>Data de lançamento:</strong> xx/xx/xxxx</p>
+      <p>Produto oficial e lacrado - não vendemos réplicas.</p>
+      <p>Itens enviados diretamente de distribuidoras oficiais.</p>
+      <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
+      <p class="price">TOTAL A PAGAR: R$ <span id="total">89,90</span></p>
+      <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
+      <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
+      <p><strong>Email:</strong> exemplo@email.com</p>
+    </section>
+
+    <!-- Área do pagamento -->
+    <section class="payment">
+      <h3>MÉTODOS DE PAGAMENTO</h3>
+      <div class="payment-options">
+        <button>Boleto</button>
+        <button>PIX</button>
+        <button>Cartão</button>
+      </div>
+      <div class="quantity">
+        <button id="minus">-</button>
+        <span id="qty">1</span>
+        <button id="plus">+</button>
+      </div>
+      <button class="buy-btn">Comprar</button>
+    </section>
+  </main>
+
+  <script src="thanks.js"></script>
+   <a href="discos.html" class="voltar">← Voltar</a>
+</body>
+</html>
