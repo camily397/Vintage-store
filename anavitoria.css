@@ -4,13 +4,13 @@ body {
    background-color: #F7F4F1; /* off-white suave */
    margin: 0;
    padding: 0;
-   color: #4A4A4A; /* texto principal em cinza escuro */
+   color: #ffffff; /* texto principal em cinza escuro */
 }
 
 header {
    background-color: #1C2833; /* azul marinho */
    padding: 15px;
-   color: #F7F4F1; /* off-white para o texto */
+   color: #e2d2ed; /* off-white para o texto */
    font-size: 22px;
    font-family: "Georgia", serif;
    text-align: center;
@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
    flex: 1;
-   background: #ffffff; /* marrom suave */
+   background: #daa868; /* marrom suave */
    padding: 20px;
    border-radius: 10px;
    color: #F7F4F1; /* off-white */
