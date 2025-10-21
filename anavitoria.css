@@ -81,7 +81,7 @@ header {
 .album-info {
    flex: 1;
    background: #f7f7f7; /* fundo branco para contraste */
-   color: #ffffff; /* texto cinza */
+   color: #503692; /* texto cinza */
    padding: 30px;
    border-radius: 10px;
    font-size: 18px;
