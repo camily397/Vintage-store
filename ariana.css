@@ -1,12 +1,12 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #edf5ef;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #1c1c1c;
+  background-color: #1e2b1f;
   color: white;
   text-align: center;
   padding: 10px;
@@ -22,7 +22,7 @@ header {
 }
 
 .album-images, .album-info, .payment {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -56,7 +56,7 @@ header {
 
 .thumbs img.active, .thumbs img:hover {
   opacity: 1;
-  border: 2px solid #1c1c1c;
+  border: 2px solid #a3c7a1;
 }
 
 .album-info {
@@ -71,21 +71,22 @@ header {
 }
 
 .cart-btn {
-  background-color: #4CAF50;
+  background-color: #82b89f;
   border: none;
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .cart-btn:hover {
-  background-color: #45a049;
+  background-color: #6da487;
 }
 
 .price {
   font-size: 18px;
-  color: #333;
+  color: #2b2b2b;
   font-weight: bold;
 }
 
@@ -95,17 +96,18 @@ header {
 }
 
 .payment-options button {
-  background-color: #222;
+  background-color: #2c3e30;
   color: white;
   border: none;
   padding: 8px 12px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .payment-options button:hover {
-  background-color: #444;
+  background-color: #3e5542;
 }
 
 .quantity {
@@ -117,7 +119,7 @@ header {
 }
 
 .quantity button {
-  background-color: #ddd;
+  background-color: #d9e6d9;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -125,16 +127,17 @@ header {
 }
 
 .buy-btn {
-  background-color: #007BFF;
+  background-color: #6ea98b;
   color: white;
   border: none;
   padding: 8px 20px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .buy-btn:hover {
-  background-color: #0056b3;
+  background-color: #5c9176;
 }
 
 .voltar {
@@ -142,7 +145,7 @@ header {
   text-align: center;
   margin: 15px auto;
   width: fit-content;
-  color: #333;
+  color: #1e2b1f;
   text-decoration: none;
   font-weight: bold;
 }
