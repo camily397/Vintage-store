@@ -44,6 +44,20 @@
       <div class="payment-options">
         <button>Boleto</button>
         <button>PIX</button>
+        <script>
+document.querySelector('#pixButton').addEventListener('click', () => {
+  const payload = {
+    albumName: 'Beabadoobee - Beatopia',
+    unitPrice: 114.90,
+    quantity: 1,
+    total: 114.90,
+    image: 'beabadoobee.jpg'
+  };
+  sessionStorage.setItem('checkout_pix', JSON.stringify(payload));
+  window.location.href = 'pix.html';
+});
+</script>
+
          <button>Cartão</button>
       </div>
       <div class="quantity">
