@@ -3,116 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrinho - Vintage Store</title>
-  <link rel="stylesheet" href="carrinho.css">
+  <title>Meu Carrinho - Vintage Store</title>
+  <link rel="stylesheet" href="frank.css">
 </head>
+
 <body>
-  <header class="topo">
-    <h1 class="logo">Vintage Store</h1>
-  </header>
+  <header>🛒 Carrinho - Vintage Store</header>
 
-  <main class="carrinho-container">
-    <h2>Seu Carrinho</h2>
-
-    <div id="mensagemVazia" class="mensagem-vazia">
-      <p>Nenhum produto selecionado.</p>
-    </div>
-
-    <div class="cart-items" id="listaProdutos"></div>
-
-    <div class="resumo-carrinho">
-      <h3>Resumo do Pedido</h3>
-      <div class="resumo-info">
-        <p><strong>Itens no carrinho:</strong> <span id="totalItens">0</span></p>
-        <p><strong>Preço total:</strong> R$ <span id="total">0,00</span></p>
-        <p id="freteMsg" class="frete-msg">Frete grátis acima de R$ 200,00</p>
-      </div>
-      <button id="finalizarCompra">Finalizar Compra</button>
-    </div>
+  <main class="container" id="cartContainer">
+    <section class="album-info" style="flex: 1 1 100%;">
+      <h2>Itens no seu carrinho:</h2>
+      <div id="cartItems"></div>
+      <h3 id="cartTotal"></h3>
+      <button class="buy-btn" id="clearCart">🗑️ Esvaziar carrinho</button>
+      <a href="index.html" class="voltar">← Continuar comprando</a>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2025 Vintage Store — Todos os direitos reservados.</p>
-  </footer>
-
   <script>
-    const lista = document.getElementById('listaProdutos');
-    const totalEl = document.getElementById('total');
-    const totalItensEl = document.getElementById('totalItens');
-    const msgVazia = document.getElementById('mensagemVazia');
-    const freteMsg = document.getElementById('freteMsg');
+    document.addEventListener("DOMContentLoaded", () => {
+      const cartItemsDiv = document.getElementById("cartItems");
+      const cartTotal = document.getElementById("cartTotal");
+      const clearCartBtn = document.getElementById("clearCart");
 
-    function atualizarQuantidade(index, valor) {
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      valor = parseInt(valor);
-      if (valor < 1) valor = 1;
-      if (valor > 5) valor = 5; // limite máximo
-      carrinho[index].quantidade = valor;
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      carregarCarrinho();
-    }
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    function remover(index) {
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      carrinho.splice(index, 1);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      carregarCarrinho();
-    }
+      function renderCart() {
+        cartItemsDiv.innerHTML = "";
+        let total = 0;
 
-    function carregarCarrinho() {
-      const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      if (carrinho.length === 0) {
-        msgVazia.style.display = 'block';
-        lista.innerHTML = '';
-        totalEl.textContent = '0,00';
-        totalItensEl.textContent = '0';
-        freteMsg.style.display = 'none';
-        return;
+        if (cart.length === 0) {
+          cartItemsDiv.innerHTML = "<p>Seu carrinho está vazio.</p>";
+          cartTotal.textContent = "";
+          return;
+        }
+
+        cart.forEach((item, index) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.style.borderBottom = "1px solid #ccc";
+          itemDiv.style.marginBottom = "15px";
+          itemDiv.style.paddingBottom = "10px";
+          itemDiv.innerHTML = `
+            <p><strong>${item.name}</strong></p>
+            <p>Quantidade: ${item.quantity}</p>
+            <p>Preço unitário: R$ ${item.price.toFixed(2)}</p>
+            <p>Subtotal: R$ ${(item.price * item.quantity).toFixed(2)}</p>
+            <button style="background:#8B0000;color:#fff;padding:5px 10px;border:none;border-radius:5px;cursor:pointer;" onclick="removeItem(${index})">Remover</button>
+          `;
+          cartItemsDiv.appendChild(itemDiv);
+          total += item.price * item.quantity;
+        });
+
+        cartTotal.textContent = `💰 Total: R$ ${total.toFixed(2)}`;
       }
 
-      msgVazia.style.display = 'none';
-      lista.innerHTML = '';
-      let total = 0;
-      let quantidadeTotal = 0;
-
-      carrinho.forEach((item, index) => {
-        const subtotal = item.preco * item.quantidade;
-        total += subtotal;
-        quantidadeTotal += item.quantidade;
-
-        const card = document.createElement('div');
-        card.className = 'cart-item';
-        card.innerHTML = `
-          <div class="cart-item-left">
-            <img src="${item.imagem}" alt="${item.nome}">
-            <div class="cart-item-info">
-              <h3>${item.nome}</h3>
-              <p>R$ ${item.preco.toFixed(2)} cada</p>
-              <p class="descricao">${item.descricao || ''}</p>
-            </div>
-          </div>
-          <div class="cart-item-right">
-            <label>Qtd:</label>
-            <input type="number" min="1" max="5" value="${item.quantidade}" onchange="atualizarQuantidade(${index}, this.value)">
-            <p class="subtotal">Subtotal: R$ ${subtotal.toFixed(2)}</p>
-            <button onclick="remover(${index})">❌ Remover</button>
-          </div>
-        `;
-        lista.appendChild(card);
+      clearCartBtn.addEventListener("click", () => {
+        localStorage.removeItem("cart");
+        cart = [];
+        renderCart();
       });
 
-      totalEl.textContent = total.toFixed(2);
-      totalItensEl.textContent = quantidadeTotal;
-      freteMsg.style.display = total >= 200 ? 'block' : 'none';
-    }
+      window.removeItem = (index) => {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+      };
 
-    document.getElementById('finalizarCompra').addEventListener('click', () => {
-      alert('Compra finalizada com sucesso!');
-      localStorage.removeItem('carrinho');
-      window.location.href = "index.html";
+      renderCart();
     });
-
-    carregarCarrinho();
   </script>
 </body>
 </html>
