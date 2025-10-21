@@ -3,12 +3,12 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #f8f8f6; /* off white */
-  color: #001f3f; /* azul marinho escuro */
+  color: #1e2a38; /* azul marinho escuro */
 }
 
 /* CABEÇALHO */
 header {
-  background-color: #001f3f;
+  background-color: #1e2a38;
   color: #f8f8f6;
   display: flex;
   justify-content: space-between;
@@ -64,7 +64,7 @@ header nav a:hover {
 
 .banner h1 {
   font-size: 36px;
-  color: #001f3f;
+  color: #1e2a38;
 }
 
 .banner p {
@@ -78,7 +78,7 @@ header nav a:hover {
 }
 
 .album-section h2 {
-  color: #001f3f;
+  color: #1e2a38;
   margin-bottom: 25px;
   font-size: 26px;
   text-align: center;
@@ -97,7 +97,7 @@ header nav a:hover {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
-  color: #001f3f;
+  color: #1e2a38;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
@@ -125,7 +125,7 @@ header nav a:hover {
 
 /* RODAPÉ */
 footer {
-  background-color: #001f3f;
+  background-color: #1e2a38;
   text-align: center;
   padding: 20px;
   color: #f8f8f6;
