@@ -1,1 +1,150 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(180deg, #aabddb, #cccccc);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  background-color: #1e2a38;
+  color: white;
+  padding: 15px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.site-header h1 {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+.site-header p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===== CONTAINER ===== */
+.avaliacao-container {
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avaliacao-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #111;
+}
+
+/* ===== CARD ===== */
+.card {
+  background-color: #f7f9fc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #1e2a38;
+}
+
+.card p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* ===== ESTRELAS ===== */
+.estrelas {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  margin: 15px 0;
+}
+
+.estrelas input {
+  display: none;
+}
+
+.estrelas label {
+  font-size: 28px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.estrelas input:checked ~ label,
+.estrelas label:hover,
+.estrelas label:hover ~ label {
+  color: #ffca28;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ===== BOTÕES ===== */
+.btn-enviar {
+  background-color: #0c1a2c;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-enviar:hover {
+  background-color: #142b45;
+}
+
+.btn-voltar {
+  display: inline-block;
+  background-color: #0c1a2c;
+  color: white;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.btn-voltar:hover {
+  background-color: #142b45;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  margin-top: auto;
+  padding: 15px 0;
+}
 
