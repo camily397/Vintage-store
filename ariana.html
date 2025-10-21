@@ -8,9 +8,7 @@
 </head>
 
 <body>
-  <header class="topo">
-    <h1 class="logo">Vintage Store</h1>
-  </header>
+  <header>Vintage Store</header>
 
   <main class="container">
     <!-- Área das imagens -->
@@ -36,11 +34,21 @@
       <p>Produto oficial e lacrado — não vendemos réplicas.</p>
       <p>Itens enviados diretamente de distribuidoras oficiais.</p>
       <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
-      <p class="price">TOTAL A PAGAR: R$ <span id="preco">159,90</span></p>
-
+      <p><strong>Faixas principais:</strong> "positions", "pov", "34+35", "safety net".</p>
+      <p class="price">TOTAL A PAGAR: R$ <span id="total">139,90</span></p>
       <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
       <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
       <p><strong>Email:</strong> exemplo@email.com</p>
+    </section>
+
+    <!-- Área do pagamento -->
+    <section class="payment">
+      <h3>MÉTODOS DE PAGAMENTO</h3>
+      <div class="payment-options">
+        <button>Boleto</button>
+        <button>PIX</button>
+        <button>Cartão</button>
+      </div>
 
       <div class="quantity">
         <button id="minus">-</button>
@@ -48,64 +56,12 @@
         <button id="plus">+</button>
       </div>
 
-      <!-- Área do pagamento -->
-      <section class="payment">
-        <h3>MÉTODOS DE PAGAMENTO</h3>
-        <div class="payment-options">
-          <button>Boleto</button>
-          <button>PIX</button>
-          <button>Cartão</button>
-        </div>
-      </section>
-
       <button class="buy-btn">Comprar</button>
     </section>
   </main>
 
-  <footer class="rodape">
-    <a href="index.html" class="voltar">← Voltar</a>
-    <p>&copy; 2025 Vintage Store — Todos os direitos reservados</p>
-  </footer>
+  <a href="index.html" class="voltar">← Voltar</a>
 
-  <script>
-    const qtyEl = document.getElementById('qty');
-    const minusBtn = document.getElementById('minus');
-    const plusBtn = document.getElementById('plus');
-    const addBtn = document.getElementById('addToCart');
-
-    let quantidade = 1;
-
-    minusBtn.addEventListener('click', () => {
-      if (quantidade > 1) {
-        quantidade--;
-        qtyEl.textContent = quantidade;
-      }
-    });
-
-    plusBtn.addEventListener('click', () => {
-      quantidade++;
-      qtyEl.textContent = quantidade;
-    });
-
-    addBtn.addEventListener('click', () => {
-      const produto = {
-        nome: "Ariana Grande - Positions",
-        preco: 159.90,
-        quantidade: quantidade,
-        imagem: "ariana.jfif"
-      };
-
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      const existente = carrinho.find(p => p.nome === produto.nome);
-      if (existente) {
-        existente.quantidade += quantidade;
-      } else {
-        carrinho.push(produto);
-      }
-
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      alert(`${produto.nome} adicionado ao carrinho!`);
-    });
-  </script>
+  <script src="ariana.js"></script>
 </body>
 </html>
