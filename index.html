@@ -1,84 +1,76 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+@@ -2,10 +2,41 @@
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vintage Store</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vintage Store - Início</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+  <script>
+    // ======= DETECTOR DE DISPOSITIVO =======
+    document.addEventListener("DOMContentLoaded", () => {
+      const largura = window.innerWidth;
+      const body = document.body;
+
+      if (largura <= 768) {
+        body.classList.add("mobile"); // celular
+      } else if (largura <= 1024) {
+        body.classList.add("tablet"); // tablet
+      } else {
+        body.classList.add("desktop"); // computador
+      }
+
+      // Atualiza a classe ao redimensionar
+      window.addEventListener("resize", () => {
+        body.classList.remove("mobile", "tablet", "desktop");
+        const novaLargura = window.innerWidth;
+
+        if (novaLargura <= 768) {
+          body.classList.add("mobile");
+        } else if (novaLargura <= 1024) {
+          body.classList.add("tablet");
+        } else {
+          body.classList.add("desktop");
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
   <!-- HEADER -->
   <header class="site-header">
-    <div class="header-left">
-      <div class="logo">Vintage Store</div>
-      <div class="tagline">Loja de discos clássicos</div>
-    </div>
-    <div class="header-center">
-      <input type="search" placeholder="Buscar álbuns...">
-    </div>
-    <nav class="header-nav">
-      <a href="#">Home</a>
-      <a href="#">Categorias</a>
-      <a href="#">Contato</a>
+@@ -25,7 +56,7 @@
     </nav>
   </header>
 
+  <!-- CATEGORIAS (no topo) -->
   <!-- CATEGORIAS -->
   <section class="categories">
-    <a href="#" class="cat-card"><img src="https://via.placeholder.com/160x100" alt=""><div class="cat-title">Rock</div></a>
-    <a href="#" class="cat-card"><img src="https://via.placeholder.com/160x100" alt=""><div class="cat-title">Pop</div></a>
-    <a href="#" class="cat-card"><img src="https://via.placeholder.com/160x100" alt=""><div class="cat-title">Jazz</div></a>
-    <a href="#" class="cat-card"><img src="https://via.placeholder.com/160x100" alt=""><div class="cat-title">Blues</div></a>
-  </section>
-
-  <!-- HERO / BANNER -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>Descubra Álbuns Clássicos</h1>
-      <p>Seleção especial para colecionadores e amantes da música vintage.</p>
-      <a href="#" class="cta">Comprar Agora</a>
+    <a class="cat-card" href="albuns.html">
+      <img src="album.jpg" alt="Álbuns">
+@@ -52,7 +83,7 @@ <h1>Bem-vindo à Vintage Store</h1>
     </div>
   </section>
 
   <!-- VITRINE / DESTAQUES -->
-  <section class="container destaques">
-    <h2>Destaques</h2>
-    <div class="album-grid">
-      <div class="album-card">
-        <a href="#">
-          <img src="https://via.placeholder.com/200x200" alt="">
-          <h3>Album 1</h3>
-          <div class="album-name">Artista A</div>
-          <div class="price">R$ 49,90</div>
-        </a>
+  <!-- DESTAQUES -->
+  <main class="container">
+    <section class="destaques">
+      <h2>Destaques</h2>
+@@ -109,14 +140,12 @@ <h3>Frank Ocean</h3>
+        </article>
+
       </div>
-      <div class="album-card">
-        <a href="#">
-          <img src="https://via.placeholder.com/200x200" alt="">
-          <h3>Album 2</h3>
-          <div class="album-name">Artista B</div>
-          <div class="price">R$ 59,90</div>
-        </a>
-      </div>
-      <div class="album-card">
-        <a href="#">
-          <img src="https://via.placeholder.com/200x200" alt="">
-          <h3>Album 3</h3>
-          <div class="album-name">Artista C</div>
-          <div class="price">R$ 39,90</div>
-        </a>
-      </div>
-    </div>
-  </section>
+
+    </section>
+  </main>
 
   <!-- RODAPÉ -->
   <footer class="site-footer">
-    © 2025 Vintage Store
+    <p>&copy; 2025 Vintage Store — Todos os direitos reservados</p>
   </footer>
-
-  <!-- JavaScript: reconhecimento de dispositivo -->
-  <script src="script.js"></script>
 
 </body>
 </html>
