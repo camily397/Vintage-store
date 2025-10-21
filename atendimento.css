@@ -71,8 +71,8 @@ body {
 }
 
 .menu button {
-  background: linear-gradient(145deg, #1e2a38, #2c3e50);
-  color: #ffffff;
+  background: linear-gradient(145deg, #ffffff, #e0e0e0); /* gradiente branco */
+  color: #1e2a38; /* texto escuro */
   border: none;
   padding: 18px;
   font-size: 18px;
@@ -84,7 +84,7 @@ body {
 }
 
 .menu button:hover {
-  background: linear-gradient(145deg, #2b3b4b, #1e2a38);
+  background: linear-gradient(145deg, #f2f2f2, #dcdcdc); /* gradiente mais claro no hover */
   transform: translateX(4px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
@@ -202,4 +202,3 @@ body {
     font-size: 12px;
   }
 }
-
