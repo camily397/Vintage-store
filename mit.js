@@ -21,38 +21,42 @@ plusBtn.addEventListener("click", () => {
   }
 });
 
-// Função para adicionar ao carrinho sem sair da página
+// Função para adicionar o produto ao carrinho (armazenado no localStorage)
 const addToCartBtn = document.getElementById("addToCart");
 addToCartBtn.addEventListener("click", () => {
   const product = {
+    id: "mitski-lush",
     name: "MITSKI - LUSH",
     price: 139.9,
     quantity: quantity,
     image: "mit.jfif"
   };
 
-  // Pega o carrinho existente (ou cria um novo)
+  // Pega o carrinho atual (ou cria um novo)
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   // Verifica se o produto já está no carrinho
-  const existing = cart.find(item => item.name === product.name);
-  if (existing) {
-    if (existing.quantity + product.quantity <= maxQty) {
-      existing.quantity += product.quantity;
+  const existingProduct = cart.find(item => item.id === product.id);
+
+  if (existingProduct) {
+    // Atualiza a quantidade, respeitando o limite
+    if (existingProduct.quantity + product.quantity <= maxQty) {
+      existingProduct.quantity += product.quantity;
     } else {
-      existing.quantity = maxQty;
+      existingProduct.quantity = maxQty;
       alert("Você atingiu o limite máximo de 5 unidades desse produto.");
     }
   } else {
     cart.push(product);
   }
 
-  // Salva de volta no localStorage
+  // Salva o carrinho atualizado no localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // Efeito visual rápido de confirmação
-  addToCartBtn.textContent = "✅ Adicionado!";
+  // Feedback visual
+  addToCartBtn.textContent = "✅ Adicionado ao carrinho!";
   addToCartBtn.classList.add("added");
+
   setTimeout(() => {
     addToCartBtn.textContent = "🛒 Adicionar ao carrinho";
     addToCartBtn.classList.remove("added");
