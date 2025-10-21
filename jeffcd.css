@@ -20,22 +20,25 @@ header {
   align-items: flex-start;
   padding: 30px;
   gap: 20px;
+  flex-wrap: wrap; /* permite quebrar em telas menores */
 }
 
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
-  flex: 1;
+  flex: 2;
   background: #dcdcdc;
   padding: 20px;
   border-radius: 10px;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* permite reorganizar as imagens */
 }
 
 .main-image {
   flex: 3;
   border-radius: 8px;
   overflow: hidden;
+  min-width: 250px;
 }
 
 .main-image img {
@@ -50,6 +53,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  min-width: 100px;
 }
 
 .thumbs img {
@@ -81,6 +85,7 @@ header {
   border-radius: 10px;
   font-size: 18px;
   line-height: 1.6;
+  min-width: 250px;
 }
 
 .album-info h2 {
@@ -100,6 +105,8 @@ header {
   background: #dcdcdc;
   padding: 20px;
   border-radius: 10px;
+  min-width: 250px;
+  margin-top: 20px;
 }
 
 .payment h3 {
@@ -112,6 +119,7 @@ header {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .payment-options button {
@@ -123,6 +131,7 @@ header {
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  min-width: 80px;
 }
 
 .payment-options button:hover {
@@ -170,9 +179,11 @@ header {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .buy-btn:hover {
   background: #000;
 }
+
 .voltar {
   position: fixed;
   bottom: 20px;
@@ -187,4 +198,65 @@ header {
 
 .voltar:hover {
   background: #333;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .album-images {
+    flex-direction: column;
+  }
+
+  .thumbs {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .album-info,
+  .payment {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  header {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .album-info {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .payment h3 {
+    font-size: 16px;
+  }
+
+  .payment button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .quantity {
+    font-size: 16px;
+  }
+
+  .buy-btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .voltar {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
 }
