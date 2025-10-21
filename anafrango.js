@@ -65,3 +65,29 @@ cartBtn.addEventListener("click", () => {
     cartBtn.classList.remove("added");
   }, 2000);
 });
+// ======= Comprar (simulação com PIX redirecionando) =======
+const buyBtn = document.getElementById("buyBtn");
+
+buyBtn.addEventListener("click", () => {
+  const selectedMethod = document.querySelector(".payment-options .pay-btn.selected");
+  if (!selectedMethod) {
+    alert("Por favor, selecione um método de pagamento.");
+    return;
+  }
+
+  const method = selectedMethod.textContent.trim().toLowerCase();
+  const total = unitPrice * quantity;
+  const albumName = document.querySelector("h2").textContent;
+
+  if (method === "pix") {
+    // redireciona para a página de pagamento via PIX
+    window.location.href = "pix.html";
+  } else {
+    // simulação para boleto ou cartão
+    alert(`Compra simulada:
+Álbum: ${albumName}
+Quantidade: ${quantity}
+Total: R$ ${total.toFixed(2).replace('.', ',')}
+Método: ${method.toUpperCase()}`);
+  }
+});
