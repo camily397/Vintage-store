@@ -81,7 +81,7 @@ header {
 .album-info {
    flex: 1;
    background: #3a2e64; /* fundo branco para contraste */
-   color: #4A4A4A; /* texto cinza */
+   color: #ffffff; /* texto cinza */
    padding: 30px;
    border-radius: 10px;
    font-size: 18px;
@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
    flex: 1;
-   background: #daa868; /* marrom suave */
+   background: #bb7a24; /* marrom suave */
    padding: 20px;
    border-radius: 10px;
    color: #F7F4F1; /* off-white */
@@ -140,7 +140,7 @@ header {
 .payment-options button.selected {
    background: #F7F4F1; /* off-white */
    color: #2F4858; /* azul escuro */
-   border: 2px solid #5f3a19; /* marrom suave */
+   border: 2px solid #a4642c; /* marrom suave */
 }
 
 .quantity {
