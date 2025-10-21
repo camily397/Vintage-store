@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f8f6; /* off white */
+  color: #001f3f; /* azul marinho */
+}
+
+header {
+  background-color: #001f3f;
+  color: #f8f8f6;
+  text-align: center;
+  padding: 20px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.pix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.pix-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+}
+
+.album-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.album-img {
+  width: 130px;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+
+.details h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.pix-area {
+  margin: 25px 0;
+}
+
+.pix-area h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.pix-qrcode {
+  width: 180px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+#pixCode {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #001f3f;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+  background-color: #f8f8f6;
+  color: #001f3f;
+}
+
+#copyBtn {
+  background-color: #001f3f;
+  color: #f8f8f6;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+#copyBtn:hover {
+  background-color: #003366;
+}
+
+.confirm-area {
+  margin-top: 25px;
+}
+
+#confirmBtn {
+  background-color: #2e8b57;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#confirmBtn:hover {
+  background-color: #267347;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 30px;
+  color: #001f3f;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.back-btn:hover {
+  color: #003366;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .album-info {
+    flex-direction: column;
+  }
+
+  .album-img {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .pix-box {
+    padding: 30px 20px;
+  }
+}
