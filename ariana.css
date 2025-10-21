@@ -1,7 +1,7 @@
 /* ======== GERAL ======== */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f1f8f3; /* verde clarinho suave */
+  background-color: #f8f8f8; /* cinza bem clarinho */
   margin: 0;
   padding: 0;
   color: #1d2e1e;
@@ -9,7 +9,7 @@ body {
 
 /* ======== CABEÇALHO ======== */
 .topo {
-  background-color: #1f3a24;
+  background-color: #1f2e4f; /* azul escuro elegante */
   color: white;
   text-align: center;
   padding: 10px 0;
@@ -41,7 +41,7 @@ body {
 }
 
 .main-image img {
-  width: 300px;
+  width: 320px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -50,13 +50,13 @@ body {
 .thumbs {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 15px;
+  gap: 18px; /* mais espaço entre as imagens */
+  margin-top: 20px;
 }
 
 .thumbs img {
-  width: 70px;
-  height: 70px;
+  width: 85px; /* miniaturas maiores */
+  height: 85px;
   border-radius: 10px;
   opacity: 0.7;
   cursor: pointer;
@@ -66,7 +66,7 @@ body {
 .thumbs img:hover,
 .thumbs img.active {
   opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 /* ======== INFORMAÇÕES ======== */
@@ -86,7 +86,7 @@ body {
 }
 
 .album-info h2 {
-  color: #1f3a24;
+  color: #1f2e4f;
   font-size: 22px;
   margin-bottom: 10px;
 }
@@ -201,20 +201,20 @@ body {
 }
 
 /* ======== RODAPÉ ======== */
-.rodape {
+footer {
   text-align: center;
-  background-color: #eaf5ec;
+  background-color: #f2f2f2;
   padding: 15px;
   font-size: 13px;
   color: #2d3d2e;
   margin-top: 40px;
-  border-top: 1px solid #c7d7cb;
+  border-top: 1px solid #ccc;
 }
 
 .voltar {
   display: inline-block;
   margin-bottom: 8px;
-  color: #1f3a24;
+  color: #1f2e4f;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
@@ -233,5 +233,10 @@ body {
 
   .album-info {
     width: 90%;
+  }
+
+  .thumbs img {
+    width: 75px;
+    height: 75px;
   }
 }
