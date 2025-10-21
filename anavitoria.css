@@ -90,7 +90,7 @@ header {
 
 .album-info h2 {
    margin-bottom: 15px;
-   color: #B88A61; /* marrom suave */
+   color: #ffffff; /* marrom suave */
 }
 
 .price {
@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
    flex: 1;
-   background: #78502e; /* marrom suave */
+   background: #ffffff; /* marrom suave */
    padding: 20px;
    border-radius: 10px;
    color: #F7F4F1; /* off-white */
