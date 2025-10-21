@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento via PIX - Vintage Store</title>
+  <link rel="stylesheet" href="pix.css">
+</head>
+<body>
+  <header>
+    <h1>Vintage Store</h1>
+  </header>
+
+  <main class="pix-container">
+    <section class="pix-box">
+      <h2>Pagamento via PIX</h2>
+
+      <div class="album-info">
+        <img src="frankcapa.jpg" alt="Álbum" class="album-img">
+        <div class="details">
+          <h3 id="albumName">Frank Ocean - Blond</h3>
+          <p><strong>Valor:</strong> R$ <span id="albumPrice">129,90</span></p>
+          <p><strong>Data do Pedido:</strong> <span id="orderDate"></span></p>
+        </div>
+      </div>
+
+      <div class="pix-area">
+        <h3>Escaneie o QR Code ou copie o código abaixo:</h3>
+        <img src="qrcodepix.png" alt="QR Code PIX" class="pix-qrcode">
+        <textarea readonly id="pixCode">00020126330014BR.GOV.BCB.PIX0114+5599999999995204000053039865405129.905802BR5912VintageStore6009SaoPaulo62070503***6304ABCD</textarea>
+        <button id="copyBtn">Copiar código PIX</button>
+      </div>
+
+      <div class="confirm-area">
+        <p>Após efetuar o pagamento, clique abaixo para confirmar sua compra:</p>
+        <button id="confirmBtn">✅ Confirmar Pagamento</button>
+      </div>
+
+      <a href="index.html" class="back-btn">← Voltar à loja</a>
+    </section>
+  </main>
+
+  <script src="pix.js"></script>
+</body>
+</html>
