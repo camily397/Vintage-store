@@ -14,37 +14,40 @@
     </div>
   </header>
 
-<div class="container">
-  <h2>Avalie nosso Atendimento</h2>
+  <div class="container">
+    <h2>Avalie nosso Atendimento</h2>
 
-  <div class="balloon" id="balloon">
-    <p>Conte-nos como foi sua experiência:</p>
-    <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
+    <div class="balloon" id="balloon">
+      <p>Conte-nos como foi sua experiência:</p>
+      <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
+    </div>
+
+    <div class="stars" id="stars">
+      <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+      <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+      <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+      <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+      <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+    </div>
+
+    <button class="btn" id="btnEnviar">Enviar Avaliação</button>
+
+    <div class="thankyou" id="thankyou">
+      Obrigado pela sua avaliação! 😊
+    </div>
+
+    <div class="tip">
+      Dica: Sua opinião ajuda a melhorar nosso atendimento. Seja sincero e conte detalhes!
+    </div>
   </div>
 
-  <div class="stars" id="stars">
-    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
-    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
-    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
-    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
-    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
-  </div>
-
-  <button class="btn" id="btnEnviar">Enviar Avaliação</button>
-
-  <div class="thankyou" id="thankyou">
-    Obrigado pela sua avaliação! 😊
-  </div>
-
-  <div class="tip">
-    Dica: Sua opinião ajuda a melhorar nosso atendimento. Seja sincero e conte detalhes!
-  </div>
-</div>
-
-<script src="avaliaçao.js"></script>
-</body>
-</html>
+  <footer class="site-footer">
+    <p>&copy; 2025 Vintage Store — Todos os direitos reservados.</p>
+    <p><a href="contato.html">Contato</a> | <a href="sobre.html">Sobre</a> | <a href="politica.html">Política de Privacidade</a></p>
+  </footer>
 
   <a href="atendimento.html" class="voltar">← Voltar</a>
+
+  <script src="avaliaçao.js"></script>
 </body>
 </html>
