@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vintage Store - Ariana Grande Positions</title>
-  <link rel="stylesheet" href="frank.css"> <!-- Mantendo o CSS do Frank Ocean -->
+  <link rel="stylesheet" href="frank.css">
 </head>
+
 <body>
   <header class="topo">
     <h1 class="logo">Vintage Store</h1>
@@ -31,8 +32,8 @@
         <button class="cart-btn" id="addToCart">🛒 Adicionar ao carrinho</button>
       </div>
 
-      <p><strong>Data de lançamento:</strong> xx/xx/xxxx</p>
-      <p>Produto oficial e lacrado - não vendemos réplicas.</p>
+      <p><strong>Data de lançamento:</strong> 30/10/2020</p>
+      <p>Produto oficial e lacrado — não vendemos réplicas.</p>
       <p>Itens enviados diretamente de distribuidoras oficiais.</p>
       <p><strong>Inclui:</strong> CD - Vinil - Pôster</p>
       <p class="price">TOTAL A PAGAR: R$ <span id="preco">159,90</span></p>
@@ -61,8 +62,9 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="rodape">
     <a href="index.html" class="voltar">← Voltar</a>
+    <p>&copy; 2025 Vintage Store — Todos os direitos reservados</p>
   </footer>
 
   <script>
@@ -85,7 +87,6 @@
       qtyEl.textContent = quantidade;
     });
 
-    // Adicionar ao carrinho e permanecer na página
     addBtn.addEventListener('click', () => {
       const produto = {
         nome: "Ariana Grande - Positions",
@@ -103,7 +104,6 @@
       }
 
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
       alert(`${produto.nome} adicionado ao carrinho!`);
     });
   </script>
