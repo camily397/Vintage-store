@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFFFFF; /* fundo branco para contraste */
+  background: #ffeef6; /* fundo branco para contraste */
   color: #4A4A4A; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #ff7dc3; /* tom coral quente */
+  background: #f5d2ff; /* tom coral quente */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
@@ -134,7 +134,7 @@ header {
 }
 
 .payment-options button:hover {
-  background: #ff8bdc; /* vermelho coral mais forte */
+  background: #f8daff; /* vermelho coral mais forte */
 }
 
 .payment-options button.selected {
@@ -157,7 +157,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #ff98c6; /* coral quente */
+  background: #d7a0e4; /* coral quente */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   transition: 0.3s;
@@ -165,7 +165,7 @@ header {
 }
 
 .quantity button:hover {
-  background: #ff9dd3; /* vermelho coral mais forte */
+  background: #e19fe2; /* vermelho coral mais forte */
 }
 
 .buy-btn {
