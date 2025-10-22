@@ -69,6 +69,7 @@
     const produtosContainer = document.getElementById("produtos");
     const totalElement = document.getElementById("total");
 
+    // Carregar o carrinho armazenado no localStorage
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
     if (carrinho.length === 0) {
@@ -76,16 +77,20 @@
     } else {
       let total = 0;
       carrinho.forEach(item => {
+        // Exibindo as informações do álbum, CD ou vinil
         const div = document.createElement("div");
         div.classList.add("produto-item");
+
         div.innerHTML = `
           <p><strong>${item.nome}</strong></p>
+          <p>Formato: ${item.formato}</p>  <!-- Exibe o formato do item -->
           <p>Quantidade: ${item.quantidade}</p>
           <p>Preço unitário: R$ ${item.preco.toFixed(2)}</p>
           <p>Subtotal: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
           <hr>
         `;
         produtosContainer.appendChild(div);
+
         total += item.preco * item.quantidade;
       });
       totalElement.textContent = total.toFixed(2);
