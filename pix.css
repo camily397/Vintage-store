@@ -1,0 +1,117 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f6;
+  color: #002244;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #002244;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.pix-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.album-summary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.album-summary img {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.album-details h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #002244;
+}
+
+.pix-info {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.pix-info h3 {
+  color: #003366;
+  font-size: 1.1rem;
+}
+
+.pix-qr {
+  width: 180px;
+  margin: 20px 0;
+  border: 2px solid #003366;
+  border-radius: 8px;
+}
+
+.pix-code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pix-code input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #003366;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #002244;
+}
+
+.pix-code button {
+  background-color: #002244;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background-color: #004488;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.confirm-btn:hover {
+  background-color: #003366;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #002244;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
