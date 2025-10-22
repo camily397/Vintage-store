@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagamento - Vintage Store</title>
+  <title>Finalizar Pagamento - Vintage Store</title>
   <link rel="stylesheet" href="paga.css">
 </head>
 <body>
@@ -11,128 +11,91 @@
     <h1>Vintage Store</h1>
   </header>
 
-  <main class="pagamento-container">
-    <section class="resumo-pedido">
-      <h2>Resumo do Pedido</h2>
-      <div id="itens-pedido"></div>
-      <p class="total"><strong>Total:</strong> R$ <span id="total"></span></p>
+  <main class="container">
+    <h2>Finalizar Pagamento</h2>
+
+    <section class="pedido">
+      <h3>Resumo do Pedido</h3>
+      <div id="produtos"></div>
+      <p class="total">Total: R$ <span id="total"></span></p>
     </section>
 
-    <section class="dados-cliente">
-      <h2>Informações de Entrega</h2>
-      <form id="form-endereco">
-        <label>Nome completo:</label>
-        <input type="text" placeholder="Digite seu nome" required>
-
-        <label>Endereço:</label>
-        <input type="text" placeholder="Rua, número, bairro" required>
-
-        <label>Cidade:</label>
-        <input type="text" placeholder="Cidade" required>
-
-        <label>CEP:</label>
-        <input type="text" placeholder="00000-000" required>
-
-        <label>Telefone:</label>
-        <input type="text" placeholder="(00) 00000-0000" required>
-      </form>
+    <section class="endereco">
+      <h3>Endereço de Entrega</h3>
+      <p><strong>Nome:</strong> XXXXX XXXXX</p>
+      <p><strong>Endereço:</strong> Rua Exemplo, 123 - Bairro Centro - Paraná/PR</p>
+      <p><strong>CEP:</strong> 00000-000</p>
+      <p><strong>Telefone:</strong> (11) 99999-9999</p>
     </section>
 
-    <section class="formas-pagamento">
-      <h2>Escolha a Forma de Pagamento</h2>
-      <div class="botoes-pagamento">
-        <button id="btn-pix">PIX</button>
-        <button id="btn-boleto">Boleto</button>
-        <button id="btn-cartao">Cartão</button>
-      </div>
+    <section class="pagamento">
+      <h3>Escolha a Forma de Pagamento</h3>
 
-      <div id="pix" class="opcao-pagamento">
-        <h3>Pagamento via PIX</h3>
-        <p>Escaneie o QR Code abaixo ou copie o código para pagamento instantâneo.</p>
-        <img src="qrcode" alt="QR Code PIX" class="pix-qrcode">
-        <p><strong>Chave PIX:</strong> vintage@store.com</p>
-      </div>
-
-      <div id="boleto" class="opcao-pagamento">
-        <h3>Pagamento via Boleto Bancário</h3>
-        <p>O boleto será gerado com vencimento em 3 dias úteis.</p>
-        <button class="gerar-boleto">Gerar Boleto</button>
-      </div>
-
-      <div id="cartao" class="opcao-pagamento">
-        <h3>Pagamento com Cartão de Crédito</h3>
-        <form class="form-cartao">
+      <div class="opcoes">
+        <div class="opcao">
+          <h4>💳 Cartão de Crédito</h4>
+          <p>Pague em até 10x sem juros.</p>
           <label>Número do Cartão:</label>
-          <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" required>
+          <input type="text" placeholder="**** **** **** ****">
+          <label>Validade:</label>
+          <input type="text" placeholder="MM/AA">
+          <label>CVV:</label>
+          <input type="text" placeholder="***">
+        </div>
 
-          <label>Nome impresso no cartão:</label>
-          <input type="text" placeholder="Ex: XXXXX XXXXX" required>
+        <div class="opcao">
+          <h4>🏦 Boleto Bancário</h4>
+          <p>O boleto será gerado após a confirmação. Prazo de vencimento: 2 dias úteis.</p>
+          <button class="gerar">Gerar Boleto</button>
+        </div>
 
-          <div class="linha">
-            <div>
-              <label>Validade:</label>
-              <input type="text" placeholder="MM/AA" maxlength="5" required>
-            </div>
-            <div>
-              <label>CVV:</label>
-              <input type="text" placeholder="123" maxlength="3" required>
-            </div>
-          </div>
-          <label>Parcelamento:</label>
-          <select>
-            <option>1x de R$ <span id="total-parcela">0,00</span> (sem juros)</option>
-            <option>2x de R$ <span id="total-parcela">0,00</span></option>
-            <option>3x de R$ <span id="total-parcela">0,00</span></option>
-          </select>
-          <button type="submit" class="btn-finalizar">Finalizar Pagamento</button>
-        </form>
+        <div class="opcao">
+          <h4>⚡ PIX</h4>
+          <p>Chave PIX: <strong>vintage@store.com</strong></p>
+          <p>O pagamento é confirmado em até 1 minuto após a transferência.</p>
+        </div>
       </div>
     </section>
+
+    <button id="confirmar" class="confirmar">Confirmar Pagamento</button>
   </main>
 
   <footer>
-    <a href="carrinho.html" class="voltar">← Voltar ao carrinho</a>
+    <a href="carrinho.html">← Voltar ao Carrinho</a>
   </footer>
 
   <script>
-    // Carregar produtos do carrinho
-    const itensDiv = document.getElementById('itens-pedido');
-    const totalSpan = document.getElementById('total');
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // Função para carregar produtos do localStorage
+    const produtosContainer = document.getElementById("produtos");
+    const totalElement = document.getElementById("total");
 
-    let total = 0;
-    itensDiv.innerHTML = '';
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-    if (cart.length > 0) {
-      cart.forEach(item => {
-        const div = document.createElement('div');
-        div.classList.add('item');
-        div.innerHTML = `
-          <img src="${item.image}" alt="${item.name}">
-          <div>
-            <h4>${item.name}</h4>
-            <p>Quantidade: ${item.quantity}</p>
-            <p>Preço: R$ ${item.price.toFixed(2)}</p>
-          </div>
-        `;
-        itensDiv.appendChild(div);
-        total += item.price * item.quantity;
-      });
+    if (carrinho.length === 0) {
+      produtosContainer.innerHTML = "<p>Seu carrinho está vazio.</p>";
     } else {
-      itensDiv.innerHTML = '<p>Seu carrinho está vazio.</p>';
+      let total = 0;
+      carrinho.forEach(item => {
+        const div = document.createElement("div");
+        div.classList.add("produto-item");
+        div.innerHTML = `
+          <p><strong>${item.nome}</strong></p>
+          <p>Quantidade: ${item.quantidade}</p>
+          <p>Preço unitário: R$ ${item.preco.toFixed(2)}</p>
+          <p>Subtotal: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+          <hr>
+        `;
+        produtosContainer.appendChild(div);
+        total += item.preco * item.quantidade;
+      });
+      totalElement.textContent = total.toFixed(2);
     }
 
-    totalSpan.textContent = total.toFixed(2);
-
-    // Controle das opções de pagamento
-    const botoes = document.querySelectorAll('.botoes-pagamento button');
-    const opcoes = document.querySelectorAll('.opcao-pagamento');
-
-    botoes.forEach(botao => {
-      botao.addEventListener('click', () => {
-        opcoes.forEach(o => o.style.display = 'none');
-        document.getElementById(botao.id.replace('btn-', '')).style.display = 'block';
-      });
+    // Botão de confirmação
+    document.getElementById("confirmar").addEventListener("click", () => {
+      alert("Pagamento confirmado! Obrigado por comprar na Vintage Store, agradeçemos a preferência!");
+      localStorage.removeItem("carrinho");
+      window.location.href = "index.html";
     });
   </script>
 </body>
