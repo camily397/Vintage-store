@@ -57,9 +57,3 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => alertBox.remove(), 2000);
   });
 });
-// Quando clicar em comprar → vai pra outra página
-const buyBtn = document.querySelector(".buy-btn");
-
-buyBtn.addEventListener("click", () => {
-  window.location.href = "paga.html"; // troque "compra.html" pelo nome da página que quiser abrir
-});
