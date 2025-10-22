@@ -23,17 +23,15 @@ body {
   min-height: 100vh;
 }
 
-/* Cabeçalho fixo no topo */
+/* Cabeçalho não fixo e texto off-white */
 header {
-  position: fixed;
   width: 100%;
-  top: 0;
   background: #1C2833; /* azul escuro */
   padding: 10px 20px;
-  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #f9f9f9; /* off-white para o texto */
 }
 
 .navbar {
@@ -45,7 +43,7 @@ header {
 .logo {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #64ffda;
+  color: #f9f9f9; /* off-white */
 }
 
 .nav-links {
@@ -59,7 +57,7 @@ header {
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: #f9f9f9; /* off-white */
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -69,7 +67,7 @@ header {
 }
 
 main {
-  margin-top: 80px; /* espaço para o cabeçalho fixo */
+  margin-top: 80px; /* espaço para o cabeçalho */
   padding-bottom: 80px; /* espaço para o rodapé fixo */
 }
 
