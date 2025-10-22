@@ -140,7 +140,7 @@ header {
 .payment-options button.selected {
    background: #F7F4F1; /* off-white */
    color: #2F4858; /* azul escuro */
-   border: 2px solid #a4642c; /* marrom suave */
+   border: 2px solid #d09867; /* marrom suave */
 }
 
 .quantity {
