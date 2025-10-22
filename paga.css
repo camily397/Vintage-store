@@ -1,104 +1,179 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f6f6;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
-  padding: 0;
   color: #333;
 }
 
 header {
-  background-color: #111;
-  color: #fff;
-  padding: 15px;
+  background-color: #1f1f1f;
+  color: white;
   text-align: center;
-  font-size: 22px;
+  padding: 20px;
 }
 
-.container {
-  width: 90%;
-  max-width: 800px;
-  margin: 30px auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h2, h3 {
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.pedido, .endereco, .pagamento {
-  margin-bottom: 25px;
-}
-
-#produtos {
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-.produto-item {
-  margin-bottom: 10px;
-}
-
-.total {
-  font-weight: bold;
-  font-size: 18px;
-  text-align: right;
-}
-
-.opcoes {
+.checkout-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.opcao {
-  background: #f1f1f1;
-  padding: 15px;
+/* Resumo do pedido */
+.order-summary {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.product-image {
+  width: 80px;
   border-radius: 8px;
 }
 
-.opcao input {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
+.address, .total {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.grand-total {
+  font-size: 18px;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Pagamento */
+.payment-section {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.payment-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-buttons button {
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.gerar {
-  background-color: #555;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.confirmar {
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  background-color: #f0f0f0;
+  transition: 0.2s;
 }
 
-.confirmar:hover {
-  background-color: #555;
+.payment-buttons button.active {
+  background-color: #2e7d32;
+  color: white;
+  border-color: #2e7d32;
 }
 
-footer {
+.payment-info {
+  display: none;
+  animation: fade 0.3s ease;
+}
+
+.payment-info.active {
+  display: block;
+}
+
+.qrcode {
+  width: 180px;
+  display: block;
+  margin: 15px auto;
+}
+
+.generate-boleto,
+.finalizar {
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.generate-boleto:hover,
+.finalizar:hover {
+  background-color: #256629;
+}
+
+.card-form input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.card-row {
+  display: flex;
+  gap: 10px;
+}
+
+.voltar {
+  display: block;
   text-align: center;
-  padding: 15px;
-  background-color: #111;
-  color: #fff;
+  margin: 20px auto;
+  color: #444;
+  text-decoration: none;
+}
+
+/* Pop-up de sucesso */
+.success-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.success-modal.show {
+  display: flex;
+  animation: fade 0.4s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+  color: #2e7d32;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
 }
