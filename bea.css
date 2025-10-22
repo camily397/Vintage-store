@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #de58b6; /* rosa suave */
+  background: #ff72d5; /* rosa suave */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
@@ -183,7 +183,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #da55b6; /* rosa mais escuro */
+  background: #ff74da; /* rosa mais escuro */
 }
 
 .voltar {
