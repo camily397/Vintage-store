@@ -3,143 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vintage Store - Pagamento</title>
-  <link rel="stylesheet" href="paga.css">
+  <title>Finalizar Compra - Vintage Store</title>
+  <link rel="stylesheet" href="checkout.css">
 </head>
 <body>
   <header>
     <h1>Vintage Store</h1>
-    <p>Finalizar Compra</p>
   </header>
 
   <main class="checkout-container">
-    <!-- Resumo do Pedido -->
     <section class="order-summary">
       <h2>Resumo do Pedido</h2>
-      <div class="product-item">
-        <img src="frankcapa.jpg" alt="Produto" class="product-image">
-        <div>
-          <h3>Frank Ocean - Blond</h3>
-          <p>Vinil, CD e Pôster inclusos</p>
-          <p><strong>Quantidade:</strong> 1</p>
-          <p><strong>Preço:</strong> R$ 129,90</p>
+      <div class="order-item">
+        <img src="bea.jfif" alt="Produto">
+        <div class="details">
+          <h3>Beabadoobee - Beatopia</h3>
+          <p>CD + Vinil + Pôster</p>
+          <p>Quantidade: <strong>1</strong></p>
+          <p>Preço unitário: R$ 119,90</p>
+          <p><strong>Total: R$ 119,90</strong></p>
+        </div>
+      </div>
+      <div class="order-item">
+        <img src="anavi.jfif" alt="Produto">
+        <div class="details">
+          <h3>Anavitória - Esquinas</h3>
+          <p>CD + Vinil + Pôster</p>
+          <p>Quantidade: <strong>1</strong></p>
+          <p>Preço unitário: R$ 119,90</p>
+          <p><strong>Total: R$ 119,90</strong></p>
         </div>
       </div>
 
-      <div class="address">
-        <h3>Endereço de Entrega</h3>
-        <p>Rua XXXX, Número XXX - Bairro</p>
-        <p>Estado - XX, 00000-000</p>
-        <p><strong>Telefone:</strong> (11) 99999-9999</p>
-      </div>
-
       <div class="total">
-        <p><strong>Subtotal:</strong> R$ 129,90</p>
-        <p><strong>Frete:</strong> R$ 15,00</p>
-        <p class="grand-total"><strong>Total:</strong> R$ 144,90</p>
+        <p><strong>Subtotal:</strong> R$ 239,80</p>
+        <p><strong>Frete:</strong> R$ 19,90</p>
+        <p class="final"><strong>Total final:</strong> R$ 259,70</p>
       </div>
     </section>
 
-    <!-- Métodos de Pagamento -->
-    <section class="payment-section">
-      <h2>Escolha sua forma de pagamento</h2>
-      <div class="payment-buttons">
-        <button id="pixBtn" class="active">PIX</button>
-        <button id="boletoBtn">Boleto</button>
-        <button id="cartaoBtn">Cartão</button>
-      </div>
+    <section class="customer-info">
+      <h2>Informações do Cliente</h2>
+      <p><strong>Nome:</strong> XXXXXX</p>
+      <p><strong>Endereço:</strong> Rua XXXXX, 000 - Bairro - XX</p>
+      <p><strong>CEP:</strong> 00000-000</p>
+      <p><strong>Telefone:</strong> (00) 99999-9999</p>
+      <p><strong>Email:</strong> exemplo@email.com</p>
+    </section>
 
-      <!-- PIX -->
-      <div id="pixInfo" class="payment-info active">
-        <h3>Pagamento via PIX</h3>
-        <p>Escaneie o QR Code abaixo ou copie o código para pagamento instantâneo.</p>
-        <img src="qrcode" alt="QR Code PIX" class="qrcode">
-        <p><strong>Chave PIX:</strong> vintage@store.com</p>
-        <button class="finalizar">Confirmar Pagamento</button>
-      </div>
+    <section class="payment-methods">
+      <h2>Formas de Pagamento</h2>
 
-      <!-- BOLETO -->
-      <div id="boletoInfo" class="payment-info">
-        <h3>Pagamento por Boleto</h3>
-        <p>O boleto tem vencimento de 3 dias úteis. O envio do pedido ocorrerá após a compensação do pagamento.</p>
-        <button class="generate-boleto">Gerar Boleto</button>
-      </div>
-
-      <!-- CARTÃO -->
-      <div id="cartaoInfo" class="payment-info">
-        <h3>Pagamento com Cartão</h3>
-        <form id="cardForm" class="card-form">
-          <label>Número do Cartão</label>
-          <input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
-
-          <label>Nome impresso no cartão</label>
-          <input type="text" placeholder="Nome completo" required>
-
-          <div class="card-row">
+      <div class="payment-option">
+        <h3>💳 Cartão de Crédito</h3>
+        <p>Pagamento seguro e imediato. Aceitamos Visa, MasterCard, Elo e American Express.</p>
+        <form class="card-form">
+          <label>Número do cartão</label>
+          <input type="text" placeholder="0000 0000 0000 0000">
+          <label>Nome impresso</label>
+          <input type="text" placeholder="Nome completo">
+          <div class="row">
             <div>
               <label>Validade</label>
-              <input type="text" placeholder="MM/AA" maxlength="5" required>
+              <input type="text" placeholder="MM/AA">
             </div>
             <div>
               <label>CVV</label>
-              <input type="text" placeholder="XXX" maxlength="3" required>
+              <input type="text" placeholder="000">
             </div>
           </div>
-
-          <button type="submit" class="finalizar">Finalizar Pagamento</button>
         </form>
+      </div>
+
+      <div class="payment-option">
+        <h3>📱 PIX</h3>
+        <p>Receba 10% de desconto pagando com PIX!</p>
+        <p>Após confirmar a compra, o QR Code aparecerá na tela.</p>
+      </div>
+
+      <div class="payment-option">
+        <h3>🧾 Boleto Bancário</h3>
+        <p>O boleto vence em 3 dias úteis. A confirmação pode levar até 48h após o pagamento.</p>
+      </div>
+
+      <div class="actions">
+        <button class="back-btn" onclick="window.location.href='carrinho.html'">← Voltar ao Carrinho</button>
+        <button class="finish-btn">Finalizar Compra</button>
       </div>
     </section>
   </main>
 
-  <a href="carrinho.html" class="voltar">← Voltar ao carrinho</a>
-
-  <!-- Pop-up de confirmação -->
-  <div id="successModal" class="success-modal">
-    <div class="modal-content">
-      <h2>✅ Compra concluída com sucesso!</h2>
-      <p>Obrigado por comprar na <strong>Vintage Store</strong> 💿</p>
-      <p>Número do pedido: <span id="orderNumber"></span></p>
-      <button id="closeModal">Fechar</button>
-    </div>
-  </div>
-
-  <script>
-    // Alternar métodos de pagamento
-    const buttons = document.querySelectorAll('.payment-buttons button');
-    const infos = document.querySelectorAll('.payment-info');
-
-    buttons.forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        infos.forEach(i => i.classList.remove('active'));
-        btn.classList.add('active');
-        infos[index].classList.add('active');
-      });
-    });
-
-    // Mostrar confirmação de compra
-    const modal = document.getElementById('successModal');
-    const orderNumber = document.getElementById('orderNumber');
-    const closeModal = document.getElementById('closeModal');
-
-    function showSuccess() {
-      const randomOrder = Math.floor(100000 + Math.random() * 900000);
-      orderNumber.textContent = `#${randomOrder}`;
-      modal.classList.add('show');
-    }
-
-    document.querySelectorAll('.finalizar, .generate-boleto').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showSuccess();
-      });
-    });
-
-    closeModal.addEventListener('click', () => {
-      modal.classList.remove('show');
-      window.location.href = 'index.html';
-    });
-  </script>
+  <footer>
+    <p>© 2025 Vintage Store — Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
