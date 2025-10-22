@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #e4d7b8; /* fundo branco para contraste */
+  background: #f3f1eb; /* fundo branco para contraste */
   color: #4A4A4A; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #bb85dc; /* rosa forte */
+  background: #c79ce2; /* rosa forte */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #c749a1; /* rosa suave */
+  background: #7f2097; /* rosa suave */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
@@ -183,7 +183,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #6d1e9f; /* rosa mais escuro */
+  background: #741daa; /* rosa mais escuro */
 }
 
 .voltar {
