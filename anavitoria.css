@@ -80,8 +80,8 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
    flex: 1;
-   background: #563b83; /* fundo branco para contraste */
-   color: #ffffff; /* texto cinza */
+   background: #dedecd; /* fundo branco para contraste */
+   color: #000000; /* texto cinza */
    padding: 30px;
    border-radius: 10px;
    font-size: 18px;
@@ -90,14 +90,14 @@ header {
 
 .album-info h2 {
    margin-bottom: 15px;
-   color: #ffffff; /* marrom suave */
+   color: #9b6a6a; /* marrom suave */
 }
 
 .price {
    margin-top: 15px;
    font-size: 20px;
    font-weight: bold;
-   color: #ffffff; /* azul escuro suave */
+   color: #000000; /* azul escuro suave */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
