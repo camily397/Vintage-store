@@ -30,7 +30,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #668a64;
+  background: #769d7f;
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -106,17 +106,17 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #FFFFFF;
+  background: #5d7e70;
   padding: 20px;
   border-radius: 10px;
-  color: #2E2C29;
+  color: #ffffff;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #3B5D4F;
+  color: #ffffff;
 }
 
 .payment-options {
@@ -138,11 +138,11 @@ header {
 }
 
 .payment-options button:hover {
-  background: #F1EFEA;
+  background: #000000;
 }
 
 .payment-options button.selected {
-  background: #3B5D4F;
+  background: #fdfffe;
   color: #FFFFFF;
 }
 
