@@ -3,31 +3,56 @@ document.addEventListener("DOMContentLoaded", () => {
   const qtyElement = document.getElementById("qty");
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
+  const buyBtn = document.querySelector(".buy-btn");
+  const paymentButtons = document.querySelectorAll(".payment-options button");
+  const totalDisplay = document.getElementById("total");
 
-  // Atualiza quantidade
+  let selectedMethod = null;
+  let quantity = 1;
+  const unitPrice = 119.9;
+
+  // Atualiza a quantidade
   plusBtn.addEventListener("click", () => {
-    qtyElement.textContent = parseInt(qtyElement.textContent) + 1;
+    if (quantity < 5) {
+      quantity++;
+      qtyElement.textContent = quantity;
+      updateTotal();
+    }
   });
 
   minusBtn.addEventListener("click", () => {
-    const current = parseInt(qtyElement.textContent);
-    if (current > 1) qtyElement.textContent = current - 1;
+    if (quantity > 1) {
+      quantity--;
+      qtyElement.textContent = quantity;
+      updateTotal();
+    }
   });
 
-  // Adicionar produto ao carrinho
+  function updateTotal() {
+    const total = (unitPrice * quantity).toFixed(2).replace(".", ",");
+    totalDisplay.textContent = total;
+  }
+
+  // Seleciona método de pagamento
+  paymentButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      paymentButtons.forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      selectedMethod = btn.textContent.trim().toLowerCase();
+    });
+  });
+
+  // Adiciona produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
       id: "beabadoobee-beatopia",
       name: "Beabadoobee - Beatopia",
-      price: 119.9,
-      quantity: parseInt(qtyElement.textContent),
+      price: unitPrice,
+      quantity,
       image: "bea.jfif"
     };
 
-    // Recupera o carrinho existente ou cria um novo
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Verifica se o produto já está no carrinho
     const existingItem = cart.find(item => item.id === product.id);
 
     if (existingItem) {
@@ -36,10 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push(product);
     }
 
-    // Salva no localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Alerta de confirmação
     const alertBox = document.createElement("div");
     alertBox.textContent = "✅ Produto adicionado ao carrinho!";
     alertBox.style.position = "fixed";
@@ -56,4 +79,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => alertBox.remove(), 2000);
   });
+
+  // Função para redirecionar para o pagamento PIX
+  buyBtn.addEventListener("click", () => {
+    if (!selectedMethod) {
+      alert("Por favor, selecione um método de pagamento.");
+      return;
+    }
+
+    const albumInfo = {
+      name: "Beabadoobee - Beatopia",
+      total: (unitPrice * quantity).toFixed(2),
+      quantity,
+      image: "bea.jfif"
+    };
+
+    if (selectedMethod === "pix") {
+      sessionStorage.setItem("pixPayment", JSON.stringify(albumInfo));
+      window.location.href = "pix.html";
+    } else {
+      alert(
+        `Compra simulada:\nÁlbum: ${albumInfo.name}\nQuantidade: ${albumInfo.quantity}\nTotal: R$ ${albumInfo.total.replace(".", ",")}\nMétodo: ${selectedMethod.toUpperCase()}`
+      );
+    }
+  });
+
+  updateTotal();
 });
