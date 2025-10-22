@@ -55,7 +55,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #003366; /* Azul marinho */
+  background: var(--primary); /* Azul marinho */
   padding: 20px 0;
   z-index: 1000;
 }
@@ -64,11 +64,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 30px; /* Aumentado o padding */
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Aumentei o tamanho da fonte */
   font-weight: bold;
   color: #f8f9fa; /* Off-white */
 }
@@ -76,7 +76,7 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px; /* Aumentei o gap */
 }
 
 .nav-links li {
@@ -95,7 +95,7 @@ header {
 
 /* Ajustando o espaço do conteúdo para o cabeçalho fixo */
 main {
-  margin-top: 100px; /* Espaço para o cabeçalho fixo */
+  margin-top: 120px; /* Aumentei o espaço para o cabeçalho fixo */
 }
 
 /* NAVBAR */
@@ -112,7 +112,7 @@ main {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 0;
+  padding: 14px 30px; /* Aumentei o padding */
 }
 
 .brand {
@@ -122,19 +122,19 @@ main {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 1.05rem;
+  font-size: 1.2rem; /* Aumentei o tamanho da fonte */
 }
 
 .menu {
   margin-left: auto;
   display: flex;
-  gap: 18px;
+  gap: 22px; /* Aumentei o gap */
   align-items: center;
 }
 
 .menu a {
   opacity: 0.9;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 10px;
 }
 
@@ -147,7 +147,7 @@ main {
   background: linear-gradient(90deg, var(--accent), var(--primary));
   color: #f8f9fa;
   font-weight: 600;
-  padding: 8px 14px !important;
+  padding: 10px 16px !important;
   border-radius: 999px;
   box-shadow: 0 6px 18px rgba(0, 51, 102, 0.25); /* Azul suave */
 }
