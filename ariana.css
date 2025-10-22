@@ -30,7 +30,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #FFFFFF;
+  background: #668a64;
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -82,7 +82,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFFFFF;
+  background: #e3dcd3;
   color: #2E2C29;
   padding: 30px;
   border-radius: 10px;
