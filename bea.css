@@ -100,32 +100,23 @@ header {
   color: #6B3E3E; /* tom de marrom quente */
 }
 
-/* ======= ÁREA DE PAGAMENTO ======= */
-.payment {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
-}
-
-.payment-center {
-  text-align: center;
-}
-
 .buy-btn {
-  background-color: #002244;
-  color: #fff;
-  font-size: 1.2rem;
-  padding: 14px 40px;
+  background-color: #3B5D4F;
+  color: white;
   border: none;
+  padding: 12px 24px;
   border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s ease;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background 0.3s ease;
 }
 
 .buy-btn:hover {
-  background-color: #003366;
-  transform: scale(1.05);
+  background-color: #2d4a3f;
 }
 
 .voltar {
