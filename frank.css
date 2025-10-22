@@ -142,7 +142,7 @@ header {
 }
 
 .payment-options button.selected {
-  background: #3B5D4F; /* verde oliva */
+  background: #678679; /* verde oliva */
   color: #FFFFFF;
 }
 
@@ -177,7 +177,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #5C4B37; /* marrom médio */
+  background: #7a6a59; /* marrom médio */
   color: #FFFFFF;
   font-size: 18px;
   cursor: pointer;
