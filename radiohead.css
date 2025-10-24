@@ -80,8 +80,8 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFF9F0; /* off-white suave para contraste */
-  color: #4A4A4A; /* texto cinza */
+  background: #000000; /* off-white suave para contraste */
+  color: #ffffff; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -97,13 +97,13 @@ header {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #F28D3B; /* laranja queimado que faz referência às cores do álbum */
+  color: #ff9743; /* laranja queimado que faz referência às cores do álbum */
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #F9F0C8; /* amarelo suave (lembrando o tom de luz e calor do álbum) */
+  background: #000000; /* amarelo suave (lembrando o tom de luz e calor do álbum) */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
