@@ -198,12 +198,15 @@ footer {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  /* Container auth */
   .container.auth {
-    margin-top: 40px;
+    max-width: 90%;
+    margin: 40px auto;
     padding: 24px 16px;
   }
 
+  /* Header */
   header.site-header {
     padding: 14px;
   }
@@ -214,5 +217,74 @@ footer {
 
   .header-left .tagline {
     font-size: 0.8rem;
+  }
+
+  /* Tabs */
+  .tabs {
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .tab {
+    padding: 12px 10px;
+    font-size: 1rem;
+  }
+
+  .tab.active {
+    background: linear-gradient(90deg, var(--accent), var(--highlight));
+    color: #fff;
+  }
+
+  /* Botões */
+  .btn {
+    padding: 10px 16px;
+    font-size: 1rem;
+  }
+
+  .google-btn {
+    padding: 10px 14px;
+  }
+
+  .divider {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container.auth {
+    max-width: 90%;
+    padding: 20px 12px;
+  }
+
+  /* Header */
+  header.site-header {
+    padding: 12px;
+  }
+
+  .header-left .logo {
+    font-size: 1.1rem;
+  }
+
+  .header-left .tagline {
+    font-size: 0.7rem;
+  }
+
+  /* Form Inputs */
+  input {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  .google-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .divider {
+    font-size: 0.75rem;
   }
 }
