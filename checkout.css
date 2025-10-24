@@ -6,14 +6,22 @@ body {
   color: #333;
 }
 
+/* CABEÇALHO */
 header {
-  background-color: #111;
+  background-color: #0a0f2c;
   color: white;
-  text-align: center;
-  padding: 15px 0;
-  font-size: 24px;
+  text-align: left;
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
+.logo {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* CONTEÚDO PRINCIPAL */
 .checkout-container {
   max-width: 900px;
   margin: 30px auto;
@@ -81,7 +89,13 @@ header {
   background-color: #333;
 }
 
+/* RODAPÉ */
 footer {
+  background-color: #0a0f2c;
+  color: white;
   text-align: center;
-  margin: 25px 0;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
 }
