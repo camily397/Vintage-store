@@ -80,7 +80,7 @@ h2, h3 {
 }
 
 .gerar {
-  background-color: #555;
+  background-color: #130b4b;
   color: #fff;
   border: none;
   padding: 8px 12px;
@@ -106,8 +106,8 @@ h2, h3 {
 
 /* RODAPÉ */
 footer {
-  background-color: #0a0f2c;
-  color: white;
+  background-color: #0a1137;
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 12px;
   font-size: 14px;
