@@ -2,7 +2,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 /* ====== CONFIG SUPABASE - TROQUE AQUI ====== */
 const SUPABASE_URL = "https://awuhwgmueyaxerfqtbdh.supabase.co"; // troque
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dWh3Z211ZXlheGVyZnF0YmRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTM0ODYsImV4cCI6MjA3NjYyOTQ4Nn0.nNFyl87x8rPSKnXAbObj88LOCYYJWCTdUv8Wpu33VYk";         // troque
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dWh3Z211ZXlheGVyZnF0YmRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTM0ODYsImV4cCI6MjA3NjYyOTQ4Nn0.nNFyl87x8rPSKnXAbObj88LOCYYJWCTdUv8Wpu33VYk";
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 /* ========================================== */
 
@@ -40,13 +40,10 @@ tabs.forEach(btn => {
   });
 });
 
-/* ===== Helper: upsert perfil =====
-   tenta inserir o perfil; se já existir, faz update.
-   usa id = supabase user id (uuid).
-*/
+/* ===== Helper: upsert perfil ===== */
 async function upsertProfile(userId, profileData) {
   if (!userId) return;
-  // Remover campos undefined
+
   const payload = {
     id: userId,
     full_name: profileData.full_name || null,
@@ -56,7 +53,6 @@ async function upsertProfile(userId, profileData) {
     updated_at: new Date().toISOString()
   };
 
-  // Usamos upsert para criar ou atualizar
   const { error } = await supabase
     .from('profiles')
     .upsert(payload, { onConflict: 'id', returning: 'minimal' });
@@ -70,10 +66,6 @@ googleLoginBtn?.addEventListener("click", async () => {
   try {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
-      options: {
-        // você pode especificar redirectTo se quiser forçar um retorno
-        // redirectTo: 'http://localhost:3000'
-      }
     });
     if (error) showMsg("Erro ao iniciar login com Google: " + error.message, "error");
     else showMsg("Redirecionando para o Google...", "success");
@@ -83,7 +75,7 @@ googleLoginBtn?.addEventListener("click", async () => {
   }
 });
 
-/* ===== Cadastro (email + senha) ===== */
+/* ===== Cadastro ===== */
 registerForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   clearMsg();
@@ -100,7 +92,6 @@ registerForm?.addEventListener('submit', async (e) => {
   }
 
   try {
-    // signUp retorna data com user (se confirmado automaticamente)
     const { data, error } = await supabase.auth.signUp({
       email,
       password: senha,
@@ -119,8 +110,6 @@ registerForm?.addEventListener('submit', async (e) => {
       return showMsg("Erro ao cadastrar: " + error.message, "error");
     }
 
-    // Se o user já for retornado (depende das configurações do projeto),
-    // tentamos criar o perfil agora.
     const user = data?.user;
     if (user) {
       const profileErr = await upsertProfile(user.id, {
@@ -132,9 +121,8 @@ registerForm?.addEventListener('submit', async (e) => {
       if (profileErr) console.warn("Erro ao criar profile:", profileErr);
     }
 
-    showMsg("Conta criada! Verifique seu e-mail (se solicitado).", "success");
+    showMsg("Conta criada! Verifique seu e-mail (se necessário).", "success");
     registerForm.reset();
-    // volta para aba login
     document.querySelector('.tab[data-tab="login-pane"]').click();
 
   } catch (err) {
@@ -143,7 +131,7 @@ registerForm?.addEventListener('submit', async (e) => {
   }
 });
 
-/* ===== Login (email + senha) ===== */
+/* ===== Login ===== */
 loginForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   clearMsg();
@@ -156,8 +144,6 @@ loginForm?.addEventListener('submit', async (e) => {
   }
 
   try {
-    // Este código assume que o campo é e-mail. Se você quer aceitar username também,
-    // precisaria consultar a tabela profiles para resolver username->email.
     const { data, error } = await supabase.auth.signInWithPassword({
       email: userOrEmail,
       password: pass
@@ -171,7 +157,6 @@ loginForm?.addEventListener('submit', async (e) => {
     showMsg("Login realizado com sucesso!", "success");
     loginForm.reset();
 
-    // opcional: garantir que exista profile para esse usuário
     const user = data?.user;
     if (user) {
       const profileErr = await upsertProfile(user.id, {
@@ -188,33 +173,28 @@ loginForm?.addEventListener('submit', async (e) => {
   }
 });
 
-/* ===== Auth state change - mostra área privada e cria profile se necessário ===== */
+/* ===== Auth State ===== */
 supabase.auth.onAuthStateChange(async (_event, session) => {
   if (session?.user) {
     privateArea.classList.remove('hidden');
     const user = session.user;
     welcomeUser.textContent = `Bem-vindo, ${user.user_metadata?.full_name || user.email}!`;
 
-    // Verifica se já existe um profile; se não, cria (upsert)
     try {
-      const { data: existing, error: selErr } = await supabase
+      const { data: existing } = await supabase
         .from('profiles')
         .select('id')
         .eq('id', user.id)
         .limit(1)
         .maybeSingle();
 
-      if (selErr) console.warn("Erro ao checar profile:", selErr);
-
       if (!existing) {
-        // insere profile com os dados disponíveis em user_metadata
-        const profileErr = await upsertProfile(user.id, {
+        await upsertProfile(user.id, {
           full_name: user.user_metadata?.full_name || null,
           dob: user.user_metadata?.dob || null,
           phone: user.user_metadata?.phone || null,
           username: user.user_metadata?.username || null
         });
-        if (profileErr) console.warn("Erro ao inserir profile via onAuthStateChange:", profileErr);
       }
     } catch (err) {
       console.error("Erro no onAuthStateChange:", err);
@@ -229,13 +209,25 @@ supabase.auth.onAuthStateChange(async (_event, session) => {
 logoutBtn?.addEventListener('click', async () => {
   try {
     const { error } = await supabase.auth.signOut();
-    if (error) return showMsg("Erro ao sair: " + error.message, "error");
+    if (error) {
+      showMsg("Erro ao sair: " + error.message, "error");
+      return;
+    }
+
+    localStorage.clear();
+    sessionStorage.clear();
+
     showMsg("Você saiu da conta.", "success");
+
+    privateArea.classList.add('hidden');
+    welcomeUser.textContent = "";
+
+    setTimeout(() => {
+      location.reload();
+    }, 800);
+
   } catch (err) {
     console.error(err);
     showMsg("Erro ao sair.", "error");
   }
 });
-
-
-
