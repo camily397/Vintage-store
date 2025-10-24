@@ -111,6 +111,14 @@ body {
   margin: 12px 0;
 }
 
+/* ====== BOTÃO GOOGLE ====== */
+.google-btn {
+  background: #fff;
+  color: #444;
+  border: 1px solid #ccc;
+  font-weight: 500;
+}
+
 /* ====== MENSAGEM ====== */
 .msg {
   text-align: center;
@@ -152,4 +160,3 @@ footer {
     padding: 9px;
   }
 }
-
