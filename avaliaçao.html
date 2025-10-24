@@ -3,51 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avaliação - Vintage Store</title>
+  <title>Avaliação de Atendimento - Vintage Store</title>
   <link rel="stylesheet" href="avaliacao.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div>
-      <h1>Vintage Store</h1>
-      <p>Música com história, estilo e nostalgia</p>
-    </div>
-  </header>
+<header>
+  <h1>Vintage Store</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="contato.html">Fale Conosco</a>
+    <a href="avaliacao.html">Avaliação</a>
+  </nav>
+</header>
 
-  <main class="avaliacao-container">
-    <h2>Avaliação</h2>
+<div class="container">
+  <h2>Avalie nosso Atendimento</h2>
 
-    <section class="card">
-      <h3>Sobre sua experiência</h3>
-      <p>
-        Conte pra gente como foi sua experiência com a Vintage Store! 
-        Sua opinião é muito importante para que possamos melhorar sempre.
-      </p>
-    </section>
+  <div class="balloon" id="balloon">
+    <p>Conte-nos como foi sua experiência:</p>
+    <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
+  </div>
 
-    <section class="card">
-      <h3>Avalie nosso atendimento e produtos</h3>
-      <div class="estrelas">
-        <input type="radio" id="estrela5" name="estrela" value="5"><label for="estrela5">★</label>
-        <input type="radio" id="estrela4" name="estrela" value="4"><label for="estrela4">★</label>
-        <input type="radio" id="estrela3" name="estrela" value="3"><label for="estrela3">★</label>
-        <input type="radio" id="estrela2" name="estrela" value="2"><label for="estrela2">★</label>
-        <input type="radio" id="estrela1" name="estrela" value="1"><label for="estrela1">★</label>
-      </div>
+  <div class="stars" id="stars">
+    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+  </div>
 
-      <label for="comentario">Deixe seu comentário:</label>
-      <textarea id="comentario" placeholder="Digite aqui sua opinião..."></textarea>
+  <button class="btn" id="btnEnviar">Enviar Avaliação</button>
 
-      <button class="btn-enviar">Enviar Avaliação</button>
-    </section>
+  <div class="thankyou" id="thankyou">
+    Obrigado pela sua avaliação! 😊
+  </div>
 
-    <a href="index.html" class="btn-voltar">← Voltar</a>
-  </main>
+  <div class="tip">
+    Dica: Sua opinião ajuda a melhorar nosso atendimento. Seja sincero e conte detalhes!
+  </div>
+</div>
 
-  <footer class="site-footer">
-    <p>© 2025 Vintage Store — Todos os direitos reservados</p>
-  </footer>
-
+<script src="avaliacao.js"></script>
 </body>
 </html>
