@@ -33,7 +33,7 @@ header.site-header {
 
 /* ======= MENU LATERAL ======= */
 .menu {
-  background-color: #f8f8f8; /* Mudado para off white */
+  background-color: #003366; /* Azul marinho */
   padding: 25px;
   width: 260px; /* um pouquinho mais largo */
   display: flex;
@@ -42,7 +42,7 @@ header.site-header {
 }
 
 .menu button {
-  background-color: #222;
+  background-color: #00509e; /* Tom mais claro de azul marinho */
   color: white;
   border: none;
   padding: 20px 16px; /* mais alto */
@@ -53,7 +53,7 @@ header.site-header {
 }
 
 .menu button:hover {
-  background-color: #333;
+  background-color: #003366; /* Azul marinho ao passar o mouse */
   transform: scale(1.02); /* leve destaque ao passar o mouse */
 }
 
@@ -75,7 +75,7 @@ button a {
 
 .conteudo h2 {
   font-size: 28px;
-  color: #000;
+  color: #003366; /* Azul marinho */
   margin-bottom: 15px;
 }
 
