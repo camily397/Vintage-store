@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <title>Cadastro/Login</title>
   <link rel="stylesheet" href="login.css">
-  
 </head>
 <body>
   <header class="site-header">
@@ -13,10 +12,11 @@
       <div class="tagline">Música com história, estilo e nostalgia</div>
     </div>
   </header>
+
   <div class="container auth">
     <div class="tabs">
-      <button class="tab active" data-tab="login-pane">Login</button>
-      <button class="tab" data-tab="register-pane">Cadastro</button>
+      <button class="tab active" data-tab="login-pane" id="loginTab">Login</button>
+      <button class="tab" data-tab="register-pane" id="registerTab">Cadastro</button>
     </div>
 
     <!-- PANE DE LOGIN -->
@@ -52,7 +52,7 @@
         </div>
         <div class="field">
           <label for="regNascimento">Data de nascimento</label>
-          <input id="regNascimento" type="date">
+          <input id="regNascimento" type="date" required>
         </div>
         <div class="field">
           <label for="regEmail">E-mail</label>
@@ -86,11 +86,33 @@
     <p>© 2025 - Vintage Store</p>
   </footer>
 
+  <script type="module" src="login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- JS para alternar entre Login e Cadastro -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginTab = document.getElementById('loginTab');
+      const registerTab = document.getElementById('registerTab');
+      const loginPane = document.getElementById('login-pane');
+      const registerPane = document.getElementById('register-pane');
 
- <script type="module" src="login.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      // Função para alternar para o Login
+      loginTab.addEventListener('click', function() {
+        loginTab.classList.add('active');
+        registerTab.classList.remove('active');
+        loginPane.classList.add('active');
+        registerPane.classList.remove('active');
+      });
 
-
+      // Função para alternar para o Cadastro
+      registerTab.addEventListener('click', function() {
+        registerTab.classList.add('active');
+        loginTab.classList.remove('active');
+        registerPane.classList.add('active');
+        loginPane.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
-
