@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 105.90; // preço unitário para Beatopia
+const price = 105.90; // preço unitário para Lamp
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "lamp-lamp genso",
+      id: "lamp-lampgenso",
       name: "Lamp - Lamp Genso",
       price: 105.90,
       quantity: parseInt(qtyElement.textContent),
