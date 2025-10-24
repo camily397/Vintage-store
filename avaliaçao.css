@@ -1,49 +1,146 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Avaliação de Atendimento - Vintage Store</title>
-  <link rel="stylesheet" href="avaliacao.css">
-</head>
-<body>
+/* ======= GERAL ======= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
 
-<header>
-  <h1>Vintage Store</h1>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="contato.html">Fale Conosco</a>
-    <a href="avaliacao.html">Avaliação</a>
-  </nav>
-</header>
+/* ======= CABEÇALHO ======= */
+header {
+  background-color: #333333;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
-<div class="container">
-  <h2>Avalie nosso Atendimento</h2>
+header h1 {
+  font-size: 20px;
+  margin: 0;
+}
 
-  <div class="balloon" id="balloon">
-    <p>Conte-nos como foi sua experiência:</p>
-    <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
-  </div>
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
 
-  <div class="stars" id="stars">
-    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
-    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
-    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
-    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
-    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
-  </div>
+nav a:hover {
+  text-decoration: underline;
+}
 
-  <button class="btn" id="btnEnviar">Enviar Avaliação</button>
+/* ======= CONTEÚDO ======= */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-  <div class="thankyou" id="thankyou">
-    Obrigado pela sua avaliação! 😊
-  </div>
+.container h2 {
+  text-align: center;
+  color: #333;
+}
 
-  <div class="tip">
-    Dica: Sua opinião ajuda a melhorar nosso atendimento. Seja sincero e conte detalhes!
-  </div>
-</div>
+/* ======= BALÃO DE TEXTO ======= */
+.balloon {
+  background-color: #e0f7fa;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  position: relative;
+  transition: background-color 0.3s;
+}
 
-<script src="avaliacao.js"></script>
-</body>
-</html>
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #e0f7fa transparent transparent transparent;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 80px;
+  font-size: 14px;
+}
+
+/* ======= ESTRELINHAS ======= */
+.stars {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.stars input {
+  display: none;
+}
+
+.stars label {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #f5b301;
+  transform: scale(1.2);
+}
+
+.stars input:checked ~ label {
+  color: #f5b301;
+}
+
+/* ======= BOTÃO ======= */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #333333;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #555555;
+}
+
+/* ======= MENSAGEM DE OBRIGADO ======= */
+.thankyou {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ======= ELEMENTOS EXTRAS ======= */
+.tip {
+  background-color: #fff3e0;
+  border-left: 5px solid #ff9800;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
