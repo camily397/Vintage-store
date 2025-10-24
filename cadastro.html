@@ -1,22 +1,18 @@
-<!doctype html>
+ <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <title>Cadastro/Login</title>
   <link rel="stylesheet" href="login.css">
+ 
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-left">
-      <div class="logo">Vintage Store</div>
-      <div class="tagline">Música com história, estilo e nostalgia</div>
-    </div>
-  </header>
+
 
   <div class="container auth">
     <div class="tabs">
-      <button class="tab active" data-tab="login-pane" id="loginTab">Login</button>
-      <button class="tab" data-tab="register-pane" id="registerTab">Cadastro</button>
+      <button class="tab active" data-tab="login-pane">Login</button>
+      <button class="tab" data-tab="register-pane">Cadastro</button>
     </div>
 
     <!-- PANE DE LOGIN -->
@@ -37,7 +33,7 @@
 
       <!-- BOTÃO LOGIN COM GOOGLE -->
       <button id="googleLoginBtn" class="btn full google-btn">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg&quot;
              alt="Google logo" width="20" style="vertical-align:middle; margin-right:8px;">
         Entrar com Google
       </button>
@@ -52,7 +48,7 @@
         </div>
         <div class="field">
           <label for="regNascimento">Data de nascimento</label>
-          <input id="regNascimento" type="date" required>
+          <input id="regNascimento" type="date">
         </div>
         <div class="field">
           <label for="regEmail">E-mail</label>
@@ -83,46 +79,13 @@
   </div>
 
   <footer>
-    <p>© 2025 - Vintage Store</p>
+    <p>© 2025 | Profº Antonio Carlos</p>
   </footer>
 
-  <!-- Aqui começa a parte JavaScript -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loginTab = document.getElementById('loginTab');
-      const registerTab = document.getElementById('registerTab');
-      const loginPane = document.getElementById('login-pane');
-      const registerPane = document.getElementById('register-pane');
 
-      // Função para alternar para o Login
-      loginTab.addEventListener('click', function() {
-        // Adiciona a classe 'active' ao botão de login
-        loginTab.classList.add('active');
-        // Remove a classe 'active' do botão de cadastro
-        registerTab.classList.remove('active');
-        
-        // Exibe o painel de Login
-        loginPane.classList.add('active');
-        // Esconde o painel de Cadastro
-        registerPane.classList.remove('active');
-      });
+ <script type="module" src="login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script&gt;
 
-      // Função para alternar para o Cadastro
-      registerTab.addEventListener('click', function() {
-        // Adiciona a classe 'active' ao botão de cadastro
-        registerTab.classList.add('active');
-        // Remove a classe 'active' do botão de login
-        loginTab.classList.remove('active');
-        
-        // Exibe o painel de Cadastro
-        registerPane.classList.add('active');
-        // Esconde o painel de Login
-        loginPane.classList.remove('active');
-      });
-    });
-  </script>
-  <!-- Fim da parte JavaScript -->
 
 </body>
-</html>
-
+</html> 
