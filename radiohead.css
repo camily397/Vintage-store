@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #93D5B5; /* verde suave, evocando a parte mais tranquila do álbum */
+  background: #028d4a; /* verde suave, evocando a parte mais tranquila do álbum */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
@@ -157,7 +157,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #c55b03; /* laranja queimado */
+  background: #ff790c; /* laranja queimado */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   transition: 0.3s;
