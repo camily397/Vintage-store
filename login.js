@@ -1,8 +1,8 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 /* ====== CONFIG SUPABASE - TROQUE AQUI ====== */
-const SUPABASE_URL = "https://xxxxxxxxxxxxxxxxxxx.supabase.co"; // troque
-const SUPABASE_ANON_KEY = "coloque-aqui-sua-anon-key";         // troque
+const SUPABASE_URL = "https://awuhwgmueyaxerfqtbdh.supabase.co"; // troque
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dWh3Z211ZXlheGVyZnF0YmRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTM0ODYsImV4cCI6MjA3NjYyOTQ4Nn0.nNFyl87x8rPSKnXAbObj88LOCYYJWCTdUv8Wpu33VYk";         // troque
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 /* ========================================== */
 
@@ -236,5 +236,6 @@ logoutBtn?.addEventListener('click', async () => {
     showMsg("Erro ao sair.", "error");
   }
 });
+
 
 
