@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addToCartBtn.addEventListener("click", () => {
     const product = {
       id: "lamp-lampgenso",
-      name: "Lamp - Lamp Genso",
+      name: "Lamp - lamp genso",
       price: 105.90,
       quantity: parseInt(qtyElement.textContent),
       image: "lamp.jfif"
