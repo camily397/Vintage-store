@@ -1,1 +1,139 @@
+/* ====== ESTILO GERAL ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f6f7fb;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ====== HEADER ====== */
+.site-header {
+  background-color: #1e2a36;
+  color: #fff;
+  width: 100%;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: 0.8rem;
+  color: #d1d5db;
+}
+
+/* ====== CONTAINER PRINCIPAL ====== */
+.auth {
+  background: #fff;
+  max-width: 360px;
+  margin: 40px auto;
+  padding: 28px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ====== ABAS (Login/Cadastro) ====== */
+.tabs {
+  display: flex;
+  background-color: #f0f2f7;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.3s;
+}
+
+.tab.active {
+  background: linear-gradient(90deg, #5a7ffb, #8cb4ff);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ====== FORMULÁRIOS ====== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field label {
+  font-size: 0.9rem;
+}
+
+.field input {
+  padding: 9px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+/* ====== BOTÕES ====== */
+.btn.full {
+  padding: 10px;
+  background: linear-gradient(90deg, #5a7ffb, #8cb4ff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.full:hover {
+  opacity: 0.9;
+}
+
+/* ====== DIVISOR ====== */
+.divider {
+  text-align: center;
+  color: #999;
+  margin: 12px 0;
+}
+
+/* ====== BOTÃO GOOGLE ====== */
+.google-btn {
+  background: #fff;
+  color: #444;
+  border: 1px solid #ccc;
+  font-weight: 500;
+}
+
+/* ====== MENSAGEM ====== */
+.msg {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #4b5563;
+}
+
+/* ====== ÁREA PRIVADA E RODAPÉ ====== */
+.private {
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  margin: 20px 0 10px;
+  font-size: 0.8rem;
+  color: #777;
+}
 
