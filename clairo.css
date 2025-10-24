@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #D7C6B0; /* bege suave, criando um tom natural e quente */
+  background: #493821; /* bege suave, criando um tom natural e quente */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFF9F0; /* off-white muito suave para contraste quente */
+  background: #f7e2c3; /* off-white muito suave para contraste quente */
   color: #4A4A4A; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
@@ -90,7 +90,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #D7B8A3; /* tom de nude suave */
+  color: #361e0e; /* tom de nude suave */
 }
 
 .price {
@@ -183,7 +183,7 @@ header {
 }
 
 .buy-btn:hover {
-  background: #C6A08A; /* nude mais escuro */
+  background: #695041; /* nude mais escuro */
 }
 
 .voltar {
