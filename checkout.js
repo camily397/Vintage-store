@@ -1,10 +1,10 @@
-// Carrega produtos do localStorage
+// Carrega produtos do localStorage (corrigido para "cart")
 const orderContainer = document.getElementById("order-items");
 const subtotalEl = document.getElementById("subtotal");
 const totalEl = document.getElementById("total-final");
 const freteEl = document.getElementById("frete");
 
-const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+const carrinho = JSON.parse(localStorage.getItem("cart")) || [];
 
 if (carrinho.length === 0) {
   orderContainer.innerHTML = "<p>Seu carrinho está vazio.</p>";
@@ -17,17 +17,16 @@ if (carrinho.length === 0) {
     const div = document.createElement("div");
     div.classList.add("order-item");
     div.innerHTML = `
-      <img src="${item.imagem}" alt="${item.nome}">
+      <img src="${item.image}" alt="${item.name}">
       <div class="details">
-        <h3>${item.nome}</h3>
-        <p>CD + Vinil + Pôster</p>
-        <p>Quantidade: <strong>${item.quantidade}</strong></p>
-        <p>Preço unitário: R$ ${item.preco.toFixed(2)}</p>
-        <p><strong>Total: R$ ${(item.preco * item.quantidade).toFixed(2)}</strong></p>
+        <h3>${item.name}</h3>
+        <p>Quantidade: <strong>${item.quantity}</strong></p>
+        <p>Preço unitário: R$ ${item.price.toFixed(2)}</p>
+        <p><strong>Total: R$ ${(item.price * item.quantity).toFixed(2)}</strong></p>
       </div>
     `;
     orderContainer.appendChild(div);
-    subtotal += item.preco * item.quantidade;
+    subtotal += item.price * item.quantity;
   });
 
   subtotalEl.textContent = subtotal.toFixed(2);
