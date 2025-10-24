@@ -2,17 +2,18 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8; /* Off-white */
+  background-color: #F8F8F8; /* Off-white */
 }
 
 header {
-  background-color: #001f3d; /* Azul marinho */
+  background-color: #1E2A38; /* Azul petróleo */
   color: white;
   padding: 20px;
   text-align: center;
   font-size: 24px;
 }
 
+/* Container de Login/Cadastro */
 .container.auth {
   width: 100%;
   max-width: 400px;
@@ -30,7 +31,7 @@ header {
 }
 
 .tab {
-  background-color: #f0f0f0;
+  background-color: #e6e6e6;
   border: 1px solid #ccc;
   padding: 10px;
   cursor: pointer;
@@ -40,7 +41,7 @@ header {
 }
 
 .tab.active {
-  background-color: #007BFF;
+  background-color: #1E2A38;
   color: white;
 }
 
@@ -73,7 +74,7 @@ input {
 button {
   width: 100%;
   padding: 12px;
-  background-color: #007BFF;
+  background-color: #1E2A38;
   color: white;
   border: none;
   border-radius: 5px;
@@ -82,9 +83,10 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #16212c;
 }
 
+/* Botão Google */
 .google-btn {
   background-color: #db4437;
   display: flex;
@@ -96,6 +98,7 @@ button:hover {
   margin-right: 8px;
 }
 
+/* Divisores e Texto */
 .divider {
   text-align: center;
   margin: 15px 0;
@@ -108,7 +111,7 @@ button:hover {
 }
 
 .signup-link {
-  color: #007BFF;
+  color: #1E2A38;
   text-decoration: none;
 }
 
@@ -116,13 +119,18 @@ button:hover {
   text-decoration: underline;
 }
 
+/* Rodapé Fixado */
 footer {
-  background-color: #001f3d; /* Azul marinho */
+  background-color: #1E2A38;
   color: white;
   text-align: center;
   font-size: 14px;
-  margin-top: 30px;
   padding: 15px;
+  
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .hidden {
