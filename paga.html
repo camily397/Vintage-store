@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finalizar Pagamento - Vintage Store</title>
-  <link rel="stylesheet" href="pagabea.css">
+  <link rel="stylesheet" href="paga.css">
 </head>
 <body>
   <header>
-    <h1>Vintage Store</h1>
+    <span class="logo">Vintage Store</span>
   </header>
 
   <main class="container">
@@ -22,7 +22,7 @@
 
     <section class="endereco">
       <h3>Endereço de Entrega</h3>
-      <p><strong>Nome:</strong> exemplo de nome</p>
+      <p><strong>Nome:</strong> Nome Exemplo</p>
       <p><strong>Endereço:</strong> Rua Exemplo, 123 - Bairro Centro - Paraná/PR</p>
       <p><strong>CEP:</strong> 00000-000</p>
       <p><strong>Telefone:</strong> (11) 99999-9999</p>
@@ -30,7 +30,6 @@
 
     <section class="pagamento">
       <h3>Escolha a Forma de Pagamento</h3>
-
       <div class="opcoes">
         <div class="opcao">
           <h4>💳 Cartão de Crédito</h4>
@@ -61,42 +60,9 @@
   </main>
 
   <footer>
-    <a href="carrinho.html">← Voltar ao Carrinho</a>
+    © 2025 Vintage Store — Todos os direitos reservados.
   </footer>
 
-  <script>
-    // Função para carregar produtos do localStorage (corrigido para "cart")
-    const produtosContainer = document.getElementById("produtos");
-    const totalElement = document.getElementById("total");
-
-    const carrinho = JSON.parse(localStorage.getItem("cart")) || [];
-
-    if (carrinho.length === 0) {
-      produtosContainer.innerHTML = "<p>Seu carrinho está vazio.</p>";
-    } else {
-      let total = 0;
-      carrinho.forEach(item => {
-        const div = document.createElement("div");
-        div.classList.add("produto-item");
-        div.innerHTML = `
-          <p><strong>${item.name}</strong></p>
-          <p>Quantidade: ${item.quantity}</p>
-          <p>Preço unitário: R$ ${item.price.toFixed(2)}</p>
-          <p>Subtotal: R$ ${(item.price * item.quantity).toFixed(2)}</p>
-          <hr>
-        `;
-        produtosContainer.appendChild(div);
-        total += item.price * item.quantity;
-      });
-      totalElement.textContent = total.toFixed(2);
-    }
-
-    // Botão de confirmação
-    document.getElementById("confirmar").addEventListener("click", () => {
-      alert("Pagamento confirmado! Obrigado por comprar na Vintage Store 💜");
-      localStorage.removeItem("cart");
-      window.location.href = "index.html";
-    });
-  </script>
+  <script src="paga.js"></script>
 </body>
 </html>
