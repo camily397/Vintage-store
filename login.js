@@ -1,113 +1,122 @@
-// app.js
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm&quot;;
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 // ===== CONFIG SUPABASE =====
-const SUPABASE_URL = "https://xxxxxxxxxxxxxxxxxxx.supabase.co&quot;;   // troque
-const SUPABASE_ANON_KEY = "coloque aqui seu API";             // troque
+const SUPABASE_URL = "https://xxxxxxxxxxxxxxxxxxx.supabase.co";  // troque
+const SUPABASE_ANON_KEY = "coloque aqui seu API";                 // troque
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+// ===== ELEMENTOS =====
+const tabs = document.querySelectorAll('.tab');
+const panes = document.querySelectorAll('.pane');
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+const authMsg = document.getElementById('authMsg');
+const privateArea = document.getElementById('privateArea');
+const welcomeUser = document.getElementById('welcomeUser');
+const logoutBtn = document.getElementById('logoutBtn');
+const googleLoginBtn = document.getElementById("googleLoginBtn");
 
-  // ===== ELEMENTOS =====
-  const tabs = document.querySelectorAll('.tab');
-  const panes = document.querySelectorAll('.pane');
-  const loginForm = document.getElementById('loginForm');
-  const registerForm = document.getElementById('registerForm');
-  const authMsg = document.getElementById('authMsg');
-  const privateArea = document.getElementById('privateArea');
-  const welcomeUser = document.getElementById('welcomeUser');
-  const logoutBtn = document.getElementById('logoutBtn');
-  const googleLoginBtn = document.getElementById("googleLoginBtn");
+// Função para exibir mensagens de sucesso ou erro
+const showMsg = (text, type = "success") => {
+  if (!authMsg) return;
+  authMsg.textContent = text;
+  authMsg.className = `msg ${type}`;
+};
 
-  const showMsg = (text, type = "success") => {
-    if (!authMsg) return;
-    authMsg.textContent = text;
-    authMsg.className = `msg ${type}`;
-  };
-  const clearMsg = () => showMsg("");
+const clearMsg = () => showMsg("");
 
-  // ===== TROCA DE ABAS =====
-  tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabs.forEach(b => b.classList.remove('active'));
-      panes.forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab)?.classList.add('active');
+// ===== TROCA DE ABAS =====
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabs.forEach(b => b.classList.remove('active'));
+    panes.forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab)?.classList.add('active');
+  });
+});
+
+// ===== LOGIN COM GOOGLE =====
+googleLoginBtn?.addEventListener("click", async () => {
+  const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
+  if (error) showMsg("Erro ao entrar com Google: " + error.message, "error");
+});
+
+// ===== CADASTRO =====
+registerForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  clearMsg();
+
+  const nome = document.getElementById('regNome').value.trim();
+  const dataNascimento = document.getElementById('regNascimento').value.trim();
+  const email = document.getElementById('regEmail').value.trim().toLowerCase();
+  const telefone = document.getElementById('regTelefone').value.trim();
+  const usuario = document.getElementById('regUsuario').value.trim().toLowerCase();
+  const senha = document.getElementById('regSenha').value;
+
+  // Validar se os campos obrigatórios estão preenchidos
+  if (!nome || !email || !senha || !usuario) {
+    return showMsg("Por favor, preencha todos os campos obrigatórios.", "error");
+  }
+
+  try {
+    const { error } = await supabase.auth.signUp({
+      email,
+      password: senha,
+      options: {
+        data: { full_name: nome, dob: dataNascimento, phone: telefone, username: usuario }
+      }
     });
-  });
 
-  // ===== LOGIN COM GOOGLE =====
-  googleLoginBtn?.addEventListener("click", async () => {
-    const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
-    if (error) showMsg("Erro ao entrar com Google: " + error.message, "error");
-  });
+    if (error) return showMsg("Erro ao cadastrar: " + error.message, "error");
 
-  // ===== CADASTRO =====
-  registerForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearMsg();
+    showMsg("Conta criada! Verifique seu e-mail.", "success");
+    registerForm.reset();
+    document.querySelector('.tab[data-tab="login-pane"]').click();
+  } catch {
+    showMsg("Erro inesperado ao cadastrar.", "error");
+  }
+});
 
-    const nome = document.getElementById('regNome').value.trim();
-    const dataNascimento = document.getElementById('regNascimento').value.trim();
-    const email = document.getElementById('regEmail').value.trim().toLowerCase();
-    const telefone = document.getElementById('regTelefone').value.trim();
-    const usuario = document.getElementById('regUsuario').value.trim().toLowerCase();
-    const senha = document.getElementById('regSenha').value;
+// ===== LOGIN =====
+loginForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  clearMsg();
 
-    try {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password: senha,
-        options: {
-          data: { full_name: nome, dob: dataNascimento, phone: telefone, username: usuario }
-        }
-      });
+  const userOrEmail = document.getElementById('loginUser').value.trim().toLowerCase();
+  const pass = document.getElementById('loginPass').value;
 
-      if (error) return showMsg("Erro ao cadastrar: " + error.message, "error");
+  // Validar se o e-mail ou senha foi preenchido
+  if (!userOrEmail || !pass) {
+    return showMsg("Por favor, preencha o e-mail e a senha.", "error");
+  }
 
-      showMsg("Conta criada! Verifique seu e-mail.", "success");
-      registerForm.reset();
-      document.querySelector('.tab[data-tab="login-pane"]').click();
-    } catch {
-      showMsg("Erro inesperado ao cadastrar.", "error");
-    }
-  });
+  try {
+    const { error } = await supabase.auth.signInWithPassword({
+      email: userOrEmail,
+      password: pass
+    });
 
-  // ===== LOGIN =====
-  loginForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    clearMsg();
+    if (error) return showMsg("Erro ao entrar: " + error.message, "error");
 
-    const userOrEmail = document.getElementById('loginUser').value.trim().toLowerCase();
-    const pass = document.getElementById('loginPass').value;
+    showMsg("Login realizado com sucesso!", "success");
+    loginForm.reset();
+  } catch {
+    showMsg("Erro inesperado no login.", "error");
+  }
+});
 
-    try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: userOrEmail,
-        password: pass
-      });
+// ===== ESTADO DE AUTENTICAÇÃO =====
+supabase.auth.onAuthStateChange((_event, session) => {
+  if (session?.user) {
+    privateArea.classList.remove('hidden');
+    welcomeUser.textContent = `Bem-vindo, ${session.user.user_metadata?.full_name || session.user.email}!`;
+  } else {
+    privateArea.classList.add('hidden');
+  }
+});
 
-      if (error) return showMsg("Erro ao entrar: " + error.message, "error");
-
-      showMsg("Login realizado com sucesso!", "success");
-      loginForm.reset();
-    } catch {
-      showMsg("Erro inesperado no login.", "error");
-    }
-  });
-
-  // ===== ESTADO DE AUTENTICAÇÃO =====
-  supabase.auth.onAuthStateChange((_event, session) => {
-    if (session?.user) {
-      privateArea.classList.remove('hidden');
-      welcomeUser.textContent = `Bem-vindo, ${session.user.user_metadata?.full_name || session.user.email}!`;
-    } else {
-      privateArea.classList.add('hidden');
-    }
-  });
-
-  // ===== LOGOUT =====
-  logoutBtn?.addEventListener('click', async () => {
-    await supabase.auth.signOut();
-    showMsg("Você saiu da conta.", "success");
-  });
+// ===== LOGOUT =====
+logoutBtn?.addEventListener('click', async () => {
+  await supabase.auth.signOut();
+  showMsg("Você saiu da conta.", "success");
 });
