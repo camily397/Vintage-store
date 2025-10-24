@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finalizar Pagamento - Vintage Store</title>
-  <link rel="stylesheet" href="pagabea.css">
+  <link rel="stylesheet" href="paga.css">
 </head>
 <body>
   <header>
-    <h1>Vintage Store</h1>
+    <span class="logo">Vintage Store</span>
   </header>
 
   <main class="container">
@@ -22,7 +22,7 @@
 
     <section class="endereco">
       <h3>Endereço de Entrega</h3>
-      <p><strong>Nome:</strong> Giulia Hadassa</p>
+      <p><strong>Nome:</strong> Nome Exemplo</p>
       <p><strong>Endereço:</strong> Rua Exemplo, 123 - Bairro Centro - Paraná/PR</p>
       <p><strong>CEP:</strong> 00000-000</p>
       <p><strong>Telefone:</strong> (11) 99999-9999</p>
@@ -30,7 +30,6 @@
 
     <section class="pagamento">
       <h3>Escolha a Forma de Pagamento</h3>
-
       <div class="opcoes">
         <div class="opcao">
           <h4>💳 Cartão de Crédito</h4>
@@ -57,10 +56,7 @@
       </div>
     </section>
 
-    <button id="confirmar" class="confirmar">Confirmar Pagamento</button>
-  </main>
-
-  <footer>
+<footer>
     <a href="carrinho.html">← Voltar ao Carrinho</a>
   </footer>
 
@@ -96,12 +92,7 @@
       alert("Pagamento confirmado! Obrigado por comprar na Vintage Store 💜");
       localStorage.removeItem("cart");
       window.location.href = "index.html";
-    });         
-    
- <footer>
-    © 2025 Vintage Store — Todos os direitos reservados.
-  </footer>
-
-  <script src="pagamento.js"></script>
+    });
+  </script>
 </body>
 </html>
