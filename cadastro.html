@@ -86,12 +86,9 @@
     <p>© 2025 - Vintage Store</p>
   </footer>
 
-  <script type="module" src="login.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  
-  <!-- JS para alternar entre Login e Cadastro -->
+  <!-- Aqui começa a parte JavaScript -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const loginTab = document.getElementById('loginTab');
       const registerTab = document.getElementById('registerTab');
       const loginPane = document.getElementById('login-pane');
@@ -99,20 +96,32 @@
 
       // Função para alternar para o Login
       loginTab.addEventListener('click', function() {
+        // Adiciona a classe 'active' ao botão de login
         loginTab.classList.add('active');
+        // Remove a classe 'active' do botão de cadastro
         registerTab.classList.remove('active');
+        
+        // Exibe o painel de Login
         loginPane.classList.add('active');
+        // Esconde o painel de Cadastro
         registerPane.classList.remove('active');
       });
 
       // Função para alternar para o Cadastro
       registerTab.addEventListener('click', function() {
+        // Adiciona a classe 'active' ao botão de cadastro
         registerTab.classList.add('active');
+        // Remove a classe 'active' do botão de login
         loginTab.classList.remove('active');
+        
+        // Exibe o painel de Cadastro
         registerPane.classList.add('active');
+        // Esconde o painel de Login
         loginPane.classList.remove('active');
       });
     });
   </script>
+  <!-- Fim da parte JavaScript -->
+
 </body>
 </html>
