@@ -6,14 +6,22 @@ body {
   color: #333;
 }
 
+/* CABEÇALHO */
 header {
-  background-color: #111;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  font-size: 22px;
+  background-color: #0a0f2c;
+  color: white;
+  text-align: left;
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
+.logo {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* CONTEÚDO */
 .container {
   width: 90%;
   max-width: 800px;
@@ -96,9 +104,13 @@ h2, h3 {
   background-color: #555;
 }
 
+/* RODAPÉ */
 footer {
+  background-color: #0a0f2c;
+  color: white;
   text-align: center;
-  padding: 15px;
-  background-color: #111;
-  color: #fff;
+  padding: 12px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
 }
