@@ -1,49 +1,218 @@
-/* ====== CONTAINER PRINCIPAL ====== */
-.auth {
-  background: #fff;
-  max-width: 360px;      /* menor largura */
-  margin: 50px auto;     /* centraliza e aproxima do topo */
-  padding: 30px 25px;    /* menos espaçamento interno */
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+:root {
+  --bg: #f8f9fa; /* fundo off-white */
+  --text: #1e2a38; /* azul marinho */
+  --primary: #1e2a38; /* azul marinho principal */
+  --accent: #4c6ea8; /* azul médio para detalhes */
+  --highlight: #89a7d0; /* azul claro */
+  --danger: #d64545; /* vermelho suave */
 }
 
-/* ====== CAMPOS E BOTÕES ====== */
-.form {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 12px;             /* menos espaço entre inputs */
 }
 
-.field label {
+/* ===== CABEÇALHO ===== */
+header.site-header {
+  width: 100%;
+  background: var(--primary);
+  color: #f8f9fa;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-left .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header-left .tagline {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ===== CONTAINER GERAL ===== */
+.container.auth {
+  flex: 1;
+  max-width: 400px;
+  width: 90%;
+  margin: 60px auto 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* ===== ABAS (LOGIN / CADASTRO) ===== */
+.tabs {
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #eaf0f6;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background: linear-gradient(90deg, var(--accent), var(--highlight));
+  color: #fff;
+}
+
+/* ===== FORMULÁRIOS ===== */
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-weight: 600;
   font-size: 0.9rem;
 }
 
-.field input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
+input {
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid var(--highlight);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
-/* ====== BOTÕES ====== */
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(76,110,168,0.25);
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent), var(--highlight));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(76,110,168,0.3);
+}
+
 .btn.full {
-  padding: 10px;
-  font-size: 0.95rem;
+  width: 100%;
 }
 
-/* ====== MENSAGEM ====== */
+/* Botão Google */
+.google-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.google-btn img {
+  margin-right: 8px;
+}
+
+.google-btn:hover {
+  background: #f2f2f2;
+}
+
+/* ===== MENSAGENS ===== */
 .msg {
+  margin-top: 14px;
+  min-height: 20px;
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: 10px;
-  color: #4b5563;
 }
 
-/* ====== RODAPÉ ====== */
-footer {
+.msg.error {
+  color: var(--danger);
+}
+
+.msg.success {
+  color: var(--accent);
+}
+
+/* ===== ÁREA PRIVADA ===== */
+.private {
+  margin-top: 22px;
+}
+
+.center {
   text-align: center;
-  margin-top: 20px;
-  font-size: 0.85rem;
-  color: #777;
+}
+
+/* ===== DIVISOR ===== */
+.divider {
+  text-align: center;
+  margin: 15px 0;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  background: var(--primary);
+  color: #f8f9fa;
+  text-align: center;
+  padding: 16px;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 480px) {
+  .container.auth {
+    margin-top: 40px;
+    padding: 24px 16px;
+  }
+
+  header.site-header {
+    padding: 14px;
+  }
+
+  .header-left .logo {
+    font-size: 1.3rem;
+  }
+
+  .header-left .tagline {
+    font-size: 0.8rem;
+  }
 }
