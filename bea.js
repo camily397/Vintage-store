@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const qtyElement = document.getElementById("qty");
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
+  const buyBtn = document.querySelector(".buy-btn"); // botão de comprar
 
   // Atualiza quantidade
   plusBtn.addEventListener("click", () => {
@@ -17,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "beabadoobee-beatopia",
-      name: "Beabadoobee - Beatopia",
-      price: 119.9,
+      id: "mitski-lush",
+      name: "Mitski - Lush",
+      price: 139.9,
       quantity: parseInt(qtyElement.textContent),
-      image: "bea.jfif"
+      image: "mit.jfif"
     };
 
     // Recupera o carrinho existente ou cria um novo
@@ -55,5 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(alertBox);
 
     setTimeout(() => alertBox.remove(), 2000);
+  });
+
+  // Redireciona ao clicar em "Comprar"
+  buyBtn.addEventListener("click", () => {
+    window.location.href = "comprabea.html"; // 🔹 troque aqui pelo nome da sua página de destino
   });
 });
