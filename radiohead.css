@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #414141; /* off-white suave para contraste */
+  background: #424242; /* off-white suave para contraste */
   color: #ffffff; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
@@ -90,7 +90,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #D94E4E; /* vermelho vibrante que remete às cores do álbum */
+  color: #ffffff; /* vermelho vibrante que remete às cores do álbum */
 }
 
 .price {
@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #504f4f; /* verde suave, evocando a parte mais tranquila do álbum */
+  background: #000000; /* verde suave, evocando a parte mais tranquila do álbum */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #535353; /* vermelho vibrante */
+  background: #000000; /* vermelho vibrante */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
