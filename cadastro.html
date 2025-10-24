@@ -1,38 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - Vintage Store</title>
-  <link rel="stylesheet" href="cadastro.css">
+  <meta charset="utf-8" />
+  <title>Cadastro/Login</title>
+  <link rel="stylesheet" href="login.css">
+  
 </head>
 <body>
-  <div class="login-container">
-    <div class="login-box">
-      <div class="logo">
-        <img src="vintage.jpeg" alt="Logo Vintage Store">
-      </div>
-      <h1>Criar Conta</h1>
-      <p class="subtitle">Preencha os dados abaixo para se cadastrar</p>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
+  </header>
+  <div class="container auth">
+    <div class="tabs">
+      <button class="tab active" data-tab="login-pane">Login</button>
+      <button class="tab" data-tab="register-pane">Cadastro</button>
+    </div>
 
-      <form action="#" method="post">
-        <label for="nome">Nome completo</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
-
-        <button type="submit" class="btn">Cadastrar-se</button>
-
-        <div class="extras">
-           <a href="conta.html" class="voltar">← Voltar</a>
+    <!-- PANE DE LOGIN -->
+    <div id="login-pane" class="pane active">
+      <form id="loginForm" class="form">
+        <div class="field">
+          <label for="loginUser">Usuário ou E-mail</label>
+          <input id="loginUser" required>
         </div>
+        <div class="field">
+          <label for="loginPass">Senha</label>
+          <input id="loginPass" type="password" required>
+        </div>
+        <button class="btn full" type="submit">Entrar</button>
+      </form>
+
+      <div class="divider">ou</div>
+
+      <!-- BOTÃO LOGIN COM GOOGLE -->
+      <button id="googleLoginBtn" class="btn full google-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
+             alt="Google logo" width="20" style="vertical-align:middle; margin-right:8px;">
+        Entrar com Google
+      </button>
+    </div>
+
+    <!-- PANE DE CADASTRO -->
+    <div id="register-pane" class="pane">
+      <form id="registerForm" class="form">
+        <div class="field">
+          <label for="regNome">Nome completo</label>
+          <input id="regNome" required>
+        </div>
+        <div class="field">
+          <label for="regNascimento">Data de nascimento</label>
+          <input id="regNascimento" type="date">
+        </div>
+        <div class="field">
+          <label for="regEmail">E-mail</label>
+          <input id="regEmail" type="email" required>
+        </div>
+        <div class="field">
+          <label for="regTelefone">Telefone</label>
+          <input id="regTelefone">
+        </div>
+        <div class="field">
+          <label for="regUsuario">Usuário</label>
+          <input id="regUsuario" required>
+        </div>
+        <div class="field">
+          <label for="regSenha">Senha</label>
+          <input id="regSenha" type="password" required>
+        </div>
+        <button class="btn full" type="submit">Cadastrar</button>
       </form>
     </div>
+
+    <div id="authMsg" class="msg"></div>
   </div>
+
+  <div id="privateArea" class="hidden center private">
+    <p id="welcomeUser"></p>
+    <button id="logoutBtn" class="btn">Sair</button>
+  </div>
+
+  <footer>
+    <p>© 2025 - Vintage Store</p>
+  </footer>
+
+
+ <script type="module" src="login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
 </body>
 </html>
 
