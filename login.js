@@ -1,12 +1,11 @@
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+// app.js
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm&quot;;
 
-document.addEventListener("DOMContentLoaded", () => {
-  
-  
-  // ===== CONFIG SUPABASE =====
-const SUPABASE_URL = "https://awuhwgmueyaxerfqtbdh.supabase.co";   // troque
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dWh3Z211ZXlheGVyZnF0YmRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTM0ODYsImV4cCI6MjA3NjYyOTQ4Nn0.nNFyl87x8rPSKnXAbObj88LOCYYJWCTdUv8Wpu33VYk";             // troque
+// ===== CONFIG SUPABASE =====
+const SUPABASE_URL = "https://xxxxxxxxxxxxxxxxxxx.supabase.co&quot;;   // troque
+const SUPABASE_ANON_KEY = "coloque aqui seu API";             // troque
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 
   // ===== ELEMENTOS =====
   const tabs = document.querySelectorAll('.tab');
