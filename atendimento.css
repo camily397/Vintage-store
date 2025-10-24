@@ -33,7 +33,7 @@ header.site-header {
 
 /* ======= MENU LATERAL ======= */
 .menu {
-  background-color: #111;
+  background-color: #f8f8f8; /* Mudado para off white */
   padding: 25px;
   width: 260px; /* um pouquinho mais largo */
   display: flex;
@@ -93,4 +93,3 @@ button a {
   padding: 10px 0;
   font-size: 14px;
 }
-
