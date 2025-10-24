@@ -1,204 +1,146 @@
-/* ===== RESET ===== */
-* {
-  box-sizing: border-box;
+/* ======= GERAL ======= */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(180deg, #aabddb, #cccccc);
-  color: #222;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== HEADER ===== */
-.site-header {
+/* ======= CABEÇALHO ======= */
+header {
+  background-color: #333333;
+  color: #fff;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 28px;
-  background: linear-gradient(90deg, #1e2a38, #2b3b4b);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 22px;
+header h1 {
+  font-size: 20px;
+  margin: 0;
 }
 
-.tagline {
-  font-size: 12px;
-  opacity: 0.9;
-}
-
-.header-nav a {
+nav a {
   color: #fff;
   text-decoration: none;
   margin-left: 20px;
-  font-weight: 500;
+  font-size: 14px;
 }
 
-.header-nav a:hover {
+nav a:hover {
   text-decoration: underline;
 }
 
-/* ===== MAIN ===== */
+/* ======= CONTEÚDO ======= */
 .container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px 60px;
-  flex: 1;
-  flex-wrap: wrap;
-}
-
-/* ===== MENU LATERAL ===== */
-.menu {
-  width: 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  border-left: 4px solid #1e2a38;
-  padding-left: 18px;
-  position: sticky;
-  top: 80px;
-}
-
-.menu button {
-  background: linear-gradient(145deg, #ffffff, #e0e0e0); /* gradiente branco */
-  color: #1e2a38; /* texto escuro */
-  border: none;
-  padding: 18px;
-  font-size: 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  font-weight: 600;
-}
-
-.menu button:hover {
-  background: linear-gradient(145deg, #f2f2f2, #dcdcdc); /* gradiente mais claro no hover */
-  transform: translateX(4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
-
-/* ===== CONTEÚDO ===== */
-.conteudo {
-  flex: 1;
-  background: rgba(255,255,255,0.85);
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  backdrop-filter: blur(6px);
-}
-
-.conteudo h2 {
-  font-size: 26px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.conteudo p {
-  margin-bottom: 16px;
-  line-height: 1.7;
-  font-size: 16px;
-  color: #333;
-}
-
-/* ===== FOOTER ===== */
-.site-footer {
-  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
   padding: 20px;
-  background: #1e2a38;
-  color: #fff;
-  margin-top: auto;
-  font-size: 14px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* ===== BOTÃO VOLTAR ===== */
-.voltar {
-  position: fixed;
-  bottom: 20px;
+.container h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* ======= BALÃO DE TEXTO ======= */
+.balloon {
+  background-color: #e0f7fa;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
   left: 20px;
-  background: #1e2a38;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 6px;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #e0f7fa transparent transparent transparent;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  min-height: 80px;
   font-size: 14px;
 }
 
-.voltar:hover {
-  background: #333;
+/* ======= ESTRELINHAS ======= */
+.stars {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-
-/* TABLET (820px ou menor) */
-@media (max-width: 820px) {
-  .container {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .menu {
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    border-left: none;
-    border-top: 4px solid #1e2a38;
-    padding-top: 12px;
-    position: static;
-    top: auto;
-  }
-
-  .menu button {
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .conteudo {
-    padding: 20px;
-  }
+.stars input {
+  display: none;
 }
 
-/* CELULAR (480px ou menor) */
-@media (max-width: 480px) {
-  .logo {
-    font-size: 18px;
-  }
+.stars label {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
 
-  .tagline {
-    font-size: 10px;
-  }
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #f5b301;
+  transform: scale(1.2);
+}
 
-  .header-nav a {
-    margin-left: 10px;
-    font-size: 14px;
-  }
+.stars input:checked ~ label {
+  color: #f5b301;
+}
 
-  .menu button {
-    padding: 10px;
-    font-size: 12px;
-  }
+/* ======= BOTÃO ======= */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #333333;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
 
-  .conteudo h2 {
-    font-size: 22px;
-  }
+.btn:hover {
+  background-color: #555555;
+}
 
-  .conteudo p {
-    font-size: 14px;
-  }
+/* ======= MENSAGEM DE OBRIGADO ======= */
+.thankyou {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+}
 
-  .voltar {
-    padding: 8px 15px;
-    font-size: 12px;
-  }
+/* ======= ELEMENTOS EXTRAS ======= */
+.tip {
+  background-color: #fff3e0;
+  border-left: 5px solid #ff9800;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
 }
