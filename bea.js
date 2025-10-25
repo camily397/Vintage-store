@@ -56,12 +56,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => alertBox.remove(), 2000);
   });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const buyBtn = document.querySelector(".buy-btn"); // seu botão de compra
 
-  buyBtn.addEventListener("click", () => {
-    // aqui você pode redirecionar pro checkout
-    window.location.href = "checkout2.html"; // troque pelo link da página de compra
+  // =======================
+  // Botão de “Comprar” funcional
+  // =======================
+  const buyBtns = document.querySelectorAll(".buy-btn");
+
+  buyBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const name = btn.dataset.name;
+      const price = btn.dataset.price;
+      const img = btn.dataset.img;
+
+      const url = `checkout.html?name=${encodeURIComponent(name)}&price=${price}&img=${encodeURIComponent(img)}`;
+      window.location.href = url;
+    });
   });
 });
