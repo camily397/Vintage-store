@@ -7,93 +7,77 @@
   <link rel="stylesheet" href="teste.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="logo">Vintage Store</div>
-  </header>
 
-  <main class="checkout-container">
-    <div class="checkout-left">
+<header class="site-header">
+  <div class="logo">Vintage Store</div>
+</header>
 
-      <!-- Produto -->
-      <section class="product-section">
-        <div class="product-image">
-          <img id="productImage" src="" alt="Produto">
-        </div>
-        <div class="product-details">
-          <h3 id="productName"></h3>
-          <p><strong>Tipo de produto:</strong> <span id="productType">CD / Vinil / Pôster</span></p>
-          <p><strong>Inclui:</strong> <span id="productIncludes"></span></p>
-          <p><strong>Faixas principais:</strong> <span id="productTracks"></span></p>
-          <p>Preço unitário: R$ <span id="productPrice"></span></p>
-          <div class="quantity">
-            <button id="minus">-</button>
-            <span id="productQty">1</span>
-            <button id="plus">+</button>
-          </div>
-          <p><strong>Total: R$ <span id="productTotal"></span></strong></p>
-        </div>
-      </section>
-
-      <!-- Informações do cliente -->
-      <section class="customer-section">
-        <h3>Informações do Cliente</h3>
-        <p><strong>Nome:</strong> <input type="text" id="customerName" placeholder="Digite seu nome"></p>
-        <p><strong>Email:</strong> <input type="email" id="customerEmail" placeholder="Digite seu email"></p>
-        <p><strong>Telefone:</strong> <input type="text" id="customerPhone" placeholder="(00) 00000-0000"></p>
-        <p><strong>Endereço:</strong> <input type="text" id="customerAddress" placeholder="Rua, Número, Bairro"></p>
-        <p><strong>Estado:</strong>
-          <select id="customerState">
-            <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
-            <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
-            <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
-            <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
-            <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
-            <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
-            <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
-            <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
-            <option value="SP" selected>SP</option><option value="SE">SE</option><option value="TO">TO</option>
-          </select>
-        </p>
-      </section>
-
-      <!-- Textos informativos -->
-      <section class="info-texts">
-        <h3>Leia nossas páginas informativas!</h3>
-        <p>Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido' presente em nosso menu "Atendimento" antes de concluir a sua compra para que você fique por dentro de como tudo por aqui funciona!</p>
-
-        <h3>Quando você receber seu rastreio, acompanhe-o!</h3>
-        <p>Encaminharemos o seu rastreio entre 7-15 dias úteis após seu pedido ser 'Embalado', e é importantíssimo que você o acompanhe no seu app/site de rastreamento favorito para ficar ciente de todas as atualizações da sua encomenda!</p>
-
-        <h3>Atenção ao preencher o endereço</h3>
-        <p>Informar endereço errado, não pagar taxas caso sejam cobradas ou não retirar a encomenda nos Correios caso solicitem pode acarretar no extravio ou na devolução do produto e, nesses casos, teremos que cobrar taxas para reenvio, ok?</p>
-      </section>
+<main class="container">
+  <section class="product-section">
+    <div class="product-image">
+      <img id="productImage" src="" alt="Produto">
     </div>
-
-    <!-- Coluna direita sticky -->
-    <div class="checkout-right">
-      <h3>Resumo da Compra</h3>
-      <p>Produto: <span id="summaryName"></span></p>
-      <p>Quantidade: <span id="summaryQty"></span></p>
-      <p>Preço unitário: R$ <span id="summaryPrice"></span></p>
-      <p>Subtotal: R$ <span id="summarySubtotal"></span></p>
-      <p>Frete: R$ <span id="summaryFrete">19.90</span></p>
-      <p><strong>Total: R$ <span id="summaryTotal"></span></strong></p>
-
-      <h3>Métodos de Pagamento</h3>
-      <div class="payment-options">
-        <button>Boleto</button>
-        <button>PIX</button>
-        <button>Cartão</button>
+    <div class="product-info">
+      <h2 id="productName"></h2>
+      <p><strong>Preço unitário:</strong> R$ <span id="productPrice"></span></p>
+      <div class="quantity">
+        <button id="minus">-</button>
+        <span id="productQty">1</span>
+        <button id="plus">+</button>
       </div>
-
-      <button class="finish-btn" id="finalizarCompra">Finalizar Compra</button>
+      <p><strong>Total:</strong> R$ <span id="productTotal"></span></p>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    © 2025 Vintage Store — Todos os direitos reservados.
-  </footer>
+  <section class="customer-section">
+    <h3>Informações do Cliente</h3>
+    <div class="customer-info">
+      <label for="customerName">Nome:</label>
+      <input type="text" id="customerName" placeholder="Seu nome">
 
-  <script src="teste.js"></script>
+      <label for="customerAddress">Endereço:</label>
+      <input type="text" id="customerAddress" placeholder="Rua, Número, Bairro">
+
+      <label for="customerCity">Cidade:</label>
+      <input type="text" id="customerCity" placeholder="Cidade">
+
+      <label for="customerState">Estado:</label>
+      <select id="customerState">
+        <option value="SP">SP</option>
+        <option value="RJ">RJ</option>
+        <option value="MG">MG</option>
+        <option value="PR">PR</option>
+        <option value="RS">RS</option>
+        <!-- Adicione os outros estados -->
+      </select>
+
+      <label for="customerCEP">CEP:</label>
+      <input type="text" id="customerCEP" placeholder="00000-000">
+
+      <label for="customerPhone">Telefone:</label>
+      <input type="text" id="customerPhone" placeholder="(00) 00000-0000">
+
+      <label for="customerEmail">Email:</label>
+      <input type="email" id="customerEmail" placeholder="email@exemplo.com">
+    </div>
+  </section>
+
+  <section class="summary-section">
+    <h3>Resumo da Compra</h3>
+    <p><strong>Produto:</strong> <span id="summaryName"></span></p>
+    <p><strong>Quantidade:</strong> <span id="summaryQty"></span></p>
+    <p><strong>Preço unitário:</strong> R$ <span id="summaryPrice"></span></p>
+    <p><strong>Subtotal:</strong> R$ <span id="summarySubtotal"></span></p>
+    <p><strong>Frete:</strong> R$ <span id="summaryFrete">19.90</span></p>
+    <p><strong>Total:</strong> R$ <span id="summaryTotal"></span></p>
+    <button id="finalizarCompra" class="btn-buy">Finalizar Compra</button>
+  </section>
+</main>
+
+<footer class="site-footer">
+  © 2025 Vintage Store — Todos os direitos reservados.
+</footer>
+
+<script src="teste.js"></script>
 </body>
 </html>
