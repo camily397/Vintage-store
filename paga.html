@@ -22,7 +22,7 @@
       <h2>Escolha a forma de pagamento</h2>
 
       <div class="opcao" id="cartao">
-        <h3>💳 Cartão de crédito</h3>
+        <h3>💳 Cartão de Débito</h3>
         <input type="text" placeholder="Número do cartão">
         <input type="text" placeholder="Nome no cartão">
         <input type="text" placeholder="Validade (MM/AA)">
@@ -42,8 +42,7 @@
     </div>
 
     <div class="botoes">
-      <button onclick="window.location.href='checkout.html'">Voltar</button>
-      <button onclick="window.location.href='index.html'">Cancelar</button>
+      <button onclick="window.location.href='carrinho.html'">← Voltar ao Carrinho</button>
     </div>
   </main>
 
@@ -127,7 +126,9 @@
           <p>Em breve você receberá um e-mail com os detalhes da compra.</p>
           <button onclick="finalizarCompra()" class="voltar-btn">Voltar à Loja</button>
         </main>
-        <footer>© 2025 Vintage Store - Todos os direitos reservados.</footer>
+        <footer style="position:fixed; bottom:0; left:0; width:100%; background-color:#0a1833; color:#fff; padding:10px 0; text-align:center;">
+          © 2025 Vintage Store - Todos os direitos reservados.
+        </footer>
       `;
     }
 
