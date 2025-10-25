@@ -3,94 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagamento - Vintage Store</title>
+  <title>Teste - Vintage Store</title>
   <link rel="stylesheet" href="teste.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
+  </header>
 
-<header class="site-header">
-  <div class="logo">Vintage Store</div>
-</header>
+  <main class="container">
+    <div class="checkout-grid">
 
-<main class="container">
-  <div class="checkout-grid">
-
-    <!-- LADO ESQUERDO: Produto -->
-    <section class="left-side">
-      <div class="product-image">
-        <img id="productImage" src="" alt="Produto">
-      </div>
-      <div class="product-info">
-        <h2 id="productName"></h2>
-        <p><strong>Tipo de Produto:</strong> Álbum (CD, Pôster, Vinil)</p>
-        <p><strong>Preço unitário:</strong> R$ <span id="productPrice"></span></p>
-        <div class="quantity">
-          <button id="minus">-</button>
-          <span id="productQty">1</span>
-          <button id="plus">+</button>
+      <!-- LADO ESQUERDO -->
+      <div class="left-side">
+        <div class="product-image">
+          <img src="ariana.jfif" alt="Ariana Grande - Positions">
         </div>
-        <p><strong>Total:</strong> R$ <span id="productTotal"></span></p>
-
-        <div class="cards">
-          <div class="card">
-            <h4>Frete</h4>
-            <p>R$ 19,90 — Entrega em todo Brasil. Escolha o estado no lado direito.</p>
-          </div>
-          <div class="card">
-            <h4>Pagamento</h4>
-            <p>Boleto, PIX ou Cartão de Crédito.</p>
-          </div>
-          <div class="card">
-            <h4>Observações</h4>
-            <p>Leia nossas páginas informativas! Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido'.</p>
-            <p>Quando receber seu rastreio, acompanhe-o! Enviaremos entre 7-15 dias úteis.</p>
-            <p>Atenção ao preencher o endereço: informar errado pode gerar taxas de reenvio.</p>
+        <div class="product-info">
+          <h2>Álbum Completo (CD, Pôster, Vinil)</h2>
+          <p><strong>Data de lançamento:</strong> 30/10/2020</p>
+          <p>Produto oficial e lacrado — não vendemos réplicas.</p>
+          <p>Itens enviados diretamente de distribuidoras oficiais.</p>
+          <div class="quantity">
+            <button id="minus">-</button>
+            <span id="qty">1</span>
+            <button id="plus">+</button>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- LADO DIREITO: Cliente e Resumo -->
-    <section class="right-side">
-      <div class="customer-section">
-        <h3>Informações do Cliente</h3>
-        <div class="customer-info">
-          <input type="text" id="customerName" placeholder="Nome completo">
-          <input type="text" id="customerAddress" placeholder="Endereço">
-          <input type="text" id="customerCity" placeholder="Cidade">
-          <select id="customerState">
-            <option value="SP">SP</option>
-            <option value="RJ">RJ</option>
-            <option value="MG">MG</option>
-            <option value="PR">PR</option>
-            <option value="RS">RS</option>
-          </select>
-          <input type="text" id="customerCEP" placeholder="CEP">
-          <input type="text" id="customerPhone" placeholder="Telefone">
-          <input type="email" id="customerEmail" placeholder="Email">
+      <!-- LADO DIREITO -->
+      <div class="right-side">
+
+        <!-- SEÇÃO DE PAGAMENTO -->
+        <div class="payment-methods">
+          <h3>Escolha a forma de pagamento</h3>
+          <div class="payment-buttons">
+            <button class="pay-btn" data-method="pix">PIX</button>
+            <button class="pay-btn" data-method="cartao">Cartão de Crédito</button>
+            <button class="pay-btn" data-method="boleto">Boleto</button>
+          </div>
+
+          <div class="payment-forms">
+            <div id="pix" class="pay-form" style="display:none;">
+              <p>Chave PIX: <strong>000.111.222-33</strong></p>
+              <p>Escaneie o QR code ou use a chave acima para pagamento.</p>
+              <img src="pix-qr.png" alt="QR Code PIX" style="width:150px; margin-top:10px;">
+            </div>
+
+            <div id="cartao" class="pay-form" style="display:none;">
+              <label>Número do Cartão:</label>
+              <input type="text" placeholder="1234 5678 9012 3456">
+              <label>Nome no Cartão:</label>
+              <input type="text" placeholder="Nome do Titular">
+              <label>Validade:</label>
+              <input type="text" placeholder="MM/AA">
+              <label>CVV:</label>
+              <input type="text" placeholder="123">
+            </div>
+
+            <div id="boleto" class="pay-form" style="display:none;">
+              <p>Seu boleto será gerado abaixo:</p>
+              <p><strong>23790.11122 33344.555667 88899.000111 2 34560000013990</strong></p>
+              <p>Imprima ou salve o boleto e pague em qualquer banco ou app de pagamento.</p>
+            </div>
+          </div>
         </div>
+
+        <!-- INFORMAÇÕES DO CLIENTE -->
+        <div class="customer-section">
+          <h3>Informações do Cliente</h3>
+          <div class="customer-info">
+            <input type="text" placeholder="Nome completo">
+            <input type="text" placeholder="Endereço">
+            <input type="text" placeholder="Cidade">
+            <select>
+              <option value="">Selecione o Estado</option>
+              <option value="SP">São Paulo</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PR">Paraná</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <!-- adicionar outros estados -->
+            </select>
+            <input type="text" placeholder="CEP">
+            <input type="text" placeholder="Telefone">
+            <input type="email" placeholder="Email">
+          </div>
+        </div>
+
+        <!-- RESUMO DA COMPRA -->
+        <div class="summary-section">
+          <h3>Resumo da Compra</h3>
+          <p>Produto: Álbum Completo (CD, Pôster, Vinil)</p>
+          <p>Quantidade: 1</p>
+          <p>Subtotal: R$ 139,90</p>
+          <p>Frete: R$ 19,90</p>
+          <p><strong>Total: R$ 159,80</strong></p>
+          <button class="btn-buy">Finalizar Compra</button>
+        </div>
+
       </div>
 
-      <div class="summary-section">
-        <h3>Resumo da Compra</h3>
-        <p><strong>Produto:</strong> <span id="summaryName"></span></p>
-        <p><strong>Tipo:</strong> Álbum (CD, Pôster, Vinil)</p>
-        <p><strong>Quantidade:</strong> <span id="summaryQty"></span></p>
-        <p><strong>Preço unitário:</strong> R$ <span id="summaryPrice"></span></p>
-        <p><strong>Subtotal:</strong> R$ <span id="summarySubtotal"></span></p>
-        <p><strong>Frete:</strong> R$ <span id="summaryFrete">19.90</span></p>
-        <p><strong>Total:</strong> R$ <span id="summaryTotal"></span></p>
-        <button id="finalizarCompra" class="btn-buy">Finalizar Compra</button>
+    </div>
+
+    <!-- INFORMAÇÕES ADICIONAIS -->
+    <div class="cards">
+      <div class="card">
+        <p><strong>Leia nossas páginas informativas!</strong> Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido' presente em nosso menu "Atendimento'' antes de concluir a sua compra para que você fique por dentro de como tudo por aqui funciona!</p>
       </div>
-    </section>
+      <div class="card">
+        <p><strong>Quando você receber seu rastreio, acompanhe-o!</strong> Encaminharemos o seu rastreio entre 7-15 dias úteis após seu pedido ser 'Embalado', e é importantíssimo que você o acompanhe no seu app/site de rastreamento favorito para ficar ciente de todas as atualizações da sua encomenda!</p>
+      </div>
+      <div class="card">
+        <p><strong>Atenção ao preencher o endereço</strong> Informar endereço errado, não pagar taxas caso sejam cobradas ou não retirar a encomenda nos Correios caso solicitem pode acarretar no extravio ou na devolução do produto e, nesses casos, teremos que cobrar taxas para reenvio, ok?</p>
+      </div>
+    </div>
+  </main>
 
-  </div>
-</main>
+  <footer class="site-footer">
+    © 2025 Vintage Store — Todos os direitos reservados.
+  </footer>
 
-<footer class="site-footer">
-  © 2025 Vintage Store — Todos os direitos reservados.
-</footer>
-
-<script src="teste.js"></script>
+  <script src="teste.js"></script>
 </body>
 </html>
