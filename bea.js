@@ -59,17 +59,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // =======================
   // Botão de “Comprar” funcional
-  // =======================
-  const buyBtns = document.querySelectorAll(".buy-btn");
+  document.addEventListener("DOMContentLoaded", () => {
+  const buyBtn = document.querySelector(".buy-btn");
+  buyBtn.addEventListener("click", () => {
+    // Pega os dados do álbum do próprio botão
+    const product = {
+      id: "beabadoobee-beatopia", // você pode gerar um id único para cada álbum
+      name: buyBtn.dataset.name,
+      price: parseFloat(buyBtn.dataset.price),
+      quantity: 1, // quantidade padrão ao comprar
+      image: buyBtn.dataset.img
+    };
 
-  buyBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const name = btn.dataset.name;
-      const price = btn.dataset.price;
-      const img = btn.dataset.img;
+    // Recupera o carrinho existente ou cria um novo
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    // Verifica se o produto já está no carrinho
+    const existingItem = cart.find(item => item.id === product.id);
+    if (existingItem) {
+      existingItem.quantity += product.quantity;
+    } else {
+      cart.push(product);
+    }
 
-      const url = `checkout.html?name=${encodeURIComponent(name)}&price=${price}&img=${encodeURIComponent(img)}`;
-      window.location.href = url;
-    });
+    // Salva no localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    // Redireciona para o checkout
+    window.location.href = "checkout2.html";
   });
 });
