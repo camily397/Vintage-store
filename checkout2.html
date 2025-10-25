@@ -11,48 +11,36 @@
     <span class="logo">Vintage Store</span>
   </header>
 
-  <main class="checkout-container">
-    <section class="order-summary">
-      <h2>Resumo do Pedido</h2>
-      <div id="order-items"></div>
+  <main class="container">
+    <h2>Finalizar Compra</h2>
 
-      <div class="total">
-        <p><strong>Subtotal:</strong> R$ <span id="subtotal">0,00</span></p>
-        <p><strong>Frete:</strong> R$ <span id="frete">19,90</span></p>
-        <p class="final"><strong>Total final:</strong> R$ <span id="total-final">0,00</span></p>
+    <section class="produto">
+      <h3>Resumo do Pedido</h3>
+      <div class="info-produto">
+        <img id="produto-imagem" src="" alt="Imagem do álbum">
+        <div>
+          <h4 id="produto-nome"></h4>
+          <p><strong>Quantidade:</strong> <span id="produto-qtd"></span></p>
+          <p><strong>Preço:</strong> R$ <span id="produto-preco"></span></p>
+          <p class="total">Total: R$ <span id="produto-total"></span></p>
+        </div>
       </div>
     </section>
 
-    <section class="customer-info">
-      <h2>Informações do Cliente</h2>
-
-      <div class="info-box">
-        <p><strong>Nome:</strong> <span id="nome">Nome Exemplo</span> 
-          <button class="edit-btn" data-field="nome">✏️</button>
-        </p>
-        <p><strong>Endereço:</strong> <span id="endereco">Rua Exemplo, 123 - Bairro - PR</span> 
-          <button class="edit-btn" data-field="endereco">✏️</button>
-        </p>
-        <p><strong>CEP:</strong> <span id="cep">01234-567</span> 
-          <button class="edit-btn" data-field="cep">✏️</button>
-        </p>
-        <p><strong>Telefone:</strong> <span id="telefone">(99) 99999-9999</span> 
-          <button class="edit-btn" data-field="telefone">✏️</button>
-        </p>
-        <p><strong>Email:</strong> <span id="email">vintage@email.com</span> 
-          <button class="edit-btn" data-field="email">✏️</button>
-        </p>
+    <section class="pagamento">
+      <h3>Método de Pagamento</h3>
+      <div class="opcoes">
+        <label><input type="radio" name="pagamento" value="cartao" checked> 💳 Cartão de Crédito</label>
+        <label><input type="radio" name="pagamento" value="pix"> ⚡ PIX</label>
+        <label><input type="radio" name="pagamento" value="boleto"> 🧾 Boleto Bancário</label>
       </div>
     </section>
 
-    <div class="actions">
-      <button class="back-btn" onclick="window.history.back()">← Voltar</button>
-      <button class="finish-btn" id="finalizar-compra">Continuar para Pagamento</button>
-    </div>
+    <button class="confirmar" id="confirmar-compra">Confirmar Compra</button>
   </main>
 
   <footer>
-    © 2025 Vintage Store — Todos os direitos reservados.
+    <a href="index.html">← Voltar à Loja</a>
   </footer>
 
   <script src="checkout2.js"></script>
