@@ -39,3 +39,36 @@ if (carrinho.length === 0) {
 document.getElementById("finalizar-compra").addEventListener("click", () => {
   window.location.href = "paga.html";
 });
+
+// ======== EDIÇÃO INLINE DO CLIENTE ========
+document.querySelectorAll(".edit-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const fieldId = button.getAttribute("data-field");
+    const span = document.getElementById(fieldId);
+
+    // Cria input para editar
+    const input = document.createElement("input");
+    input.type = "text";
+    input.value = span.textContent;
+    input.style.width = "80%";
+    input.style.fontSize = "16px";
+    input.style.padding = "2px 5px";
+
+    // Substitui span pelo input
+    span.replaceWith(input);
+    input.focus();
+
+    // Ao pressionar Enter ou perder foco, salva e volta ao span
+    const save = () => {
+      span.textContent = input.value;
+      input.replaceWith(span);
+    };
+
+    input.addEventListener("blur", save);
+    input.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        save();
+      }
+    });
+  });
+});
