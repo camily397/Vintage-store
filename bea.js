@@ -14,35 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (current > 1) qtyElement.textContent = current - 1;
   });
 
- document.addEventListener("DOMContentLoaded", () => {
-  const addToCartBtn = document.getElementById("addToCart");
-  const qtyElement = document.getElementById("quantity");
-  const increaseBtn = document.getElementById("increaseQty");
-  const decreaseBtn = document.getElementById("decreaseQty");
-
-  // controle de quantidade
-  increaseBtn.addEventListener("click", () => {
-    qtyElement.textContent = parseInt(qtyElement.textContent) + 1;
-  });
-
-  decreaseBtn.addEventListener("click", () => {
-    let currentQty = parseInt(qtyElement.textContent);
-    if (currentQty > 1) {
-      qtyElement.textContent = currentQty - 1;
-    }
-  });
-
-  // adicionar ao carrinho
+  // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "beabadoobee-beatopia",
-      name: "Beabadoobee - Beatopia",
+      id: "mitski-lush",
+      name: "Mitski - Lush",
       price: 139.9,
       quantity: parseInt(qtyElement.textContent),
-      image: "beatopia.jpg" // troque pelo caminho da sua imagem
+      image: "mit.jfif"
     };
 
+    // Recupera o carrinho existente ou cria um novo
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Verifica se o produto já está no carrinho
     const existingItem = cart.find(item => item.id === product.id);
 
     if (existingItem) {
@@ -51,9 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push(product);
     }
 
+    // Salva no localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // alerta visual
+    // Alerta de confirmação
     const alertBox = document.createElement("div");
     alertBox.textContent = "✅ Produto adicionado ao carrinho!";
     alertBox.style.position = "fixed";
@@ -69,29 +55,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(alertBox);
 
     setTimeout(() => alertBox.remove(), 2000);
-
-    // efeito visual no botão
-    addToCartBtn.classList.add("added");
-    setTimeout(() => addToCartBtn.classList.remove("added"), 1500);
   });
 });
-
-// Botão de comprar → redireciona para a página de pagamento
-const buyBtn = document.querySelector(".buy-btn");
-
-if (buyBtn) {
-  buyBtn.addEventListener("click", () => {
-    const product = {
-      name: "Beabadoobee - Beatopia", // 🩷 coloque o nome do álbum aqui
-      price: 119.9,                   // 💰 coloque o preço do álbum aqui
-      quantity: parseInt(document.getElementById("qty")?.textContent || 1),
-      image: "bea.jfif"               // 🖼️ coloque o nome da imagem principal do álbum
-    };
-
-    // Salva as informações do produto no localStorage
-    localStorage.setItem("produtoCompra", JSON.stringify(product));
-
-    // Redireciona para a página de pagamento
-    window.location.href = "pagamentos.html";
-  });
-}
