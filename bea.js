@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
   addToCartBtn.addEventListener("click", () => {
     const product = {
       id: "mitski-lush",
-      name: "Mitski - Lush",
+      name: "Beabadoobee - Beatopia",
       price: 139.9,
       quantity: parseInt(qtyElement.textContent),
-      image: "mit.jfif"
+      image: "bea.jfif"
     };
 
     // Recupera o carrinho existente ou cria um novo
