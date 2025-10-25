@@ -5,11 +5,11 @@ const stars = document.querySelectorAll('.stars input');
 const balloon = document.getElementById('balloon');
 
 const cores = {
-  1: '#ffcccc', // vermelho claro
-  2: '#ffd9b3', // laranja claro
-  3: '#fff3b3', // amarelo claro
-  4: '#d4f5b3', // verde claro
-  5: '#b3f0ff'  // azul claro
+  1: '#ffcccc',
+  2: '#ffd9b3',
+  3: '#fff3b3',
+  4: '#d4f5b3',
+  5: '#b3f0ff'
 };
 
 // Mudança de cor do balão conforme estrela selecionada
