@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const qtyElement = document.getElementById("qty");
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
+  const buyBtn = document.querySelector(".buy-btn"); // Novo botão comprar
 
   // Atualiza quantidade
   plusBtn.addEventListener("click", () => {
@@ -50,5 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(alertBox);
 
     setTimeout(() => alertBox.remove(), 2000);
+  });
+
+  // Comprar agora → redireciona para página de pagamento
+  buyBtn.addEventListener("click", () => {
+    const produto = {
+      id: "ariana-grande-positions",
+      name: "Ariana Grande - Positions",
+      price: 139.9,
+      quantity: parseInt(qtyElement.textContent),
+      image: "ariana.jfif"
+    };
+
+    localStorage.setItem("produtoSelecionado", JSON.stringify(produto));
+    window.location.href = "teste.html";
   });
 });
