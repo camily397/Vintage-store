@@ -25,6 +25,7 @@ body {
   gap: 30px;
 }
 
+/* LADO ESQUERDO */
 .left-side, .right-side {
   background: white;
   padding: 25px;
@@ -33,10 +34,6 @@ body {
 }
 
 .left-side {
-  flex: 1;
-}
-
-.right-side {
   flex: 1;
 }
 
@@ -87,27 +84,49 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* LADO DIREITO */
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* espaçamento entre seções */
+}
+
+.customer-section, .summary-section {
+  background-color: #f0f4ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
 .customer-section h3, .summary-section h3 {
   margin-top: 0;
+  margin-bottom: 15px;
+  color: #003366;
 }
 
 .customer-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px; /* mais espaçamento entre inputs */
 }
 
 .customer-info input, .customer-info select {
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .summary-section p {
   font-size: 16px;
-  margin: 8px 0;
+  margin: 10px 0; /* mais espaço entre linhas */
+}
+
+.summary-section {
+  margin-top: 20px; /* separação do customer-section */
 }
 
 .btn-buy {
