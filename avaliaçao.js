@@ -33,5 +33,5 @@ btnEnviar.addEventListener('click', () => {
   thankyou.style.display = 'block';
   comentario.value = '';
   stars.forEach(r => r.checked = false);
-  balloon.style.backgroundColor = '#e0f7fa'; // resetar cor
+  balloon.style.backgroundColor = '#e0f7fa';
 });
