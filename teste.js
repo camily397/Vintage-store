@@ -1,62 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const productImage = document.getElementById("productImage");
-  const productName = document.getElementById("productName");
-  const productPrice = document.getElementById("productPrice");
-  const productQty = document.getElementById("productQty");
-  const productTotal = document.getElementById("productTotal");
-
-  const summaryName = document.getElementById("summaryName");
-  const summaryQty = document.getElementById("summaryQty");
-  const summaryPrice = document.getElementById("summaryPrice");
-  const summarySubtotal = document.getElementById("summarySubtotal");
-  const summaryTotal = document.getElementById("summaryTotal");
-
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
+  const qtyElement = document.getElementById("qty");
+  const resQty = document.getElementById("resQty");
+  const resTotal = document.getElementById("resTotal");
 
-  // Carrega produto do localStorage
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const product = cart[cart.length -1]; // Último produto adicionado
-
-  if (product) {
-    productImage.src = product.image;
-    productName.textContent = product.name;
-    productPrice.textContent = product.price.toFixed(2);
-    productQty.textContent = product.quantity;
-    productTotal.textContent = (product.price * product.quantity).toFixed(2);
-
-    summaryName.textContent = product.name;
-    summaryQty.textContent = product.quantity;
-    summaryPrice.textContent = product.price.toFixed(2);
-    summarySubtotal.textContent = (product.price * product.quantity).toFixed(2);
-    summaryTotal.textContent = (product.price * product.quantity + 19.9).toFixed(2);
-  }
-
-  // Atualiza quantidade
+  // Quantidade
   plusBtn.addEventListener("click", () => {
-    productQty.textContent = parseInt(productQty.textContent) + 1;
-    updateTotals();
+    qtyElement.textContent = parseInt(qtyElement.textContent) + 1;
+    resQty.textContent = qtyElement.textContent;
+    resTotal.textContent = (139.90 * qtyElement.textContent).toFixed(2);
   });
 
   minusBtn.addEventListener("click", () => {
-    const current = parseInt(productQty.textContent);
+    let current = parseInt(qtyElement.textContent);
     if (current > 1) {
-      productQty.textContent = current - 1;
-      updateTotals();
+      qtyElement.textContent = current - 1;
+      resQty.textContent = qtyElement.textContent;
+      resTotal.textContent = (139.90 * qtyElement.textContent).toFixed(2);
     }
   });
 
-  function updateTotals() {
-    const qty = parseInt(productQty.textContent);
-    const total = (product.price * qty);
-    productTotal.textContent = total.toFixed(2);
-    summaryQty.textContent = qty;
-    summarySubtotal.textContent = total.toFixed(2);
-    summaryTotal.textContent = (total + 19.9).toFixed(2);
-  }
+  // Mostrar forma de pagamento
+  const btnPix = document.getElementById("btnPix");
+  const btnCartao = document.getElementById("btnCartao");
+  const btnBoleto = document.getElementById("btnBoleto");
+  const formPix = document.getElementById("formPix");
+  const formCartao = document.getElementById("formCartao");
+  const formBoleto = document.getElementById("formBoleto");
 
-  // Finalizar compra (alert apenas)
-  document.getElementById("finalizarCompra").addEventListener("click", () => {
-    alert("Compra finalizada! Obrigado!");
+  btnPix.addEventListener("click", () => {
+    formPix.style.display = "block";
+    formCartao.style.display = "none";
+    formBoleto.style.display = "none";
+  });
+
+  btnCartao.addEventListener("click", () => {
+    formPix.style.display = "none";
+    formCartao.style.display = "block";
+    formBoleto.style.display = "none";
+  });
+
+  btnBoleto.addEventListener("click", () => {
+    formPix.style.display = "none";
+    formCartao.style.display = "none";
+    formBoleto.style.display = "block";
   });
 });
