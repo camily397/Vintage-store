@@ -7,88 +7,102 @@ body {
 
 /* Cabeçalho */
 header.site-header {
-  background-color: #0a0f2c;
+  background-color: #08102a;
   color: white;
   padding: 15px 30px;
-  font-size: 18px;
-}
-
-.logo {
+  font-size: 20px;
   font-weight: bold;
 }
 
-/* Conteúdo principal */
+/* Container */
 .checkout-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 30px auto;
   background: white;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .checkout-container h2 {
-  color: #0a0f2c;
-  margin-bottom: 20px;
+  color: #08102a;
+  margin-bottom: 25px;
 }
 
 /* Produto */
-.product-info {
+.product-section {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   margin-bottom: 25px;
 }
 
-.product-info img {
-  width: 150px;
-  height: 150px;
+.product-image img {
+  width: 300px;
+  height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
-.details h3 {
+.product-details h3 {
   margin-top: 0;
-  margin-bottom: 10px;
 }
 
-.details p {
-  margin: 5px 0;
+.product-details p {
+  margin: 6px 0;
+}
+
+/* Cliente */
+.customer-section {
+  margin-bottom: 25px;
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.customer-section h3 {
+  margin-top: 0;
+}
+
+.customer-section p {
+  margin: 8px 0;
+}
+
+.customer-section .edit-btn {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 /* Pagamento */
-.payment-methods {
+.payment-section {
   margin-bottom: 25px;
 }
 
-.payment-methods h3 {
-  margin-bottom: 10px;
-}
-
-.payment-methods button {
+.payment-options button {
   padding: 12px 20px;
   margin-right: 10px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: #111;
+  background-color: #08102a;
   color: white;
   transition: background 0.3s;
 }
 
-.payment-methods button:hover {
+.payment-options button:hover {
   background-color: #333;
 }
 
-/* Botão finalizar */
 .finish-btn {
   padding: 15px 25px;
   font-size: 18px;
   border: none;
   border-radius: 8px;
-  background-color: #0a0f2c;
+  background-color: #08102a;
   color: white;
   cursor: pointer;
+  margin-top: 15px;
   transition: background 0.3s;
 }
 
@@ -98,7 +112,7 @@ header.site-header {
 
 /* Rodapé */
 footer.site-footer {
-  background-color: #0a0f2c;
+  background-color: #08102a;
   color: white;
   text-align: center;
   padding: 12px 0;
