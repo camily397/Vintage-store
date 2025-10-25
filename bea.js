@@ -14,20 +14,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (current > 1) qtyElement.textContent = current - 1;
   });
 
-  // Adicionar produto ao carrinho
+ document.addEventListener("DOMContentLoaded", () => {
+  const addToCartBtn = document.getElementById("addToCart");
+  const qtyElement = document.getElementById("quantity");
+  const increaseBtn = document.getElementById("increaseQty");
+  const decreaseBtn = document.getElementById("decreaseQty");
+
+  // controle de quantidade
+  increaseBtn.addEventListener("click", () => {
+    qtyElement.textContent = parseInt(qtyElement.textContent) + 1;
+  });
+
+  decreaseBtn.addEventListener("click", () => {
+    let currentQty = parseInt(qtyElement.textContent);
+    if (currentQty > 1) {
+      qtyElement.textContent = currentQty - 1;
+    }
+  });
+
+  // adicionar ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "mitski-lush",
-      name: "Mitski - Lush",
+      id: "beabadoobee-beatopia",
+      name: "Beabadoobee - Beatopia",
       price: 139.9,
       quantity: parseInt(qtyElement.textContent),
-      image: "mit.jfif"
+      image: "beatopia.jpg" // troque pelo caminho da sua imagem
     };
 
-    // Recupera o carrinho existente ou cria um novo
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Verifica se o produto já está no carrinho
     const existingItem = cart.find(item => item.id === product.id);
 
     if (existingItem) {
@@ -36,10 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push(product);
     }
 
-    // Salva no localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Alerta de confirmação
+    // alerta visual
     const alertBox = document.createElement("div");
     alertBox.textContent = "✅ Produto adicionado ao carrinho!";
     alertBox.style.position = "fixed";
@@ -55,8 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(alertBox);
 
     setTimeout(() => alertBox.remove(), 2000);
+
+    // efeito visual no botão
+    addToCartBtn.classList.add("added");
+    setTimeout(() => addToCartBtn.classList.remove("added"), 1500);
   });
 });
+
 // Botão de comprar → redireciona para a página de pagamento
 const buyBtn = document.querySelector(".buy-btn");
 
