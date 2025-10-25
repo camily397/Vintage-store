@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste - Vintage Store</title>
+  <title>Pagamento - Vintage Store</title>
   <link rel="stylesheet" href="teste.css">
 </head>
 <body>
@@ -16,17 +16,16 @@
 
   <main class="container">
     <div class="checkout-grid">
-
-      <!-- LADO ESQUERDO -->
+      <!-- LADO ESQUERDO: Imagem e produto -->
       <div class="left-side">
         <div class="product-image">
-          <img src="ariana.jfif" alt="Ariana Grande - Positions">
+          <img src="ariana.jfif" alt="Produto">
         </div>
         <div class="product-info">
-          <h2>Álbum Completo (CD, Pôster, Vinil)</h2>
-          <p><strong>Data de lançamento:</strong> 30/10/2020</p>
-          <p>Produto oficial e lacrado — não vendemos réplicas.</p>
-          <p>Itens enviados diretamente de distribuidoras oficiais.</p>
+          <h2>Álbum: Ariana Grande - Positions</h2>
+          <p>Formato: CD + Pôster + Vinil</p>
+          <p class="price">Preço unitário: R$ 139,90</p>
+
           <div class="quantity">
             <button id="minus">-</button>
             <span id="qty">1</span>
@@ -35,91 +34,74 @@
         </div>
       </div>
 
-      <!-- LADO DIREITO -->
+      <!-- LADO DIREITO: Pagamento e informações do cliente -->
       <div class="right-side">
-
-        <!-- SEÇÃO DE PAGAMENTO -->
+        <!-- Formas de pagamento -->
         <div class="payment-methods">
-          <h3>Escolha a forma de pagamento</h3>
+          <h3>Forma de Pagamento</h3>
           <div class="payment-buttons">
-            <button class="pay-btn" data-method="pix">PIX</button>
-            <button class="pay-btn" data-method="cartao">Cartão de Crédito</button>
-            <button class="pay-btn" data-method="boleto">Boleto</button>
+            <button id="btnPix">PIX</button>
+            <button id="btnCartao">Cartão</button>
+            <button id="btnBoleto">Boleto</button>
           </div>
 
           <div class="payment-forms">
-            <div id="pix" class="pay-form" style="display:none;">
-              <p>Chave PIX: <strong>000.111.222-33</strong></p>
-              <p>Escaneie o QR code ou use a chave acima para pagamento.</p>
-              <img src="pix-qr.png" alt="QR Code PIX" style="width:150px; margin-top:10px;">
+            <div id="formPix" class="pay-form" style="display:none;">
+              <p>Chave PIX: 123.456.789-00</p>
             </div>
-
-            <div id="cartao" class="pay-form" style="display:none;">
-              <label>Número do Cartão:</label>
-              <input type="text" placeholder="1234 5678 9012 3456">
-              <label>Nome no Cartão:</label>
-              <input type="text" placeholder="Nome do Titular">
-              <label>Validade:</label>
-              <input type="text" placeholder="MM/AA">
-              <label>CVV:</label>
-              <input type="text" placeholder="123">
+            <div id="formCartao" class="pay-form" style="display:none;">
+              <input type="text" placeholder="Número do cartão">
+              <input type="text" placeholder="Nome no cartão">
+              <input type="text" placeholder="Validade (MM/AA)">
+              <input type="text" placeholder="CVV">
             </div>
-
-            <div id="boleto" class="pay-form" style="display:none;">
-              <p>Seu boleto será gerado abaixo:</p>
-              <p><strong>23790.11122 33344.555667 88899.000111 2 34560000013990</strong></p>
-              <p>Imprima ou salve o boleto e pague em qualquer banco ou app de pagamento.</p>
+            <div id="formBoleto" class="pay-form" style="display:none;">
+              <p>Seu boleto será gerado após finalizar a compra.</p>
             </div>
           </div>
         </div>
 
-        <!-- INFORMAÇÕES DO CLIENTE -->
+        <!-- Informações do cliente -->
         <div class="customer-section">
           <h3>Informações do Cliente</h3>
           <div class="customer-info">
-            <input type="text" placeholder="Nome completo">
-            <input type="text" placeholder="Endereço">
-            <input type="text" placeholder="Cidade">
-            <select>
-              <option value="">Selecione o Estado</option>
-              <option value="SP">São Paulo</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="MG">Minas Gerais</option>
-              <option value="PR">Paraná</option>
-              <option value="RS">Rio Grande do Sul</option>
-              <!-- adicionar outros estados -->
-            </select>
-            <input type="text" placeholder="CEP">
-            <input type="text" placeholder="Telefone">
-            <input type="email" placeholder="Email">
+            <input type="text" id="nome" placeholder="Nome completo">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <input type="text" id="cep" placeholder="CEP">
+            <input type="text" id="cidade" placeholder="Cidade">
+            <input type="text" id="estado" placeholder="Estado">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="email" id="email" placeholder="Email">
           </div>
         </div>
 
-        <!-- RESUMO DA COMPRA -->
+        <!-- Resumo da compra -->
         <div class="summary-section">
           <h3>Resumo da Compra</h3>
-          <p>Produto: Álbum Completo (CD, Pôster, Vinil)</p>
-          <p>Quantidade: 1</p>
-          <p>Subtotal: R$ 139,90</p>
-          <p>Frete: R$ 19,90</p>
-          <p><strong>Total: R$ 159,80</strong></p>
-          <button class="btn-buy">Finalizar Compra</button>
+          <p>Produto: Ariana Grande - Positions</p>
+          <p>Formato: CD + Pôster + Vinil</p>
+          <p>Quantidade: <span id="resQty">1</span></p>
+          <p>Subtotal: R$ <span id="resTotal">139,90</span></p>
         </div>
 
+        <!-- Botão finalizar -->
+        <button class="btn-buy">Finalizar Compra</button>
       </div>
-
     </div>
 
-    <!-- INFORMAÇÕES ADICIONAIS -->
+    <!-- Informações adicionais -->
     <div class="cards">
       <div class="card">
-        <p><strong>Leia nossas páginas informativas!</strong> Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido' presente em nosso menu "Atendimento'' antes de concluir a sua compra para que você fique por dentro de como tudo por aqui funciona!</p>
+        <strong>Leia nossas páginas informativas!</strong>
+        <p>Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido' presente em nosso menu "Atendimento" antes de concluir a sua compra.</p>
       </div>
       <div class="card">
-        <p><strong>Quando você receber seu rastreio, acompanhe-o!</strong> Encaminharemos o seu rastreio entre 7-15 dias úteis após seu pedido ser 'Embalado', e é importantíssimo que você o acompanhe no seu app/site de rastreamento favorito para ficar ciente de todas as atualizações da sua encomenda!</p>
+        <strong>Quando você receber seu rastreio, acompanhe-o!</strong>
+        <p>Encaminharemos o seu rastreio entre 7-15 dias úteis após seu pedido ser 'Embalado'. É importante acompanhar no app/site de rastreamento favorito.</p>
       </div>
       <div class="card">
-        <p><strong>Atenção ao preencher o endereço</strong> Informar endereço errado, não pagar taxas caso sejam cobradas ou não retirar a encomenda nos Correios caso solicitem pode acarretar no extravio ou na devolução do produto e, nesses casos, teremos que cobrar taxas para reenvio, ok?</p>
+        <strong>Atenção ao preencher o endereço</strong>
+        <p>Informar endereço errado ou não retirar a encomenda pode acarretar extravio ou devolução. Taxas de reenvio podem ser cobradas.</p>
       </div>
     </div>
   </main>
