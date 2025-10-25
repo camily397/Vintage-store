@@ -57,3 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => alertBox.remove(), 2000);
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const buyBtn = document.querySelector(".buy-btn"); // seu botão de compra
+
+  buyBtn.addEventListener("click", () => {
+    // aqui você pode redirecionar pro checkout
+    window.location.href = "checkout.html"; // troque pelo link da página de compra
+  });
+});
