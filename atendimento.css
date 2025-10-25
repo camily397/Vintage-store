@@ -109,20 +109,23 @@ button a {
   color: #00264d;
 }
 
-/* ======= LINK VOLTAR ======= */
+/* ======= BOTÂO VOLTAR ======= */
 .voltar {
-  display: inline-block;
-  margin-bottom: 25px;
-  font-size: 18px;
-  color: #003366;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1C2833; /* azul marinho */
+  color: white;
+  padding: 10px 20px;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
 .voltar:hover {
-  color: #001f2d;
+  background: #34495E; /* azul mais claro */
 }
+
 
 /* ======= RODAPÉ ======= */
 .site-footer {
