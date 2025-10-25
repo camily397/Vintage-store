@@ -1,38 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === Seletores ===
+  // === ELEMENTOS ===
+  const plusBtn = document.getElementById("plus");
+  const minusBtn = document.getElementById("minus");
+  const qtyElement = document.getElementById("qty");
+  const resQty = document.getElementById("resQty");
+  const resTotal = document.getElementById("resTotal");
+  const btnBuy = document.getElementById("finalizarCompra");
+
   const productImg = document.getElementById("productImg");
   const productName = document.getElementById("productName");
   const productFormat = document.getElementById("productFormat");
   const productPrice = document.getElementById("productPrice");
-  const qtyElement = document.getElementById("qty");
   const resProduct = document.getElementById("resProduct");
   const resFormat = document.getElementById("resFormat");
-  const resQty = document.getElementById("resQty");
-  const resTotal = document.getElementById("resTotal");
-  const plusBtn = document.getElementById("plus");
-  const minusBtn = document.getElementById("minus");
-  const btnBuy = document.getElementById("finalizarCompra");
 
-  // === Carregar produto do localStorage ===
-  const produto = JSON.parse(localStorage.getItem("produtoSelecionado"));
-  if (!produto) {
-    alert("Nenhum produto selecionado! Volte para a loja.");
-    window.location.href = "index.html";
-  }
+  // === PRODUTO PADRÃO (para teste) ===
+  // Depois você pode substituir por valores dinâmicos da loja
+  const produto = {
+    nome: "Ariana Grande - Positions",
+    formato: "CD + Pôster + Vinil",
+    preco: 139.90,
+    imagem: "ariana.jfif"
+  };
 
-  productImg.src = produto.imagem;
   productName.textContent = produto.nome;
   productFormat.textContent = "Formato: " + produto.formato;
   productPrice.textContent = produto.preco.toFixed(2).replace(".", ",");
-  qtyElement.textContent = produto.quantidade;
+  productImg.src = produto.imagem;
   resProduct.textContent = produto.nome;
   resFormat.textContent = produto.formato;
-  resQty.textContent = produto.quantidade;
-  resTotal.textContent = (produto.preco * produto.quantidade).toFixed(2).replace(".", ",");
+  resTotal.textContent = produto.preco.toFixed(2).replace(".", ",");
 
-  // === Quantidade ===
-  let quantidade = produto.quantidade;
-
+  // === QUANTIDADE ===
+  let quantidade = 1;
   function atualizarResumo() {
     resQty.textContent = quantidade;
     resTotal.textContent = (produto.preco * quantidade).toFixed(2).replace(".", ",");
@@ -43,17 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     quantidade++;
     atualizarResumo();
   });
-
   minusBtn.addEventListener("click", () => {
     if (quantidade > 1) quantidade--;
     atualizarResumo();
   });
 
-  // === Pagamento ===
+  // === FORMAS DE PAGAMENTO ===
   const paymentForms = {
     pix: document.getElementById("formPix"),
     cartao: document.getElementById("formCartao"),
-    boleto: document.getElementById("formBoleto")
+    boleto: document.getElementById("formBoleto"),
   };
 
   function showForm(type) {
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnCartao").addEventListener("click", () => showForm("cartao"));
   document.getElementById("btnBoleto").addEventListener("click", () => showForm("boleto"));
 
-  // === Finalizar Compra ===
+  // === FINALIZAR COMPRA ===
   btnBuy.addEventListener("click", () => {
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
@@ -95,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2 style="color:#003366; margin-bottom:15px;">🎉 Obrigado pela sua compra!</h2>
       <p style="font-size:17px; line-height:1.6; color:#333;">
         Seu pedido foi recebido com sucesso e já está a caminho!<br>
-        Um e-mail de confirmação será enviado com os detalhes do pedido. 📦✉️
+        Um e-mail de confirmação será enviado com os detalhes do seu pedido. 📦✉️
       </p>
       <button id="voltarHome" style="
         margin-top:25px;
