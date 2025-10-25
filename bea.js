@@ -65,5 +65,5 @@ document.querySelector(".buy-btn").addEventListener("click", () => {
   };
 
   localStorage.setItem("selectedAlbum", JSON.stringify(album));
-  window.location.href = "checkout.html"; // página de pagamento
+  window.location.href = "checkout2.html"; // página de pagamento
 });
