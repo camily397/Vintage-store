@@ -1,0 +1,203 @@
+/* ===== RESET GERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== ESTRUTURA ===== */
+body {
+  background-color: #f8f7f4; /* off-white */
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+  background-color: #0a0f2c; /* azul marinho */
+  color: white;
+  text-align: left;
+  padding: 16px 30px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== CONTEÚDO ===== */
+.container {
+  background-color: #fff;
+  width: 90%;
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #0a0f2c;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h3 {
+  color: #0a0f2c;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+/* ===== INFORMAÇÕES DO ÁLBUM ===== */
+.pedido {
+  background-color: #f4f4f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.produto-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.produto-item img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #d3d3d3;
+}
+
+.produto-item p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.total {
+  text-align: right;
+  font-weight: 600;
+  font-size: 18px;
+  color: #0a0f2c;
+  margin-top: 10px;
+}
+
+/* ===== MÉTODOS DE PAGAMENTO ===== */
+.pagamento {
+  margin-top: 30px;
+}
+
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.opcao {
+  background-color: #f9f9ff;
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.opcao:hover {
+  background-color: #eef1ff;
+  border-color: #0a0f2c;
+}
+
+.opcao h4 {
+  color: #0a0f2c;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.opcao p {
+  font-size: 14px;
+  color: #444;
+}
+
+.opcao input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ===== BOTÕES ===== */
+.gerar,
+.confirmar {
+  display: inline-block;
+  background-color: #0a0f2c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gerar:hover,
+.confirmar:hover {
+  background-color: #13204b;
+}
+
+.confirmar {
+  width: 100%;
+  margin-top: 25px;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  background-color: #0a0f2c;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .produto-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .produto-item img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .confirmar {
+    font-size: 15px;
+  }
+}
