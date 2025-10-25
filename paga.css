@@ -1,149 +1,135 @@
-/* ===== GERAL ===== */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f6f6;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  color: #333;
-}
-
-/* ===== CABEÇALHO ===== */
-header {
-  background-color: #0a1833; /* azul bem escuro */
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-header .logo {
-  margin-left: 5px;
-}
-
-/* ===== CONTEÚDO PRINCIPAL ===== */
-.container {
-  width: 90%;
-  max-width: 800px;
-  margin: 30px auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h2, h3 {
+  background: #f5f7fa;
   color: #222;
-  margin-bottom: 10px;
 }
 
-.pedido, .endereco, .pagamento {
-  margin-bottom: 25px;
-}
-
-#produtos {
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-.produto-item {
-  margin-bottom: 10px;
-}
-
-.total {
-  font-weight: bold;
-  font-size: 18px;
-  text-align: right;
-}
-
-/* ===== OPÇÕES DE PAGAMENTO ===== */
-.opcoes {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.opcao {
-  background: #f1f1f1;
-  padding: 15px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.opcao:hover {
-  background-color: #eaeaea;
-}
-
-.opcao.selecionada {
-  border: 2px solid #0a1833;
-  background-color: #eef2ff;
-}
-
-.opcao input {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.gerar {
-  background-color: #0a1833;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.gerar:hover {
-  background-color: #152a59;
-}
-
-/* ===== BOTÕES ===== */
-.botoes {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
-}
-
-.botoes button {
+header {
   background-color: #0a1833;
   color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s;
+  text-align: left;
+  padding: 12px 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.botoes button:hover {
-  background-color: #152a59;
-}
-
-/* ===== RODAPÉ ===== */
 footer {
   background-color: #0a1833;
   color: white;
   text-align: center;
   padding: 10px 0;
-  font-size: 14px;
+  font-size: 0.9rem;
   margin-top: 40px;
 }
 
-footer a {
-  color: #cfd7ff;
-  text-decoration: none;
-  transition: 0.3s;
+main {
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-footer a:hover {
-  text-decoration: underline;
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.resumo {
+  margin-bottom: 25px;
+}
+
+.produto-item {
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+.total {
+  font-size: 1.1rem;
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.formas-pagamento {
+  margin-top: 20px;
+}
+
+.formas-pagamento h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.opcao {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.opcao:hover {
+  border-color: #0a1833;
+  background: #f0f3fa;
+}
+
+.opcao input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #0a1833;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #142e5b;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.botoes button {
+  width: 48%;
+}
+
+.pix-confirm input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  margin: 10px 0;
+}
+
+.voltar-btn {
+  background: #0a1833;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.voltar-btn:hover {
+  background: #142e5b;
 }
