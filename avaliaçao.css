@@ -162,7 +162,7 @@ textarea#comentario {
   text-align: center;
 }
 
-/* BOTÃO VOLTAR */
+/* ======= BOTÂO VOLTAR ======= */
 .voltar {
   position: fixed;
   bottom: 20px;
@@ -178,6 +178,7 @@ textarea#comentario {
 .voltar:hover {
   background: #34495E; /* azul mais claro */
 }
+
 
 /* ======= RODAPÉ ======= */
 .site-footer {
