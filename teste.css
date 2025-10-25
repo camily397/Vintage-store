@@ -1,0 +1,141 @@
+/* ======= GERAL ======= */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+  background-color: #001a33;
+  color: white;
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* ======= CONTAINER ======= */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* ======= CARD PRINCIPAL ======= */
+.card, .produto-card, .pagamento-info {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  padding: 30px 25px;
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* ======= TÍTULOS ======= */
+h2 {
+  font-size: 32px;
+  color: #001a33;
+  text-align: center;
+  border-bottom: 2px solid #003366;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  color: #003366;
+  margin-bottom: 12px;
+}
+
+/* ======= PRODUTO SELECIONADO ======= */
+.produto-card h3 {
+  margin: 0 0 10px 0;
+}
+
+.produto-card p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* ======= INPUTS ======= */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* ======= BOTÕES ======= */
+button, .btn {
+  background-color: #001a33;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #000d1a;
+  transform: translateY(-2px);
+}
+
+/* ======= CONFIRMAÇÃO ======= */
+.confirmacao {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0b1a33;
+  text-align: center;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  background-color: #001a33;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 15px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  input[type="text"] {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+  button, .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
