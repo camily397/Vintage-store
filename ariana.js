@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const qtyElement = document.getElementById("qty");
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
-  const buyBtn = document.querySelector(".buy-btn"); // Novo botão comprar
 
   // Atualiza quantidade
   plusBtn.addEventListener("click", () => {
@@ -52,3 +51,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => alertBox.remove(), 2000);
   });
+});
