@@ -57,13 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => alertBox.remove(), 2000);
   });
 });
-document.querySelector(".buy-btn").addEventListener("click", () => {
-  const album = {
-    name: "Beatopia",
-    price: 79.90, // preço do álbum
-    image: "bea.jfif"
-  };
+document.addEventListener("DOMContentLoaded", () => {
+  const buyBtn = document.querySelector(".buy-btn");
 
-  localStorage.setItem("selectedAlbum", JSON.stringify(album));
-  window.location.href = "checkout2.html"; // página de pagamento
+  if (!buyBtn) return;
+
+  buyBtn.addEventListener("click", () => {
+    const name = buyBtn.dataset.name;
+    const price = buyBtn.dataset.price;
+    const img = buyBtn.dataset.img;
+
+    // Manda as informações do álbum para a página de checkout
+    const url = `checkout2.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&img=${encodeURIComponent(img)}`;
+    window.location.href = url;
+  });
 });
