@@ -19,12 +19,12 @@
       <!-- LADO ESQUERDO: Imagem e produto -->
       <div class="left-side">
         <div class="product-image">
-          <img src="ariana.jfif" alt="Produto">
+          <img id="productImg" src="" alt="Produto">
         </div>
         <div class="product-info">
-          <h2>Álbum: Ariana Grande - Positions</h2>
-          <p>Formato: CD + Pôster + Vinil</p>
-          <p class="price">Preço unitário: R$ 139,90</p>
+          <h2 id="productName">Produto</h2>
+          <p id="productFormat">Formato: </p>
+          <p class="price">Preço unitário: R$ <span id="productPrice">0,00</span></p>
 
           <div class="quantity">
             <button id="minus">-</button>
@@ -78,14 +78,14 @@
         <!-- Resumo da compra -->
         <div class="summary-section">
           <h3>Resumo da Compra</h3>
-          <p>Produto: Ariana Grande - Positions</p>
-          <p>Formato: CD + Pôster + Vinil</p>
+          <p>Produto: <span id="resProduct">Produto</span></p>
+          <p>Formato: <span id="resFormat"></span></p>
           <p>Quantidade: <span id="resQty">1</span></p>
-          <p>Subtotal: R$ <span id="resTotal">139,90</span></p>
+          <p>Subtotal: R$ <span id="resTotal">0,00</span></p>
         </div>
 
         <!-- Botão finalizar -->
-        <button class="btn-buy">Finalizar Compra</button>
+        <button id="finalizarCompra" class="btn-buy">Finalizar Compra</button>
       </div>
     </div>
 
