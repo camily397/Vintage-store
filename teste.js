@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ======== SELETORES ========
+  // ======== ELEMENTOS ========
   const paymentButtons = document.querySelectorAll(".payment-method button");
   const sections = document.querySelectorAll(".payment-section");
   const finalizarBtn = document.getElementById("finalizarCompra");
@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const qtyElement = document.getElementById("qty");
 
   // ======== QUANTIDADE ========
-  plusBtn.addEventListener("click", () => {
+  plusBtn?.addEventListener("click", () => {
     qtyElement.textContent = parseInt(qtyElement.textContent) + 1;
   });
 
-  minusBtn.addEventListener("click", () => {
+  minusBtn?.addEventListener("click", () => {
     const current = parseInt(qtyElement.textContent);
     if (current > 1) qtyElement.textContent = current - 1;
   });
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======== MÉTODOS DE PAGAMENTO ========
   paymentButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+      // destacar botão selecionado
       paymentButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ======== FINALIZAR COMPRA ========
-  finalizarBtn.addEventListener("click", () => {
+  finalizarBtn?.addEventListener("click", () => {
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
     overlay.style.top = 0;
@@ -77,13 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
 
-    // Ativa o fade-in
+    // fade-in
     requestAnimationFrame(() => {
       overlay.style.opacity = "1";
       modal.style.transform = "scale(1)";
     });
 
-    // Botão para voltar
+    // botão voltar
     document.getElementById("voltarHome").addEventListener("click", () => {
       overlay.style.opacity = "0";
       modal.style.transform = "scale(0.9)";
