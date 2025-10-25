@@ -3,78 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - Vintage Store</title>
+  <title>Pagamento - Vintage Store</title>
   <link rel="stylesheet" href="teste.css">
 </head>
 <body>
-  <header class="header">
-    <h1>Checkout</h1>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
   </header>
 
-  <main class="checkout-container">
-    <!-- Informações do Cliente -->
-    <section class="customer-info">
-      <h2>Informações do Cliente</h2>
-      <div class="info-box">
-        <p><strong>Nome:</strong> Nome Exemplo <span class="edit"></span></p>
-        <p><strong>Email:</strong> exemplo@email.com <span class="edit"></span></p>
-        <p><strong>Endereço:</strong> Rua XXXXX, 123 <span class="edit"></span></p>
-        <p><strong>Cidade:</strong> S=Cidade <span class="edit"></span></p>
-        <p><strong>Estado:</strong> <input type="text" value="SP" maxlength="2" class="estado-input"></p>
-      </div>
-    </section>
+  <main class="container">
+    <div class="checkout-grid">
+      <!-- LADO ESQUERDO -->
+      <div class="left-side">
+        <div class="product-image">
+          <img id="productImg" src="" alt="Produto">
+        </div>
+        <div class="product-info">
+          <h2 id="productName">Nome do produto</h2>
+          <p id="productFormat">Formato: —</p>
+          <p class="price">Preço unitário: R$ <span id="productPrice">0,00</span></p>
 
-    <!-- Resumo do Pedido -->
-    <section class="order-summary">
-      <h2>Resumo do Pedido</h2>
-      <div class="item">
-        <img src="produto.jpg" alt="Produto">
-        <div class="item-details">
-          <p class="item-name">Vinil - Mitski Lush</p>
-          <p class="item-price">R$ 189,90</p>
           <div class="quantity">
-            <button id="minus">−</button>
+            <button id="minus">-</button>
             <span id="qty">1</span>
             <button id="plus">+</button>
           </div>
         </div>
       </div>
-      <p class="total"><strong>Total:</strong> R$ 189,90</p>
-    </section>
 
-    <!-- Pagamento -->
-    <section class="payment">
-      <h2>Forma de Pagamento</h2>
-      <div class="payment-method">
-        <button data-method="pix">PIX</button>
-        <button data-method="cartao">Cartão</button>
-        <button data-method="boleto">Boleto</button>
+      <!-- LADO DIREITO -->
+      <div class="right-side">
+        <!-- FORMA DE PAGAMENTO -->
+        <div class="payment-methods">
+          <h3>Forma de Pagamento</h3>
+          <div class="payment-buttons">
+            <button id="btnPix">PIX</button>
+            <button id="btnCartao">Cartão</button>
+            <button id="btnBoleto">Boleto</button>
+          </div>
+
+          <div class="payment-forms">
+            <div id="formPix" class="pay-form" style="display:none;">
+              <p>Chave PIX: 123.456.789-00</p>
+            </div>
+            <div id="formCartao" class="pay-form" style="display:none;">
+              <input type="text" placeholder="Número do cartão">
+              <input type="text" placeholder="Nome no cartão">
+              <input type="text" placeholder="Validade (MM/AA)">
+              <input type="text" placeholder="CVV">
+            </div>
+            <div id="formBoleto" class="pay-form" style="display:none;">
+              <p>Seu boleto será gerado após finalizar a compra.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- INFORMAÇÕES DO CLIENTE -->
+        <div class="customer-section">
+          <h3>Informações do Cliente</h3>
+          <div class="customer-info">
+            <input type="text" id="nome" placeholder="Nome completo">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <input type="text" id="cep" placeholder="CEP">
+            <input type="text" id="cidade" placeholder="Cidade">
+            <input type="text" id="estado" placeholder="Estado">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="email" id="email" placeholder="Email">
+          </div>
+        </div>
+
+        <!-- RESUMO -->
+        <div class="summary-section">
+          <h3>Resumo da Compra</h3>
+          <p>Produto: <span id="resProduct">—</span></p>
+          <p>Formato: <span id="resFormat">—</span></p>
+          <p>Quantidade: <span id="resQty">1</span></p>
+          <p>Subtotal: R$ <span id="resTotal">0,00</span></p>
+        </div>
+
+        <button class="btn-buy">Finalizar Compra</button>
       </div>
+    </div>
 
-      <div id="pix" class="payment-section" style="display:none;">
-        <p>Escaneie o QR Code abaixo para pagar:</p>
-        <img src="qrcode.png" alt="QR Code PIX" class="qrcode">
+    <!-- INFORMAÇÕES ADICIONAIS -->
+    <div class="cards">
+      <div class="card">
+        <strong>Leia nossas páginas informativas!</strong>
+        <p>Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido' presente em nosso menu "Atendimento".</p>
       </div>
-
-      <div id="cartao" class="payment-section" style="display:none;">
-        <label>Número do Cartão</label>
-        <input type="text" placeholder="0000 0000 0000 0000">
-        <label>Validade</label>
-        <input type="text" placeholder="MM/AA">
-        <label>CVV</label>
-        <input type="text" placeholder="123">
+      <div class="card">
+        <strong>Quando você receber seu rastreio, acompanhe-o!</strong>
+        <p>Encaminharemos o rastreio entre 7-15 dias úteis após o pedido ser 'Embalado'.</p>
       </div>
-
-      <div id="boleto" class="payment-section" style="display:none;">
-        <p>O boleto será gerado após a finalização da compra.</p>
+      <div class="card">
+        <strong>Atenção ao preencher o endereço</strong>
+        <p>Informar endereço errado ou não retirar a encomenda pode gerar taxas de reenvio.</p>
       </div>
-    </section>
-
-    <button id="finalizarCompra" class="finalizar-btn">Finalizar Compra</button>
+    </div>
   </main>
 
-  <footer class="footer">
-    <p>Vintage Store © 2025</p>
+  <footer class="site-footer">
+    © 2025 Vintage Store — Todos os direitos reservados.
   </footer>
 
   <script src="teste.js"></script>
