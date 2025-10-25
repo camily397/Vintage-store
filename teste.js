@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+ocument.addEventListener("DOMContentLoaded", () => {
   // ======== SELETORES ========
   const paymentButtons = document.querySelectorAll(".payment-method button");
   const sections = document.querySelectorAll(".payment-section");
@@ -92,4 +92,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300);
     });
   });
-});
+});[
