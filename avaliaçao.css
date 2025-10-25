@@ -144,6 +144,24 @@ textarea#comentario {
   color: #001a33;
 }
 
+/* ======= BOTÃO ENVIAR ======= */
+.btn {
+  background-color: #001a33;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #000d1a;
+  transform: translateY(-2px);
+}
+
 /* ======= MENSAGEM DE AGRADECIMENTO ======= */
 .thankyou {
   display: none;
