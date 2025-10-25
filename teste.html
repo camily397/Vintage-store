@@ -13,65 +13,78 @@
 </header>
 
 <main class="container">
-  <section class="product-section">
-    <div class="product-image">
-      <img id="productImage" src="" alt="Produto">
-    </div>
-    <div class="product-info">
-      <h2 id="productName"></h2>
-      <p><strong>Preço unitário:</strong> R$ <span id="productPrice"></span></p>
-      <div class="quantity">
-        <button id="minus">-</button>
-        <span id="productQty">1</span>
-        <button id="plus">+</button>
+  <div class="checkout-grid">
+
+    <!-- LADO ESQUERDO: Produto -->
+    <section class="left-side">
+      <div class="product-image">
+        <img id="productImage" src="" alt="Produto">
       </div>
-      <p><strong>Total:</strong> R$ <span id="productTotal"></span></p>
-    </div>
-  </section>
+      <div class="product-info">
+        <h2 id="productName"></h2>
+        <p><strong>Tipo de Produto:</strong> Álbum (CD, Pôster, Vinil)</p>
+        <p><strong>Preço unitário:</strong> R$ <span id="productPrice"></span></p>
+        <div class="quantity">
+          <button id="minus">-</button>
+          <span id="productQty">1</span>
+          <button id="plus">+</button>
+        </div>
+        <p><strong>Total:</strong> R$ <span id="productTotal"></span></p>
 
-  <section class="customer-section">
-    <h3>Informações do Cliente</h3>
-    <div class="customer-info">
-      <label for="customerName">Nome:</label>
-      <input type="text" id="customerName" placeholder="Seu nome">
+        <div class="cards">
+          <div class="card">
+            <h4>Frete</h4>
+            <p>R$ 19,90 — Entrega em todo Brasil. Escolha o estado no lado direito.</p>
+          </div>
+          <div class="card">
+            <h4>Pagamento</h4>
+            <p>Boleto, PIX ou Cartão de Crédito.</p>
+          </div>
+          <div class="card">
+            <h4>Observações</h4>
+            <p>Leia nossas páginas informativas! Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido'.</p>
+            <p>Quando receber seu rastreio, acompanhe-o! Enviaremos entre 7-15 dias úteis.</p>
+            <p>Atenção ao preencher o endereço: informar errado pode gerar taxas de reenvio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <label for="customerAddress">Endereço:</label>
-      <input type="text" id="customerAddress" placeholder="Rua, Número, Bairro">
+    <!-- LADO DIREITO: Cliente e Resumo -->
+    <section class="right-side">
+      <div class="customer-section">
+        <h3>Informações do Cliente</h3>
+        <div class="customer-info">
+          <input type="text" id="customerName" placeholder="Nome completo">
+          <input type="text" id="customerAddress" placeholder="Endereço">
+          <input type="text" id="customerCity" placeholder="Cidade">
+          <select id="customerState">
+            <option value="SP">SP</option>
+            <option value="RJ">RJ</option>
+            <option value="MG">MG</option>
+            <option value="PR">PR</option>
+            <option value="RS">RS</option>
+          </select>
+          <input type="text" id="customerCEP" placeholder="CEP">
+          <input type="text" id="customerPhone" placeholder="Telefone">
+          <input type="email" id="customerEmail" placeholder="Email">
+        </div>
+      </div>
 
-      <label for="customerCity">Cidade:</label>
-      <input type="text" id="customerCity" placeholder="Cidade">
+      <div class="summary-section">
+        <h3>Resumo da Compra</h3>
+        <p><strong>Produto:</strong> <span id="summaryName"></span></p>
+        <p><strong>Tipo:</strong> Álbum (CD, Pôster, Vinil)</p>
+        <p><strong>Quantidade:</strong> <span id="summaryQty"></span></p>
+        <p><strong>Preço unitário:</strong> R$ <span id="summaryPrice"></span></p>
+        <p><strong>Subtotal:</strong> R$ <span id="summarySubtotal"></span></p>
+        <p><strong>Frete:</strong> R$ <span id="summaryFrete">19.90</span></p>
+        <p><strong>Total:</strong> R$ <span id="summaryTotal"></span></p>
+        <button id="finalizarCompra" class="btn-buy">Finalizar Compra</button>
+      </div>
+    </section>
 
-      <label for="customerState">Estado:</label>
-      <select id="customerState">
-        <option value="SP">SP</option>
-        <option value="RJ">RJ</option>
-        <option value="MG">MG</option>
-        <option value="PR">PR</option>
-        <option value="RS">RS</option>
-        <!-- Adicione os outros estados -->
-      </select>
-
-      <label for="customerCEP">CEP:</label>
-      <input type="text" id="customerCEP" placeholder="00000-000">
-
-      <label for="customerPhone">Telefone:</label>
-      <input type="text" id="customerPhone" placeholder="(00) 00000-0000">
-
-      <label for="customerEmail">Email:</label>
-      <input type="email" id="customerEmail" placeholder="email@exemplo.com">
-    </div>
-  </section>
-
-  <section class="summary-section">
-    <h3>Resumo da Compra</h3>
-    <p><strong>Produto:</strong> <span id="summaryName"></span></p>
-    <p><strong>Quantidade:</strong> <span id="summaryQty"></span></p>
-    <p><strong>Preço unitário:</strong> R$ <span id="summaryPrice"></span></p>
-    <p><strong>Subtotal:</strong> R$ <span id="summarySubtotal"></span></p>
-    <p><strong>Frete:</strong> R$ <span id="summaryFrete">19.90</span></p>
-    <p><strong>Total:</strong> R$ <span id="summaryTotal"></span></p>
-    <button id="finalizarCompra" class="btn-buy">Finalizar Compra</button>
-  </section>
+  </div>
 </main>
 
 <footer class="site-footer">
