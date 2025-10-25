@@ -1,137 +1,110 @@
-/* ===== RESET ===== */
-* {
-  box-sizing: border-box;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #faf9f7; /* off-white */
   margin: 0;
   padding: 0;
+  color: #0a0f2c;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f6f6;
-  color: #333;
-  min-height: 100vh;
-}
-
-/* ===== CABEÇALHO ===== */
+/* Cabeçalho */
 header {
   background-color: #0a0f2c;
-  color: white;
+  color: #fff;
   text-align: left;
-  padding: 10px 25px;
-  font-size: 18px;
+  padding: 15px 30px;
+  font-size: 20px;
   font-weight: 500;
 }
 
 .logo {
-  font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
 }
 
-/* ===== CONTEÚDO PRINCIPAL ===== */
-.checkout-container {
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Conteúdo principal */
+.container {
+  width: 90%;
+  max-width: 700px;
+  background: #fff;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.order-item {
+h2 {
+  color: #0a0f2c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.produto h3, .pagamento h3 {
+  color: #0a0f2c;
+  border-bottom: 2px solid #0a0f2c;
+  padding-bottom: 5px;
+}
+
+.info-produto {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
+  gap: 20px;
+  margin-top: 15px;
 }
 
-.order-item img {
-  width: 90px;
-  height: 90px;
+.info-produto img {
+  width: 130px;
+  height: 130px;
   border-radius: 8px;
-  margin-right: 15px;
   object-fit: cover;
 }
 
-.details h3 {
-  margin: 0 0 5px 0;
-  font-size: 18px;
-}
-
-.details p {
-  margin: 3px 0;
-  font-size: 14px;
+.info-produto h4 {
+  margin: 5px 0;
 }
 
 .total {
-  text-align: right;
-  margin-top: 15px;
-  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.customer-info {
-  margin-top: 30px;
-  padding-top: 10px;
-  border-top: 2px solid #eee;
+.opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.info-box p {
-  position: relative;
-  padding-right: 30px; /* espaço para o lápis */
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-.edit-btn {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #111;
-}
-
-.edit-btn:hover {
-  color: #555;
-}
-
-/* ===== BOTOES ===== */
-.actions {
-  text-align: center;
-  margin-top: 25px;
-}
-
-.actions button {
-  padding: 12px 25px;
-  font-size: 16px;
-  border: none;
+.opcoes label {
+  background: #f5f5f5;
+  padding: 10px;
   border-radius: 8px;
   cursor: pointer;
-  margin: 5px;
 }
 
-.back-btn {
-  background-color: #ccc;
-}
-
-.finish-btn {
-  background-color: #111;
-  color: white;
-}
-
-.finish-btn:hover {
-  background-color: #333;
-}
-
-/* ===== RODAPÉ ===== */
-footer {
+.confirmar {
+  width: 100%;
   background-color: #0a0f2c;
-  color: white;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.confirmar:hover {
+  background-color: #182463;
+}
+
+/* Rodapé */
+footer {
   text-align: center;
-  padding: 12px;
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
-  margin-top: 30px;
+  padding: 20px;
+  background-color: #0a0f2c;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
 }
