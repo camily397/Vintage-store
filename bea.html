@@ -43,18 +43,34 @@
 
     <!-- Área do pagamento -->
     <section class="payment">
-      <button class="buy-btn">Comprar</button>
+      <!-- Botão agora com data-attributes para funcionar -->
+      <button class="buy-btn" 
+              data-name="Beabadoobee - Beatopia" 
+              data-price="139.9" 
+              data-img="bea.jfif">
+        Comprar
+      </button>
     </section>
   </main>
 
   <a href="index.html" class="voltar">← Voltar</a>
   <script src="bea.js"></script>
+
+  <!-- Script de redirecionamento do botão Comprar -->
   <script>
-  function buyNow(name, price, img) {
-    const url = `checkout.html?name=${encodeURIComponent(name)}&price=${price}&img=${encodeURIComponent(img)}`;
-    window.location.href = url;
-  }
-</script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buyBtn = document.querySelector(".buy-btn");
+
+      buyBtn.addEventListener("click", () => {
+        const name = buyBtn.dataset.name;
+        const price = buyBtn.dataset.price;
+        const img = buyBtn.dataset.img;
+
+        const url = `checkout.html?name=${encodeURIComponent(name)}&price=${price}&img=${encodeURIComponent(img)}`;
+        window.location.href = url;
+      });
+    });
+  </script>
 
 </body>
 </html>
