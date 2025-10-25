@@ -1,63 +1,71 @@
 /* ======= GERAL ======= */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8; /* Fundo off white */
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f0f2f5; /* Fundo suave */
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
+/* ======= CABEÇALHO ======= */
 header.site-header {
-  background-color: #003366; /* Azul marinho */
+  background-color: #00264d; /* Azul mais escuro e consistente */
   color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .header-left .logo {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .header-left .tagline {
-  font-size: 14px;
-  color: #ccc;
+  font-size: 16px;
+  color: #dcdcdc;
+  margin-top: 4px;
 }
 
 /* ======= CONTAINER ======= */
 .container {
   display: flex;
   min-height: calc(100vh - 100px);
+  gap: 25px;
 }
 
 /* ======= MENU LATERAL ======= */
 .menu {
   background-color: #003366; /* Azul marinho */
-  padding: 25px;
-  width: 260px; /* um pouquinho mais largo */
+  padding: 30px 20px;
+  width: 280px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu button {
-  background-color: #00509e; /* Tom mais claro de azul marinho */
+  background-color: #004080; /* Azul um pouco mais claro que o fundo */
   color: white;
   border: none;
-  padding: 20px 16px; /* mais alto */
-  font-size: 17px; /* texto levemente maior */
+  padding: 18px 15px;
+  font-size: 18px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.1s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .menu button:hover {
-  background-color: #003366; /* Azul marinho ao passar o mouse */
-  transform: scale(1.02); /* leve destaque ao passar o mouse */
+  background-color: #001f3d; /* Azul mais escuro ao passar o mouse */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Links dentro dos botões (corrigido — agora nunca ficam azuis) */
+/* Links dentro dos botões */
 button a {
   color: inherit;
   text-decoration: none;
@@ -69,27 +77,56 @@ button a {
 /* ======= CONTEÚDO PRINCIPAL ======= */
 .conteudo {
   flex: 1;
-  padding: 40px;
-  background-color: white;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .conteudo h2 {
-  font-size: 28px;
-  color: #003366; /* Azul marinho */
-  margin-bottom: 15px;
+  font-size: 32px;
+  color: #00264d;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #004080;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 .conteudo p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 15px;
+}
+
+/* Links e destaque */
+.conteudo strong {
+  color: #00264d;
 }
 
 /* ======= RODAPÉ ======= */
 .site-footer {
-  background-color: #003366; /* Azul marinho */
+  background-color: #00264d;
   color: white;
   text-align: center;
-  padding: 10px 0;
-  font-size: 14px;
+  padding: 15px 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+  margin-top: 30px;
+}
+
+/* ======= LINK VOLTAR ======= */
+.voltar {
+  display: inline-block;
+  margin: 25px 40px;
+  font-size: 18px;
+  color: #004080;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.voltar:hover {
+  color: #001f3d;
 }
