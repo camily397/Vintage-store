@@ -49,5 +49,12 @@
 
   <a href="index.html" class="voltar">← Voltar</a>
   <script src="bea.js"></script>
+  <script>
+  function buyNow(name, price, img) {
+    const url = `checkout.html?name=${encodeURIComponent(name)}&price=${price}&img=${encodeURIComponent(img)}`;
+    window.location.href = url;
+  }
+</script>
+
 </body>
 </html>
