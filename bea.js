@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "mitski-lush",
+      id: "beabadoobee-beatopia",
       name: "Beabadoobee - Beatopia",
       price: 139.9,
       quantity: parseInt(qtyElement.textContent),
