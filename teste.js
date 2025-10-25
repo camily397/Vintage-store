@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === Elementos ===
+  // === ELEMENTOS ===
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
   const qtyElement = document.getElementById("qty");
@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const resProduct = document.getElementById("resProduct");
   const resFormat = document.getElementById("resFormat");
 
-  // === Carregar produto do localStorage ===
-  const produtoData = localStorage.getItem("produtoSelecionado");
-  if (!produtoData) {
-    alert("Nenhum produto selecionado! Redirecionando à loja.");
-    window.location.href = "index.html";
-    return;
-  }
-  const produto = JSON.parse(produtoData);
+  // === PRODUTO PADRÃO (para teste) ===
+  // Depois você pode substituir por valores dinâmicos da loja
+  const produto = {
+    nome: "Álbum Genérico",
+    formato: "CD + Pôster + Vinil",
+    preco: 139.90,
+    imagem: "ariana.jfif"
+  };
 
   productName.textContent = produto.nome;
   productFormat.textContent = "Formato: " + produto.formato;
@@ -31,25 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
   resFormat.textContent = produto.formato;
   resTotal.textContent = produto.preco.toFixed(2).replace(".", ",");
 
-  // === Quantidade ===
+  // === QUANTIDADE ===
   let quantidade = 1;
   function atualizarResumo() {
     resQty.textContent = quantidade;
     resTotal.textContent = (produto.preco * quantidade).toFixed(2).replace(".", ",");
+    qtyElement.textContent = quantidade;
   }
 
   plusBtn.addEventListener("click", () => {
     quantidade++;
-    qtyElement.textContent = quantidade;
     atualizarResumo();
   });
   minusBtn.addEventListener("click", () => {
     if (quantidade > 1) quantidade--;
-    qtyElement.textContent = quantidade;
     atualizarResumo();
   });
 
-  // === Formas de pagamento ===
+  // === FORMAS DE PAGAMENTO ===
   const paymentForms = {
     pix: document.getElementById("formPix"),
     cartao: document.getElementById("formCartao"),
@@ -65,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnCartao").addEventListener("click", () => showForm("cartao"));
   document.getElementById("btnBoleto").addEventListener("click", () => showForm("boleto"));
 
-  // === Finalizar compra com pop-up ===
+  // === FINALIZAR COMPRA ===
   btnBuy.addEventListener("click", () => {
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
@@ -120,10 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("voltarHome").addEventListener("click", () => {
       overlay.style.opacity = "0";
       modal.style.transform = "scale(0.9)";
-      setTimeout(() => {
-        localStorage.removeItem("produtoSelecionado");
-        window.location.href = "index.html";
-      }, 300);
+      setTimeout(() => window.location.href = "index.html", 300);
     });
   });
 });
