@@ -62,6 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buyBtn.addEventListener("click", () => {
     // aqui você pode redirecionar pro checkout
-    window.location.href = "checkout.html"; // troque pelo link da página de compra
+    window.location.href = "checkout2.html"; // troque pelo link da página de compra
   });
 });
