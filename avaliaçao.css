@@ -144,24 +144,6 @@ textarea#comentario {
   color: #001a33;
 }
 
-/* ======= BOTÃO ENVIAR ======= */
-.btn {
-  background-color: #001a33;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 15px 25px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #000d1a;
-  transform: translateY(-2px);
-}
-
 /* ======= MENSAGEM DE AGRADECIMENTO ======= */
 .thankyou {
   display: none;
@@ -180,13 +162,31 @@ textarea#comentario {
   text-align: center;
 }
 
+/* BOTÃO VOLTAR */
+.voltar {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #1C2833; /* azul marinho */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.voltar:hover {
+  background: #34495E; /* azul mais claro */
+}
+
 /* ======= RODAPÉ ======= */
 .site-footer {
-  background-color: #001a33;
+  background-color: #00264d;
   color: white;
   text-align: center;
   padding: 15px 0;
   font-size: 15px;
   letter-spacing: 0.5px;
   box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+  margin-top: auto; /* empurra o footer para baixo */
 }
