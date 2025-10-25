@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagamento - Vintage Store</title>
-  <link rel="stylesheet" href="teste.css">
+  <link rel="stylesheet" href="aricomp.css">
 </head>
 <body>
   <header class="site-header">
@@ -16,16 +16,15 @@
 
   <main class="container">
     <div class="checkout-grid">
-      <!-- LADO ESQUERDO: Imagem e produto -->
+      <!-- LADO ESQUERDO -->
       <div class="left-side">
         <div class="product-image">
           <img id="productImg" src="" alt="Produto">
         </div>
         <div class="product-info">
-          <h2 id="productName">Produto</h2>
-          <p id="productFormat">Formato: </p>
-          <p class="price">Preço unitário: R$ <span id="productPrice">0,00</span></p>
-
+          <h2 id="productName"></h2>
+          <p id="productFormat"></p>
+          <p class="price">Preço unitário: R$ <span id="productPrice"></span></p>
           <div class="quantity">
             <button id="minus">-</button>
             <span id="qty">1</span>
@@ -34,9 +33,8 @@
         </div>
       </div>
 
-      <!-- LADO DIREITO: Pagamento e informações do cliente -->
+      <!-- LADO DIREITO -->
       <div class="right-side">
-        <!-- Formas de pagamento -->
         <div class="payment-methods">
           <h3>Forma de Pagamento</h3>
           <div class="payment-buttons">
@@ -61,7 +59,6 @@
           </div>
         </div>
 
-        <!-- Informações do cliente -->
         <div class="customer-section">
           <h3>Informações do Cliente</h3>
           <div class="customer-info">
@@ -75,33 +72,31 @@
           </div>
         </div>
 
-        <!-- Resumo da compra -->
         <div class="summary-section">
           <h3>Resumo da Compra</h3>
-          <p>Produto: <span id="resProduct">Produto</span></p>
+          <p>Produto: <span id="resProduct"></span></p>
           <p>Formato: <span id="resFormat"></span></p>
           <p>Quantidade: <span id="resQty">1</span></p>
-          <p>Subtotal: R$ <span id="resTotal">0,00</span></p>
+          <p>Subtotal: R$ <span id="resTotal"></span></p>
         </div>
 
-        <!-- Botão finalizar -->
-        <button id="finalizarCompra" class="btn-buy">Finalizar Compra</button>
+        <button class="btn-buy" id="finalizarCompra">Finalizar Compra</button>
       </div>
     </div>
 
-    <!-- Informações adicionais -->
+    <!-- Cards informativos -->
     <div class="cards">
       <div class="card">
         <strong>Leia nossas páginas informativas!</strong>
-        <p>Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido' presente em nosso menu "Atendimento" antes de concluir a sua compra.</p>
+        <p>Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido'.</p>
       </div>
       <div class="card">
-        <strong>Quando você receber seu rastreio, acompanhe-o!</strong>
-        <p>Encaminharemos o seu rastreio entre 7-15 dias úteis após seu pedido ser 'Embalado'. É importante acompanhar no app/site de rastreamento favorito.</p>
+        <strong>Acompanhe seu rastreio!</strong>
+        <p>Encaminharemos o rastreio entre 7-15 dias úteis após o pedido ser 'Embalado'.</p>
       </div>
       <div class="card">
         <strong>Atenção ao preencher o endereço</strong>
-        <p>Informar endereço errado ou não retirar a encomenda pode acarretar extravio ou devolução. Taxas de reenvio podem ser cobradas.</p>
+        <p>Informar endereço errado ou não retirar a encomenda pode acarretar extravio ou devolução.</p>
       </div>
     </div>
   </main>
@@ -110,6 +105,6 @@
     © 2025 Vintage Store — Todos os direitos reservados.
   </footer>
 
-  <script src="teste.js"></script>
+  <script src="aricomp.js"></script>
 </body>
 </html>
