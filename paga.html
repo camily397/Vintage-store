@@ -5,6 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finalizar Pagamento - Vintage Store</title>
   <link rel="stylesheet" href="paga.css">
+  <style>
+    /* Apenas interação visual leve — sem quebrar o CSS existente */
+    .opcao {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .opcao:hover {
+      background-color: #f2f2f2;
+    }
+    .opcao.selecionada {
+      border-color: #222;
+      background-color: #e9e9e9;
+    }
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    .botoes button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+    .botoes button:hover {
+      background-color: #555;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -31,7 +69,7 @@
     <section class="pagamento">
       <h3>Escolha a Forma de Pagamento</h3>
       <div class="opcoes">
-        <div class="opcao">
+        <div class="opcao" onclick="selecionar(this)">
           <h4>💳 Cartão de Crédito</h4>
           <p>Pague em até 10x sem juros.</p>
           <label>Número do Cartão:</label>
@@ -42,13 +80,13 @@
           <input type="text" placeholder="***">
         </div>
 
-        <div class="opcao">
+        <div class="opcao" onclick="selecionar(this)">
           <h4>🏦 Boleto Bancário</h4>
           <p>O boleto será gerado após a confirmação. Prazo de vencimento: 2 dias úteis.</p>
           <button class="gerar">Gerar Boleto</button>
         </div>
 
-        <div class="opcao">
+        <div class="opcao" onclick="selecionar(this)">
           <h4>⚡ PIX</h4>
           <p>Chave PIX: <strong>vintage@store.com</strong></p>
           <p>O pagamento é confirmado em até 1 minuto após a transferência.</p>
@@ -56,15 +94,26 @@
       </div>
     </section>
 
-<footer>
-    <a href="carrinho.html">← Voltar ao Carrinho</a>
+    <div class="botoes">
+      <button onclick="window.location.href='carrinho.html'">← Voltar ao Carrinho</button>
+      <button id="confirmar">Finalizar Compra</button>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Vintage Store - Todos os direitos reservados
   </footer>
 
   <script>
-    // Função para carregar produtos do localStorage (corrigido para "cart")
+    // Interação: seleção da forma de pagamento
+    function selecionar(elemento) {
+      document.querySelectorAll('.opcao').forEach(el => el.classList.remove('selecionada'));
+      elemento.classList.add('selecionada');
+    }
+
+    // Carregar produtos do localStorage
     const produtosContainer = document.getElementById("produtos");
     const totalElement = document.getElementById("total");
-
     const carrinho = JSON.parse(localStorage.getItem("cart")) || [];
 
     if (carrinho.length === 0) {
@@ -87,8 +136,13 @@
       totalElement.textContent = total.toFixed(2);
     }
 
-    // Botão de confirmação
+    // Finalizar compra
     document.getElementById("confirmar").addEventListener("click", () => {
+      const selecionada = document.querySelector(".opcao.selecionada");
+      if (!selecionada) {
+        alert("Por favor, selecione uma forma de pagamento antes de finalizar.");
+        return;
+      }
       alert("Pagamento confirmado! Obrigado por comprar na Vintage Store 💜");
       localStorage.removeItem("cart");
       window.location.href = "index.html";
