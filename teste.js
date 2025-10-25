@@ -4,57 +4,72 @@ document.addEventListener("DOMContentLoaded", () => {
   const qtyElement = document.getElementById("qty");
   const resQty = document.getElementById("resQty");
   const resTotal = document.getElementById("resTotal");
-  const productPrice = document.getElementById("productPrice");
   const btnBuy = document.querySelector(".btn-buy");
 
+  const productImg = document.getElementById("productImg");
+  const productName = document.getElementById("productName");
+  const productFormat = document.getElementById("productFormat");
+  const productPrice = document.getElementById("productPrice");
+  const resProduct = document.getElementById("resProduct");
+  const resFormat = document.getElementById("resFormat");
+
   // === Carregar informações do produto salvo ===
-  const produto = JSON.parse(localStorage.getItem("produtoSelecionado"));
-  if (produto) {
-    document.getElementById("productName").textContent = produto.nome;
-    document.getElementById("productFormat").textContent = produto.formato;
-    document.getElementById("productPrice").textContent = produto.preco.toFixed(2).replace('.', ',');
-    document.getElementById("resProduct").textContent = produto.nome;
-    document.getElementById("resFormat").textContent = produto.formato;
-    document.getElementById("productImg").src = produto.imagem;
-    resTotal.textContent = produto.preco.toFixed(2).replace('.', ',');
+  const produtoData = localStorage.getItem("produtoSelecionado");
+  if (!produtoData) {
+    alert("Nenhum produto foi selecionado. Retornando à loja.");
+    window.location.href = "index.html";
+    return;
   }
 
-  // === Atualizar quantidade ===
+  const produto = JSON.parse(produtoData);
+
+  productName.textContent = produto.nome;
+  productFormat.textContent = "Formato: " + produto.formato;
+  productPrice.textContent = produto.preco.toFixed(2).replace(".", ",");
+  productImg.src = produto.imagem;
+  resProduct.textContent = produto.nome;
+  resFormat.textContent = produto.formato;
+  resTotal.textContent = produto.preco.toFixed(2).replace(".", ",");
+
+  // === Quantidade ===
+  let quantidade = 1;
+  function atualizarResumo() {
+    resQty.textContent = quantidade;
+    resTotal.textContent = (produto.preco * quantidade).toFixed(2).replace(".", ",");
+  }
+
   plusBtn.addEventListener("click", () => {
-    let qty = parseInt(qtyElement.textContent);
-    qty++;
-    qtyElement.textContent = qty;
-    resQty.textContent = qty;
-    resTotal.textContent = (produto.preco * qty).toFixed(2).replace('.', ',');
+    quantidade++;
+    qtyElement.textContent = quantidade;
+    atualizarResumo();
   });
 
   minusBtn.addEventListener("click", () => {
-    let qty = parseInt(qtyElement.textContent);
-    if (qty > 1) qty--;
-    qtyElement.textContent = qty;
-    resQty.textContent = qty;
-    resTotal.textContent = (produto.preco * qty).toFixed(2).replace('.', ',');
+    if (quantidade > 1) quantidade--;
+    qtyElement.textContent = quantidade;
+    atualizarResumo();
   });
 
-  // === Alternar forma de pagamento ===
+  // === Pagamentos ===
   const paymentForms = {
-    PIX: document.getElementById("formPix"),
-    Cartão: document.getElementById("formCartao"),
-    Boleto: document.getElementById("formBoleto"),
+    pix: document.getElementById("formPix"),
+    cartao: document.getElementById("formCartao"),
+    boleto: document.getElementById("formBoleto"),
   };
 
-  document.getElementById("btnPix").addEventListener("click", () => showForm("PIX"));
-  document.getElementById("btnCartao").addEventListener("click", () => showForm("Cartão"));
-  document.getElementById("btnBoleto").addEventListener("click", () => showForm("Boleto"));
-
   function showForm(type) {
-    for (const key in paymentForms) paymentForms[key].style.display = "none";
+    Object.values(paymentForms).forEach(f => f.style.display = "none");
     paymentForms[type].style.display = "block";
   }
 
+  document.getElementById("btnPix").addEventListener("click", () => showForm("pix"));
+  document.getElementById("btnCartao").addEventListener("click", () => showForm("cartao"));
+  document.getElementById("btnBoleto").addEventListener("click", () => showForm("boleto"));
+
   // === Finalizar compra ===
   btnBuy.addEventListener("click", () => {
-    alert("🎉 Obrigado pela sua compra! Seu pedido está a caminho.\nVocê receberá um e-mail com os detalhes em breve!");
+    alert("🎉 Obrigado pela sua compra!\nSeu pedido está a caminho.\nVocê receberá um e-mail com os detalhes em breve!");
+    localStorage.removeItem("produtoSelecionado");
     window.location.href = "index.html";
   });
 });
