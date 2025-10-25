@@ -3,37 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teste - Vintage Store</title>
+  <title>Pagamento - Vintage Store</title>
   <link rel="stylesheet" href="teste.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="header-left">
-      <div class="logo">Vintage Store</div>
-    </div>
+    <div class="logo">Vintage Store</div>
   </header>
 
   <main class="checkout-container">
     <h2>Pagamento do Produto</h2>
 
-    <div class="product-info">
-      <img id="productImage" src="" alt="Produto">
-      <div class="details">
+    <div class="product-section">
+      <div class="product-image">
+        <img id="productImage" src="" alt="Produto">
+      </div>
+      <div class="product-details">
         <h3 id="productName"></h3>
+        <p><strong>Tipo de produto:</strong> <span id="productType">CD / Vinil / Pôster</span></p>
+        <p><strong>Inclui:</strong> <span id="productIncludes">CD, Vinil, Pôster</span></p>
         <p>Preço unitário: R$ <span id="productPrice"></span></p>
         <p>Quantidade: <span id="productQty"></span></p>
-        <p><strong>Total a pagar: R$ <span id="productTotal"></span></strong></p>
+        <p><strong>Total: R$ <span id="productTotal"></span></strong></p>
       </div>
     </div>
 
-    <div class="payment-methods">
-      <h3>Escolha o método de pagamento:</h3>
-      <button>Boleto</button>
-      <button>PIX</button>
-      <button>Cartão</button>
+    <div class="customer-section">
+      <h3>Informações do Cliente</h3>
+      <p><strong>Nome:</strong> <span id="customerName">Nome Exemplo</span> <button class="edit-btn" data-field="customerName">✏️</button></p>
+      <p><strong>Email:</strong> <span id="customerEmail">email@exemplo.com</span> <button class="edit-btn" data-field="customerEmail">✏️</button></p>
+      <p><strong>Telefone:</strong> <span id="customerPhone">(00) 00000-0000</span> <button class="edit-btn" data-field="customerPhone">✏️</button></p>
+      <p><strong>Endereço:</strong> <span id="customerAddress">Rua Exemplo, 123</span> <button class="edit-btn" data-field="customerAddress">✏️</button></p>
+      <p><strong>Estado:</strong>
+        <select id="customerState">
+          <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+          <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+          <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+          <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+          <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+          <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
+          <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
+          <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+          <option value="SP" selected>SP</option><option value="SE">SE</option><option value="TO">TO</option>
+        </select>
+      </p>
     </div>
 
-    <button class="finish-btn" id="finalizarCompra">Finalizar Compra</button>
+    <div class="payment-section">
+      <h3>Métodos de Pagamento</h3>
+      <div class="payment-options">
+        <button>Boleto</button>
+        <button>PIX</button>
+        <button>Cartão</button>
+      </div>
+      <button class="finish-btn" id="finalizarCompra">Finalizar Compra</button>
+    </div>
   </main>
 
   <footer class="site-footer">
