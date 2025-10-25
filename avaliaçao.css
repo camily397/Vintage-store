@@ -5,42 +5,52 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ======= CABEÇALHO ======= */
 header {
   background-color: #00264d;
   color: white;
-  padding: 25px 40px;
-  text-align: center;
+  padding: 20px 40px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-header h1 {
+header .header-left h1 {
   margin: 0;
   font-size: 28px;
   font-weight: 700;
+  text-align: left;
 }
 
 /* ======= CONTAINER PRINCIPAL ======= */
 .container {
   flex: 1;
-  padding: 50px 20px;
-  max-width: 700px;
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
 }
 
-.container h2 {
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  padding: 40px 30px;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ======= TÍTULO ======= */
+.card h2 {
   font-size: 32px;
   color: #00264d;
-  margin-bottom: 10px;
+  margin: 0;
   text-align: center;
   border-bottom: 2px solid #004080;
   display: inline-block;
@@ -52,10 +62,9 @@ header h1 {
   background-color: #e0f7fa;
   padding: 25px 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: background-color 0.3s;
   width: 100%;
-  max-width: 600px;
 }
 
 .balloon p {
@@ -81,6 +90,7 @@ textarea#comentario {
   justify-content: center;
   gap: 15px;
   font-size: 32px;
+  flex-direction: row;
 }
 
 .stars input {
@@ -135,9 +145,7 @@ textarea#comentario {
   font-size: 16px;
   color: #555;
   font-style: italic;
-  margin-top: 10px;
   text-align: center;
-  max-width: 600px;
 }
 
 /* ======= RODAPÉ ======= */
@@ -149,5 +157,4 @@ textarea#comentario {
   font-size: 15px;
   letter-spacing: 0.5px;
   box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
-  margin-top: auto;
 }
