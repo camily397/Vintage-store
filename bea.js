@@ -56,34 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => alertBox.remove(), 2000);
   });
+});
+document.querySelector(".buy-btn").addEventListener("click", () => {
+  const album = {
+    name: "Beatopia",
+    price: 79.90, // preço do álbum
+    image: "bea.jfif"
+  };
 
-  // =======================
-  // Botão de “Comprar” funcional
-  document.addEventListener("DOMContentLoaded", () => {
-  const buyBtn = document.querySelector(".buy-btn");
-  buyBtn.addEventListener("click", () => {
-    // Pega os dados do álbum do próprio botão
-    const product = {
-      id: "beabadoobee-beatopia", // você pode gerar um id único para cada álbum
-      name: buyBtn.dataset.name,
-      price: parseFloat(buyBtn.dataset.price),
-      quantity: 1, // quantidade padrão ao comprar
-      image: buyBtn.dataset.img
-    };
-
-    // Recupera o carrinho existente ou cria um novo
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    // Verifica se o produto já está no carrinho
-    const existingItem = cart.find(item => item.id === product.id);
-    if (existingItem) {
-      existingItem.quantity += product.quantity;
-    } else {
-      cart.push(product);
-    }
-
-    // Salva no localStorage
-    localStorage.setItem("cart", JSON.stringify(cart));
-    // Redireciona para o checkout
-    window.location.href = "checkout2.html";
-  });
+  localStorage.setItem("selectedAlbum", JSON.stringify(album));
+  window.location.href = "checkout.html"; // página de pagamento
 });
