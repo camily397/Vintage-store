@@ -1,12 +1,18 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f6f6f6;
-  margin: 0;
-  padding: 0;
   color: #333;
+  min-height: 100vh;
 }
 
-/* CABEÇALHO */
+/* ===== CABEÇALHO ===== */
 header {
   background-color: #0a0f2c;
   color: white;
@@ -21,7 +27,7 @@ header {
   letter-spacing: 1px;
 }
 
-/* CONTEÚDO PRINCIPAL */
+/* ===== CONTEÚDO PRINCIPAL ===== */
 .checkout-container {
   max-width: 900px;
   margin: 30px auto;
@@ -47,7 +53,13 @@ header {
 }
 
 .details h3 {
-  margin: 0;
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.details p {
+  margin: 3px 0;
+  font-size: 14px;
 }
 
 .total {
@@ -62,6 +74,30 @@ header {
   border-top: 2px solid #eee;
 }
 
+.info-box p {
+  position: relative;
+  padding-right: 30px; /* espaço para o lápis */
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #111;
+}
+
+.edit-btn:hover {
+  color: #555;
+}
+
+/* ===== BOTOES ===== */
 .actions {
   text-align: center;
   margin-top: 25px;
@@ -89,7 +125,7 @@ header {
   background-color: #333;
 }
 
-/* RODAPÉ */
+/* ===== RODAPÉ ===== */
 footer {
   background-color: #0a0f2c;
   color: white;
