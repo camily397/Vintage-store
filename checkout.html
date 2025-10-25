@@ -25,11 +25,24 @@
 
     <section class="customer-info">
       <h2>Informações do Cliente</h2>
-      <p><strong>Nome:</strong> Nome Exemplo</p>
-      <p><strong>Endereço:</strong> Rua Exemplo, 123 - Bairro - PR</p>
-      <p><strong>CEP:</strong> 01234-567</p>
-      <p><strong>Telefone:</strong> (99) 99999-9999</p>
-      <p><strong>Email:</strong> vintage@email.com</p>
+
+      <div class="info-box">
+        <p><strong>Nome:</strong> <span id="nome">Nome Exemplo</span> 
+          <button class="edit-btn" data-field="nome">✏️</button>
+        </p>
+        <p><strong>Endereço:</strong> <span id="endereco">Rua Exemplo, 123 - Bairro - PR</span> 
+          <button class="edit-btn" data-field="endereco">✏️</button>
+        </p>
+        <p><strong>CEP:</strong> <span id="cep">01234-567</span> 
+          <button class="edit-btn" data-field="cep">✏️</button>
+        </p>
+        <p><strong>Telefone:</strong> <span id="telefone">(99) 99999-9999</span> 
+          <button class="edit-btn" data-field="telefone">✏️</button>
+        </p>
+        <p><strong>Email:</strong> <span id="email">vintage@email.com</span> 
+          <button class="edit-btn" data-field="email">✏️</button>
+        </p>
+      </div>
     </section>
 
     <div class="actions">
