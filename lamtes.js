@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Lamp - Lamp Genso",
     formato: "CD + Pôster + Vinil",
-    preco: 105.90,
+    preco: 215.90,
     imagem: "lamp.jfif"
   };
 
