@@ -3,62 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - Vintage Store</title>
+  <title>Pagamento - Vintage Store</title>
   <link rel="stylesheet" href="teste.css">
 </head>
 <body>
-  <header>
-    <h1>Finalizar Compra</h1>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
   </header>
 
-  <main class="checkout-container">
-    <!-- Produto -->
-    <section class="product-summary">
-      <div class="product-image">
-        <img src="" alt="Produto selecionado" id="checkoutImage">
-      </div>
-      <div class="product-info">
-        <h2 id="checkoutName"></h2>
-        <p id="checkoutFormat"></p>
-        <p class="price">Preço unitário: <span id="checkoutPrice"></span></p>
-        <p class="quantity">Quantidade: <span id="checkoutQty"></span></p>
-        <hr>
-        <h3>Total: R$ <span id="checkoutTotal"></span></h3>
-      </div>
-    </section>
+  <main class="container">
+    <div class="checkout-grid">
+      <!-- LADO ESQUERDO -->
+      <div class="left-side">
+        <div class="product-image">
+          <img src="" alt="Produto" id="productImage">
+        </div>
+        <div class="product-info">
+          <h2 id="productName"></h2>
+          <p id="productFormat"></p>
+          <p class="price" id="productPrice"></p>
 
-    <!-- Informações do cliente -->
-    <section class="client-info">
-      <h2>Informações do Cliente</h2>
-      <div class="info-bubble">
-        <p><strong>Nome:</strong> <span id="clientName">Exemplo</span></p>
-        <p><strong>Email:</strong> <span id="clientEmail">exemplo@email.com</span></p>
-        <p><strong>Endereço:</strong> <span id="clientAddress">Rua Exemplo, 123</span></p>
-        <button id="editClient">✏️ Editar</button>
+          <div class="quantity">
+            <button id="minus">-</button>
+            <span id="qty">1</span>
+            <button id="plus">+</button>
+          </div>
+        </div>
       </div>
-      <div id="editForm" class="hidden">
-        <input type="text" id="editName" placeholder="Nome">
-        <input type="email" id="editEmail" placeholder="Email">
-        <input type="text" id="editAddress" placeholder="Endereço">
-        <button id="saveClient">Salvar</button>
-      </div>
-    </section>
 
-    <!-- Pagamento -->
-    <section class="payment-section">
-      <h2>Forma de Pagamento</h2>
-      <div class="payment-options">
-        <button class="payment-btn" data-method="pix">PIX</button>
-        <button class="payment-btn" data-method="cartao">Cartão</button>
-        <button class="payment-btn" data-method="boleto">Boleto</button>
-      </div>
-    </section>
+      <!-- LADO DIREITO -->
+      <div class="right-side">
+        <!-- Formas de pagamento -->
+        <div class="payment-methods">
+          <h3>Forma de Pagamento</h3>
+          <div class="payment-buttons">
+            <button id="btnPix">PIX</button>
+            <button id="btnCartao">Cartão</button>
+            <button id="btnBoleto">Boleto</button>
+          </div>
 
-    <button class="finalize-btn">Finalizar Compra</button>
+          <div class="payment-forms">
+            <div id="formPix" class="pay-form" style="display:none;">
+              <p>Chave PIX: 123.456.789-00</p>
+            </div>
+            <div id="formCartao" class="pay-form" style="display:none;">
+              <input type="text" placeholder="Número do cartão">
+              <input type="text" placeholder="Nome no cartão">
+              <input type="text" placeholder="Validade (MM/AA)">
+              <input type="text" placeholder="CVV">
+            </div>
+            <div id="formBoleto" class="pay-form" style="display:none;">
+              <p>Seu boleto será gerado após finalizar a compra.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informações do cliente -->
+        <div class="customer-section">
+          <h3>Informações do Cliente</h3>
+          <div class="customer-info">
+            <input type="text" id="nome" placeholder="Nome completo">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <input type="text" id="cep" placeholder="CEP">
+            <input type="text" id="cidade" placeholder="Cidade">
+            <input type="text" id="estado" placeholder="Estado">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="email" id="email" placeholder="Email">
+          </div>
+        </div>
+
+        <!-- Resumo -->
+        <div class="summary-section">
+          <h3>Resumo da Compra</h3>
+          <p id="resumoNome">Produto: </p>
+          <p id="resumoFormato">Formato: </p>
+          <p>Quantidade: <span id="resQty">1</span></p>
+          <p>Subtotal: R$ <span id="resTotal">0,00</span></p>
+        </div>
+
+        <!-- Botão -->
+        <button class="btn-buy">Finalizar Compra</button>
+      </div>
+    </div>
+
+    <!-- Informações adicionais -->
+    <div class="cards">
+      <div class="card">
+        <strong>Leia nossas páginas informativas!</strong>
+        <p>Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido' presente em nosso menu "Atendimento" antes de concluir a sua compra.</p>
+      </div>
+      <div class="card">
+        <strong>Quando você receber seu rastreio, acompanhe-o!</strong>
+        <p>Encaminharemos o seu rastreio entre 7-15 dias úteis após seu pedido ser 'Embalado'. É importante acompanhar no app/site de rastreamento favorito.</p>
+      </div>
+      <div class="card">
+        <strong>Atenção ao preencher o endereço</strong>
+        <p>Informar endereço errado ou não retirar a encomenda pode acarretar extravio ou devolução. Taxas de reenvio podem ser cobradas.</p>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <p>Vintage Store © 2025</p>
+  <footer class="site-footer">
+    © 2025 Vintage Store — Todos os direitos reservados.
   </footer>
 
   <script src="teste.js"></script>
