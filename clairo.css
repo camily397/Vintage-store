@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #eae6d2; /* marrom suave */
+  background: #946e58; /* marrom suave */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
@@ -138,7 +138,7 @@ header {
 }
 
 .payment-options button.selected {
-  background: #F9F6F0; /* off-white */
+  background: #9b785d; /* off-white */
   color: #8E5A3A; /* marrom suave */
   border: 2px solid #D7B8A3; /* nude suave */
 }
