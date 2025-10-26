@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // === PRODUTO PADRÃO (para teste) ===
   // Depois você pode substituir por valores dinâmicos da loja
   const produto = {
-    nome: "Yves - looop",
+    nome: "Yves - loop",
     formato: "CD + Pôster + Vinil",
     preco: 99.90,
     imagem: "loop.jfif"
