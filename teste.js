@@ -1,82 +1,75 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* ========= 1. CARREGAR PRODUTO DO LOCALSTORAGE ========= */
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const produtoSelecionado = JSON.parse(localStorage.getItem("produtoSelecionado")) || cart[cart.length - 1];
-
-  // Preenche automaticamente as infos se houver produto salvo
-  if (produtoSelecionado) {
-    const img = document.querySelector(".product-image img");
-    const nome = document.querySelector(".product-info h2");
-    const preco = document.querySelector(".product-info .price");
-    const resumoNome = document.querySelector(".summary-section p:nth-child(2)");
-    const resumoFormato = document.querySelector(".summary-section p:nth-child(3)");
-    const resQty = document.getElementById("resQty");
-    const resTotal = document.getElementById("resTotal");
-
-    if (img) img.src = produtoSelecionado.image;
-    if (nome) nome.textContent = produtoSelecionado.name;
-    if (preco) preco.textContent = `Preço unitário: R$ ${produtoSelecionado.price.toFixed(2).replace(".", ",")}`;
-    if (resumoNome) resumoNome.textContent = `Produto: ${produtoSelecionado.name}`;
-    if (resumoFormato) resumoFormato.textContent = "Formato: CD + Pôster + Vinil";
-    if (resQty) resQty.textContent = produtoSelecionado.quantity;
-    if (resTotal) resTotal.textContent = (produtoSelecionado.price * produtoSelecionado.quantity).toFixed(2).replace(".", ",");
-  }
-
-  /* ========= 2. CONTROLE DE QUANTIDADE ========= */
+  // === ELEMENTOS ===
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
   const qtyElement = document.getElementById("qty");
   const resQty = document.getElementById("resQty");
   const resTotal = document.getElementById("resTotal");
-  let quantity = produtoSelecionado?.quantity || 1;
-  const price = produtoSelecionado?.price || 0;
+  const btnBuy = document.getElementById("finalizarCompra");
 
-  function updateQuantityDisplay() {
-    qtyElement.textContent = quantity;
-    resQty.textContent = quantity;
-    resTotal.textContent = (quantity * price).toFixed(2).replace(".", ",");
+  const productImg = document.getElementById("productImg");
+  const productName = document.getElementById("productName");
+  const productFormat = document.getElementById("productFormat");
+  const productPrice = document.getElementById("productPrice");
+  const resProduct = document.getElementById("resProduct");
+  const resFormat = document.getElementById("resFormat");
+
+  // === PRODUTO PADRÃO (para teste) ===
+  // Depois você pode substituir por valores dinâmicos da loja
+  const produto = {
+    nome: "Álbum Genérico",
+    formato: "CD + Pôster + Vinil",
+    preco: 139.90,
+    imagem: "ariana.jfif"
+  };
+
+  productName.textContent = produto.nome;
+  productFormat.textContent = "Formato: " + produto.formato;
+  productPrice.textContent = produto.preco.toFixed(2).replace(".", ",");
+  productImg.src = produto.imagem;
+  resProduct.textContent = produto.nome;
+  resFormat.textContent = produto.formato;
+  resTotal.textContent = produto.preco.toFixed(2).replace(".", ",");
+
+  // === QUANTIDADE ===
+  let quantidade = 1;
+  function atualizarResumo() {
+    resQty.textContent = quantidade;
+    resTotal.textContent = (produto.preco * quantidade).toFixed(2).replace(".", ",");
+    qtyElement.textContent = quantidade;
   }
 
   plusBtn.addEventListener("click", () => {
-    quantity++;
-    updateQuantityDisplay();
+    quantidade++;
+    atualizarResumo();
   });
-
   minusBtn.addEventListener("click", () => {
-    if (quantity > 1) {
-      quantity--;
-      updateQuantityDisplay();
-    }
+    if (quantidade > 1) quantidade--;
+    atualizarResumo();
   });
 
-  /* ========= 3. MÉTODOS DE PAGAMENTO ========= */
-  const btnPix = document.getElementById("btnPix");
-  const btnCartao = document.getElementById("btnCartao");
-  const btnBoleto = document.getElementById("btnBoleto");
-  const formPix = document.getElementById("formPix");
-  const formCartao = document.getElementById("formCartao");
-  const formBoleto = document.getElementById("formBoleto");
+  // === FORMAS DE PAGAMENTO ===
+  const paymentForms = {
+    pix: document.getElementById("formPix"),
+    cartao: document.getElementById("formCartao"),
+    boleto: document.getElementById("formBoleto"),
+  };
 
-  function mostrarForma(forma) {
-    formPix.style.display = "none";
-    formCartao.style.display = "none";
-    formBoleto.style.display = "none";
-    forma.style.display = "block";
+  function showForm(type) {
+    Object.values(paymentForms).forEach(f => f.style.display = "none");
+    paymentForms[type].style.display = "block";
   }
 
-  btnPix.addEventListener("click", () => mostrarForma(formPix));
-  btnCartao.addEventListener("click", () => mostrarForma(formCartao));
-  btnBoleto.addEventListener("click", () => mostrarForma(formBoleto));
+  document.getElementById("btnPix").addEventListener("click", () => showForm("pix"));
+  document.getElementById("btnCartao").addEventListener("click", () => showForm("cartao"));
+  document.getElementById("btnBoleto").addEventListener("click", () => showForm("boleto"));
 
-  /* ========= 4. FINALIZAR COMPRA ========= */
-  const finalizarBtn = document.querySelector(".btn-buy");
-
-  finalizarBtn.addEventListener("click", () => {
-    // Mensagem de agradecimento (popup bonito)
+  // === FINALIZAR COMPRA ===
+  btnBuy.addEventListener("click", () => {
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
-    overlay.style.top = "0";
-    overlay.style.left = "0";
+    overlay.style.top = 0;
+    overlay.style.left = 0;
     overlay.style.width = "100vw";
     overlay.style.height = "100vh";
     overlay.style.background = "rgba(0,0,0,0.6)";
@@ -101,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2 style="color:#003366; margin-bottom:15px;">🎉 Obrigado pela sua compra!</h2>
       <p style="font-size:17px; line-height:1.6; color:#333;">
         Seu pedido foi recebido com sucesso e já está a caminho!<br>
-        Um e-mail de confirmação foi enviado com os detalhes do seu pedido. 📦✉️
+        Um e-mail de confirmação será enviado com os detalhes do seu pedido. 📦✉️
       </p>
       <button id="voltarHome" style="
         margin-top:25px;
@@ -118,19 +111,15 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
 
-    // Animação
     requestAnimationFrame(() => {
       overlay.style.opacity = "1";
       modal.style.transform = "scale(1)";
     });
 
-    // Botão de retorno
     document.getElementById("voltarHome").addEventListener("click", () => {
       overlay.style.opacity = "0";
       modal.style.transform = "scale(0.9)";
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 300);
+      setTimeout(() => window.location.href = "index.html", 300);
     });
   });
 });
