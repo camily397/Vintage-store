@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Radiohead - In Rainbows",
     formato: "CD + Pôster + Vinil",
-    preco: 140.90,
+    preco: 299.90,
     imagem: "radiohead.jfif"
   };
 
