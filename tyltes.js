@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Tyler The Creator - Flower Boy",
     formato: "CD + Pôster + Vinil",
-    preco: 155.90,
+    preco: 265.90,
     imagem: "tyler.jfif"
   };
 
