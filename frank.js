@@ -117,21 +117,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => alertBox.remove(), 2000);
   });
-
-  // ======= NOVO: Salvar informações e ir para página de pagamento =======
-  if (buyNowBtn) {
-    buyNowBtn.addEventListener("click", () => {
-      const product = {
-        id: "bts-love-yourself",
-        name: "BTS - Love Yourself",
-        price: 129.90,
-        quantity: parseInt(qtyElement.textContent),
-        image: "bts.jfif",
-        formato: "CD + Pôster + Vinil"
-      };
-
-      localStorage.setItem("produtoSelecionado", JSON.stringify(product));
-      window.location.href = "teste.html"; // redireciona para a página de pagamento
-    });
-  }
-});
