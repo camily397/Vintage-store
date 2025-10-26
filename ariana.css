@@ -83,7 +83,7 @@ header {
 .album-info {
   flex: 1;
   background: #6ba08a;
-  color: #2E2C29;
+  color: #ffffff;
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -160,8 +160,8 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #336d55;
-  color: #FFFFFF;
+  background: #ffffff;
+  color: #518a78;
   cursor: pointer;
   transition: 0.3s;
   font-weight: bold;
