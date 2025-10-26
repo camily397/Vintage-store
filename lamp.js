@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 105.90; // preço unitário para Lamp
+const price = 215.90; // preço unitário para Lamp
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = {
       id: "lamp-lampgenso",
       name: "Lamp - lamp genso",
-      price: 105.90,
+      price: 215.90,
       quantity: parseInt(qtyElement.textContent),
       image: "lamp.jfif"
     };
