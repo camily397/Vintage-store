@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Virgingod - neon genesis virgingod",
     formato: "CD + Pôster + Vinil",
-    preco: 99.90,
+    preco: 209.90,
     imagem: "steh.jfif"
   };
 
