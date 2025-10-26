@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Sade - Love Deluxe",
     formato: "CD + Pôster + Vinil",
-    preco: 149.90,
+    preco: 279.90,
     imagem: "sade.jfif"
   };
 
