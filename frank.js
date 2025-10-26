@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "bts-love-yourself",
-      name: "BTS - Love Yourself",
+      id: "frank ocean-blond",
+      name: "Frank Ocean - Blond",
       price: 129.90,
       quantity: parseInt(qtyElement.textContent),
-      image: "bts.jfif",
+      image: "frank.jfif",
       formato: "CD + Pôster + Vinil"
     };
 
