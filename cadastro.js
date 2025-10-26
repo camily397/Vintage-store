@@ -68,4 +68,8 @@ function showWelcomeModal(nome) {
 
     document.getElementById('closeModal').onclick = () => modal.remove();
 }
+// Guarda o usuário logado
+localStorage.setItem('usuarioLogado', JSON.stringify(data));
 
+// Redireciona para minhaConta.html ou mostra pop-up de boas-vindas
+window.location.href = 'minhaconta.html';
