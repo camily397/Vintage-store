@@ -81,8 +81,8 @@ header {
 /* ======= INFORMAÇÕES DO ÁLBUM ======= */
 .album-info {
   flex: 1;
-  background: #ece9da; /* preto */
-  color: #FFCF71; /* amarelo claro */
+  background: #fdfbf4; /* preto */
+  color: #f6be4d; /* amarelo claro */
   padding: 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -91,14 +91,14 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #FFCF71; /* amarelo claro */
+  color: #ffc34c; /* amarelo claro */
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #FFCF71; /* amarelo claro */
+  color: #ffc34b; /* amarelo claro */
 }
 
 /* ======= PAGAMENTO ======= */
