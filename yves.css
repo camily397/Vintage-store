@@ -90,7 +90,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #8D8D8D; /* cinza metálico */
+  color: #580048; /* cinza metálico */
 }
 
 .price {
@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #8D8D8D; /* cinza metálico */
+  background: #420099; /* cinza metálico */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #31326F; /* azul marinho */
+  background: #696bdb; /* azul marinho */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
@@ -157,7 +157,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #31326F; /* azul marinho */
+  background: #696bdb; /* azul marinho */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   transition: 0.3s;
@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #8D8D8D; /* cinza metálico */
+  background: #000000; /* cinza metálico */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
