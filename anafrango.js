@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "Ana frango elétrico-Me chama de gato que eu sou sua",
-      name: "Ana frango elétrico -Me chama de gato que eu sou sua",
-      price: 139.9,
+      id: "ana frango eletrico-me chama de gato que eu sou sua",
+      name: "Ana Frango Elétrico - Me Chama de Gato Que Eu Sou Sua",
+      price: 130.9,
       quantity: parseInt(qtyElement.textContent),
       image: "anafrango.jfif"
     };
@@ -55,20 +55,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(alertBox);
 
     setTimeout(() => alertBox.remove(), 2000);
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const buyBtn = document.querySelector(".buy-btn");
-
-  if (!buyBtn) return;
-
-  buyBtn.addEventListener("click", () => {
-    const name = buyBtn.dataset.name;
-    const price = buyBtn.dataset.price;
-    const img = buyBtn.dataset.img;
-
-    // Manda as informações do álbum para a página de checkout
-    const url = `checkout2.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&img=${encodeURIComponent(img)}`;
-    window.location.href = url;
   });
 });
