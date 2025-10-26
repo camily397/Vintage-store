@@ -31,7 +31,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #cccccc; /* branco */
+  background: #05550d; /* branco */
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -83,7 +83,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFFFFF; /* branco */
+  background: #cccccc; /* branco */
   color: #1E1E1E; /* texto preto */
   padding: 30px;
   border-radius: 10px;
@@ -163,7 +163,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #858585; /* azul marinho */
+  background: #1C2833; /* azul marinho */
   color: #FFFFFF; /* branco */
   cursor: pointer;
   transition: 0.3s;
