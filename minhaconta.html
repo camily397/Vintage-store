@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Conta - Vintage Store</title>
+  <link rel="stylesheet" href="minhaconta.css">
+</head>
+
+<body>
+  <header>
+    <span class="logo">Vintage Store</span>
+    <a href="index.html" class="voltar">← Voltar</a>
+  </header>
+
+  <main class="container">
+    <h2>Minha Conta</h2>
+
+    <section class="perfil">
+      <div class="foto-perfil">
+        <img id="fotoPerfil" src="default-profile.png" alt="Foto de perfil">
+        <input type="file" id="uploadFoto" accept="image/*">
+      </div>
+
+      <div class="info">
+        <label>Nome:</label>
+        <input type="text" id="nome" placeholder="Seu nome completo">
+
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="seuemail@email.com">
+
+        <label>Telefone:</label>
+        <input type="text" id="telefone" placeholder="(00) 00000-0000">
+
+        <label>Endereço:</label>
+        <input type="text" id="endereco" placeholder="Rua, número, bairro, cidade">
+
+        <div class="acoes">
+          <button id="salvar">💾 Salvar alterações</button>
+          <button id="sair">🚪 Sair</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Vintage Store — Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="minhaconta.js"></script>
+</body>
+</html>
