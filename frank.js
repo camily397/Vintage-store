@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 119.90; // preço unitário (exemplo: Beatopia)
+const price = 129.90; // preço unitário (exemplo: Blond)
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
