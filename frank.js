@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 129.90; // preço unitário (exemplo: Blond)
+const price = 119.90; // preço unitário para Beatopia
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
@@ -48,14 +48,15 @@ thumbs.forEach(thumb => {
     thumb.classList.add("active");
   });
 });
-
-/* ======= Adicionar ao carrinho ======= */
+// ======= Adicionar ao carrinho =======
 const cartBtn = document.getElementById("addToCart");
 
 cartBtn.addEventListener("click", () => {
+  // muda o texto e a cor
   cartBtn.textContent = "✔️ Adicionado!";
   cartBtn.classList.add("added");
 
+  // volta ao normal depois de 2 segundos
   setTimeout(() => {
     cartBtn.textContent = "🛒 Adicionar ao carrinho";
     cartBtn.classList.remove("added");
@@ -67,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const qtyElement = document.getElementById("qty");
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
-  const buyNowBtn = document.getElementById("buyNow"); // <— botão “Comprar”
 
   // Atualiza quantidade
   plusBtn.addEventListener("click", () => {
@@ -86,11 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Frank Ocean - Blond",
       price: 129.90,
       quantity: parseInt(qtyElement.textContent),
-      image: "frank.jfif",
-      formato: "CD + Pôster + Vinil"
+      image: "frank.jfif"
     };
 
+    // Recupera o carrinho existente ou cria um novo
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Verifica se o produto já está no carrinho
     const existingItem = cart.find(item => item.id === product.id);
 
     if (existingItem) {
@@ -99,8 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
       cart.push(product);
     }
 
+    // Salva no localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    // Alerta de confirmação
     const alertBox = document.createElement("div");
     alertBox.textContent = "✅ Produto adicionado ao carrinho!";
     alertBox.style.position = "fixed";
@@ -117,3 +121,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => alertBox.remove(), 2000);
   });
+});
