@@ -1,118 +1,87 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Vintage Store</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f9f5f0; /* fundo off-white */
-        }
-        header {
-            background-color: #1a1a4b; /* azul marinho */
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 80px);
-        }
-        .login-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-        .login-container h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .login-container input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 12px;
-            background-color: #1a1a4b;
-            color: white;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #333366;
-        }
-        .login-container p {
-            text-align: center;
-            margin-top: 15px;
-        }
-        .login-container a {
-            color: #1a1a4b;
-            text-decoration: none;
-        }
-        .login-container a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <title>Cadastro/Login</title>
+  <link rel="stylesheet" href="login.css">  
 </head>
 <body>
-    <header>
-        Vintage Store
-    </header>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
+  </header>
+  <div class="container auth">
+    <div class="tabs">
+      <button class="tab active" data-tab="login-pane">Login</button>
+      <button class="tab" data-tab="register-pane">Cadastro</button>
+    </div>
 
-    <main>
-        <div class="login-container">
-            <h2>Login</h2>
-            <input type="email" id="email" placeholder="Digite seu email">
-            <input type="password" id="senha" placeholder="Digite sua senha">
-            <button onclick="login()">Entrar</button>
-            <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+    <!-- PANE DE LOGIN -->
+    <div id="login-pane" class="pane active">
+      <form id="loginForm" class="form">
+        <div class="field">
+          <label for="loginUser">Usuário ou E-mail</label>
+          <input id="loginUser" required>
         </div>
-    </main>
+        <div class="field">
+          <label for="loginPass">Senha</label>
+          <input id="loginPass" type="password" required>
+        </div>
+        <button class="btn full" type="submit">Entrar</button>
+      </form>
+      <div class="divider">ou</div>
+      <!-- BOTÃO LOGIN COM GOOGLE -->
+      <button id="googleLoginBtn" class="btn full google-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
+             alt="Google logo" width="20" style="vertical-align:middle; margin-right:8px;">
+        Entrar com Google
+      </button>
+    </div>
 
-    <script type="module">
-        import { supabase } from './supabaseClient.js';
+    <!-- PANE DE CADASTRO -->
+    <div id="register-pane" class="pane">
+      <form id="registerForm" class="form">
+        <div class="field">
+          <label for="regNome">Nome completo</label>
+          <input id="regNome" required>
+        </div>
+        <div class="field">
+          <label for="regNascimento">Data de nascimento</label>
+          <input id="regNascimento" type="date">
+        </div>
+        <div class="field">
+          <label for="regEmail">E-mail</label>
+          <input id="regEmail" type="email" required>
+        </div>
+        <div class="field">
+          <label for="regTelefone">Telefone</label>
+          <input id="regTelefone">
+        </div>
+        <div class="field">
+          <label for="regUsuario">Usuário</label>
+          <input id="regUsuario" required>
+        </div>
+        <div class="field">
+          <label for="regSenha">Senha</label>
+          <input id="regSenha" type="password" required>
+        </div>
+        <button class="btn full" type="submit">Cadastrar</button>
+      </form>
+    </div>
 
-        async function login() {
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-
-            if (!email || !senha) {
-                alert('Por favor, preencha todos os campos!');
-                return;
-            }
-
-            // Consulta no Supabase
-            const { data, error } = await supabase
-                .from('usuarios')
-                .select('*')
-                .eq('email', email)
-                .eq('senha', senha)
-                .single();
-
-            if (error || !data) {
-                alert('Email ou senha incorretos!');
-            } else {
-                alert(`Bem-vindo(a), ${data.nome}!`);
-                // Redireciona para a página de conta
-                window.location.href = 'minhaConta.html';
-            }
-        }
-    </script>
+    <div id="authMsg" class="msg"></div>
+  </div>
+    
+  <div id="privateArea" class="hidden center private">
+    <p id="welcomeUser"></p>
+    <button id="logoutBtn" class="btn">Sair</button>
+  </div>
+  <footer>
+    <p>© 2025 - Vintage Store</p>
+  </footer>
+ <script type="module" src="login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
 </html>
