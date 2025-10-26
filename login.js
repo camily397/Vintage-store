@@ -230,4 +230,34 @@ logoutBtn?.addEventListener('click', async () => {
     console.error(err);
     showMsg("Erro ao sair.", "error");
   }
-});
+});// Após cadastro bem-sucedido
+showWelcomeModal(data.nome);
+
+function showWelcomeModal(nome) {
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+        <div style="
+            position: fixed;
+            top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.5);
+            display:flex; justify-content:center; align-items:center;
+        ">
+            <div style="
+                background:white;
+                padding: 30px;
+                border-radius: 15px;
+                text-align:center;
+                max-width: 300px;
+            ">
+                <h2>Bem-vinda, ${nome}!</h2>
+                <p>Login realizado com sucesso 💖</p>
+                <button id="closeModal">Fechar</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('closeModal').onclick = () => modal.remove();
+}
+localStorage.setItem('usuarioLogado', JSON.stringify(data));
+
