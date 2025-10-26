@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Kali Uchis - Red Moon in Venus",
     formato: "CD + Pôster + Vinil",
-    preco: 109.90,
+    preco: 245.90,
     imagem: "kali.jfif"
   };
 
