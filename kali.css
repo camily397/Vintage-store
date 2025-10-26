@@ -90,7 +90,7 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #9B6D6A; /* tom suave de rosa queimado (remetendo ao álbum) */
+  color: #704e4c; /* tom suave de rosa queimado (remetendo ao álbum) */
 }
 
 .price {
@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #FA812F; /* rosa quente suave */
+  background: #dd7027; /* rosa quente suave */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
