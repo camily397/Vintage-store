@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 120.90; // preço unitário para Beatopia
+const price = 125.90; // preço unitário para Beatopia
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
@@ -82,11 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "clairo-sling",
-      name: "Clairo - Sling",
-      price: 120.90,
+      id: "carol biazin-no escuro",
+      name: "Carol Biazin - No escuro",
+      price: 125.90,
       quantity: parseInt(qtyElement.textContent),
-      image: "clairo.jfif"
+      image: "carol.jfif"
     };
 
     // Recupera o carrinho existente ou cria um novo
