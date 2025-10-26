@@ -1,0 +1,245 @@
+inicio css: /* ======= GERAL ======= */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f8f6; /* off white */
+  color: #1e2a38; /* azul marinho escuro */
+}
+
+/* CABEÇALHO */
+header {
+  background-color: #1e2a38;
+  color: #f8f8f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav a {
+  color: #f8f8f6;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #bcd0ff;
+}
+
+.cart-icon {
+  background-color: #bcd0ff;
+  color: #001f3f;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cart-icon:hover {
+  background-color: #8aa8e3;
+}
+
+/* BANNER */
+.banner {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #e3e8f0, #f8f8f6);
+}
+
+.banner h1 {
+  font-size: 36px;
+  color: #1e2a38;
+}
+
+.banner p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* SEÇÃO DE ÁLBUNS */
+.album-section {
+  padding: 50px 80px;
+}
+
+.album-section h2 {
+  color: #1e2a38;
+  margin-bottom: 25px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.album-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: #1e2a38;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.album-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.album-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.album-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.album-card p {
+  font-size: 15px;
+  color: #003366;
+  font-weight: 600;
+}
+
+/* RODAPÉ */
+footer {
+  background-color: #1e2a38;
+  text-align: center;
+  padding: 20px;
+  color: #f8f8f6;
+  font-size: 14px;
+}
+
+/* =============================== */
+/* RESPONSIVIDADE POR DISPOSITIVO */
+/* =============================== */
+
+/* DESKTOP (acima de 1024px) */
+@media (min-width: 1025px) {
+  body {
+    --device: desktop;
+  }
+
+  .banner h1 { font-size: 36px; }
+  .banner p { font-size: 18px; }
+  .album-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .album-section { padding: 50px 80px; }
+}
+
+/* TABLET (entre 768px e 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    --device: tablet;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  header nav a {
+    margin: 10px;
+  }
+
+  .banner h1 { font-size: 32px; }
+  .banner p { font-size: 17px; }
+
+  .album-section { padding: 40px 40px; }
+  .album-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+}
+
+/* CELULAR (até 767px) */
+@media (max-width: 767px) {
+  body {
+    --device: mobile;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 15px;
+  }
+
+  header .logo { font-size: 22px; }
+  header nav a { margin: 8px; }
+
+  .banner h1 { font-size: 28px; }
+  .banner p { font-size: 16px; }
+
+  .album-section { padding: 30px 20px; }
+  .album-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+
+  .album-card h3 { font-size: 14px; }
+  .album-card p { font-size: 13px; }
+}
+/* CATEGORIAS PRINCIPAIS */
+.categorias {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8f8f6, #eaeef4);
+}
+
+.categorias h2 {
+  font-size: 28px;
+  color: #1e2a38;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.categoria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  justify-content: center;
+}
+
+.categoria-card {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #1e2a38;
+}
+
+.categoria-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.categoria-card h3 {
+  margin: 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.categoria-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  background-color: #f0f3f8;
+}
