@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = {
       id: "faye Webster-i know i'm funny haha",
       name: "Faye Webster - i know i'm funny haha",
-      price: 119.90,
+      price: 229.90,
       quantity: parseInt(qtyElement.textContent),
       image: "faye.jfif"
     };
