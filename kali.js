@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 119.90; // preço unitário para Beatopia
+const price = 245.90; // preço unitário para Beatopia
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = {
       id: "kali uchis-red moon in venus",
       name: "Kali Uchis - Red Moon in Venus",
-      price: 109.90,
+      price: 245.90,
       quantity: parseInt(qtyElement.textContent),
       image: "kali.jfif"
     };
