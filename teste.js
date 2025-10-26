@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // === PRODUTO PADRÃO (para teste) ===
   // Depois você pode substituir por valores dinâmicos da loja
   const produto = {
-    nome: "Álbum Genérico",
+    nome: "Ariana Grande - Positions",
     formato: "CD + Pôster + Vinil",
     preco: 139.90,
     imagem: "ariana.jfif"
