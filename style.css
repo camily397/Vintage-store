@@ -159,3 +159,11 @@ button:hover {
 .msg.error {
   color: #c0392b;
 }
+/* Apenas a aba ativa deve aparecer */
+.pane {
+  display: none;
+}
+
+.pane.active {
+  display: block;
+}
