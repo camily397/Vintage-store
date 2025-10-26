@@ -4,27 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagamento - Vintage Store</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; margin:0; padding:0; }
-    .site-header { background:#003366; color:#fff; padding:20px; display:flex; align-items:center; }
-    .logo { font-weight:bold; font-size:1.5em; }
-    .tagline { margin-left:15px; font-size:0.9em; color:#ddd; }
-    .container { max-width:1200px; margin:30px auto; padding:0 20px; }
-    .checkout-grid { display:flex; gap:30px; flex-wrap:wrap; }
-    .left-side, .right-side { background:#fff; padding:20px; border-radius:10px; flex:1; min-width:300px; }
-    .product-image img { width:100%; border-radius:10px; }
-    .quantity { display:flex; align-items:center; margin-top:10px; }
-    .quantity button { width:40px; height:40px; font-size:18px; }
-    .quantity span { margin:0 10px; font-size:18px; }
-    .payment-buttons button { margin-right:10px; padding:10px 15px; cursor:pointer; }
-    .payment-buttons button.selected { background:#003366; color:#fff; }
-    .pay-form { margin-top:10px; }
-    .customer-info input { display:block; width:100%; margin-bottom:8px; padding:8px; }
-    .summary-section { margin-top:15px; }
-    .cards { display:flex; gap:15px; margin-top:20px; flex-wrap:wrap; }
-    .card { background:#fff; padding:15px; border-radius:10px; flex:1; min-width:200px; }
-    .btn-buy { margin-top:15px; padding:12px 20px; background:#003366; color:#fff; border:none; border-radius:8px; cursor:pointer; }
-  </style>
+  <link rel="stylesheet" href="franktes.css">
 </head>
 <body>
   <header class="site-header">
@@ -104,6 +84,7 @@
       </div>
     </div>
 
+    <!-- Cards informativos -->
     <div class="cards">
       <div class="card">
         <strong>Leia nossas páginas informativas!</strong>
@@ -124,62 +105,6 @@
     © 2025 Vintage Store — Todos os direitos reservados.
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // ELEMENTOS
-      const plusBtn = document.getElementById("plus");
-      const minusBtn = document.getElementById("minus");
-      const qtyElement = document.getElementById("qty");
-      const resQty = document.getElementById("resQty");
-      const resTotal = document.getElementById("resTotal");
-      const btnBuy = document.getElementById("finalizarCompra");
-
-      const productImg = document.getElementById("productImg");
-      const productName = document.getElementById("productName");
-      const productFormat = document.getElementById("productFormat");
-      const productPrice = document.getElementById("productPrice");
-      const resProduct = document.getElementById("resProduct");
-      const resFormat = document.getElementById("resFormat");
-
-      // PRODUTO GENÉRICO
-      const produto = {
-        nome: "Frank Ocean - blond",
-        formato: "CD + Pôster + Vinil",
-        preco: 129.99,
-        imagem: "frank.jfif"
-      };
-
-      productName.textContent = produto.nome;
-      productFormat.textContent = "Formato: " + produto.formato;
-      productPrice.textContent = produto.preco.toFixed(2).replace(".", ",");
-      productImg.src = produto.imagem;
-      resProduct.textContent = produto.nome;
-      resFormat.textContent = produto.formato;
-      resTotal.textContent = produto.preco.toFixed(2).replace(".", ",");
-
-      // QUANTIDADE
-      let quantidade = 1;
-      function atualizarResumo() {
-        resQty.textContent = quantidade;
-        resTotal.textContent = (produto.preco * quantidade).toFixed(2).replace(".", ",");
-        qtyElement.textContent = quantidade;
-      }
-
-      plusBtn.addEventListener("click", () => { quantidade++; atualizarResumo(); });
-      minusBtn.addEventListener("click", () => { if (quantidade>1) quantidade--; atualizarResumo(); });
-
-      // FORMAS DE PAGAMENTO
-      const paymentForms = {
-        pix: document.getElementById("formPix"),
-        cartao: document.getElementById("formCartao"),
-        boleto: document.getElementById("formBoleto")
-      };
-
-      function showForm(type) {
-        Object.values(paymentForms).forEach(f => f.style.display="none");
-        paymentForms[type].style.display="block";
-      }
-
-      document.getElementById("btnPix").addEventListener("click", ()=>showForm("pix"));
-      document.getElementById("btnCartao").addEventListener("click", ()=>showForm("cartao"));
-      document.getElementById("btnBoleto").addEventListener("click", ()=>
+  <script src="teste.js"></script>
+</body>
+</html>
