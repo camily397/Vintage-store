@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Clairo - Sling",
     formato: "CD + Pôster + Vinil",
-    preco: 120.90,
+    preco: 260.90,
     imagem: "clairo.jfif"
   };
 
