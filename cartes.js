@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Carol Biazin - No Escuro",
     formato: "Disco Vinl + Encarte + Capa",
-    preco: 45.90,
+    preco: 125.90,
     imagem: "carol.jfif"
   };
 
