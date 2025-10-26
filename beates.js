@@ -1,4 +1,4 @@
-ocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   // === ELEMENTOS ===
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
