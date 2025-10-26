@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = {
       id: "radiohead-in rainbows",
       name: "Radiohead - In Rainbows",
-      price: 140.90,
+      price: 299.90,
       quantity: parseInt(qtyElement.textContent),
       image: "radiohead.jfif"
     };
