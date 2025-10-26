@@ -29,7 +29,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #D4A0A7; /* tom suave de rosa terroso (em referência à paleta do álbum) */
+  background: #9d0015; /* tom suave de rosa terroso (em referência à paleta do álbum) */
   padding: 20px;
   border-radius: 10px;
   display: flex;
