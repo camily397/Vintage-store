@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nome: "Yves - looop",
     formato: "CD + Pôster + Vinil",
     preco: 99.90,
-    imagem: "yves.jfif"
+    imagem: "loop.jfif"
   };
 
   productName.textContent = produto.nome;
