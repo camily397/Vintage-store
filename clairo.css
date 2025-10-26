@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #dfd1bc; /* off-white muito suave para contraste quente */
+  background: #eae6d2; /* off-white muito suave para contraste quente */
   color: #473410; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #E6D4B9; /* marrom claro / nude quente */
+  background: #948369; /* marrom claro / nude quente */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #8E5A3A; /* marrom suave */
+  background: #8d5d3fec; /* marrom suave */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
