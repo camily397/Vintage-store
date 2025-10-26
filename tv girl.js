@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 135.90; // preço unitário para Beatopia
+const price = 235.90; // preço unitário para Beatopia
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = {
       id: "tv girl-who really cares",
       name: "Tv Girl - Who Really Cares",
-      price: 135.90,
+      price: 235.90,
       quantity: parseInt(qtyElement.textContent),
       image: "tv girl.jfif"
     };
