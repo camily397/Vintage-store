@@ -1,64 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vintage Store</title>
+  <meta charset="utf-8" />
+  <title>Vintage Store — Login e Cadastro</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <div class="logo">Vintage Store</div>
-    <nav>
-      <a href="albuns.html">Álbuns</a>
-      <a href="cds.html">CDs</a>
-      <a href="discos.html">Discos</a>
-      <a href="login.html">Minha Conta</a>
-       <a href="atendimento.html">Atendimento</a>
-      <a href="carrinho.html" class="cart-icon">🛒 Carrinho</a>
-    </nav>
-  </header>
+  <header>Vintage Store</header>
 
-  <section class="banner">
-    <h1>Bem-vindo à Vintage Store</h1>
-    <p>Os melhores CDs, Vinis e Álbuns clássicos estão aqui 🎵</p>
-  </section>
+  <div class="main-area">
+    <div class="pet-area">
+      <img src="pet.png" alt="Mascote Vintage" id="petImg">
+      <div id="speechBubble" class="speech hidden">Olá! Faça login ou cadastre-se 💫</div>
+    </div>
 
-  <main>
-    <!-- Primeira seção de álbuns -->
-    <section class="album-section">
-      <h2>Álbuns em destaque</h2>
-      <div class="album-grid">
-        <a href="mit.html" class="album-card">
-          <img src="mit.jfif" alt="Mitski">
-          <h3>Mitski - Lush</h3>
-          <p>R$ 139,90</p>
-        </a>
-        <a href="ariana.html" class="album-card">
-          <img src="ariana.jfif" alt="Ariana Grande">
-          <h3>Ariana Grande - Positions</h3>
-          <p>R$ 139,90</p>
-        </a>
-        <a href="frank.html" class="album-card">
-          <img src="frank.jfif" alt="Frank Ocean">
-          <h3>Frank Ocean - Blond</h3>
-          <p>R$ 129,90</p>
-        </a>
-        <a href="bea.html" class="album-card">
-          <img src="bea.jfif" alt="Beabadoobee">
-          <h3>Beabadoobee - Beatopia</h3>
-          <p>R$ 119,90</p>
-        </a>
-        <a href="anavitoria.html" class="album-card">
-          <img src="anavi.jfif" alt="Anavitótia">
-          <h3>Anavitória - Esquinas</h3>
-          <p>R$ 109,90</p>
-        </a>
+    <div class="container auth">
+      <div class="tabs">
+        <div class="tab active" data-tab="login-pane">Login</div>
+        <div class="tab" data-tab="register-pane">Cadastro</div>
       </div>
-    </section>
-   </main>
-  <footer>
-    <p>© 2025 Vintage Store | Todos os direitos reservados.</p>
-  </footer>
+
+      <div id="authMsg" class="msg"></div>
+
+      <!-- LOGIN -->
+      <div class="pane active" id="login-pane">
+        <form id="loginForm">
+          <div class="field">
+            <label for="loginUser">E-mail ou usuário</label>
+            <input type="text" id="loginUser" placeholder="Digite seu e-mail ou usuário" required>
+          </div>
+          <div class="field">
+            <label for="loginPass">Senha</label>
+            <input type="password" id="loginPass" placeholder="Digite sua senha" required>
+          </div>
+          <button type="submit">Entrar</button>
+          <div class="divider">ou</div>
+          <button type="button" class="google-btn" id="googleLoginBtn">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="20">
+            Entrar com Google
+          </button>
+        </form>
+      </div>
+
+      <!-- CADASTRO -->
+      <div class="pane" id="register-pane">
+        <form id="registerForm">
+          <div class="field">
+            <label for="regNome">Nome completo</label>
+            <input type="text" id="regNome" required>
+          </div>
+          <div class="field">
+            <label for="regNascimento">Data de nascimento</label>
+            <input type="date" id="regNascimento">
+          </div>
+          <div class="field">
+            <label for="regEmail">E-mail</label>
+            <input type="email" id="regEmail" required>
+          </div>
+          <div class="field">
+            <label for="regTelefone">Telefone</label>
+            <input type="tel" id="regTelefone" placeholder="(xx) xxxxx-xxxx">
+          </div>
+          <div class="field">
+            <label for="regUsuario">Usuário</label>
+            <input type="text" id="regUsuario" required>
+          </div>
+          <div class="field">
+            <label for="regSenha">Senha</label>
+            <input type="password" id="regSenha" required>
+          </div>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="login.js"></script>
 </body>
 </html>
