@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Tv Girl - Who Really Cares",
     formato: "CD + Pôster + Vinil",
-    preco: 135.90,
+    preco: 235.90,
     imagem: "tv girl.jfif"
   };
 
