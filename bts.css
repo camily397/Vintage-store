@@ -103,7 +103,7 @@ header {
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #D5A6BD; /* lilás suave */
+  background: #ccd0ff; /* lilás suave */
   padding: 20px;
   border-radius: 10px;
   color: #F9F6F0; /* off-white */
@@ -112,7 +112,7 @@ header {
 .payment h3 {
   margin-bottom: 15px;
   font-size: 18px;
-  color: #F9F6F0;
+  color: #00014e;
 }
 
 .payment-options {
@@ -174,7 +174,7 @@ header {
   padding: 15px;
   border: none;
   border-radius: 8px;
-  background: #D5A6BD; /* lilás suave */
+  background: #ffd2f9; /* lilás suave */
   color: #F9F6F0; /* off-white */
   font-size: 18px;
   cursor: pointer;
