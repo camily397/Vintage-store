@@ -59,7 +59,11 @@ async function upsertProfile(userId, profileData) {
 
   return error;
 }
-
+// Verifica se já está logado
+const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+if (usuario) {
+    window.location.href = 'minhaconta.html';
+}
 /* ===== Login com Google (OAuth) ===== */
 googleLoginBtn?.addEventListener("click", async () => {
   clearMsg();
