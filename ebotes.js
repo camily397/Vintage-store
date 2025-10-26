@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Ebony - Terapia",
     formato: "CD + Pôster + Vinil",
-    preco: 125.90,
+    preco: 225.90,
     imagem: "ebony.jfif"
   };
 
