@@ -30,7 +30,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #769d7f;
+  background: #edf1e8;
   padding: 20px;
   border-radius: 10px;
   display: flex;
@@ -82,7 +82,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #e3dcd3;
+  background: #6ba08a;
   color: #2E2C29;
   padding: 30px;
   border-radius: 10px;
@@ -93,20 +93,20 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
-  color: #3B5D4F;
+  color: #6ba08a;
 }
 
 .price {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
-  color: #5C4B37;
+  color: #ffffff;
 }
 
 /* ======= ÁREA DE PAGAMENTO ======= */
 .payment {
   flex: 1;
-  background: #5d7e70;
+  background: #3b4d45;
   padding: 20px;
   border-radius: 10px;
   color: #ffffff;
@@ -160,7 +160,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #3B5D4F;
+  background: #336d55;
   color: #FFFFFF;
   cursor: pointer;
   transition: 0.3s;
