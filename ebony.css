@@ -80,7 +80,7 @@ header {
 /* ======= ÁREA DAS INFORMAÇÕES ======= */
 .album-info {
   flex: 1;
-  background: #FFF1D9; /* bege claro suave (evoca a suavidade e aconchego da terapia) */
+  background: #efe7da; /* bege claro suave (evoca a suavidade e aconchego da terapia) */
   color: #4A4A4A; /* texto cinza */
   padding: 30px;
   border-radius: 10px;
