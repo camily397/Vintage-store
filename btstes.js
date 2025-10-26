@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "BTS - Love Yourself",
     formato: "CD + Pôster + Vinil",
-    preco: 129.90,
+    preco: 250.90,
     imagem: "bts.jfif"
   };
 
