@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 119.90; // preço unitário para Beatopia
+const price = 250.90; // preço unitário para Beatopia
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = {
       id: "bts-love yourself",
       name: "BTS - Love Yourself",
-      price: 129.90,
+      price: 250.90,
       quantity: parseInt(qtyElement.textContent),
       image: "bts.jfif"
     };
