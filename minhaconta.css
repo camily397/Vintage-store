@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #0a0f2c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  font-size: 18px;
+}
+
+.voltar {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #0a0f2c;
+  text-align: center;
+}
+
+.perfil {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.foto-perfil {
+  flex: 1;
+  text-align: center;
+}
+
+.foto-perfil img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #0a0f2c;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.foto-perfil input {
+  display: block;
+  margin: 0 auto;
+}
+
+.info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#salvar {
+  background-color: #0a0f2c;
+  color: white;
+}
+
+#salvar:hover {
+  background-color: #101848;
+}
+
+#sair {
+  background-color: #ccc;
+}
+
+#sair:hover {
+  background-color: #999;
+}
+
+footer {
+  background-color: #0a0f2c;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: 40px;
+}
