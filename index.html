@@ -2,23 +2,25 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <title>Vintage Store — Login e Cadastro</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Vintage Store — Login / Cadastro</title>
+  <link rel="stylesheet" href="atyle.css">
 </head>
 
 <body>
   <header>Vintage Store</header>
 
   <div class="main-area">
+    <!-- Pet -->
     <div class="pet-area">
-      <img src="pet.png" alt="Mascote Vintage" id="petImg">
-      <div id="speechBubble" class="speech hidden">Olá! Faça login ou cadastre-se 💫</div>
+      <img src="pet.png" alt="Mascote Vintage Store" id="petImg">
+      <div id="speechBubble" class="speech hidden">Olá! Vamos começar? 🐾</div>
     </div>
 
+    <!-- Formulário -->
     <div class="container auth">
       <div class="tabs">
         <div class="tab active" data-tab="login-pane">Login</div>
-        <div class="tab" data-tab="register-pane">Cadastro</div>
+        <div class="tab" data-tab="register-pane">Cadastrar</div>
       </div>
 
       <div id="authMsg" class="msg"></div>
@@ -27,19 +29,14 @@
       <div class="pane active" id="login-pane">
         <form id="loginForm">
           <div class="field">
-            <label for="loginUser">E-mail ou usuário</label>
-            <input type="text" id="loginUser" placeholder="Digite seu e-mail ou usuário" required>
+            <label for="loginEmail">E-mail</label>
+            <input type="email" id="loginEmail" placeholder="Digite seu e-mail" required>
           </div>
           <div class="field">
             <label for="loginPass">Senha</label>
             <input type="password" id="loginPass" placeholder="Digite sua senha" required>
           </div>
           <button type="submit">Entrar</button>
-          <div class="divider">ou</div>
-          <button type="button" class="google-btn" id="googleLoginBtn">
-            <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="20">
-            Entrar com Google
-          </button>
         </form>
       </div>
 
@@ -47,30 +44,18 @@
       <div class="pane" id="register-pane">
         <form id="registerForm">
           <div class="field">
-            <label for="regNome">Nome completo</label>
-            <input type="text" id="regNome" required>
-          </div>
-          <div class="field">
-            <label for="regNascimento">Data de nascimento</label>
-            <input type="date" id="regNascimento">
-          </div>
-          <div class="field">
             <label for="regEmail">E-mail</label>
-            <input type="email" id="regEmail" required>
-          </div>
-          <div class="field">
-            <label for="regTelefone">Telefone</label>
-            <input type="tel" id="regTelefone" placeholder="(xx) xxxxx-xxxx">
-          </div>
-          <div class="field">
-            <label for="regUsuario">Usuário</label>
-            <input type="text" id="regUsuario" required>
+            <input type="email" id="regEmail" placeholder="Digite seu e-mail" required>
           </div>
           <div class="field">
             <label for="regSenha">Senha</label>
-            <input type="password" id="regSenha" required>
+            <input type="password" id="regSenha" placeholder="Crie uma senha" required>
           </div>
-          <button type="submit">Cadastrar</button>
+          <div class="field">
+            <label for="regUsuario">Nome de usuário</label>
+            <input type="text" id="regUsuario" placeholder="Escolha um nome de usuário" required>
+          </div>
+          <button type="submit">Cadastrar-se</button>
         </form>
       </div>
     </div>
