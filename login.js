@@ -1,7 +1,7 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 /* ====== CONFIG SUPABASE - TROQUE AQUI ====== */
-const SUPABASE_URL = "https://awuhwgmueyaxerfqtbdh.supabase.co"; // troque
+const SUPABASE_URL = "https://awuhwgmueyaxerfqtbdh.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dWh3Z211ZXlheGVyZnF0YmRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNTM0ODYsImV4cCI6MjA3NjYyOTQ4Nn0.nNFyl87x8rPSKnXAbObj88LOCYYJWCTdUv8Wpu33VYk";
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 /* ========================================== */
@@ -59,18 +59,18 @@ async function upsertProfile(userId, profileData) {
 
   return error;
 }
-// Verifica se já está logado
-const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
-if (usuario) {
-    window.location.href = 'minhaconta.html';
+
+/* ===== Verifica se já está logado ===== */
+const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+if (usuarioLogado) {
+    window.location.href = 'minhaConta.html';
 }
+
 /* ===== Login com Google (OAuth) ===== */
 googleLoginBtn?.addEventListener("click", async () => {
   clearMsg();
   try {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-    });
+    const { error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
     if (error) showMsg("Erro ao iniciar login com Google: " + error.message, "error");
     else showMsg("Redirecionando para o Google...", "success");
   } catch (err) {
@@ -99,14 +99,7 @@ registerForm?.addEventListener('submit', async (e) => {
     const { data, error } = await supabase.auth.signUp({
       email,
       password: senha,
-      options: {
-        data: {
-          full_name: nome,
-          dob: dataNascimento,
-          phone: telefone,
-          username: usuario
-        }
-      }
+      options: { data: { full_name: nome, dob: dataNascimento, phone: telefone, username: usuario } }
     });
 
     if (error) {
@@ -123,12 +116,15 @@ registerForm?.addEventListener('submit', async (e) => {
         username: usuario
       });
       if (profileErr) console.warn("Erro ao criar profile:", profileErr);
+
+      // Guarda o usuário logado
+      localStorage.setItem('usuarioLogado', JSON.stringify(user));
+
+      // Pop-up de boas-vindas
+      showWelcomeModal(nome);
     }
 
-    showMsg("Conta criada! Verifique seu e-mail (se necessário).", "success");
     registerForm.reset();
-    document.querySelector('.tab[data-tab="login-pane"]').click();
-
   } catch (err) {
     console.error(err);
     showMsg("Erro inesperado ao cadastrar.", "error");
@@ -148,10 +144,7 @@ loginForm?.addEventListener('submit', async (e) => {
   }
 
   try {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: userOrEmail,
-      password: pass
-    });
+    const { data, error } = await supabase.auth.signInWithPassword({ email: userOrEmail, password: pass });
 
     if (error) {
       console.error("signIn error:", error);
@@ -170,12 +163,38 @@ loginForm?.addEventListener('submit', async (e) => {
         username: user.user_metadata?.username || null
       });
       if (profileErr) console.warn("Erro ao upsert profile depois do login:", profileErr);
+
+      // Guarda o usuário logado
+      localStorage.setItem('usuarioLogado', JSON.stringify(user));
+
+      // Redireciona direto para minhaConta.html
+      window.location.href = 'minhaConta.html';
     }
   } catch (err) {
     console.error(err);
     showMsg("Erro inesperado no login.", "error");
   }
 });
+
+/* ===== Pop-up de boas-vindas ===== */
+function showWelcomeModal(nome) {
+  const modal = document.createElement('div');
+  modal.innerHTML = `
+    <div style="position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center;">
+      <div style="background:white; padding:30px; border-radius:15px; text-align:center; max-width:300px;">
+        <h2>Bem-vinda, ${nome}!</h2>
+        <p>Cadastro realizado com sucesso 💖</p>
+        <button id="closeModal">Fechar</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  document.getElementById('closeModal').onclick = () => {
+    modal.remove();
+    window.location.href = 'minhaConta.html';
+  };
+}
 
 /* ===== Auth State ===== */
 supabase.auth.onAuthStateChange(async (_event, session) => {
@@ -229,38 +248,8 @@ logoutBtn?.addEventListener('click', async () => {
     setTimeout(() => {
       location.reload();
     }, 800);
-
   } catch (err) {
     console.error(err);
     showMsg("Erro ao sair.", "error");
   }
-});// Após cadastro bem-sucedido
-showWelcomeModal(data.nome);
-
-function showWelcomeModal(nome) {
-    const modal = document.createElement('div');
-    modal.innerHTML = `
-        <div style="
-            position: fixed;
-            top:0; left:0; width:100%; height:100%;
-            background: rgba(0,0,0,0.5);
-            display:flex; justify-content:center; align-items:center;
-        ">
-            <div style="
-                background:white;
-                padding: 30px;
-                border-radius: 15px;
-                text-align:center;
-                max-width: 300px;
-            ">
-                <h2>Bem-vinda, ${nome}!</h2>
-                <p>Login realizado com sucesso 💖</p>
-                <button id="closeModal">Fechar</button>
-            </div>
-        </div>
-    `;
-    // Guarda o usuário logado
-localStorage.setItem('usuarioLogado', JSON.stringify(data));
-
-// Redireciona para minhaConta.html ou mostra pop-up de boas-vindas
-window.location.href = 'minhaconta.html';
+});
