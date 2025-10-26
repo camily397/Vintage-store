@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // === PRODUTO PADRÃO (para teste) ===
   // Depois você pode substituir por valores dinâmicos da loja
   const produto = {
-    nome: "Álbum Genérico",
+    nome: "Frank Ocean - Blond",
     formato: "CD + Pôster + Vinil",
-    preco: 139.90,
-    imagem: "ariana.jfif"
+    preco: 129.90,
+    imagem: "frank.jfif"
   };
 
   productName.textContent = produto.nome;
