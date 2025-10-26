@@ -30,7 +30,7 @@ header {
 /* ======= ÁREA DAS IMAGENS ======= */
 .album-images {
   flex: 1;
-  background: #edf1e8;
+  background: #d0e6ca;
   padding: 20px;
   border-radius: 10px;
   display: flex;
