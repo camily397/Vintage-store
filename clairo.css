@@ -126,7 +126,7 @@ header {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background: #946e58; /* marrom suave */
+  background: #795a48; /* marrom suave */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   font-weight: bold;
@@ -157,7 +157,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #eae6d2; /* marrom suave */
+  background: #725545; /* marrom suave */
   color: #F9F6F0; /* off-white */
   cursor: pointer;
   transition: 0.3s;
