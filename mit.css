@@ -110,7 +110,7 @@ header {
   background: #05550d; /* branco */
   padding: 20px;
   border-radius: 10px;
-  color: #1E1E1E; /* preto */
+  color: #ffffff; /* preto */
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
@@ -163,7 +163,7 @@ header {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background: #1C2833; /* azul marinho */
+  background: #ffffff; /* azul marinho */
   color: #FFFFFF; /* branco */
   cursor: pointer;
   transition: 0.3s;
