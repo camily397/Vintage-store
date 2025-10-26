@@ -15,7 +15,7 @@ const qtyDisplay = document.getElementById("qty");
 const totalDisplay = document.getElementById("total");
 
 let quantity = 1;
-const price = 119.90; // preço unitário para Beatopia
+const price = 135.90; // preço unitário para Beatopia
 
 function updateTotal() {
   totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
