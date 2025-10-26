@@ -1,8 +1,73 @@
+/* ======= Seleção de forma de pagamento ======= */
+const buttons = document.querySelectorAll(".payment-options button");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+  });
+});
+
+/* ======= Controle de quantidade ======= */
+const minusBtn = document.getElementById("minus");
+const plusBtn = document.getElementById("plus");
+const qtyDisplay = document.getElementById("qty");
+const totalDisplay = document.getElementById("total");
+
+let quantity = 1;
+const price = 119.90; // preço unitário (exemplo: Beatopia)
+
+function updateTotal() {
+  totalDisplay.textContent = (price * quantity).toFixed(2).replace(".", ",");
+}
+
+minusBtn.addEventListener("click", () => {
+  if (quantity > 1) {
+    quantity--;
+    qtyDisplay.textContent = quantity;
+    updateTotal();
+  }
+});
+
+plusBtn.addEventListener("click", () => {
+  if (quantity < 5) {
+    quantity++;
+    qtyDisplay.textContent = quantity;
+    updateTotal();
+  }
+});
+
+/* ======= Troca da imagem principal ======= */
+const thumbs = document.querySelectorAll(".thumb");
+const mainImg = document.getElementById("mainImg");
+
+thumbs.forEach(thumb => {
+  thumb.addEventListener("click", () => {
+    mainImg.src = thumb.src;
+    thumbs.forEach(t => t.classList.remove("active"));
+    thumb.classList.add("active");
+  });
+});
+
+/* ======= Adicionar ao carrinho ======= */
+const cartBtn = document.getElementById("addToCart");
+
+cartBtn.addEventListener("click", () => {
+  cartBtn.textContent = "✔️ Adicionado!";
+  cartBtn.classList.add("added");
+
+  setTimeout(() => {
+    cartBtn.textContent = "🛒 Adicionar ao carrinho";
+    cartBtn.classList.remove("added");
+  }, 2000);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const addToCartBtn = document.getElementById("addToCart");
   const qtyElement = document.getElementById("qty");
   const plusBtn = document.getElementById("plus");
   const minusBtn = document.getElementById("minus");
+  const buyNowBtn = document.getElementById("buyNow"); // <— botão “Comprar”
 
   // Atualiza quantidade
   plusBtn.addEventListener("click", () => {
@@ -17,11 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "ariana-grande-positions",
+      id: "ariana grande-positions",
       name: "Ariana Grande - Positions",
-      price: 139.9,
+      price: 139.90,
       quantity: parseInt(qtyElement.textContent),
-      image: "ariana.jfif"
+      image: "ariana.jfif",
+      formato: "CD + Pôster + Vinil"
     };
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -51,4 +117,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => alertBox.remove(), 2000);
   });
+
+  // ======= NOVO: Salvar informações e ir para página de pagamento =======
+  if (buyNowBtn) {
+    buyNowBtn.addEventListener("click", () => {
+      const product = {
+        id: "bts-love-yourself",
+        name: "BTS - Love Yourself",
+        price: 129.90,
+        quantity: parseInt(qtyElement.textContent),
+        image: "bts.jfif",
+        formato: "CD + Pôster + Vinil"
+      };
+
+      localStorage.setItem("produtoSelecionado", JSON.stringify(product));
+      window.location.href = "teste.html"; // redireciona para a página de pagamento
+    });
+  }
 });
