@@ -93,7 +93,11 @@ header {
 
 .album-info h2 {
   margin-bottom: 15px;
+<<<<<<< HEAD
+  color: #604711; /* verde oliva */
+=======
   color: #3B5D4F;
+>>>>>>> 498afccf07d18c03309c70822a7b2b116f0cf313
 }
 
 .price {
@@ -142,7 +146,11 @@ header {
 }
 
 .payment-options button.selected {
-  background: #fdfffe;
+<<<<<<< HEAD
+  background: #745c06; /* verde oliva */
+=======
+  background: #745c06;
+>>>>>>> 498afccf07d18c03309c70822a7b2b116f0cf313
   color: #FFFFFF;
 }
 
