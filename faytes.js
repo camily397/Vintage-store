@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Faye Webster - i know i'm funny haha",
     formato: "CD + Pôster + Vinil",
-    preco: 119.90,
+    preco: 229.90,
     imagem: "faye.jfif"
   };
 
