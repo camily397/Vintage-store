@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const produto = {
     nome: "Yves - loop",
     formato: "CD + Pôster + Vinil",
-    preco: 99.90,
+    preco: 225.90,
     imagem: "loop.jfif"
   };
 
