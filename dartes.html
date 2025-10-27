@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - Vintage Store</title>
+  <link rel="stylesheet" href="dartes.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-left">
+      <div class="logo">Vintage Store</div>
+      <div class="tagline">Música com história, estilo e nostalgia</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="checkout-grid">
+      <!-- LADO ESQUERDO -->
+      <div class="left-side">
+        <div class="product-image">
+          <img id="productImg" src="" alt="Produto">
+        </div>
+        <div class="product-info">
+          <h2 id="productName"></h2>
+          <p id="productFormat"></p>
+          <p class="price">Preço unitário: R$ <span id="productPrice"></span></p>
+          <div class="quantity">
+            <button id="minus">-</button>
+            <span id="qty">1</span>
+            <button id="plus">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LADO DIREITO -->
+      <div class="right-side">
+        <div class="payment-methods">
+          <h3>Forma de Pagamento</h3>
+          <div class="payment-buttons">
+            <button id="btnPix">PIX</button>
+            <button id="btnCartao">Cartão</button>
+            <button id="btnBoleto">Boleto</button>
+          </div>
+
+          <div class="payment-forms">
+            <div id="formPix" class="pay-form" style="display:none;">
+              <p>Chave PIX: 123.456.789-00</p>
+            </div>
+            <div id="formCartao" class="pay-form" style="display:none;">
+              <input type="text" placeholder="Número do cartão">
+              <input type="text" placeholder="Nome no cartão">
+              <input type="text" placeholder="Validade (MM/AA)">
+              <input type="text" placeholder="CVV">
+            </div>
+            <div id="formBoleto" class="pay-form" style="display:none;">
+              <p>Seu boleto será gerado após finalizar a compra.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="customer-section">
+          <h3>Informações do Cliente</h3>
+          <div class="customer-info">
+            <input type="text" id="nome" placeholder="Nome completo">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <input type="text" id="cep" placeholder="CEP">
+            <input type="text" id="cidade" placeholder="Cidade">
+            <input type="text" id="estado" placeholder="Estado">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="email" id="email" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="summary-section">
+          <h3>Resumo da Compra</h3>
+          <p>Produto: <span id="resProduct"></span></p>
+          <p>Formato: <span id="resFormat"></span></p>
+          <p>Quantidade: <span id="resQty">1</span></p>
+          <p>Subtotal: R$ <span id="resTotal"></span></p>
+        </div>
+
+        <button class="btn-buy" id="finalizarCompra">Finalizar Compra</button>
+      </div>
+    </div>
+
+    <!-- Cards informativos -->
+    <div class="cards">
+      <div class="card">
+        <strong>Leia nossas páginas informativas!</strong>
+        <p>Recomendamos a leitura das páginas 'Termos de Uso/Condições' e 'Acompanhar Pedido'.</p>
+      </div>
+      <div class="card">
+        <strong>Acompanhe seu rastreio!</strong>
+        <p>Encaminharemos o rastreio entre 7-15 dias úteis após o pedido ser 'Embalado'.</p>
+      </div>
+      <div class="card">
+        <strong>Atenção ao preencher o endereço</strong>
+        <p>Informar endereço errado ou não retirar a encomenda pode acarretar extravio ou devolução.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    © 2025 Vintage Store — Todos os direitos reservados.
+  </footer>
+
+  <script src="dartes.js"></script>
+</body>
+</html>
+
+<a href="darkcd.html" class="voltar">← Voltar</a>
+</body>
+</html>
