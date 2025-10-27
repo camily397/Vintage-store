@@ -17,6 +17,9 @@ header {
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 header nav a {
@@ -41,6 +44,8 @@ header nav a:hover {
   text-align: center;
   width: 100%;
   padding: 20px;
+  margin-top: 60px; /* espaço para cabeçalho fixo */
+  flex-grow: 1;
 }
 
 /* NUVEM */
@@ -49,8 +54,14 @@ header nav a:hover {
   height: 150px;
   background: #fff;
   border-radius: 100px / 50px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  animation: cloud-float 4s ease-in-out infinite;
+}
+
+@keyframes cloud-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 /* PET ANIMADO */
@@ -71,7 +82,7 @@ header nav a:hover {
 /* NOME DO SITE */
 .site-name {
   font-family: "Merriweather", serif;
-  font-size: 36px;
+  font-size: 42px;
   color: #1e2a38;
   margin-bottom: 30px;
 }
@@ -82,21 +93,21 @@ header nav a:hover {
   color: #001f3f;
   font-weight: 600;
   font-size: 18px;
-  padding: 15px 35px;
+  padding: 15px 40px;
   border-radius: 30px;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s ease;
   text-decoration: none;
 }
 
 .cta-button:hover {
   background-color: #8aa8e3;
   border-color: #bcd0ff;
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
-/* RODAPÉ FIXO NA PARTE INFERIOR */
+/* RODAPÉ */
 footer {
   background-color: #1e2a38;
   color: #f8f8f6;
@@ -104,13 +115,14 @@ footer {
   padding: 20px;
   font-size: 14px;
   width: 100%;
+  margin-top: auto;
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .cloud { width: 220px; height: 110px; margin-bottom: 40px; }
   .pet-container img { width: 90px; }
-  .site-name { font-size: 28px; }
+  .site-name { font-size: 32px; }
   .cta-button { font-size: 16px; padding: 12px 25px; }
   header { padding: 15px 20px; }
 }
