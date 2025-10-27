@@ -56,53 +56,44 @@
   </div>
 </div>
 
-<script>
-  // Inicializar Supabase (não afeta o supabase principal)
-  const SUPABASE_URL = "https://awuhwgmueyaxerfqtbdh.supabase.co";
-  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3dWh3Z211ZXlheGVyZnR..." // sua key completa
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      <script type="module">
+  import { supabase } from './supabase.js'; // caminho para seu supabase.js
 
-  window.onload = () => {
-    const forgotBtn = document.getElementById('forgotPassword');
-    const resetModal = document.getElementById('resetModal');
-    const modalContent = document.getElementById('modalContent');
-    const closeModal = document.getElementById('closeModal');
-    const sendReset = document.getElementById('sendReset');
+  const forgotBtn = document.getElementById('forgotPassword');
+  const resetModal = document.getElementById('resetModal');
+  const closeModal = document.getElementById('closeModal');
+  const sendReset = document.getElementById('sendReset');
 
-    // Abrir modal
-    forgotBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      resetModal.style.display = 'flex';
-    });
+  forgotBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetModal.style.display = 'flex';
+  });
 
-    // Fechar modal ao clicar no botão Cancelar
-    closeModal.addEventListener('click', () => {
+  closeModal.addEventListener('click', () => {
+    resetModal.style.display = 'none';
+  });
+
+  resetModal.addEventListener('click', (e) => {
+    if (e.target === resetModal) resetModal.style.display = 'none';
+  });
+
+  sendReset.addEventListener('click', async () => {
+    const email = document.getElementById('resetEmail').value;
+    if (!email) {
+      alert('Digite seu e-mail.');
+      return;
+    }
+
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email);
+    if (error) {
+      alert('Erro ao enviar e-mail: ' + error.message);
+    } else {
+      alert('E-mail de recuperação enviado! Verifique sua caixa de entrada.');
       resetModal.style.display = 'none';
-    });
-
-    // Fechar modal ao clicar fora da caixa
-    resetModal.addEventListener('click', (e) => {
-      if (e.target === resetModal) resetModal.style.display = 'none';
-    });
-
-    // Enviar e-mail de redefinição
-    sendReset.addEventListener('click', async () => {
-      const email = document.getElementById('resetEmail').value;
-      if (!email) {
-        alert('Digite seu e-mail.');
-        return;
-      }
-
-      const { data, error } = await supabase.auth.resetPasswordForEmail(email);
-      if (error) {
-        alert('Erro ao enviar e-mail: ' + error.message);
-      } else {
-        alert('E-mail de recuperação enviado! Verifique sua caixa de entrada.');
-        resetModal.style.display = 'none';
-      }
-    });
-  };
+    }
+  });
 </script>
+
       <!-- CADASTRO -->
       <div class="pane" id="register-pane">
         <form id="registerForm">
