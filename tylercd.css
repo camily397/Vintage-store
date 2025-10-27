@@ -211,8 +211,8 @@ header {
 
 /* ======= BOTÃO CARRINHO ======= */
 .cart-btn {
-  background-color: #000000; /* preto */
-  color: #FFFFFF;
+  background-color: #1C2833; /* azul marinho */
+  color: #FFFFFF; /* branco */
   border: none;
   padding: 10px 18px;
   border-radius: 25px;
@@ -222,7 +222,7 @@ header {
 }
 
 .cart-btn:hover {
-  background-color: #333333; /* cinza escuro */
+  background-color: #273849; /* azul escuro */
   transform: scale(1.05);
 }
 
@@ -230,7 +230,6 @@ header {
 .cart-btn.added {
   background-color: #2ecc71; /* verde */
   color: #fff;
-}
 
 /* ======= RESPONSIVIDADE ======= */
 @media (max-width: 768px) {
