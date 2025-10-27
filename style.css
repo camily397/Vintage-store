@@ -7,49 +7,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-/* CABEÇALHO */
-header {
-  background-color: #1e2a38;
-  color: #f8f8f6;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-header .logo {
-  font-family: "Merriweather", serif;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-header nav a {
-  color: #f8f8f6;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-header nav a:hover {
-  color: #bcd0ff;
-  transform: scale(1.05);
-}
-
-/* LANDING */
-.landing {
-  flex: 1;
+/* SPLASH SCREEN */
+.splash-screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 50px 20px;
   position: relative;
+  width: 100%;
+  padding: 50px 20px;
 }
 
 .cloud {
@@ -57,15 +28,14 @@ header nav a:hover {
   height: 150px;
   background: #fff;
   border-radius: 100px / 50px;
-  position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 80px; /* empurra a nuvem para baixo */
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* Animação sutil da nuvem/pet */
 .pet-container {
-  position: absolute;
-  top: -80px;
+  position: relative;
+  top: 50px; /* move para baixo da nuvem */
   animation: float 3s ease-in-out infinite;
 }
 
@@ -82,7 +52,7 @@ header nav a:hover {
   font-family: "Merriweather", serif;
   font-size: 36px;
   color: #1e2a38;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -112,11 +82,14 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .cloud { width: 220px; height: 110px; }
+  .cloud { width: 220px; height: 110px; margin-bottom: 50px; }
   .pet-container img { width: 90px; }
   .site-name { font-size: 28px; }
   .cta-button { font-size: 16px; padding: 12px 25px; }
