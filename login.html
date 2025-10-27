@@ -43,6 +43,19 @@
           <button type="submit">Entrar</button>
         </form>
       </div>
+      <!-- Modal de recuperação de senha -->
+<div id="resetModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center;">
+  <div style="background:white; padding:20px; border-radius:8px; max-width:400px; width:90%; text-align:center;">
+    <h3>Redefinir senha</h3>
+    <p>Digite seu e-mail para receber o link de redefinição:</p>
+    <input type="email" id="resetEmail" placeholder="Seu e-mail" style="width:80%; padding:8px; margin:10px 0;">
+    <div style="margin-top:10px;">
+      <button id="sendReset" style="margin-right:10px;">Enviar</button>
+      <button id="closeModal">Cancelar</button>
+    </div>
+  </div>
+</div>
 
       <!-- CADASTRO -->
       <div class="pane" id="register-pane">
