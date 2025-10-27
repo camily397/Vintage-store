@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Depois você pode substituir por valores dinâmicos da loja
   const produto = {
     nome: "Brent Faiyaz - Westeland",
-    formato: "Disco Vinl + Encarte + Capa",
+    formato: "CD + capa",
     preco: 29.90,
     imagem: "brentcd.jfif"
   };
