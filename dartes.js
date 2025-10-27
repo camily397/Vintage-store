@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // === PRODUTO PADRÃO (para teste) ===
   // Depois você pode substituir por valores dinâmicos da loja
   const produto = {
-    nome: "Jeff Buckley - Grace"
+    nome: "BTS - Dark&Wild"
    formato: "CD + Capa",
     preco: 55.90,
     imagem: "darkcd.jfif"
