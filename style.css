@@ -9,17 +9,17 @@ body {
   min-height: 100vh;
 }
 
-/* CABEÇALHO */
+/* CABEÇALHO - SOBRE NO CANTO ESQUERDO */
 header {
   background-color: #1e2a38; /* azul marinho */
   width: 100%;
   padding: 15px 50px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  display: flex;
-  justify-content: flex-end;
   position: fixed;
   top: 0;
   z-index: 10;
+  display: flex;
+  justify-content: flex-start;
 }
 
 header nav a {
@@ -34,34 +34,18 @@ header nav a:hover {
   transform: scale(1.05);
 }
 
-/* SPLASH SCREEN CENTRALIZADA */
+/* SPLASH SCREEN CENTRALIZADA VERTICALMENTE */
 .splash-screen {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* centraliza verticalmente */
   align-items: center;
   text-align: center;
   width: 100%;
   padding: 20px;
   margin-top: 60px; /* espaço para cabeçalho fixo */
   flex-grow: 1;
-}
-
-/* NUVEM */
-.cloud {
-  width: 300px;
-  height: 150px;
-  background: #fff;
-  border-radius: 100px / 50px;
-  margin-bottom: 50px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  animation: cloud-float 4s ease-in-out infinite;
-}
-
-@keyframes cloud-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
 }
 
 /* PET ANIMADO */
@@ -120,7 +104,6 @@ footer {
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .cloud { width: 220px; height: 110px; margin-bottom: 40px; }
   .pet-container img { width: 90px; }
   .site-name { font-size: 32px; }
   .cta-button { font-size: 16px; padding: 12px 25px; }
