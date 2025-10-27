@@ -99,37 +99,3 @@ loginForm?.addEventListener('submit', async (e) => {
     showMsg("Erro inesperado no login.", "error");
   }
 });
-<script>
-  const forgotBtn = document.getElementById('forgotPassword');
-  const resetModal = document.getElementById('resetModal');
-  const closeModal = document.getElementById('closeModal');
-  const sendReset = document.getElementById('sendReset');
-
-  // Mostrar modal
-  forgotBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    resetModal.style.display = 'flex';
-  });
-
-  // Fechar modal
-  closeModal.addEventListener('click', () => {
-    resetModal.style.display = 'none';
-  });
-
-  // Enviar e-mail de redefinição pelo Supabase
-  sendReset.addEventListener('click', async () => {
-    const email = document.getElementById('resetEmail').value;
-    if (!email) {
-      alert('Digite seu e-mail.');
-      return;
-    }
-
-    const { data, error } = await supabase.auth.resetPasswordForEmail(email);
-    if (error) {
-      alert('Erro ao enviar e-mail: ' + error.message);
-    } else {
-      alert('E-mail de recuperação enviado! Verifique sua caixa de entrada.');
-      resetModal.style.display = 'none';
-    }
-  });
-</script>
