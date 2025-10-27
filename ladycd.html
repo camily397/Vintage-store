@@ -3,28 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vintage Store - Lady Gaga The Fame</title>
-  <link rel="stylesheet" href="gaga.css">
+  <title>Vintage Store - Urias</title>
+  <link rel="stylesheet" href="ladycd.css">
 </head>
 <body>
   <header>Vintage Store</header>
 
   <main class="container">
-    <!-- Área da imagem -->
+    <!-- Área das imagens -->
     <section class="album-images">
       <div class="main-image">
-        <img id="ladycd.jfif" src=ladycd.css" alt="Lady Gaga - The Fame">
+        <img id="mainImg" src="ladycd.jfif" alt="Lady Álbum">
+      </div>
+      <div class="thumbs">
       </div>
     </section>
 
     <!-- Área das informações -->
     <section class="album-info">
-      <h2>LADY GAGA - THE FAME</h2>
-      <p><strong>Data de lançamento:</strong> 19/08/2008</p>
+      <div class="album-header">
+      <h2>LADY GAGA - THE FAME </h2>
+       <button class="cart-btn" id="addToCart">🛒 Adicionar ao carrinho</button>
+</div>
+ <p><strong>Data de lançamento:</strong> 19/08/2008</p>
       <p>Produto oficial e lacrado - não vendemos réplicas.</p>
       <p>Itens enviados diretamente de distribuidoras oficiais.</p>
       <p><strong>Inclui:</strong> CD - Pôster - Livreto exclusivo</p>
-      <p class="price">TOTAL A PAGAR: R$ <span id="total">99,90</span></p>
+      <p class="price">TOTAL A PAGAR: R$ <span id="total">45,90</span></p>
       <p><strong>Endereço:</strong> Rua XXXX | Número: XXX | Bairro: XXXX | Estado: XXXX</p>
       <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
       <p><strong>Email:</strong> exemplo@email.com</p>
@@ -43,11 +48,12 @@
         <span id="qty">1</span>
         <button id="plus">+</button>
       </div>
-      <button class="buy-btn">Comprar</button>
+  <!-- Botão Comprar que envia para pagamento -->
+<button class="buy-btn" onclick="window.location.href='ladtes.html'">Comprar</button>
     </section>
   </main>
 
   <script src="ladycd.js"></script>
-  <a href="cds.html" class="voltar">← Voltar</a>
+   <a href="cds.html" class="voltar">← Voltar</a>
 </body>
 </html>
