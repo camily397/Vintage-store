@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // === PRODUTO PADRÃO (para teste) ===
   // Depois você pode substituir por valores dinâmicos da loja
   const produto = {
-    nome: "BTS - Dark&Wild"
+    nome: "BTS - dark&wild"
    formato: "CD + Capa",
     preco: 55.90,
     imagem: "darkcd.jfif"
