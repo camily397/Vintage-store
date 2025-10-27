@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar produto ao carrinho
   addToCartBtn.addEventListener("click", () => {
     const product = {
-      id: "SZA - SOS",
+      id: "SZA-SOS",
       name: "SZA - SOS",
       price: 39.90,
       quantity: parseInt(qtyElement.textContent),
