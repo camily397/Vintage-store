@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("voltarHome").addEventListener("click", () => {
       overlay.style.opacity = "0";
       modal.style.transform = "scale(0.9)";
-      setTimeout(() => window.location.href = "index.html", 300);
+      setTimeout(() => window.location.href = "inicio.html", 300);
     });
   });
 });
