@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addToCartBtn.addEventListener("click", () => {
     const product = {
       id: "evanescence-fallen",
-      name: "Evanescence - FallenE",
+      name: "Evanescence - Fallen",
       price: 150.90,
       quantity: parseInt(qtyElement.textContent),
       image: "fallen.jfif"
