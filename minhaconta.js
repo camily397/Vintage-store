@@ -8,7 +8,21 @@ const endereco = document.getElementById("endereco");
 const salvar = document.getElementById("salvar");
 const sair = document.getElementById("sair");
 
-// 1️⃣ Mostrar preview da foto de perfil e salvar no Local Storage
+// === Criar botão de remover foto dinamicamente ===
+const btnRemoverFoto = document.createElement("button");
+btnRemoverFoto.textContent = "🗑️ Remover foto";
+btnRemoverFoto.id = "removerFoto";
+btnRemoverFoto.style.display = "block";
+btnRemoverFoto.style.margin = "10px auto";
+btnRemoverFoto.style.padding = "8px 14px";
+btnRemoverFoto.style.background = "#e63946";
+btnRemoverFoto.style.color = "#fff";
+btnRemoverFoto.style.border = "none";
+btnRemoverFoto.style.borderRadius = "6px";
+btnRemoverFoto.style.cursor = "pointer";
+uploadFoto.insertAdjacentElement("afterend", btnRemoverFoto);
+
+// === 1️⃣ Mostrar preview da foto de perfil e salvar no Local Storage ===
 uploadFoto.addEventListener("change", (e) => {
   const arquivo = e.target.files[0];
   if (arquivo) {
@@ -21,24 +35,28 @@ uploadFoto.addEventListener("change", (e) => {
   }
 });
 
-// 2️⃣ Carregar dados do Local Storage ao abrir a página
+// === 2️⃣ Remover foto de perfil ===
+btnRemoverFoto.addEventListener("click", () => {
+  fotoPerfil.src = "default-profile.png"; // volta pra imagem padrão
+  localStorage.removeItem("fotoPerfil");
+  uploadFoto.value = ""; // limpa o input file
+  alert("📷 Foto removida!");
+});
+
+// === 3️⃣ Carregar dados do Local Storage ao abrir a página ===
 window.addEventListener("DOMContentLoaded", () => {
-  // Carrega nome e email do usuário (simula login)
   nome.value = localStorage.getItem("nomeUsuario") || nome.value;
   email.value = localStorage.getItem("emailUsuario") || email.value;
-
-  // Carrega telefone e endereço se já houver alterações salvas
   telefone.value = localStorage.getItem("telefone") || telefone.value;
   endereco.value = localStorage.getItem("endereco") || endereco.value;
 
-  // Carrega foto de perfil salva
   const fotoSalva = localStorage.getItem("fotoPerfil");
   if (fotoSalva) {
     fotoPerfil.src = fotoSalva;
   }
 });
 
-// 3️⃣ Salvar alterações
+// === 4️⃣ Salvar alterações ===
 salvar.addEventListener("click", () => {
   localStorage.setItem("nomeUsuario", nome.value);
   localStorage.setItem("emailUsuario", email.value);
@@ -48,11 +66,18 @@ salvar.addEventListener("click", () => {
   alert("✅ Alterações salvas com sucesso!");
 });
 
-// 4️⃣ Confirmação antes de sair
+// === 5️⃣ Confirmação antes de sair ===
 sair.addEventListener("click", () => {
   const confirmar = confirm("Você realmente deseja sair da sua conta?");
   if (confirmar) {
-    alert("Você saiu da conta.");
-    window.location.href = "inicio.html"; // redireciona pro início
+    // Limpa todas as informações salvas
+    localStorage.removeItem("nomeUsuario");
+    localStorage.removeItem("emailUsuario");
+    localStorage.removeItem("telefone");
+    localStorage.removeItem("endereco");
+    localStorage.removeItem("fotoPerfil");
+
+    alert("🚪 Você saiu da conta. Todas as informações foram apagadas.");
+    window.location.href = "inicio.html"; // redireciona para o início
   }
 });
