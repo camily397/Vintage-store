@@ -1,0 +1,123 @@
+/* ===== GERAL ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f8f6;
+  color: #1e2a38;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CABEÇALHO */
+header {
+  background-color: #1e2a38;
+  color: #f8f8f6;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+header .logo {
+  font-family: "Merriweather", serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+header nav a {
+  color: #f8f8f6;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+  color: #bcd0ff;
+  transform: scale(1.05);
+}
+
+/* LANDING */
+.landing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+}
+
+.cloud {
+  width: 300px;
+  height: 150px;
+  background: #fff;
+  border-radius: 100px / 50px;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Animação sutil da nuvem/pet */
+.pet-container {
+  position: absolute;
+  top: -80px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.pet-container img {
+  width: 120px;
+}
+
+.site-name {
+  font-family: "Merriweather", serif;
+  font-size: 36px;
+  color: #1e2a38;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #bcd0ff;
+  color: #001f3f;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 15px 35px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #8aa8e3;
+  border-color: #bcd0ff;
+  transform: translateY(-3px);
+}
+
+/* RODAPÉ */
+footer {
+  background-color: #1e2a38;
+  color: #f8f8f6;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .cloud { width: 220px; height: 110px; }
+  .pet-container img { width: 90px; }
+  .site-name { font-size: 28px; }
+  .cta-button { font-size: 16px; padding: 12px 25px; }
+}
