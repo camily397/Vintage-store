@@ -159,6 +159,7 @@ button:hover {
 .msg.error {
   color: #c0392b;
 }
+
 /* Apenas a aba ativa deve aparecer */
 .pane {
   display: none;
@@ -166,4 +167,94 @@ button:hover {
 
 .pane.active {
   display: block;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVIDADE */
+/* ========================= */
+
+/* Telas médias (tablets e menores laptops) */
+@media (max-width: 900px) {
+  .main-area {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  header {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .pet-area img {
+    width: 200px;
+  }
+
+  .container.auth {
+    max-width: 340px;
+  }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+  header {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .main-area {
+    gap: 25px;
+    margin-top: 20px;
+  }
+
+  .pet-area img {
+    width: 170px;
+  }
+
+  .speech {
+    font-size: 12px;
+    max-width: 150px;
+    top: -40px;
+  }
+
+  .container.auth {
+    max-width: 90%;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+}
+
+/* Telas muito pequenas (menos de 380px) */
+@media (max-width: 380px) {
+  header {
+    font-size: 18px;
+  }
+
+  .pet-area img {
+    width: 150px;
+  }
+
+  .speech {
+    font-size: 11px;
+    top: -35px;
+  }
+
+  .container.auth {
+    padding: 15px;
+  }
 }
