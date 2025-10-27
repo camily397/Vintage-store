@@ -7,36 +7,56 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: center;
-  align-items: center;
 }
 
-/* SPLASH SCREEN */
+/* CABEÇALHO */
+header {
+  background-color: #1e2a38; /* azul marinho */
+  width: 100%;
+  padding: 15px 50px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav a {
+  color: #f8f8f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+  color: #bcd0ff;
+  transform: scale(1.05);
+}
+
+/* SPLASH SCREEN CENTRALIZADA */
 .splash-screen {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: relative;
   width: 100%;
-  padding: 50px 20px;
+  padding: 20px;
 }
 
+/* NUVEM */
 .cloud {
   width: 300px;
   height: 150px;
   background: #fff;
   border-radius: 100px / 50px;
-  margin-bottom: 80px; /* empurra a nuvem para baixo */
+  margin-bottom: 60px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Animação sutil da nuvem/pet */
+/* PET ANIMADO */
 .pet-container {
-  position: relative;
-  top: 50px; /* move para baixo da nuvem */
   animation: float 3s ease-in-out infinite;
+  margin-bottom: 30px;
 }
 
 @keyframes float {
@@ -48,14 +68,15 @@ body {
   width: 120px;
 }
 
+/* NOME DO SITE */
 .site-name {
   font-family: "Merriweather", serif;
   font-size: 36px;
   color: #1e2a38;
-  margin-top: 40px;
   margin-bottom: 30px;
 }
 
+/* BOTÃO CTA */
 .cta-button {
   background-color: #bcd0ff;
   color: #001f3f;
@@ -75,7 +96,7 @@ body {
   transform: translateY(-3px);
 }
 
-/* RODAPÉ */
+/* RODAPÉ FIXO NA PARTE INFERIOR */
 footer {
   background-color: #1e2a38;
   color: #f8f8f6;
@@ -83,14 +104,13 @@ footer {
   padding: 20px;
   font-size: 14px;
   width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .cloud { width: 220px; height: 110px; margin-bottom: 50px; }
+  .cloud { width: 220px; height: 110px; margin-bottom: 40px; }
   .pet-container img { width: 90px; }
   .site-name { font-size: 28px; }
   .cta-button { font-size: 16px; padding: 12px 25px; }
+  header { padding: 15px 20px; }
 }
