@@ -1,4 +1,3 @@
-// cadastro.js
 import { supabase } from './supabaseClient.js';
 
 async function cadastrar() {
@@ -12,7 +11,7 @@ async function cadastrar() {
     }
 
     // Verifica se o email já existe
-    const { data: existente, error: errCheck } = await supabase
+    const { data: existente } = await supabase
         .from('usuarios')
         .select('*')
         .eq('email', email)
@@ -23,24 +22,28 @@ async function cadastrar() {
         return;
     }
 
-    // Insere no Supabase
+    // Insere no banco
     const { data, error } = await supabase
         .from('usuarios')
-        .insert([{ nome, email, senha }]);
+        .insert([{ nome, email, senha }])
+        .select()
+        .single();
 
     if (error) {
         alert('Erro ao cadastrar. Tente novamente.');
         console.log(error);
     } else {
-        alert('Cadastro realizado com sucesso! Agora faça login.');
-        window.location.href = 'login.html';
+        showWelcomeModal(data.nome);
+
+        localStorage.setItem('usuarioLogado', JSON.stringify(data));
+
+        setTimeout(() => {
+            window.location.href = 'minhaconta.html';
+        }, 2000);
     }
 }
 
-// conecta o botão com a função
 document.querySelector('button').addEventListener('click', cadastrar);
-// Após cadastro bem-sucedido
-showWelcomeModal(data.nome);
 
 function showWelcomeModal(nome) {
     const modal = document.createElement('div');
@@ -68,8 +71,3 @@ function showWelcomeModal(nome) {
 
     document.getElementById('closeModal').onclick = () => modal.remove();
 }
-// Guarda o usuário logado
-localStorage.setItem('usuarioLogado', JSON.stringify(data));
-
-// Redireciona para minhaConta.html ou mostra pop-up de boas-vindas
-window.location.href = 'minhaconta.html';
